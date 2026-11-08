@@ -1,0 +1,1269 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kwin package.
+#
+# SPDX-FileCopyrightText: 2026 X əyyam
+# SPDX-FileCopyrightText: 2026 Kheyyam <xxmn77@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kwin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2026-03-29 02:08+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
+"Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.12.3\n"
+
+#: ui/Focus.qml:22
+#, fuzzy, kde-format
+#| msgid "Window &activation policy:"
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr "Pəncərələrin &aktişləşdirilməsi qaydaları:"
+
+#: ui/Focus.qml:46
+#, fuzzy, kde-format
+#| msgctxt "sassa asas"
+#| msgid "Click to focus"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr "Vurmaqla fokus"
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, fuzzy, kde-format
+#| msgid "Focus follows mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr "Kursor ilə fokuslamaq"
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, fuzzy, kde-format
+#| msgid "Focus under mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr "Fokus kursor altında"
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, fuzzy, kde-format
+#| msgid "&Window snap zone:"
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr "&Pəncərənin yapışma sahəsi:"
+
+#: ui/Focus.qml:115
+#, kde-format
+msgid "&Delay focus by:"
+msgstr "&Fokuslanma müddəti:"
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, fuzzy, kde-format
+#| msgid " ms"
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " ms"
+
+#: ui/Focus.qml:146
+#, kde-format
+msgid "Focus &stealing prevention:"
+msgstr "Fokusun &dəyişiminin əngəllənməsi:"
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, kde-format
+msgid "None"
+msgstr "Heç biri"
+
+#: ui/Focus.qml:151
+#, kde-format
+msgid "Low"
+msgstr "Aşağı"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr "Orta"
+
+#: ui/Focus.qml:153
+#, kde-format
+msgid "High"
+msgstr "Yüksək"
+
+#: ui/Focus.qml:154
+#, kde-format
+msgid "Extreme"
+msgstr "Çox yüksək"
+
+#: ui/Focus.qml:171
+#, fuzzy, kde-format
+#| msgid "Switch to that Virtual Desktop"
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr "Bu virtual iş masasına keçid"
+
+#: ui/Focus.qml:173
+#, fuzzy, kde-format
+#| msgid "When activating a window on a different Virtual Desktop:"
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr "Başqa iş masasındakı pəncərəyə keçid zamanı:"
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr "Pəncərəni bu virtual iş masasına köçür"
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, kde-format
+msgid "Do nothing"
+msgstr "Heç biri"
+
+#: ui/Focus.qml:207
+#, kde-format
+msgid "Raising windows:"
+msgstr "Pəncərələri önə çıxartmaq:"
+
+#: ui/Focus.qml:208
+#, fuzzy, kde-format
+#| msgid "&Click raises active window"
+msgid "&Click raises focused window"
+msgstr "Klik aktiv pən&cərəni önə çıxarır"
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr "Üzə&rində olduqda önə çıxma müddəti:"
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr "Birdən çox ekranla davranış:"
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr "Ekran üçün ayrıca foku&s"
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr "&Fokus"
+
+#: ui/main.qml:37
+#, kde-format
+msgid "Titlebar A&ctions"
+msgstr "Başlıq paneli Fəa&liyyətləri"
+
+#: ui/main.qml:43
+#, kde-format
+msgid "W&indow Actions"
+msgstr "Pəncərə Fəal&iyyətləri"
+
+#: ui/main.qml:49
+#, fuzzy, kde-format
+#| msgid "Mo&vement"
+msgid "Mo&vement & Placement"
+msgstr "&Yerdəyişmə"
+
+#: ui/MovementAndPlacement.qml:17
+#, fuzzy, kde-format
+#| msgid "Mo&vement"
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "&Yerdəyişmə"
+
+#: ui/MovementAndPlacement.qml:22
+#, kde-format
+msgid "Screen &edge snap zone:"
+msgstr "&Kənar yapışma sahəsi:"
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, fuzzy, kde-format
+#| msgid " px"
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr " piksel"
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr "&Pəncərənin yapışma sahəsi:"
+
+#: ui/MovementAndPlacement.qml:79
+#, kde-format
+msgid "&Center snap zone:"
+msgstr "&Mərkəzi yapışma sahəsi:"
+
+#: ui/MovementAndPlacement.qml:106
+#, kde-format
+msgid "&Snap windows:"
+msgstr "Pən&cərələri yapışdırmaq:"
+
+#: ui/MovementAndPlacement.qml:107
+#, kde-format
+msgid "Only when overlapping"
+msgstr "Yalnız üst-üstə gəldikdə yapışdırmaq"
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, kde-format
+msgid "Window &placement:"
+msgstr "Yeni &pəncərənin yerləşdirilməsi:"
+
+#: ui/MovementAndPlacement.qml:129
+#, kde-format
+msgid "Minimal Overlapping"
+msgstr "Ən az üst-üstə düşmə"
+
+#: ui/MovementAndPlacement.qml:130
+#, kde-format
+msgid "Maximized"
+msgstr "Tam açılan"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "Təsadüfi"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "Mərkəzdə"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr "Yuxarı sol küncdə"
+
+#: ui/MovementAndPlacement.qml:134
+#, kde-format
+msgid "Under mouse"
+msgstr "Kursorun altında"
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr "Yüksəltmək"
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr "Alçaltmaq"
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, kde-format
+msgid "Raise/lower"
+msgstr "Yüksəltmək/Alçaltmaq"
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr "Kiçiltmək"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr "Bağlamaq"
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "Window &placement:"
+msgid "Window menu"
+msgstr "Yeni &pəncərənin yerləşdirilməsi:"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, fuzzy, kde-format
+#| msgid "Focus under mouse"
+msgid "Focus and raise"
+msgstr "Fokus kursor altında"
+
+#: ui/TitlebarActions.qml:31
+#, fuzzy, kde-format
+#| msgid "Focus under mouse"
+msgid "Focus and lower"
+msgstr "Fokus kursor altında"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, fuzzy, kde-format
+#| msgid "&Focus"
+msgid "Focus"
+msgstr "&Fokus"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, kde-format
+msgid "Maximize"
+msgstr "Tam açılan"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr "Şaquli tam açılma"
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, kde-format
+msgid "Horizontally maximize"
+msgstr "Üfüqi tam açılma"
+
+#: ui/TitlebarActions.qml:49
+#, kde-format
+msgid "Titlebar Actions"
+msgstr "Başlıq çubuğu Fəaliyyətləri"
+
+#: ui/TitlebarActions.qml:52
+#, kde-format
+msgid "&Double-click:"
+msgstr "&İkili klik:"
+
+#: ui/TitlebarActions.qml:63
+#, kde-format
+msgid "Show on all desktops"
+msgstr "Bütün iş masalarında göstərmək"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, kde-format
+msgid "Mouse &wheel:"
+msgstr "Siçanın diyircə&yi:"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, kde-format
+msgid "Maximize/restore"
+msgstr "Böyütmək/Geri qaytarmaq"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, kde-format
+msgid "Keep above/below"
+msgstr "Üstdə/Altda tutmaq"
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, kde-format
+msgid "Move to previous/next desktop"
+msgstr "Əvvəlki/Sonrakı iş masasına köçürmək"
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, kde-format
+msgid "Change opacity"
+msgstr "Şəffaflığı dəyişmək"
+
+#: ui/TitlebarActions.qml:102
+#, kde-format
+msgid "Titlebar and Frame Actions"
+msgstr "Başlıq çubuğu və Çərçivə Fəaliyyətləri"
+
+#: ui/TitlebarActions.qml:111
+#, fuzzy, kde-format
+#| msgid "&Focus"
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "&Fokus"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, kde-format
+msgid "&Left click:"
+msgstr "Siçanın so&l düyməsi:"
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, kde-format
+msgid "&Middle click:"
+msgstr "Siçanın orta düy&məsi:"
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr "Sağ &klik:"
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, kde-format
+msgid "Maximize Button Actions"
+msgstr "Böyütmə düyməsi"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, kde-format
+msgid "L&eft click:"
+msgstr "S&ol klik:"
+
+#: ui/TitlebarActions.qml:268
+#, kde-format
+msgid "Middle c&lick:"
+msgstr "Orta düymə k&liki:"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr "Sağ kli&k:"
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr "Köçürmək"
+
+#: ui/WindowActions.qml:28
+#, fuzzy, kde-format
+#| msgid "Activate, raise and move"
+msgid "Focus, raise, and move"
+msgstr "Aktivləşdirmək, yüksəltmək və köçürmək"
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+#| msgid "Activate, raise and move"
+msgid "Focus, raise, and resize"
+msgstr "Aktivləşdirmək, yüksəltmək və köçürmək"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "Ölçüsünü dəyişmək"
+
+#: ui/WindowActions.qml:35
+#, kde-format
+msgid "Decrease opacity"
+msgstr "Şəffaflığı azaltmaq"
+
+#: ui/WindowActions.qml:36
+#, kde-format
+msgid "Increase opacity"
+msgstr "Şəffaflığı artırmaq"
+
+#: ui/WindowActions.qml:42
+#, fuzzy, kde-format
+#| msgid "Inactive Inner Window Actions"
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "Qeyri-aktiv pəncərə daxilində"
+
+#: ui/WindowActions.qml:50
+#, fuzzy, kde-format
+#| msgid "Activate and raise"
+msgid "Focus, click through, and raise on release"
+msgstr "Aktivləşdirmək və üstə çıxarmaq"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr "Sürüşdürmə"
+
+#: ui/WindowActions.qml:104
+#, fuzzy, kde-format
+#| msgid "Activate and scroll"
+msgid "Focus and scroll"
+msgstr "Aktivləşdirmək və sürüşdürmək"
+
+#: ui/WindowActions.qml:105
+#, fuzzy, kde-format
+#| msgid "Activate, raise and scroll"
+msgid "Focus, raise, and scroll"
+msgstr "Aktivləşdirmək, üzə çıxartmaq və sürüşdürmək"
+
+#: ui/WindowActions.qml:120
+#, fuzzy, kde-format
+#| msgid "Inner Window, Titlebar and Frame Actions"
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr "Pəncərə daxilində, Başlıqda və Çərçivədə"
+
+#: ui/WindowActions.qml:123
+#, kde-format
+msgid "Mo&difier key:"
+msgstr "&Dəyişdirici düymə:"
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "Meta"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, kde-format
+msgid "Middle &click:"
+msgstr "O&rta düymə:"
+
+#: ui/WindowActions.qml:202
+#, kde-format
+msgid "Mo&use wheel:"
+msgstr "Siçanın di&yircəyi:"
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Bu sətirdə siz qeyri-aktiv pəncərənin daxilində (başlıq və çərçivəyə "
+#~ "deyil) siçanın sol düyməsinin vurulması zamanı onun davranışını təyin edə "
+#~ "bilərsiniz."
+
+#~ msgid "Activate, raise and pass click"
+#~ msgstr "Aktivləşdirmık, üstə çıxarmaq və tıklamanı icra etmək"
+
+#~ msgid "Activate and pass click"
+#~ msgstr "Aktivləşdirmək və tıklamanı icra etmək"
+
+#~ msgid "Activate"
+#~ msgstr "Aktivləşdirmək"
+
+#~ msgid "Activate and raise"
+#~ msgstr "Aktivləşdirmək və üstə çıxarmaq"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Bu sətirdə siz qeyri-aktiv pəncərənin daxilində (başlıq və çərçivəyə "
+#~ "deyil) siçanın orta düyməsinin vurulması zamanı onun davranışını təyin "
+#~ "edə bilərsiniz."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Bu sətirdə siz qeyri-aktiv pəncərənin daxilində (başlıq və çərçivəyə "
+#~ "deyil) siçanın sağ düyməsinin vurulması zamanı onun davranışını təyin edə "
+#~ "bilərsiniz."
+
+#~ msgid ""
+#~ "In this row you can customize behavior when scrolling into an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Bu sətirdə siz qeyri-aktiv pəncərənin daxilində (başlıq və çərçivəyə "
+#~ "deyil) siçanın diyircəyinə vurulması zamanı onun davranışını təyin edə "
+#~ "bilərsiniz."
+
+#~ msgid ""
+#~ "Here you select whether holding the Meta key or Alt key will allow you to "
+#~ "perform the following actions."
+#~ msgstr ""
+#~ "Burada Meta düyməsini və ya Alt düyməsini basılı saxlamaqla aşağıdakı "
+#~ "hərəkətləri əməlləri icra edə bilərsiniz."
+
+#~ msgid "  + "
+#~ msgstr "  + "
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "Bu sətirdə başlıq çubuğuna və ya çərçivəyə tıkladıqda sol klik "
+#~ "davranışına düzəliş edə bilərsiniz."
+
+#~ msgid "Toggle raise and lower"
+#~ msgstr "Yüksəltmə və Alçaltma keçisi"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into "
+#~ "the titlebar or the frame."
+#~ msgstr ""
+#~ "Bu sətirdə siz başlıq çubuğuna və çəçivəyə vurduqda orta düymənin "
+#~ "davranışına düzəliş edə bilərsiniz."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "Bu sətirdə siz siz başlıq çübüğuna və çərçivəyə vurduqda sağ düymənin "
+#~ "davranışlarına düzəliş edə bilərsiniz."
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when scrolling with the mouse wheel "
+#~ "in a window while pressing the modifier key."
+#~ msgstr ""
+#~ "Burada siz pəncərə daxilində dəyişdirici düyməyə basdıqda siçanın "
+#~ "diyircəyini hərəkət etdirərkən KDE-nin davranışına düzəliş edə bilərsiniz"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html><head/><body><p>The placement policy determines where a new window "
+#~| "will appear on the desktop.</p><ul style=\"margin-top: 0px; margin-"
+#~| "bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+#~| "\"><li style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+#~| "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~| "font-style:italic;\">Smart</span> will try to achieve a minimum overlap "
+#~| "of windows</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~| "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~| "style=\" font-style:italic;\">Maximizing</span> will try to maximize "
+#~| "every window to fill the whole screen. It might be useful to selectively "
+#~| "affect placement of some windows using the window-specific settings.</"
+#~| "li><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+#~| "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~| "font-style:italic;\">Cascade</span> will cascade the windows</li><li "
+#~| "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~| "style:italic;\">Random</span> will use a random position</li><li style="
+#~| "\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; "
+#~| "-qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~| "\">Centered</span> will place the window centered</li><li style=\" "
+#~| "margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -"
+#~| "qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~| "\">Zero-cornered</span> will place the window in the top-left corner</"
+#~| "li><li style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; "
+#~| "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~| "font-style:italic;\">Under mouse</span> will place the window under the "
+#~| "pointer</li></ul></body></html>"
+#~ msgid ""
+#~ "<html><head/><body><p>The placement policy determines where a new window "
+#~ "will appear on the desktop.</p><ul style=\"margin-top: 0px; margin-"
+#~ "bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+#~ "\"><li style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Smart</span> will try to achieve a minimum overlap "
+#~ "of windows</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Maximizing</span> will try to maximize "
+#~ "every window to fill the whole screen. It might be useful to selectively "
+#~ "affect placement of some windows using the window-specific settings.</"
+#~ "li><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Random</span> will use a random position</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Centered</span> will place the window centered</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Zero-cornered</span> will place the window in the top-"
+#~ "left corner</li><li style=\" margin-top:0px; margin-bottom:12px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Under mouse</span> will place the window "
+#~ "under the pointer</li></ul></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Bu parametr yeni pəncərənin iş masasında "
+#~ "yerləşdirilmə qaydasnı təyin etməyə imkan verir.</p><ul style=\"margin-"
+#~ "top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-"
+#~ "list-indent: 1;\"><li style=\" margin-top:12px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Ən az üst-üstə düşmə</span> pəncərələrin "
+#~ "minimum üst-üstə düşməsinə nail olmağa çalışacaq</li><li style=\" margin-"
+#~ "top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+#~ "indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">Tam "
+#~ "açılan</span>bütün ekranı doldurmaq üçün hər pəncərəni böyütməyə "
+#~ "çalışacaqdır. Pəncərənin xüsusi parametrlərini istifadə edərək bəzi "
+#~ "pəncərələrin yerləşdirilməsinə seçici şəkildə təsir etmək faydalı ola "
+#~ "bilər.</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Ardıcıl</span>Pəncərələr ardıcıl düzüləcək</"
+#~ "li><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Təsadüfi</span>Pəncərələr ixtiyari düzüləcək</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Mərkəzdə</span> Pəncərələr ekranın mərkəszində "
+#~ "yerləşəcək</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Yuxarı sol küncdə</span> Pəncərələr yuxarı "
+#~ "sol küncdə yerləşəcək</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">Kursorun altında</span> "
+#~ "Pəncərələr kursorun altında yerləşəcək</li></ul></body></html>"
+
+#~ msgid ""
+#~ "When turned on, apps which are able to remember the positions of their "
+#~ "windows are allowed to do so. This will override the window placement "
+#~ "mode defined above."
+#~ msgstr ""
+#~ "Açıldıqda, pəncərələrinin yerlərini yadda saxlaya bilən tətbiqlər bunu "
+#~ "edə bilər. Bu, yuxarıda müəyyənləşdirilmiş pəncərə yerləşdirmə rejimini "
+#~ "ləğv edəcəkdir."
+
+#~ msgid ""
+#~ "Allow apps to remember the positions of their own windows, if they "
+#~ "support it"
+#~ msgstr ""
+#~ "Dəstəklədiyi halda, tətbiqlərin öz pəncərələrinin yerlərini yadda "
+#~ "saxlamasına icazə vermək"
+
+#~ msgid "Virtual Desktop behavior:"
+#~ msgstr "Virtual iş masası davranışları:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>This setting controls what happens when an open "
+#~ "window located on a Virtual Desktop other than the current one is "
+#~ "activated. </p><p><span style=\" font-style:italic;\">Switch to that "
+#~ "Virtual Desktop</span> will switch to the Virtual Desktop where the "
+#~ "window is currently located. </p><p><span style=\" font-style:italic;"
+#~ "\">Bring window to current Virtual Desktop</span> will cause the window "
+#~ "to jump to the active Virtual Desktop. </p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Bu ayar, hazırkı açıq virtual iş masasında deyil "
+#~ "başqa  bir iş masasında yerləşən pəncərənin davranışlarını idarə edir. </"
+#~ "p><p><span style=\" font-style:italic;\">Bu virtual iş masasına keçid</"
+#~ "span> pəncərənin hazırda yerləşdiyi virtual iş masasına keçid edəcək. </"
+#~ "p><p><span style=\" font-style:italic;\">Pəncərəni hazırkı iş masasına "
+#~ "köçürmək</span> pəncərəni aktiv virtual işa masasına köçürəcək. </p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "With this option you can specify how and when windows will be focused."
+#~ msgstr "Pəncərələrin aktişləşdirilməsi qaydaları."
+
+#~ msgid "Click to focus (mouse precedence)"
+#~ msgstr "Vurmaqla fokus (siçanın üstünlüyü)"
+
+#~ msgid "Focus follows mouse (mouse precedence)"
+#~ msgstr "Kursor ilə fokuslamaq (siçanın üstünlüyü)"
+
+#~ msgid "Focus strictly under mouse"
+#~ msgstr "Fokus yalnız kursor altında"
+
+#~ msgid ""
+#~ "This is the delay after which the window the mouse pointer is over will "
+#~ "automatically receive focus."
+#~ msgstr ""
+#~ "Bu, müddət ərzində kursor üzərində dayandıqda pəncərə avtomatik olaraq "
+#~ "fokuslanacaqdır."
+
+#~ msgid ""
+#~ "<html><head/><body><p>This option specifies how much KWin will try to "
+#~ "prevent unwanted focus stealing caused by unexpected activation of new "
+#~ "windows. (Note: This feature does not work with the <span style=\" font-"
+#~ "style:italic;\">Focus under mouse</span> or <span style=\" font-style:"
+#~ "italic;\">Focus strictly under mouse</span> focus policies.) </p><ul "
+#~ "style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+#~ "right: 0px; -qt-list-indent: 1;\"><li style=\" margin-top:12px; margin-"
+#~ "bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">None:</span> Prevention "
+#~ "is turned off and new windows always become activated.</li><li style=\" "
+#~ "margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+#~ "block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~ "\">Low:</span> Prevention is enabled; when some window does not have "
+#~ "support for the underlying mechanism and KWin cannot reliably decide "
+#~ "whether to activate the window or not, it will be activated. This setting "
+#~ "may have both worse and better results than the medium level, depending "
+#~ "on the applications.</li><li style=\" margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-style:italic;\">Medium:</span> Prevention is "
+#~ "enabled.</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">High:</span> New windows get activated only "
+#~ "if no window is currently active or if they belong to the currently "
+#~ "active application. This setting is probably not really usable when not "
+#~ "using mouse focus policy.</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">Extreme:</span> All "
+#~ "windows must be explicitly activated by the user.</li></ul><p>Windows "
+#~ "that are prevented from stealing focus are marked as demanding attention, "
+#~ "which by default means their taskbar entry will be highlighted. This can "
+#~ "be changed in the Notifications control module.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Bu seçim, yeni pəncərələrin gözlənilmədən "
+#~ "aktivləşdirilməsi nəticəsində yaranan arzuolunmaz fokus dəyişməsinin "
+#~ "qarşısını almağa KWin-in nə iş görəcəyini göstərir. (Qeyd: Bu, <span "
+#~ "style=\" font-style:italic;\">Kursorun altından fokuslama</span> və ya "
+#~ "<span style=\" font-style:italic;\">Kursorun tam altından fokuslama</"
+#~ "span> fokuslama qaydaları ilə işləməyəcək.) </p><ul style=\"margin-top: "
+#~ "0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-"
+#~ "indent: 1;\"><li style=\" margin-top:12px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Qeyd:</span> Qarşılıqlı təsir söndürülüb və "
+#~ "yeni pəncərə həmişə aktivdir.</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">Aşağı:</span> "
+#~ "Qarşılıqlı təsir aktivləşdirilib; bəzi pəncərədə əsas mexanizm üçün "
+#~ "dəstək olmadıqda və KWin, pəncərəni aktiv etmək və ya etməmək barədə "
+#~ "etibarlı qərar verə bilməyəndə aktivləşdiriləcəkdir. Bu parametr "
+#~ "tətbiqlərdən asılı olaraq orta səviyyədən daha pis və daha yaxşı "
+#~ "nəticələrə səbəb ola bilər.</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">Orta:</span> Qarşılıqlı "
+#~ "təsir sktivdir.</li><li style=\" margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-style:italic;\">Yüksək:</span> Yeni pəncərələr, "
+#~ "yalnız heç bir pəncərə aktiv deyilsə və ya hazırda aktiv tətbiqə "
+#~ "aiddirsə, aktiv olur. Siçan fokus rejimini istifadə etmədikdə bu "
+#~ "parametr, o qədər də yararlı deyil.</li><li style=\" margin-top:0px; "
+#~ "margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-"
+#~ "indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">Çox "
+#~ "yüksək:</span> Bütün pəncərələr istifadəçi tərəfindən açıq şəkildə  "
+#~ "aktivləşdirilməlidir.</li></ul><p>Fokus dəyişməsinin qarşısı alınan "
+#~ "pəncərə diqqət tələb edilən kimi qeyd olunacaq. Məsələn tapşırıq "
+#~ "panelindəki həmin pəncərəyə aid element işıqlanacaq. Bunu \"Sistem "
+#~ "ayarları\" menyusundakı bildirişlərin ayarlanması bölümündə dəyişmək olar."
+#~ "</p></body></html>"
+
+#~ msgid ""
+#~ "When this option is enabled, the active window will be brought to the "
+#~ "front when you click somewhere into the window contents. To change it for "
+#~ "inactive windows, you need to change the settings in the Actions tab."
+#~ msgstr ""
+#~ "Bu seçimdə pəncər daxilinə vurduqda aktiv pəncərə ön plana "
+#~ "çıxarılacaqdır. Aktiv pəncərə üçünü bunu \"Fəaliyyətlər\" vərəqində "
+#~ "ayarlamaq olar."
+
+#~ msgid ""
+#~ "When this option is enabled, a window in the background will "
+#~ "automatically come to the front when the mouse pointer has been over it "
+#~ "for some time."
+#~ msgstr ""
+#~ "Bu seçimdə kursor bir müddət üzərində yerləşdiyi halda pəncərə avtomatik "
+#~ "önə çıxacaq."
+
+#~ msgid ""
+#~ "This is the delay after which the window that the mouse pointer is over "
+#~ "will automatically come to the front."
+#~ msgstr ""
+#~ "Bu kursorun üzərində dayanması ilə pəncərənin önə çıxmasına qədər olan "
+#~ "müddətdir."
+
+#~ msgid ""
+#~ "When this option is enabled, focus operations are limited only to the "
+#~ "active screen"
+#~ msgstr ""
+#~ "Bu seçim aktiv edildikdə fokuslama əməliyyatı yalnız aktiv ekranı ilə "
+#~ "məhdudlaşır"
+
+#~ msgid "Window activation policy description"
+#~ msgstr "Pəncərənin aktivləşdirilməsi qaydalarının təfərrüatları"
+
+#~ msgid "Adva&nced"
+#~ msgstr "Əla&və"
+
+#~ msgid "&Titlebar Actions"
+#~ msgstr "Başlıq çubuğu Fəaliyyə&tləri"
+
+#~ msgid "Window Actio&ns"
+#~ msgstr "Pə&ncərə Fəaliyyətləri"
+
+#~ msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgstr "başlıq çubuğuna <em>ikili</em> kilik davranşları."
+
+#~ msgid "Behavior on <em>mouse wheel</em> scroll over the titlebar."
+#~ msgstr ""
+#~ "Balıqd çubuğunda <em>siçanın diyircəyinin</em> hərəkəti zamanı davranış."
+
+#~ msgid "Active"
+#~ msgstr "Aktiv pəncərə"
+
+#~ msgid "Inactive"
+#~ msgstr "Qeyri-aktiv pəncərə"
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "<em>Aktiv pəncərə</em> çərçivəsi və başlıq çubuğuna <em>sol</em> klik "
+#~ "zamanı davranış."
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "<em>Qeyri-aktiv pəncərə</em> çərçivəsi və ya başlıq çubuğuna <em>sol</em> "
+#~ "klik zamanı davranış."
+
+#~ msgid "Activate and lower"
+#~ msgstr "Fokuslamaq və arxa plana keşirmək"
+
+#~ msgid "Behavior on <em>left</em> click onto the maximize button."
+#~ msgstr "Böyütmə düyməsinə <em>sol</em> klik zamanı davranış."
+
+#~ msgid "Behavior on <em>middle</em> click onto the maximize button."
+#~ msgstr "Böyütmə düyməsinə <em>orta</em> düymə ilə klik zamanı davranış."
+
+#~ msgid "Behavior on <em>right</em> click onto the maximize button."
+#~ msgstr "Böyütmə süyməsinə <em>sağ</em> düymə ilə kilik zamanı davranış."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for screen edges, i.e. the 'strength' of "
+#~ "the magnetic field which will make windows snap to the border when moved "
+#~ "near it."
+#~ msgstr ""
+#~ "Burada siz kənara yapışma sahəsini təyin edə bilərsiniz. Bu pəncərələrin "
+#~ "kənara yapışmasına imkan verən maqnit sahəsinin qüvvəsi kimi başa düşülə "
+#~ "bilər."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for windows, i.e. the 'strength' of the "
+#~ "magnetic field which will make windows snap to each other when they are "
+#~ "moved near another window."
+#~ msgstr ""
+#~ "Burada siz pəncərələr üçün yapışma sahəsini ayarlaya bilərsiniz. Bu "
+#~ "pəncərələrin bir-birinə yapışmasına imkan verən maqnit sahəsinin qüvvəsi "
+#~ "kimi başa düşülə bilər."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for the screen center, i.e. the 'strength' "
+#~ "of the magnetic field which will make windows snap to the center of the "
+#~ "screen when moved near it."
+#~ msgstr ""
+#~ "Burada siz ekranın mərkəzi üçün yapışma sahəsini təyin edə bilərsiniz. Bu "
+#~ "pəncərələrin mərkəzə yapışmasına imkan verən maqnit sahəsinin qüvvəsi "
+#~ "kimi başa düşülə bilər."
+
+#~ msgid ""
+#~ "Here you can set that windows will be only snapped if you try to overlap "
+#~ "them, i.e. they will not be snapped if the windows comes only near "
+#~ "another window or border."
+#~ msgstr ""
+#~ "Burada üst-üstə yerləşdirməyə cəhd etdiyinizdə pəncərələrin bir-birinə "
+#~ "yapışmasını tənzimləyə bilərsiniz. Başqa bir pəncərənin və ya ekranın "
+#~ "kənarına yaxınlaşdıqda yapışmayacaqdır."
+
+#~ msgid ""
+#~ "<em>Click to focus:</em> A window becomes active when you click into it. "
+#~ "This behavior is common on other operating systems and likely what you "
+#~ "want."
+#~ msgstr ""
+#~ "<em>Fokus üçün klik:</em> Pəncərə daxilinə vurduqda aktivləşir. Bu başqa "
+#~ "əməliyyat sistemlərində də belədir və güman ki, buna artıq vərdiş "
+#~ "etmisiniz."
+
+#~ msgid ""
+#~ "<em>Click to focus (mouse precedence):</em> Mostly the same as <em>Click "
+#~ "to focus</em>. If an active window has to be chosen by the system (eg. "
+#~ "because the currently active one was closed) the window under the mouse "
+#~ "is the preferred candidate. Unusual, but possible variant of <em>Click to "
+#~ "focus</em>."
+#~ msgstr ""
+#~ "<em>Fokus üçün klik (siçanın üstünlüyü):</em>Bu rejimin oxşarı<em>Fokus "
+#~ "üçün klik</em>. Əgər sistem aktiv pəncərəni özü seçərsə (məsələn, aktiv "
+#~ "pəncərə bağlandıqda) üstünlük kursorun alrındakı pəncərəyə verilir. Bir "
+#~ "az qeyri-adi olsa da <em>Fokus üçün klik</em> rejiminə alternativ variant "
+#~ "kimi qəbul olunur."
+
+#~ msgid ""
+#~ "<em>Focus follows mouse:</em> Moving the mouse onto a window will "
+#~ "activate it. Eg. windows randomly appearing under the mouse will not gain "
+#~ "the focus. <em>Focus stealing prevention</em> takes place as usual. Think "
+#~ "as <em>Click to focus</em> just without having to actually click."
+#~ msgstr ""
+#~ "<em>Fokus siçanı izləyir:</em>Kursoru üzərində hərəkət etdirdikdə pəncərə "
+#~ "aktivləşəcək. Təsadüfi kursorun altına düşən pəncərə fokuslanmayacaq, "
+#~ "belə ki, <em>Fokusun dəyişməsin qarşısının alınması</em> adi qaydada "
+#~ "işləyir. Bu variant <em>Fokus üçün klik</em>oxşayır, ancaq xüsusi klik "
+#~ "tələb olunmur."
+
+#~ msgid ""
+#~ "This is mostly the same as <em>Focus follows mouse</em>. If an active "
+#~ "window has to be chosen by the system (eg. because the currently active "
+#~ "one was closed) the window under the mouse is the preferred candidate. "
+#~ "Choose this, if you want a hover controlled focus."
+#~ msgstr ""
+#~ "Bu daha çox<em>Fokus siçanı izləyir</em> variantı kimidir. Əgər sistem "
+#~ "aktiv pəncərəni özü seçərsə (məs., aktiv pəncərə bağlandıqda), üstünlük "
+#~ "kursorun altındakı pəncərəyə verilir. Üstündə saxlayarkən fokuslamaq üçün "
+#~ "bu rejimi seçin."
+
+#~ msgid ""
+#~ "<em>Focus under mouse:</em> The focus always remains on the window under "
+#~ "the mouse.<br/><strong>Warning:</strong> <em>Focus stealing prevention</"
+#~ "em> and the <em>tabbox ('Alt+Tab')</em> contradict the activation policy "
+#~ "and will not work. You very likely want to use <em>Focus follows mouse "
+#~ "(mouse precedence)</em> instead!"
+#~ msgstr ""
+#~ "<em>Kursorun altında fokus:</em> Həmişə kursorun altında fokuslanır.<br/"
+#~ "><strong>Xəbərdarlıq</strong> <em>Fokusun dəyişməsinin qarşısnın "
+#~ "alınması</em> və <em>başlıq qutusu ('Alt+Tab')</em> aktivləşdirmə "
+#~ "qaydasına ziddir və işlıməz.Bunun əvəzinə siz <em>Fokus siçanı izləyir</"
+#~ "em>variantını işlətmək istəyə bilərsiniz."
+
+#~ msgid ""
+#~ "<em>Focus strictly under mouse:</em> The focus is always on the window "
+#~ "under the mouse (in doubt nowhere) very much like the focus behavior in "
+#~ "an unmanaged legacy X11 environment.<br/><strong>Warning:</strong> "
+#~ "<em>Focus stealing prevention</em> and the <em>tabbox ('Alt+Tab')</em> "
+#~ "contradict the activation policy and will not work. You very likely want "
+#~ "to use <em>Focus follows mouse (mouse precedence)</em> instead!"
+#~ msgstr ""
+#~ "<em>Fokus tam krsorun altında:</em> Fokus həmişə kursorun altında (əgər "
+#~ "kursorun altı boşdursa fokus ititr) -daha çox öncəki X11 mühitindəki "
+#~ "fokusun davranışına oxşayır.<br/><strong>Qeyd:</strong> <em>Fokusun "
+#~ "dəyişməsinin qarşısının alınması</em>və <em>başlıq qutusu ('Alt+Tab')</"
+#~ "em> davranışına ziddir və işləməz. Bunun əvəzinə siz <em>Fokus siçanı "
+#~ "izləyir (siçanın üstünlüyü)</em>variantını işlətmək istəyə bilərsiniz."
+
+#~ msgid "Show actions menu"
+#~ msgstr "Fəaliyyətlər menyusunu göstərmək"
+
+#~ msgid "Shade/unshade"
+#~ msgstr "Kolgələmək/Kölgələməmək"
+
+#~ msgid "Window &unshading:"
+#~ msgstr "Pəncərəni başlıqdan aç&maq:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>If this option is enabled, a shaded window will "
+#~ "unshade automatically when the mouse pointer has been over the titlebar "
+#~ "for some time.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Bu seçimdə, başlığa yığılmış pəncərə, kursoru "
+#~ "başlıq çubuğu üzərində bir müddət saxladıqda açılacaqdır.</p></body></"
+#~ "html>"
+
+#~ msgid "On titlebar hover after:"
+#~ msgstr "Başlıq çubuğu üzərində qaldığı müddət:"
+
+#~ msgid ""
+#~ "Sets the time in milliseconds before the window unshades when the mouse "
+#~ "pointer goes over the shaded window."
+#~ msgstr ""
+#~ "Kursoru üzərində saxladıqda başlıq çubuğuna yığılmış pəncərənin avtomatik "
+#~ "açılma müddəti, millisaniyələrlə."
+
+#~ msgid "Shade"
+#~ msgstr "Balığa yığmaq"
+
+#~ msgid "&Special windows:"
+#~ msgstr "&Xüsusi pəncərələr:"
+
+#~ msgid ""
+#~ "When turned on, utility windows (tool windows, torn-off menus,...) of "
+#~ "inactive applications will be hidden and will be shown only when the "
+#~ "application becomes active. Note that applications have to mark the "
+#~ "windows with the proper window type for this feature to work."
+#~ msgstr ""
+#~ "Bu parametr aktiv edildikdə köməkçi pəncərərələr (alətlər paneli, "
+#~ "ayrılmış menyular...) qeyri-aktiv tətbiqlər üçün gizlədiləcəkdir. Qeyd: "
+#~ "Bu xüsusiyyətlərin düzgün işləməsi üçün tətbiqlərin, pəncərələri doğru "
+#~ "şəkildə quraşdırmaları lazımdır."
+
+#~ msgid "Hide utility windows for inactive applications"
+#~ msgstr "Qeyri-aktiv tətbiqlərin köməkçi pəncərələrini gizlətmək."
+
+#~ msgid ""
+#~ "When this option is enabled, the active screen (where new windows appear, "
+#~ "for example) is the screen containing the mouse pointer. When disabled, "
+#~ "the active screen is the screen containing the focused window."
+#~ msgstr ""
+#~ "Bu seçim aktiv edildikdə, aktiv ekran (məsələn yeni pəncərələrin "
+#~ "göründüyü yer) siçan kursorundan ibarət ekrandır. Söndürüldükdə isə aktiv "
+#~ "kranın fokuslanmış pəncərələrindən ibarət ekrandır."
+
+#~ msgid "Active screen follows &mouse"
+#~ msgstr "Aktiv ekran &kursoru izləyir"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Xəyyam Qocayev"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "xxmn77@gmail.com"
+
+#~ msgid "Window Behavior Configuration Module"
+#~ msgstr "Pəncərə Davranışı Tənzimləmə Modulu"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "(c) 1997 - 2002 KWin and KControl Authors"
+
+#~ msgid "Matthias Ettrich"
+#~ msgstr "Matthias Ettrich"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Cristian Tibirna"
+#~ msgstr "Cristian Tibirna"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Matthias Kalle Dalheimer"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Daniel Molkentin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid "Pat Dowler"
+#~ msgstr "Pat Dowler"
+
+#~ msgid "Bernd Wuebben"
+#~ msgstr "Bernd Wuebben"
+
+#~ msgid "Matthias Hoelzer-Kluepfel"
+#~ msgstr "Matthias Hoelzer-Kluepfel"
+
+#~ msgid ""
+#~ "<p><h1>Window Behavior</h1> Here you can customize the way windows behave "
+#~ "when being moved, resized or clicked on. You can also specify a focus "
+#~ "policy as well as a placement policy for new windows.</p> <p>Please note "
+#~ "that this configuration will not take effect if you do not use KWin as "
+#~ "your window manager. If you do use a different window manager, please "
+#~ "refer to its documentation for how to customize window behavior.</p>"
+#~ msgstr ""
+#~ "<p><h1>Pəncərə Davranışı</h1>Burada siz, yerdəyişmə, ölçüsünün dəyişməsi "
+#~ "və klikləmə zamanı pəncərənin davranışını ayarlaya bilərsiniz. Həmçinin "
+#~ "burada fokuslama və yeni pəncərənin yerləşmə qaydalarını təyin edə "
+#~ "bilərsiniz.</p> <p>Nəzərə alın ki, yalnız KWin pəncərə menecerindən "
+#~ "istifadə edildiyi halda bu qayda işləyəcək. Əgər başqa pəncərə meneceri "
+#~ "istifadə edirsinizsə, pəncərə davranışının necə ayarlanması haqqında ona "
+#~ "uyğun məlumatlara müraciət edin.</p>"
+
+#~ msgid "Cascaded"
+#~ msgstr "Ardıcıl"
+
+#~ msgid "Window &geometry:"
+#~ msgstr "Pəncərənin həndəsi göstəriciləri:"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's geometry to be displayed while "
+#~ "it is being moved or resized. The window position relative to the top-"
+#~ "left corner of the screen is displayed together with its size."
+#~ msgstr ""
+#~ "Bu seçim aktiv edilərsə pəncərənin yerini və ya ölçüsünü dəyişərkən onun "
+#~ "həndəsi göstəriciləri görünəcəkdir. Ekranın yuxarı küncünə nisbi olaraq "
+#~ "ölçüləri ilə birgə pəncərənin ekranda mövqeyi göstəriləcəkdir."
+
+#~ msgid "Display when moving or resizing"
+#~ msgstr "Yerdəyişmə və ya ölçüsü dəyişdirilərkən göstərmək"

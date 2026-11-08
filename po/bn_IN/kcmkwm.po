@@ -1,0 +1,1007 @@
+# translation of kcmkwm.po to Bengali INDIA
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Runa Bhattacharjee <runab@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2009-01-07 16:17+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+"Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
+"Language: bn_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr ""
+
+#: ui/Focus.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr ""
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr ""
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr ""
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Window Switching"
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr "উইন্ডো পরিবর্তন"
+
+#: ui/Focus.qml:115
+#, kde-format
+msgid "&Delay focus by:"
+msgstr ""
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, fuzzy, kde-format
+#| msgid " ms"
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " ms"
+
+#: ui/Focus.qml:146
+#, kde-format
+msgid "Focus &stealing prevention:"
+msgstr ""
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "None"
+msgid "None"
+msgstr "শূণ্য"
+
+#: ui/Focus.qml:151
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "Low"
+msgid "Low"
+msgstr "নিম্ন"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: ui/Focus.qml:153
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "High"
+msgid "High"
+msgstr "উচ্চ"
+
+#: ui/Focus.qml:154
+#, kde-format
+msgid "Extreme"
+msgstr ""
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr ""
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, fuzzy, kde-format
+#| msgid "Nothing"
+msgid "Do nothing"
+msgstr "কিছু না"
+
+#: ui/Focus.qml:207
+#, fuzzy, kde-format
+#| msgid "Windows"
+msgid "Raising windows:"
+msgstr "উইন্ডো"
+
+#: ui/Focus.qml:208
+#, fuzzy, kde-format
+#| msgid "C&lick raises active window"
+msgid "&Click raises focused window"
+msgstr "ক্লিকের ফলে সক্রিয় উইন্ডো উপরে করা হবে (&l)"
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr ""
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr ""
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr ""
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr ""
+
+#: ui/main.qml:37
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar A&ctions"
+msgstr "শিরোনামের বার সংক্রান্ত কর্ম (&T)"
+
+#: ui/main.qml:43
+#, fuzzy, kde-format
+#| msgid "Window Actio&ns"
+msgid "W&indow Actions"
+msgstr "উইন্ডো সংক্রান্ত কর্ম (&n)"
+
+#: ui/main.qml:49
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Mo&vement & Placement"
+msgstr "স্থাপনা: (&P)"
+
+#: ui/MovementAndPlacement.qml:17
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "স্থাপনা: (&P)"
+
+#: ui/MovementAndPlacement.qml:22
+#, kde-format
+msgid "Screen &edge snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, fuzzy, kde-format
+#| msgid " pixel"
+#| msgid_plural " pixels"
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr " পিক্সেল"
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:79
+#, kde-format
+msgid "&Center snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:106
+#, fuzzy, kde-format
+#| msgid "Windows"
+msgid "&Snap windows:"
+msgstr "উইন্ডো"
+
+#: ui/MovementAndPlacement.qml:107
+#, fuzzy, kde-format
+#| msgid "Only &when moving windows"
+msgid "Only when overlapping"
+msgstr "শুধুমাত্র উইন্ডো স্থানান্তর কালে (&w)"
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window &placement:"
+msgstr "স্থাপনা: (&P)"
+
+#: ui/MovementAndPlacement.qml:129
+#, fuzzy, kde-format
+#| msgid "Only &when moving windows"
+msgid "Minimal Overlapping"
+msgstr "শুধুমাত্র উইন্ডো স্থানান্তর কালে (&w)"
+
+#: ui/MovementAndPlacement.qml:130
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximized"
+msgstr "বড় করুন"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "যথেচ্ছ"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "কেন্দ্রস্থিত"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:134
+#, kde-format
+msgid "Under mouse"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr ""
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr ""
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, kde-format
+msgid "Raise/lower"
+msgstr ""
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr "আড়াল করুন"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window menu"
+msgstr "স্থাপনা: (&P)"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus and raise"
+msgstr "সক্রিয় করে উপরে স্থানান্তর"
+
+#: ui/TitlebarActions.qml:31
+#, fuzzy, kde-format
+#| msgid "Activate & Lower"
+msgid "Focus and lower"
+msgstr "সক্রিয় করে নীচে স্থানান্তর"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, kde-format
+msgid "Focus"
+msgstr ""
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximize"
+msgstr "বড় করুন"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, kde-format
+msgid "Horizontally maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:49
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar Actions"
+msgstr "শিরোনামের বার সংক্রান্ত কর্ম (&T)"
+
+#: ui/TitlebarActions.qml:52
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Double-click:"
+msgstr "শিরোনামের বারের উপর দুইবার ক্লিক: (&T)"
+
+#: ui/TitlebarActions.qml:63
+#, fuzzy, kde-format
+#| msgid "On All Desktops"
+msgid "Show on all desktops"
+msgstr "সকল ডেস্কটপের উপর"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, fuzzy, kde-format
+#| msgid "Mouse wheel:"
+msgid "Mouse &wheel:"
+msgstr "মাউসের উইল:"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, fuzzy, kde-format
+#| msgid "Maximize/Restore"
+msgid "Maximize/restore"
+msgstr "সর্বোচ্চ/স্বাভাবিক মাপ"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, fuzzy, kde-format
+#| msgid "Keep Above/Below"
+msgid "Keep above/below"
+msgstr "উপরে/নীচে রাখা হবে"
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, fuzzy, kde-format
+#| msgid "Move to Previous/Next Desktop"
+msgid "Move to previous/next desktop"
+msgstr "পূর্ববর্তী/পরবর্তী ডেস্কটপে স্থানান্তর"
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, kde-format
+msgid "Change opacity"
+msgstr ""
+
+#: ui/TitlebarActions.qml:102
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar and Frame Actions"
+msgstr "শিরোনামের বার সংক্রান্ত কর্ম (&T)"
+
+#: ui/TitlebarActions.qml:111
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Left click:"
+msgstr "শিরোনামের বারের উপর দুইবার ক্লিক: (&T)"
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Middle click:"
+msgstr "শিরোনামের বারের উপর দুইবার ক্লিক: (&T)"
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, fuzzy, kde-format
+#| msgid "Maximize Button"
+msgid "Maximize Button Actions"
+msgstr "বড় করার বাটন"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "L&eft click:"
+msgstr "শিরোনামের বারের উপর দুইবার ক্লিক: (&T)"
+
+#: ui/TitlebarActions.qml:268
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle c&lick:"
+msgstr "মাঝের বাটন:"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr ""
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr "স্থানান্তরণ"
+
+#: ui/WindowActions.qml:28
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, raise, and move"
+msgstr "সক্রিয় করে উপরে স্থানান্তর"
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, raise, and resize"
+msgstr "সক্রিয় করে উপরে স্থানান্তর"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "মাপ পরিবর্তন"
+
+#: ui/WindowActions.qml:35
+#, kde-format
+msgid "Decrease opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:36
+#, kde-format
+msgid "Increase opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:42
+#, fuzzy, kde-format
+#| msgid "Window Actio&ns"
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "উইন্ডো সংক্রান্ত কর্ম (&n)"
+
+#: ui/WindowActions.qml:50
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, click through, and raise on release"
+msgstr "সক্রিয় করে উপরে স্থানান্তর"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:104
+#, fuzzy, kde-format
+#| msgid "Activate & Lower"
+msgid "Focus and scroll"
+msgstr "সক্রিয় করে নীচে স্থানান্তর"
+
+#: ui/WindowActions.qml:105
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, raise, and scroll"
+msgstr "সক্রিয় করে উপরে স্থানান্তর"
+
+#: ui/WindowActions.qml:120
+#, fuzzy, kde-format
+#| msgid "Titlebar && Frame"
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr "শিরোনামের বার ও ফ্রেম"
+
+#: ui/WindowActions.qml:123
+#, fuzzy, kde-format
+#| msgid "Modifier key:"
+msgid "Mo&difier key:"
+msgstr "পরিবর্তক-কি:"
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "Meta"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle &click:"
+msgstr "মাঝের বাটন:"
+
+#: ui/WindowActions.qml:202
+#, fuzzy, kde-format
+#| msgid "Mouse wheel:"
+msgid "Mo&use wheel:"
+msgstr "মাউসের উইল:"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Activate, raise and pass click"
+#~ msgstr "সক্রিয় করে উপরে স্থানান্তর"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Activate and pass click"
+#~ msgstr "সক্রিয় করে উপরে স্থানান্তর"
+
+#~ msgid "Activate"
+#~ msgstr "সক্রিয়করণ"
+
+#, fuzzy
+#~| msgid "Ad&vanced"
+#~ msgid "Adva&nced"
+#~ msgstr "উন্নত বৈশিষ্ট্য (&v)"
+
+#~ msgid "&Titlebar Actions"
+#~ msgstr "শিরোনামের বার সংক্রান্ত কর্ম (&T)"
+
+#~ msgid "Window Actio&ns"
+#~ msgstr "উইন্ডো সংক্রান্ত কর্ম (&n)"
+
+#~ msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgstr "শিরোনামের বারের উপর <em>দুইবার</em> ক্লিকের আচরণ।"
+
+#, fuzzy
+#~| msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgid "Behavior on <em>mouse wheel</em> scroll over the titlebar."
+#~ msgstr "শিরোনামের বারের উপর <em>দুইবার</em> ক্লিকের আচরণ।"
+
+#~ msgid "Active"
+#~ msgstr "সক্রিয়"
+
+#~ msgid "Inactive"
+#~ msgstr "নিষ্ক্রিয়"
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "<em>সক্রিয়</em> উইন্ডোর শিরোনামের বার অথবা ফ্রেমের মধ্যে <em>বাঁদিকের</em> "
+#~ "বাটন ক্লিক করার ফলে হওয়া আচরণ।"
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "<em>নিষ্ক্রিয়</em> উইন্ডোর শিরোনামের বার অথবা ফ্রেমের মধ্যে <em>বাঁদিকের</em> "
+#~ "বাটন ক্লিক করার ফলে হওয়া আচরণ।"
+
+#~ msgid "Behavior on <em>left</em> click onto the maximize button."
+#~ msgstr "বড় করার বাটনের উপর <em>বাঁদিকের</em> বাটন ক্লিকের ফলে আচরণ।"
+
+#~ msgid "Behavior on <em>middle</em> click onto the maximize button."
+#~ msgstr "বড় করার বাটনের উপর <em>মাঝের</em> বাটন ক্লিকের ফলে আচরণ।"
+
+#~ msgid "Behavior on <em>right</em> click onto the maximize button."
+#~ msgstr "বড় করার বাটনের উপর <em>ডানদিকের</em> বাটন ক্লিকের ফলে আচরণ।"
+
+#, fuzzy
+#~| msgid "Operations Menu"
+#~ msgid "Show actions menu"
+#~ msgstr "কর্ম সংক্রান্ত মেনু"
+
+#, fuzzy
+#~| msgid "Shade/Unshade"
+#~ msgid "Shade/unshade"
+#~ msgstr "ছায়াবৃত/ছায়াবিহীন"
+
+#~ msgid "Shade"
+#~ msgstr "ছায়াবৃত করুন"
+
+#, fuzzy
+#~| msgid "Windows"
+#~ msgid "&Special windows:"
+#~ msgstr "উইন্ডো"
+
+#~ msgid "Hide utility windows for inactive applications"
+#~ msgstr "নিষ্ক্রিয় অ্যাপ্লিকেশনের ক্ষেত্রে সহায়ক উইন্ডো বন্ধ করা হবে"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "রুণা ভট্টাচার্য্য"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "runab@redhat.com"
+
+#~ msgid "Window Behavior Configuration Module"
+#~ msgstr "উইন্ডোর আচরণ কনফিগারেশনের মডিউল"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "(c) ১৯৯৭ - ২০০২ KWin ও KControl নির্মাতাবৃন্দ"
+
+#~ msgid "Matthias Ettrich"
+#~ msgstr "ম্যাথায়েস এট্রিখ"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "ওয়াল্ডো ব্যাস্টিয়েন"
+
+#~ msgid "Cristian Tibirna"
+#~ msgstr "ক্রিস্টিনা টিবির্না"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "ম্যাথায়েস কালে ডালহেইমার"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "ড্যানিয়েল মোলকেনটিন"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "উইন উইলক্স"
+
+#~ msgid "Pat Dowler"
+#~ msgstr "প্যাট ডাউলার"
+
+#~ msgid "Bernd Wuebben"
+#~ msgstr "বার্ন্ড উইবেন"
+
+#~ msgid "Matthias Hoelzer-Kluepfel"
+#~ msgstr "ম্যাথায়েস হোয়েলজার-ক্লুয়েপফেল"
+
+#, fuzzy
+#~| msgid "Display window &geometry when moving or resizing"
+#~ msgid "Display when moving or resizing"
+#~ msgstr ""
+#~ "উইন্ডো স্থানান্তর অথবা উইন্ডোর মাপ পরিবর্তনের সময় উইন্ডোর জ্যামিতি প্রদর্শন করা "
+#~ "হবে (&g)"
+
+#~ msgid "Maximize (vertical only)"
+#~ msgstr "বড় করুন (শুধুমাত্র উলম্ব দিশায়)"
+
+#~ msgid "Maximize (horizontal only)"
+#~ msgstr "বড় করুন (শুধুমাত্র অনুভূমিক দিশায়)"
+
+#, fuzzy
+#~| msgid "Maximize"
+#~ msgid "Maximizing"
+#~ msgstr "বড় করুন"
+
+#, fuzzy
+#~| msgctxt "@title:group"
+#~| msgid "Window Switching"
+#~ msgid "Window tabbing:"
+#~ msgstr "উইন্ডো পরিবর্তন"
+
+#, fuzzy
+#~| msgctxt "@title:group"
+#~| msgid "Window Switching"
+#~ msgid "Start window tab drag"
+#~ msgstr "উইন্ডো পরিবর্তন"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "Ri&ght button:"
+#~ msgstr "ডানদিকের বাটন:"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "&Left button:"
+#~ msgstr "বাঁদিকের বাটন:"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "&Right button:"
+#~ msgstr "ডানদিকের বাটন:"
+
+#, fuzzy
+#~| msgid "Middle button:"
+#~ msgid "M&iddle button:"
+#~ msgstr "মাঝের বাটন:"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "Left &button"
+#~ msgstr "বাঁদিকের বাটন:"
+
+#~ msgid "Shading"
+#~ msgstr "ছায়াবৃত"
+
+#~ msgid "Dela&y:"
+#~ msgstr "বিলম্ব: (&y)"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy"
+#~ msgstr "নীতি: (&P)"
+
+#~ msgid "&Moving"
+#~ msgstr "স্থানান্তরণ (&M)"
+
+#~ msgid "Handle mouse wheel events"
+#~ msgstr "মাউস উইলের ইভেন্ট ব্যবস্থাপনা"
+
+#, fuzzy
+#~| msgid ""
+#~| "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~| "<em>active</em> window."
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an active window."
+#~ msgstr ""
+#~ "<em>সক্রিয়</em> উইন্ডোর শিরোনামের বার অথবা ফ্রেমের মধ্যে <em>ডানদিকের</em> "
+#~ "বাটন ক্লিক করার ফলে হওয়া আচরণ।"
+
+#, fuzzy
+#~| msgid ""
+#~| "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~| "<em>inactive</em> window."
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an inactive window."
+#~ msgstr ""
+#~ "<em>নিষ্ক্রিয়</em> উইন্ডোর শিরোনামের বার অথবা ফ্রেমের মধ্যে <em>ডানদিকের</em> "
+#~ "বাটন ক্লিক করার ফলে হওয়া আচরণ।"
+
+#~ msgid "Left button:"
+#~ msgstr "বাঁদিকের বাটন:"
+
+#~ msgid "Middle button:"
+#~ msgstr "মাঝের বাটন:"
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "<em>সক্রিয়</em> উইন্ডোর শিরোনামের বার অথবা ফ্রেমের মধ্যে <em>মাঝের</em> বাটন "
+#~ "ক্লিক করার ফলে হওয়া আচরণ।"
+
+#~ msgid "Right button:"
+#~ msgstr "ডানদিকের বাটন:"
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "<em>সক্রিয়</em> উইন্ডোর শিরোনামের বার অথবা ফ্রেমের মধ্যে <em>ডানদিকের</em> "
+#~ "বাটন ক্লিক করার ফলে হওয়া আচরণ।"
+
+#, fuzzy
+#~| msgid "Titlebar && Frame"
+#~ msgid "Titlebar & Frame"
+#~ msgstr "শিরোনামের বার ও ফ্রেম"
+
+#, fuzzy
+#~| msgid "&Titlebar Actions"
+#~ msgid "Titlebar"
+#~ msgstr "শিরোনামের বার সংক্রান্ত কর্ম (&T)"
+
+#~ msgid "Windows"
+#~ msgstr "উইন্ডো"
+
+#~ msgid "kcmkwinoptions"
+#~ msgstr "kcmkwinoptions"
+
+#, fuzzy
+#~| msgid "Display content in &resizing windows"
+#~ msgid "Display borders on &maximized windows"
+#~ msgstr "মাপ পরিবর্তনের জন্য চিহ্নিত উইন্ডোর মধ্যে উপস্থিত তথ্য প্রদর্শন করা হবে (&r)"
+
+#, fuzzy
+#~| msgid "Minimize"
+#~ msgctxt "@item:inlistbox behavior on double click"
+#~ msgid "Minimize"
+#~ msgstr "আড়াল করুন"
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "<em>নিষ্ক্রিয়</em> উইন্ডোর শিরোনামের বার অথবা ফ্রেমের মধ্যে <em>মাঝের</em> "
+#~ "বাটন ক্লিক করার ফলে হওয়া আচরণ।"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no border snap zone"
+#~ msgid "none"
+#~ msgstr "শূণ্য"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no window snap zone"
+#~ msgid "none"
+#~ msgstr "শূণ্য"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no center snap zone"
+#~ msgid "none"
+#~ msgstr "শূণ্য"
+
+#, fuzzy
+#~| msgid "Nothing"
+#~ msgctxt "Floating layout, windows aren't tiled at all"
+#~ msgid "Floating"
+#~ msgstr "কিছু না"
+
+#~ msgid "Di&splay content in moving windows"
+#~ msgstr "স্থানান্তরের জন্য চিহ্নিত উইন্ডোর মধ্যে উপস্থিত তথ্য প্রদর্শন করা হবে (&s)"
+
+#~ msgid "Display content in &resizing windows"
+#~ msgstr "মাপ পরিবর্তনের জন্য চিহ্নিত উইন্ডোর মধ্যে উপস্থিত তথ্য প্রদর্শন করা হবে (&r)"
+
+#~ msgid "Allow moving and resizing o&f maximized windows"
+#~ msgstr "সর্বোচ্চ মাপে নির্ধারিত উইন্ডোর স্থানান্তরণ ও মাপ পরিবর্তন করা যাবে (&f)"
+
+#~ msgid "Show window list while switching windows"
+#~ msgstr "উইন্ডো পরিবর্তনের সময় উইন্ডো তালিকা প্রদর্শন করা হবে"
+
+#~ msgid "&Traverse windows on all desktops"
+#~ msgstr "সকল ডেস্কটপের উপর অবস্থিত উইন্ডো পার করা হবে (&T)"
+
+#~ msgid "Popup desktop name on desktop &switch"
+#~ msgstr "ডেস্কটপ পরিবর্তনের সময় ডেস্কটপের নাম পপ-আপ করে প্রদর্শন করা হবে (&s)"
+
+#~ msgctxt "Focus Stealing Prevention Level"
+#~ msgid "Normal"
+#~ msgstr "স্বাভাবিক"
+
+#~ msgid "Active Desktop Borders"
+#~ msgstr "সক্রিয় ডেস্কটপের প্রান্ত"
+
+#~ msgid "D&isabled"
+#~ msgstr "নিষ্ক্রিয় (&i)"
+
+#~ msgid "A&lways enabled"
+#~ msgstr "সর্বদা সক্রিয় (&l)"
+
+#~ msgid "Desktop &switch delay:"
+#~ msgstr "ডেস্কটপ পরিবর্তে বিলম্ব: (&s)"

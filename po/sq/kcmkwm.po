@@ -1,0 +1,767 @@
+# Albanian translation for kdebase-workspace
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the kdebase-workspace package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase-workspace\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2009-05-21 16:13+0000\n"
+"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+"Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2011-05-06 00:58+0000\n"
+"X-Generator: Launchpad (build 12959)\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr ""
+
+#: ui/Focus.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr ""
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr ""
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr ""
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr ""
+
+#: ui/Focus.qml:115
+#, kde-format
+msgid "&Delay focus by:"
+msgstr ""
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, fuzzy, kde-format
+#| msgid " ms"
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " ms"
+
+#: ui/Focus.qml:146
+#, kde-format
+msgid "Focus &stealing prevention:"
+msgstr ""
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "None"
+msgid "None"
+msgstr "Asnjë"
+
+#: ui/Focus.qml:151
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "Low"
+msgid "Low"
+msgstr "I Ulët"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: ui/Focus.qml:153
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "High"
+msgid "High"
+msgstr "I Lartë"
+
+#: ui/Focus.qml:154
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "Extreme"
+msgid "Extreme"
+msgstr "E skajshme"
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr ""
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, fuzzy, kde-format
+#| msgid "Nothing"
+msgid "Do nothing"
+msgstr "Asgjë"
+
+#: ui/Focus.qml:207
+#, fuzzy, kde-format
+#| msgid "Windows"
+msgid "Raising windows:"
+msgstr "Dritaret"
+
+#: ui/Focus.qml:208
+#, kde-format
+msgid "&Click raises focused window"
+msgstr ""
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr ""
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr ""
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr ""
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr "&Fokus"
+
+#: ui/main.qml:37
+#, kde-format
+msgid "Titlebar A&ctions"
+msgstr ""
+
+#: ui/main.qml:43
+#, fuzzy, kde-format
+#| msgid "Windows"
+msgid "W&indow Actions"
+msgstr "Dritaret"
+
+#: ui/main.qml:49
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Mo&vement & Placement"
+msgstr "&Vendosja:"
+
+#: ui/MovementAndPlacement.qml:17
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "&Vendosja:"
+
+#: ui/MovementAndPlacement.qml:22
+#, kde-format
+msgid "Screen &edge snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, fuzzy, kde-format
+#| msgid " pixel"
+#| msgid_plural " pixels"
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr " pixel"
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:79
+#, kde-format
+msgid "&Center snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:106
+#, fuzzy, kde-format
+#| msgid "Windows"
+msgid "&Snap windows:"
+msgstr "Dritaret"
+
+#: ui/MovementAndPlacement.qml:107
+#, kde-format
+msgid "Only when overlapping"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window &placement:"
+msgstr "&Vendosja:"
+
+#: ui/MovementAndPlacement.qml:129
+#, kde-format
+msgid "Minimal Overlapping"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:130
+#, fuzzy, kde-format
+#| msgid "Maximizing"
+msgid "Maximized"
+msgstr "Maksimizuese"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "Rastësore"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "Në Qendër"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:134
+#, kde-format
+msgid "Under mouse"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr "Përpjestim"
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr "Inferior"
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, fuzzy, kde-format
+#| msgid "Lower"
+msgid "Raise/lower"
+msgstr "Inferior"
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr "Minimizo"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window menu"
+msgstr "&Vendosja:"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, fuzzy, kde-format
+#| msgid "Activate"
+msgid "Focus and raise"
+msgstr "Aktivizoje"
+
+#: ui/TitlebarActions.qml:31
+#, fuzzy, kde-format
+#| msgid "Activate"
+msgid "Focus and lower"
+msgstr "Aktivizoje"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, fuzzy, kde-format
+#| msgid "&Focus"
+msgid "Focus"
+msgstr "&Fokus"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, fuzzy, kde-format
+#| msgid "Maximizing"
+msgid "Maximize"
+msgstr "Maksimizuese"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, kde-format
+msgid "Horizontally maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:49
+#, kde-format
+msgid "Titlebar Actions"
+msgstr ""
+
+#: ui/TitlebarActions.qml:52
+#, kde-format
+msgid "&Double-click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:63
+#, kde-format
+msgid "Show on all desktops"
+msgstr ""
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, fuzzy, kde-format
+#| msgid "Mouse wheel:"
+msgid "Mouse &wheel:"
+msgstr "Rrota e miut:"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, fuzzy, kde-format
+#| msgid "Maximizing"
+msgid "Maximize/restore"
+msgstr "Maksimizuese"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, kde-format
+msgid "Keep above/below"
+msgstr ""
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, kde-format
+msgid "Move to previous/next desktop"
+msgstr ""
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, kde-format
+msgid "Change opacity"
+msgstr ""
+
+#: ui/TitlebarActions.qml:102
+#, kde-format
+msgid "Titlebar and Frame Actions"
+msgstr ""
+
+#: ui/TitlebarActions.qml:111
+#, fuzzy, kde-format
+#| msgid "&Focus"
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "&Fokus"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, kde-format
+msgid "&Left click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, kde-format
+msgid "&Middle click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, fuzzy, kde-format
+#| msgid "Maximize Button"
+msgid "Maximize Button Actions"
+msgstr "Butoni i Maksimizimit"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, kde-format
+msgid "L&eft click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:268
+#, fuzzy, kde-format
+#| msgid "Maximize Button"
+msgid "Middle c&lick:"
+msgstr "Butoni i Maksimizimit"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr ""
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr "Lëviz"
+
+#: ui/WindowActions.qml:28
+#, fuzzy, kde-format
+#| msgid "Activate"
+msgid "Focus, raise, and move"
+msgstr "Aktivizoje"
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+#| msgid "Activate"
+msgid "Focus, raise, and resize"
+msgstr "Aktivizoje"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "Ripërmaso"
+
+#: ui/WindowActions.qml:35
+#, kde-format
+msgid "Decrease opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:36
+#, kde-format
+msgid "Increase opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:42
+#, fuzzy, kde-format
+#| msgid "Windows"
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "Dritaret"
+
+#: ui/WindowActions.qml:50
+#, fuzzy, kde-format
+#| msgid "Activate"
+msgid "Focus, click through, and raise on release"
+msgstr "Aktivizoje"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:104
+#, fuzzy, kde-format
+#| msgid "Activate"
+msgid "Focus and scroll"
+msgstr "Aktivizoje"
+
+#: ui/WindowActions.qml:105
+#, fuzzy, kde-format
+#| msgid "Activate"
+msgid "Focus, raise, and scroll"
+msgstr "Aktivizoje"
+
+#: ui/WindowActions.qml:120
+#, kde-format
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr ""
+
+#: ui/WindowActions.qml:123
+#, kde-format
+msgid "Mo&difier key:"
+msgstr ""
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "Meta"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, fuzzy, kde-format
+#| msgid "Maximize Button"
+msgid "Middle &click:"
+msgstr "Butoni i Maksimizimit"
+
+#: ui/WindowActions.qml:202
+#, fuzzy, kde-format
+#| msgid "Mouse wheel:"
+msgid "Mo&use wheel:"
+msgstr "Rrota e miut:"
+
+#, fuzzy
+#~| msgid "Activate"
+#~ msgid "Activate and pass click"
+#~ msgstr "Aktivizoje"
+
+#~ msgid "Activate"
+#~ msgstr "Aktivizoje"
+
+#~ msgid "Active"
+#~ msgstr "Aktiv"
+
+#~ msgid "Inactive"
+#~ msgstr "Jo aktiv"
+
+#~ msgid "Shade"
+#~ msgstr "Hija"
+
+#, fuzzy
+#~| msgid "Windows"
+#~ msgid "&Special windows:"
+#~ msgstr "Dritaret"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "KDE Shqip, Launchpad Contributions: Vilson Gjeci"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde-shqip@yahoogroups.com,vilsongjeci@gmail.com"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "(c) 1997 - 2002 KWin dhe Autorët e KControl"
+
+#~ msgid "Matthias Ettrich"
+#~ msgstr "Matthias Ettrich"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Cristian Tibirna"
+#~ msgstr "Cristian Tibirna"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Matthias Kalle Dalheimer"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Daniel Molkentin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid "Pat Dowler"
+#~ msgstr "Pat Dowler"
+
+#~ msgid "Bernd Wuebben"
+#~ msgstr "Bernd Wuebben"
+
+#~ msgid "Matthias Hoelzer-Kluepfel"
+#~ msgstr "Matthias Hoelzer-Kluepfel"
+
+#, fuzzy
+#~| msgid "Cascade"
+#~ msgid "Cascaded"
+#~ msgstr "Kaskadë"
+
+#~ msgid "Maximize (vertical only)"
+#~ msgstr "Maksimizo (vetëm vertikale)"
+
+#~ msgid "Maximize (horizontal only)"
+#~ msgstr "Maksimizo (horizontale vetëm)"
+
+#~ msgid "Smart"
+#~ msgstr "E Zgjuar"
+
+#, fuzzy
+#~| msgid "Maximizing"
+#~ msgid "Maximizing"
+#~ msgstr "Maksimizuese"
+
+#, fuzzy
+#~| msgid "Zero-Cornered"
+#~ msgid "Zero-cornered"
+#~ msgstr "Me Zero Cepa"
+
+#, fuzzy
+#~| msgid "Maximize Button"
+#~ msgid "M&iddle button:"
+#~ msgstr "Butoni i Maksimizimit"
+
+#~ msgid "Shading"
+#~ msgstr "Hija"
+
+#, fuzzy
+#~| msgid "Maximize Button"
+#~ msgid "Middle button:"
+#~ msgstr "Butoni i Maksimizimit"
+
+#~ msgid "Snap Zones"
+#~ msgstr "Zonat Kapëse"
+
+#~ msgid "kcmkwinoptions"
+#~ msgstr "kcmkwinoptions"

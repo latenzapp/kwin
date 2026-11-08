@@ -1,0 +1,1579 @@
+# Translation of kcmkwm.po into Bosnian.
+# Strahinja Radic <rstraxy@sezampro.yu>, 2000.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2003, 2004.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2005, 2006, 2007, 2008, 2009, 2010.
+# Dalibor Djuric <dalibor.djuric@mozilla-srbija.org>, 2010.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2013-10-18 20:17+0000\n"
+"Last-Translator: Samir Ribić <Unknown>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Launchpad (build 16807)\n"
+"X-Launchpad-Export-Date: 2013-10-19 05:17+0000\n"
+"X-Associated-UI-Catalogs: desktop_kdebase\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr ""
+
+#: ui/Focus.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr ""
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, fuzzy, kde-format
+#| msgid "Active screen follows &mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr "Aktivni ekran prati &miša"
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, fuzzy, kde-format
+#| msgid "Under Mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr "Pod mišem"
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, fuzzy, kde-format
+#| msgid "&Window snap zone:"
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr "&Zona namiještanja prozora:"
+
+#: ui/Focus.qml:115
+#, fuzzy, kde-format
+#| msgid "&Delay focus by"
+msgid "&Delay focus by:"
+msgstr "&Odloži fokus za"
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, fuzzy, kde-format
+#| msgid " ms"
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " ms"
+
+#: ui/Focus.qml:146
+#, fuzzy, kde-format
+#| msgid "Focus &stealing prevention"
+msgid "Focus &stealing prevention:"
+msgstr "Sprečavanje &preuzimanja fokusa"
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, kde-format
+msgid "None"
+msgstr "Ništa"
+
+#: ui/Focus.qml:151
+#, kde-format
+msgid "Low"
+msgstr "Nisko"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr "Srednje"
+
+#: ui/Focus.qml:153
+#, kde-format
+msgid "High"
+msgstr "Visoko"
+
+#: ui/Focus.qml:154
+#, kde-format
+msgid "Extreme"
+msgstr "Ekstremno"
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr ""
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, fuzzy, kde-format
+#| msgid "Nothing"
+msgid "Do nothing"
+msgstr "Ništa"
+
+#: ui/Focus.qml:207
+#, fuzzy, kde-format
+#| msgid "Raising windows"
+msgid "Raising windows:"
+msgstr "Podizanje prozora"
+
+#: ui/Focus.qml:208
+#, fuzzy, kde-format
+#| msgid "C&lick raises active window"
+msgid "&Click raises focused window"
+msgstr "K&lik podiže aktivni prostor"
+
+#: ui/Focus.qml:228
+#, fuzzy, kde-format
+#| msgid "&Raise on hover, delayed by"
+msgid "&Raise on hover, delayed by:"
+msgstr "&Podizanje nadlijetanjem, odloženo za"
+
+#: ui/Focus.qml:272
+#, fuzzy, kde-format
+#| msgid "Multiscreen behaviour"
+msgid "Multiscreen behavior:"
+msgstr "Višeekransko ponašanje"
+
+#: ui/Focus.qml:273
+#, fuzzy, kde-format
+#| msgid "S&eparate screen focus"
+msgid "&Separate screen focus"
+msgstr "&Razdvoji ekranski fokus"
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr "&Fokus"
+
+#: ui/main.qml:37
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar A&ctions"
+msgstr "Radnje &naslovne trake"
+
+#: ui/main.qml:43
+#, fuzzy, kde-format
+#| msgid "Window Actio&ns"
+msgid "W&indow Actions"
+msgstr "Radnje &prozora"
+
+#: ui/main.qml:49
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Mo&vement & Placement"
+msgstr "&Pozicioniranje:"
+
+#: ui/MovementAndPlacement.qml:17
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "&Pozicioniranje:"
+
+#: ui/MovementAndPlacement.qml:22
+#, fuzzy, kde-format
+#| msgid "&Border snap zone:"
+msgid "Screen &edge snap zone:"
+msgstr "Nona &namiještanja ivica"
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, fuzzy, kde-format
+#| msgid " pixel"
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr " piksel"
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr "&Zona namiještanja prozora:"
+
+#: ui/MovementAndPlacement.qml:79
+#, kde-format
+msgid "&Center snap zone:"
+msgstr "&Centralna zona namiještanja:"
+
+#: ui/MovementAndPlacement.qml:106
+#, fuzzy, kde-format
+#| msgid "Raising windows"
+msgid "&Snap windows:"
+msgstr "Podizanje prozora"
+
+#: ui/MovementAndPlacement.qml:107
+#, fuzzy, kde-format
+#| msgid "Snap windows onl&y when overlapping"
+msgid "Only when overlapping"
+msgstr "Namjesti prozore samo pri &preklapanju"
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window &placement:"
+msgstr "&Pozicioniranje:"
+
+#: ui/MovementAndPlacement.qml:129
+#, fuzzy, kde-format
+#| msgid "Snap windows onl&y when overlapping"
+msgid "Minimal Overlapping"
+msgstr "Namjesti prozore samo pri &preklapanju"
+
+#: ui/MovementAndPlacement.qml:130
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximized"
+msgstr "maksimizuj"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "Slučajno"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "Centrirano"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:134
+#, fuzzy, kde-format
+#| msgid "Under Mouse"
+msgid "Under mouse"
+msgstr "Pod mišem"
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr "Podizanje"
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr "Spuštanje"
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, fuzzy, kde-format
+#| msgid "Raise/Lower"
+msgid "Raise/lower"
+msgstr "Podigni/Spusti"
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr "Minimiziraj"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr "Zatvori"
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window menu"
+msgstr "&Pozicioniranje:"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, fuzzy, kde-format
+#| msgid "Under Mouse"
+msgid "Focus and raise"
+msgstr "Pod mišem"
+
+#: ui/TitlebarActions.qml:31
+#, fuzzy, kde-format
+#| msgid "Under Mouse"
+msgid "Focus and lower"
+msgstr "Pod mišem"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, fuzzy, kde-format
+#| msgid "&Focus"
+msgid "Focus"
+msgstr "&Fokus"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, kde-format
+msgid "Maximize"
+msgstr "maksimizuj"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, kde-format
+msgid "Horizontally maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:49
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar Actions"
+msgstr "Radnje &naslovne trake"
+
+#: ui/TitlebarActions.qml:52
+#, kde-format
+msgid "&Double-click:"
+msgstr "&Dvostruki klik"
+
+#: ui/TitlebarActions.qml:63
+#, fuzzy, kde-format
+#| msgid "On All Desktops"
+msgid "Show on all desktops"
+msgstr "Na svim radnim površinama"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, fuzzy, kde-format
+#| msgid "M&ouse wheel:"
+msgid "Mouse &wheel:"
+msgstr "T&očak miša"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, fuzzy, kde-format
+#| msgid "Maximize/Restore"
+msgid "Maximize/restore"
+msgstr "Maksimiziraj/Vrati"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, fuzzy, kde-format
+#| msgid "Keep Above/Below"
+msgid "Keep above/below"
+msgstr "Čuvaj iznad/ispod"
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, fuzzy, kde-format
+#| msgid "Move to Previous/Next Desktop"
+msgid "Move to previous/next desktop"
+msgstr "Pomjeri na prethodnu/narednu radnu površinu"
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, fuzzy, kde-format
+#| msgid "Change Opacity"
+msgid "Change opacity"
+msgstr "Smanji neprozirnost"
+
+#: ui/TitlebarActions.qml:102
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar and Frame Actions"
+msgstr "Radnje &naslovne trake"
+
+#: ui/TitlebarActions.qml:111
+#, fuzzy, kde-format
+#| msgid "&Focus"
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "&Fokus"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, fuzzy, kde-format
+#| msgid "&Double-click:"
+msgid "&Left click:"
+msgstr "&Dvostruki klik"
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, fuzzy, kde-format
+#| msgid "&Double-click:"
+msgid "&Middle click:"
+msgstr "&Dvostruki klik"
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, fuzzy, kde-format
+#| msgid "Maximize Button"
+msgid "Maximize Button Actions"
+msgstr "Dugme maksimiziranja"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, fuzzy, kde-format
+#| msgid "&Double-click:"
+msgid "L&eft click:"
+msgstr "&Dvostruki klik"
+
+#: ui/TitlebarActions.qml:268
+#, fuzzy, kde-format
+#| msgid "Middle b&utton:"
+msgid "Middle c&lick:"
+msgstr "Srednje d&ugme"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr ""
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr "Pomjeranje"
+
+#: ui/WindowActions.qml:28
+#, fuzzy, kde-format
+#| msgid "Activate, Raise & Move"
+msgid "Focus, raise, and move"
+msgstr "Aktiviranje, podizanje i pomijeranje"
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+#| msgid "Activate, Raise & Move"
+msgid "Focus, raise, and resize"
+msgstr "Aktiviranje, podizanje i pomijeranje"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "Promjena veličine"
+
+#: ui/WindowActions.qml:35
+#, fuzzy, kde-format
+#| msgid "Decrease Opacity"
+msgid "Decrease opacity"
+msgstr "Učini prozirnijim"
+
+#: ui/WindowActions.qml:36
+#, fuzzy, kde-format
+#| msgid "Increase Opacity"
+msgid "Increase opacity"
+msgstr "Učini manje prozirnim"
+
+#: ui/WindowActions.qml:42
+#, fuzzy, kde-format
+#| msgid "Inactive Inner Window"
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "Neaktivan unurašnji prozor"
+
+#: ui/WindowActions.qml:50
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, click through, and raise on release"
+msgstr "Aktiviraj i podigni"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr "Klizanje"
+
+#: ui/WindowActions.qml:104
+#, fuzzy, kde-format
+#| msgid "Activate & Scroll"
+msgid "Focus and scroll"
+msgstr "Aktiviranje i klizanje"
+
+#: ui/WindowActions.qml:105
+#, fuzzy, kde-format
+#| msgid "Activate, Raise & Scroll"
+msgid "Focus, raise, and scroll"
+msgstr "Aktiviranje, podizanje i klizanje"
+
+#: ui/WindowActions.qml:120
+#, fuzzy, kde-format
+#| msgid "Inner Window, Titlebar & Frame"
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr "Unutrašnji prozor, Naslovna traka i okvir"
+
+#: ui/WindowActions.qml:123
+#, fuzzy, kde-format
+#| msgid "Modifier &key:"
+msgid "Mo&difier key:"
+msgstr "Modifikatorski &taster"
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "Meta"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, fuzzy, kde-format
+#| msgid "Middle b&utton:"
+msgid "Middle &click:"
+msgstr "Srednje d&ugme"
+
+#: ui/WindowActions.qml:202
+#, fuzzy, kde-format
+#| msgid "M&ouse wheel:"
+msgid "Mo&use wheel:"
+msgstr "T&očak miša"
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "U ovom redu možete prilagoditi ponašanje lijevog klika prilikom klika u "
+#~ "neaktivni unutrašnji prozor ('unutrašnji znači: ni naslov, ni okvir).."
+
+#, fuzzy
+#~| msgid "Activate, Raise & Pass Click"
+#~ msgid "Activate, raise and pass click"
+#~ msgstr "Aktiviraj, podigni i proslijedi klik"
+
+#, fuzzy
+#~| msgid "Activate & Pass Click"
+#~ msgid "Activate and pass click"
+#~ msgstr "Aktiviraj i proslijedi klik"
+
+#~ msgid "Activate"
+#~ msgstr "Aktiviraj"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Activate and raise"
+#~ msgstr "Aktiviraj i podigni"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "U ovom redu možete prilagoditi ponašanje srednjeg klika kada se klikne na "
+#~ "neaktivni unutrašnji prozor ('unutrašnji znači: ni naslov, ni okvir)."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "U ovom redu možete prilagoditi ponašanje desnog klika prilikom klika u "
+#~ "neaktivni unutrašnji prozor ('unutrašnji znači: ni naslov, ni okvir).."
+
+#~ msgid ""
+#~ "In this row you can customize behavior when scrolling into an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "U ovom redu možete prilagoditi ponašanje klizanja u neaktivnom "
+#~ "unutrašnjem prozor ('unutrašnji znači: ni naslov, ni okvir)."
+
+#~ msgid ""
+#~ "Here you select whether holding the Meta key or Alt key will allow you to "
+#~ "perform the following actions."
+#~ msgstr ""
+#~ "Ovdje odabirate da li će Meta ili Alt taster vam dopustiti da obavite "
+#~ "sljedeće akcije."
+
+#, fuzzy
+#~| msgid "   + "
+#~ msgid "  + "
+#~ msgstr "   + "
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "U ovom redu možete prilagoditi ponašanje lijevog klika prilikom klika na "
+#~ "naslovnu traku okvira"
+
+#, fuzzy
+#~| msgid "Toggle Raise & Lower"
+#~ msgid "Toggle raise and lower"
+#~ msgstr "Preklopi podizanje i spuštanje"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into "
+#~ "the titlebar or the frame."
+#~ msgstr ""
+#~ "U ovom redu možete prilagoditi ponašanje srednjeg klika prilikom klika "
+#~ "nanaslovnu traku okvira"
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "U ovom redu možete prilagoditi ponašanje desnog klika klikom na naslovnu "
+#~ "traku okvira"
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when scrolling with the mouse wheel "
+#~ "in a window while pressing the modifier key."
+#~ msgstr ""
+#~ "Možete prilagoditi KDE ponašanje prilikom klizanaj točkićem miša u "
+#~ "prozoru dok je pritisnut modifikatorski taster."
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>This option specifies how much KWin will try to prevent unwanted "
+#~| "focus stealing caused by unexpected activation of new windows. (Note: "
+#~| "This feature does not work with the Focus Under Mouse or Focus Strictly "
+#~| "Under Mouse focus policies.)\n"
+#~| "<ul>\n"
+#~| "<li><em>None:</em> Prevention is turned off and new windows always "
+#~| "become activated.</li>\n"
+#~| "<li><em>Low:</em> Prevention is enabled; when some window does not have "
+#~| "support for the underlying mechanism and KWin cannot reliably decide "
+#~| "whether to activate the window or not, it will be activated. This "
+#~| "setting may have both worse and better results than the medium level, "
+#~| "depending on the applications.</li>\n"
+#~| "<li><em>Medium:</em> Prevention is enabled.</li>\n"
+#~| "<li><em>High:</em> New windows get activated only if no window is "
+#~| "currently active or if they belong to the currently active application. "
+#~| "This setting is probably not really usable when not using mouse focus "
+#~| "policy.</li>\n"
+#~| "<li><em>Extreme:</em> All windows must be explicitly activated by the "
+#~| "user.</li>\n"
+#~| "</ul></p>\n"
+#~| "<p>Windows that are prevented from stealing focus are marked as "
+#~| "demanding attention, which by default means their taskbar entry will be "
+#~| "highlighted. This can be changed in the Notifications control module.</p>"
+#~ msgid ""
+#~ "<html><head/><body><p>The placement policy determines where a new window "
+#~ "will appear on the desktop.</p><ul style=\"margin-top: 0px; margin-"
+#~ "bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+#~ "\"><li style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Smart</span> will try to achieve a minimum overlap "
+#~ "of windows</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Maximizing</span> will try to maximize "
+#~ "every window to fill the whole screen. It might be useful to selectively "
+#~ "affect placement of some windows using the window-specific settings.</"
+#~ "li><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Random</span> will use a random position</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Centered</span> will place the window centered</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Zero-cornered</span> will place the window in the top-"
+#~ "left corner</li><li style=\" margin-top:0px; margin-bottom:12px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Under mouse</span> will place the window "
+#~ "under the pointer</li></ul></body></html>"
+#~ msgstr ""
+#~ "<p>Ova opcija određuje koliko će KWin probati spriječiti neželjeno "
+#~ "preuzimanje fokusa koju izaziva neočekivana aktivacija novog prozora. "
+#~ "(Napomena: Ova mogućnost neće raditi s pravilima Fokus ispod miša ili "
+#~ "Fokus striktno ispod  miša.)\n"
+#~ "<ul>\n"
+#~ "<li><em>Ništa:</em> Sprečavanje je isključeno i novi prozori se uvijek "
+#~ "aktiviraju.</li>\n"
+#~ "<li><em>Nisko:</em> Sprečavanje je uključeno; kada prozor nema podršku za "
+#~ "podložni mehanizam i KWin ne može pouzdano odrediti da li da aktivira "
+#~ "prozor ili ne, on će biti aktiviran. Ova postavka moće imati bolje ili "
+#~ "lošije rezultate nego srednji nivo, zavisno od aplikacija.</li>\n"
+#~ "<li><em>Srednje:</em> Sprečavanje je omogućeno.</li>\n"
+#~ "<li><em>Visoko:</em> Novi prozori se aktiviraju samo ako nijedan prozor "
+#~ "nije trenutno aktivan ili priipadaju trenutno aktivnoj aplikaciji. Ova "
+#~ "postavka vjerovatno nije upotrebljiva kada se ne koriste pravila fokusa "
+#~ "miša.</li>\n"
+#~ "<li><em>Ekstremno:</em> Sve prozore mora korisnik eksplicitno aktivirati."
+#~ "</li>\n"
+#~ "</ul></p>\n"
+#~ "<p>Prozoti kojima je sprečeno preuzimanje fokusa su označeni kao da traže "
+#~ "pažnju, čime će njihovo mjesto na traci zadataka biti označeno. To se "
+#~ "može promijeniti u kontrolnom modulu napomena.</p>"
+
+#~ msgid ""
+#~ "This is the delay after which the window the mouse pointer is over will "
+#~ "automatically receive focus."
+#~ msgstr ""
+#~ "Ovo je kašnjenje nakon koga će prozor iznad kog je pokazivač automatski "
+#~ "dobiti fokus"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>This option specifies how much KWin will try to prevent unwanted "
+#~| "focus stealing caused by unexpected activation of new windows. (Note: "
+#~| "This feature does not work with the Focus Under Mouse or Focus Strictly "
+#~| "Under Mouse focus policies.)\n"
+#~| "<ul>\n"
+#~| "<li><em>None:</em> Prevention is turned off and new windows always "
+#~| "become activated.</li>\n"
+#~| "<li><em>Low:</em> Prevention is enabled; when some window does not have "
+#~| "support for the underlying mechanism and KWin cannot reliably decide "
+#~| "whether to activate the window or not, it will be activated. This "
+#~| "setting may have both worse and better results than the medium level, "
+#~| "depending on the applications.</li>\n"
+#~| "<li><em>Medium:</em> Prevention is enabled.</li>\n"
+#~| "<li><em>High:</em> New windows get activated only if no window is "
+#~| "currently active or if they belong to the currently active application. "
+#~| "This setting is probably not really usable when not using mouse focus "
+#~| "policy.</li>\n"
+#~| "<li><em>Extreme:</em> All windows must be explicitly activated by the "
+#~| "user.</li>\n"
+#~| "</ul></p>\n"
+#~| "<p>Windows that are prevented from stealing focus are marked as "
+#~| "demanding attention, which by default means their taskbar entry will be "
+#~| "highlighted. This can be changed in the Notifications control module.</p>"
+#~ msgid ""
+#~ "<html><head/><body><p>This option specifies how much KWin will try to "
+#~ "prevent unwanted focus stealing caused by unexpected activation of new "
+#~ "windows. (Note: This feature does not work with the <span style=\" font-"
+#~ "style:italic;\">Focus under mouse</span> or <span style=\" font-style:"
+#~ "italic;\">Focus strictly under mouse</span> focus policies.) </p><ul "
+#~ "style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+#~ "right: 0px; -qt-list-indent: 1;\"><li style=\" margin-top:12px; margin-"
+#~ "bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">None:</span> Prevention "
+#~ "is turned off and new windows always become activated.</li><li style=\" "
+#~ "margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+#~ "block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~ "\">Low:</span> Prevention is enabled; when some window does not have "
+#~ "support for the underlying mechanism and KWin cannot reliably decide "
+#~ "whether to activate the window or not, it will be activated. This setting "
+#~ "may have both worse and better results than the medium level, depending "
+#~ "on the applications.</li><li style=\" margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-style:italic;\">Medium:</span> Prevention is "
+#~ "enabled.</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">High:</span> New windows get activated only "
+#~ "if no window is currently active or if they belong to the currently "
+#~ "active application. This setting is probably not really usable when not "
+#~ "using mouse focus policy.</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">Extreme:</span> All "
+#~ "windows must be explicitly activated by the user.</li></ul><p>Windows "
+#~ "that are prevented from stealing focus are marked as demanding attention, "
+#~ "which by default means their taskbar entry will be highlighted. This can "
+#~ "be changed in the Notifications control module.</p></body></html>"
+#~ msgstr ""
+#~ "<p>Ova opcija određuje koliko će KWin probati spriječiti neželjeno "
+#~ "preuzimanje fokusa koju izaziva neočekivana aktivacija novog prozora. "
+#~ "(Napomena: Ova mogućnost neće raditi s pravilima Fokus ispod miša ili "
+#~ "Fokus striktno ispod  miša.)\n"
+#~ "<ul>\n"
+#~ "<li><em>Ništa:</em> Sprečavanje je isključeno i novi prozori se uvijek "
+#~ "aktiviraju.</li>\n"
+#~ "<li><em>Nisko:</em> Sprečavanje je uključeno; kada prozor nema podršku za "
+#~ "podložni mehanizam i KWin ne može pouzdano odrediti da li da aktivira "
+#~ "prozor ili ne, on će biti aktiviran. Ova postavka moće imati bolje ili "
+#~ "lošije rezultate nego srednji nivo, zavisno od aplikacija.</li>\n"
+#~ "<li><em>Srednje:</em> Sprečavanje je omogućeno.</li>\n"
+#~ "<li><em>Visoko:</em> Novi prozori se aktiviraju samo ako nijedan prozor "
+#~ "nije trenutno aktivan ili priipadaju trenutno aktivnoj aplikaciji. Ova "
+#~ "postavka vjerovatno nije upotrebljiva kada se ne koriste pravila fokusa "
+#~ "miša.</li>\n"
+#~ "<li><em>Ekstremno:</em> Sve prozore mora korisnik eksplicitno aktivirati."
+#~ "</li>\n"
+#~ "</ul></p>\n"
+#~ "<p>Prozoti kojima je sprečeno preuzimanje fokusa su označeni kao da traže "
+#~ "pažnju, čime će njihovo mjesto na traci zadataka biti označeno. To se "
+#~ "može promijeniti u kontrolnom modulu napomena.</p>"
+
+#~ msgid ""
+#~ "When this option is enabled, the active window will be brought to the "
+#~ "front when you click somewhere into the window contents. To change it for "
+#~ "inactive windows, you need to change the settings in the Actions tab."
+#~ msgstr ""
+#~ "Kada je ova opcija omogućena, aktivni prozor će biti prebačen u prednji "
+#~ "plan kada kliknete u sadržaj prozora. Da to promijenite za neaktive "
+#~ "prozore, morate postaviti postavke u kartici akcija."
+
+#~ msgid ""
+#~ "When this option is enabled, a window in the background will "
+#~ "automatically come to the front when the mouse pointer has been over it "
+#~ "for some time."
+#~ msgstr ""
+#~ "Kada je ova opcija omogućena, prozor u pozadini će automatski doći u "
+#~ "prednji plan kada je pokazivač miša iznad nmjega neko vrijeme"
+
+#~ msgid ""
+#~ "This is the delay after which the window that the mouse pointer is over "
+#~ "will automatically come to the front."
+#~ msgstr ""
+#~ "Ovo je kašnjenje nakon koga će prozor iznad kog je pokazivač miša doći u "
+#~ "prednji plan"
+
+#, fuzzy
+#~| msgid ""
+#~| "When this option is enabled, focus operations are limited only to the "
+#~| "active Xinerama screen"
+#~ msgid ""
+#~ "When this option is enabled, focus operations are limited only to the "
+#~ "active screen"
+#~ msgstr ""
+#~ "Kada je ova akcija omogućena, operacije fokusa su ograničene samo na "
+#~ "aktivni Xinerama ekran"
+
+#, fuzzy
+#~| msgid "Ad&vanced"
+#~ msgid "Adva&nced"
+#~ msgstr "&Napredno"
+
+#~ msgid "&Titlebar Actions"
+#~ msgstr "Radnje &naslovne trake"
+
+#~ msgid "Window Actio&ns"
+#~ msgstr "Radnje &prozora"
+
+#~ msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgstr "Ponašanje <em>dvostrukog</em> klika u naslovnu traku."
+
+#, fuzzy
+#~| msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgid "Behavior on <em>mouse wheel</em> scroll over the titlebar."
+#~ msgstr "Ponašanje <em>dvostrukog</em> klika u naslovnu traku."
+
+#~ msgid "Active"
+#~ msgstr "Aktivno"
+
+#~ msgid "Inactive"
+#~ msgstr "Neaktivno"
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Ponašanje <em>lijevog klika </em> na anslov okvira <em>aktivnog</em> "
+#~ "prozora."
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Ponašanje <em>lijevog</em> klika na naslovnu traku ili okvir "
+#~ "<em>neaktivnog</em> prozora."
+
+#, fuzzy
+#~| msgid "Activate & Lower"
+#~ msgid "Activate and lower"
+#~ msgstr "Aktiviraj i spusti"
+
+#~ msgid "Behavior on <em>left</em> click onto the maximize button."
+#~ msgstr "Ponašanje <em>lijevog</em> klika na dugme maksimiziranja."
+
+#~ msgid "Behavior on <em>middle</em> click onto the maximize button."
+#~ msgstr "Ponašanje <em>srednjeg</em> klika na dugme maksimiziranja."
+
+#~ msgid "Behavior on <em>right</em> click onto the maximize button."
+#~ msgstr "Ponašanje <em>desnog</em> klika na dugme maksimiziranja."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set the snap zone for screen borders, i.e. the 'strength' "
+#~| "of the magnetic field which will make windows snap to the border when "
+#~| "moved near it."
+#~ msgid ""
+#~ "Here you can set the snap zone for screen edges, i.e. the 'strength' of "
+#~ "the magnetic field which will make windows snap to the border when moved "
+#~ "near it."
+#~ msgstr ""
+#~ "Ovdje možete postaviti zonu namiještanja za ivice ekrana, tj. 'jačinu' "
+#~ "magnetnog polja koje čini da se prozori namjeste na ivicu kada se pomiču "
+#~ "blizu nje."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for windows, i.e. the 'strength' of the "
+#~ "magnetic field which will make windows snap to each other when they are "
+#~ "moved near another window."
+#~ msgstr ""
+#~ "Ovdje možete postaviti zonu namiještanja za prozori, tj. 'jačinu' "
+#~ "magnetnog polja koje čini da se prozori namjeste jedan na drugog kada se "
+#~ "pomiču blizu drugog prozora."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for the screen center, i.e. the 'strength' "
+#~ "of the magnetic field which will make windows snap to the center of the "
+#~ "screen when moved near it."
+#~ msgstr ""
+#~ "Ovdje možete postaviti zonu namiještanja za centar ekrana, tj. 'jačinu' "
+#~ "magnetnog polja koje čini da se prozori namjeste na centar ekrana kada se "
+#~ "pomiču blizu njega."
+
+#~ msgid ""
+#~ "Here you can set that windows will be only snapped if you try to overlap "
+#~ "them, i.e. they will not be snapped if the windows comes only near "
+#~ "another window or border."
+#~ msgstr ""
+#~ "Ovdje možete postaviti da se prozori namjeste samo ako ih pokušate "
+#~ "preklopiti, tj, neće se namjestiti ako budu samo blizu drugog prozora ili "
+#~ "ivice."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Click To Focus</b><br>\n"
+#~| "A window becomes active when you click into it.<br><br>\n"
+#~| "This behaviour is common on other operating systems and<br>\n"
+#~| "likely what you want."
+#~ msgid ""
+#~ "<em>Click to focus:</em> A window becomes active when you click into it. "
+#~ "This behavior is common on other operating systems and likely what you "
+#~ "want."
+#~ msgstr ""
+#~ "<b>Klik na fokus</b><br>\n"
+#~ "Prozor postaje aktivan kada kliknete na njega.<br><br>\n"
+#~ "Ovo ponašanje je uobičajeno u drugim operativnim sistemima i <br>\n"
+#~ "vjerovatno je ono što želite."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Click To Focus - Mouse Precedence</b><br>\n"
+#~| "This is mostly the same as <i>Click To Focus</i><br><br>\n"
+#~| "If an active window has to be chosen by the system<br>\n"
+#~| "(eg. because the currently active one was closed) <br>\n"
+#~| "the window under the mouse is the preferred candidate.<br><br>\n"
+#~| "Unusual, but possible variant of <i>Click To Focus</i>."
+#~ msgid ""
+#~ "<em>Click to focus (mouse precedence):</em> Mostly the same as <em>Click "
+#~ "to focus</em>. If an active window has to be chosen by the system (eg. "
+#~ "because the currently active one was closed) the window under the mouse "
+#~ "is the preferred candidate. Unusual, but possible variant of <em>Click to "
+#~ "focus</em>."
+#~ msgstr ""
+#~ "<b>Klik na fokus - prioritet mišem</b><br>\n"
+#~ "To je uglavnom kao <i>Klik na fokus</i><br><br>\n"
+#~ "Ako sistem treba da odabere aktivni prozor<br>\n"
+#~ "(npr. jer je trenutno aktivni zatvoren) <br>\n"
+#~ "prozor pod mišem je preferirani kandidat.<br><br>\n"
+#~ "Neobična, ali moguća varijanta <i>Klik na fokus</i>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Focus Follows Mouse</b><br>\n"
+#~| "Moving the mouse onto a window will activate it.<br><br>\n"
+#~| "Eg. windows randomly appearing under the mouse will not gain the focus."
+#~| "<br>\n"
+#~| "Focus stealing prevention takes place as usual.<br><br>\n"
+#~| "Think as <i>Click To Focus</i> just without having to actually click."
+#~ msgid ""
+#~ "<em>Focus follows mouse:</em> Moving the mouse onto a window will "
+#~ "activate it. Eg. windows randomly appearing under the mouse will not gain "
+#~ "the focus. <em>Focus stealing prevention</em> takes place as usual. Think "
+#~ "as <em>Click to focus</em> just without having to actually click."
+#~ msgstr ""
+#~ "<b>Fokus prati miša</b><br>\n"
+#~ "Micanje miša na prozor će ga aktivirati.<br><br>\n"
+#~ "Npr. prozori koji se slučajno pojavljuju pod mišem neće dobiti fokus."
+#~ "<br>\n"
+#~ "Sprečavanje krađe fokusa radi kao obično.<br><br>\n"
+#~ "Gledajte na ovo kao <i>klik na fokus</i> bez potrebe za stvarnim klikom."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Focus Follows Mouse - Mouse Precedence</b><br>\n"
+#~| "This is mostly the same as <i>Focus Follows Mouse</i><br><br>\n"
+#~| "If an active window has to be chosen by the system<br>\n"
+#~| "(eg. because the currently active one was closed) <br>\n"
+#~| "the window under the mouse is the preferred candidate.<br><br>\n"
+#~| "Choose this, if you want a hover controlled focus."
+#~ msgid ""
+#~ "This is mostly the same as <em>Focus follows mouse</em>. If an active "
+#~ "window has to be chosen by the system (eg. because the currently active "
+#~ "one was closed) the window under the mouse is the preferred candidate. "
+#~ "Choose this, if you want a hover controlled focus."
+#~ msgstr ""
+#~ "<b>Fokus prati miša - prioritet mišem</b><br>\n"
+#~ "To je uglavnom kao <i>Fokus prati miša</i><br><br>\n"
+#~ "Ako sistem treba da odabere aktivni prozor<br>\n"
+#~ "(npr. jer je trenutno aktivni zatvoren) <br>\n"
+#~ "prozor pod mišem je preferirani kandidat.<br><br>\n"
+#~ "Odaberite ovo za fokus kontrolisan nadlijetanjem."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Focus Under Mouse</b><br>\n"
+#~| "The focus always remains on the window under the mouse.<br><br>\n"
+#~| "\n"
+#~| "Notice:<br>\n"
+#~| "<b>Focus stealing prevention</b> and the <b>tabbox (\"Alt+Tab\")</"
+#~| "b><br>\n"
+#~| "contradict the policy and <b>will not work</b>.<br><br>\n"
+#~| "You very likely want to use<br>\n"
+#~| "<i>Focus Follows Mouse - Mouse Precedence</i> instead!"
+#~ msgid ""
+#~ "<em>Focus under mouse:</em> The focus always remains on the window under "
+#~ "the mouse.<br/><strong>Warning:</strong> <em>Focus stealing prevention</"
+#~ "em> and the <em>tabbox ('Alt+Tab')</em> contradict the activation policy "
+#~ "and will not work. You very likely want to use <em>Focus follows mouse "
+#~ "(mouse precedence)</em> instead!"
+#~ msgstr ""
+#~ "<b>Fokus pod mišem</b><br>\n"
+#~ "Fokus uvijek ostaje na prozoru pod mišem.<br><br>\n"
+#~ "\n"
+#~ "Napomena:<br>\n"
+#~ "<b>Sprečavanje krađe fokusa</b> i <b>tab prebacivanje (\"Alt+Tab\")</"
+#~ "b><br>\n"
+#~ "su u kontradikciji s pravilom i <b>neće raditi</b>.<br><br>\n"
+#~ "Možda želite koristiti<br>\n"
+#~ "<i>Fokus prati miša - prioritet mišem</i> umjesto toga!"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Focus Strictly Under Mouse</b><br>\n"
+#~| "The focus is always on the window under the mouse - in doubt nowhere -"
+#~| "<br>\n"
+#~| "very much like the focus behaviour in an unmanaged legacy X11 "
+#~| "environment.<br><br>\n"
+#~| "\n"
+#~| "Notice:<br>\n"
+#~| "<b>Focus stealing prevention</b> and the <b>tabbox (\"Alt+Tab\")</"
+#~| "b><br>\n"
+#~| "contradict the policy and <b>will not work</b>.<br><br>\n"
+#~| "You very likely want to use<br>\n"
+#~| "<i>Focus Follows Mouse - Mouse Precedence</i> instead!"
+#~ msgid ""
+#~ "<em>Focus strictly under mouse:</em> The focus is always on the window "
+#~ "under the mouse (in doubt nowhere) very much like the focus behavior in "
+#~ "an unmanaged legacy X11 environment.<br/><strong>Warning:</strong> "
+#~ "<em>Focus stealing prevention</em> and the <em>tabbox ('Alt+Tab')</em> "
+#~ "contradict the activation policy and will not work. You very likely want "
+#~ "to use <em>Focus follows mouse (mouse precedence)</em> instead!"
+#~ msgstr ""
+#~ "<b>Fokus striktno pod mišem</b><br>\n"
+#~ "Fokus je uvijek ispod miša bez obzira gdje ste  -<br>\n"
+#~ "slično kao ponašanje fokusa u starim X11 okruženjima.<br><br>\n"
+#~ "\n"
+#~ "<b>Sprečavanje krađe fokusa</b> i <b>tab prebacivanje (\"Alt+Tab\")</"
+#~ "b><br>\n"
+#~ "su u kontradikciji s pravilom i <b>neće raditi</b>.<br><br>\n"
+#~ "Možda želite koristiti<br>\n"
+#~ "<i>Fokus prati miša - prioritet mišem</i> umjesto toga!"
+
+#, fuzzy
+#~| msgid "Operations Menu"
+#~ msgid "Show actions menu"
+#~ msgstr "Meni operacija"
+
+#, fuzzy
+#~| msgid "Shade/Unshade"
+#~ msgid "Shade/unshade"
+#~ msgstr "Zasijenči/Odsijenči"
+
+#, fuzzy
+#~| msgid "Window Tabbing"
+#~ msgid "Window &unshading:"
+#~ msgstr "Kartice prozora"
+
+#, fuzzy
+#~| msgid ""
+#~| "If Shade Hover is enabled, a shaded window will un-shade automatically "
+#~| "when the mouse pointer has been over the title bar for some time."
+#~ msgid ""
+#~ "<html><head/><body><p>If this option is enabled, a shaded window will "
+#~ "unshade automatically when the mouse pointer has been over the titlebar "
+#~ "for some time.</p></body></html>"
+#~ msgstr ""
+#~ "Ako je nadlijetanje sijenkom omogućeno, osijenčeni prozor će ukloniti "
+#~ "sijenku automatski kada je pointer miša iznad naslova neko vrijeme."
+
+#~ msgid ""
+#~ "Sets the time in milliseconds before the window unshades when the mouse "
+#~ "pointer goes over the shaded window."
+#~ msgstr ""
+#~ "Postavlja vrijeme u miliosekundama prije prozor izgubi sijenku kada "
+#~ "pokazivač miša ide preko osijenlenog prozora."
+
+#~ msgid "Shade"
+#~ msgstr "Sijenčenje"
+
+#, fuzzy
+#~| msgid "Special Windows"
+#~ msgid "&Special windows:"
+#~ msgstr "Specijalni prozori"
+
+#~ msgid ""
+#~ "When turned on, utility windows (tool windows, torn-off menus,...) of "
+#~ "inactive applications will be hidden and will be shown only when the "
+#~ "application becomes active. Note that applications have to mark the "
+#~ "windows with the proper window type for this feature to work."
+#~ msgstr ""
+#~ "Kada je uključeno, pomoćni prozori (prozor s alatkama, izdvojeni meniji) "
+#~ "neaktivne aplikacije će biti skriveni i prikazani samo kada aplikacija "
+#~ "postane aktivna. Aplikacije trebaju označiti prozore odgovarajućim tipom, "
+#~ "da bi ova osobina radila."
+
+#~ msgid "Hide utility windows for inactive applications"
+#~ msgstr "Sakrij pomoćne prozore za neaktivne aplikacije"
+
+#, fuzzy
+#~| msgid ""
+#~| "When this option is enabled, the active Xinerama screen (where new "
+#~| "windows appear, for example) is the screen containing the mouse pointer. "
+#~| "When disabled, the active Xinerama screen is the screen containing the "
+#~| "focused window. By default this option is disabled for Click to focus "
+#~| "and enabled for other focus policies."
+#~ msgid ""
+#~ "When this option is enabled, the active screen (where new windows appear, "
+#~ "for example) is the screen containing the mouse pointer. When disabled, "
+#~ "the active screen is the screen containing the focused window."
+#~ msgstr ""
+#~ "Kada je ova opcija uključena, aktivni Xinerama ekran (gdje se novi "
+#~ "prozori pojavljuju, na primjer) je ekran koji sarži pokazivač miša. Kada "
+#~ "je isključeno, aktivni Xinerama ekran je ekran koji sadrži fokusirani  "
+#~ "prozor. Podrazumijevano, ova opcija je onemogućena u Klik na fokus i "
+#~ "omogućena za druga pravila fokusa."
+
+#~ msgid "Active screen follows &mouse"
+#~ msgstr "Aktivni ekran prati &miša"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Samir Ribić"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "samir.ribic@etf.unsa.ba"
+
+#~ msgid "Window Behavior Configuration Module"
+#~ msgstr "Modul za podešavanje ponašanja prozora"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "© 1997-2002, autori KWina i K‑kontrole"
+
+#~ msgid "Matthias Ettrich"
+#~ msgstr "Matijas Etrih"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Valdo Bastijan"
+
+#~ msgid "Cristian Tibirna"
+#~ msgstr "Kristijan Tibirna"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Matijas Kale Dalhajmer"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Danijel Molkentin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Vin Vilks"
+
+#~ msgid "Pat Dowler"
+#~ msgstr "Patrik Douler"
+
+#~ msgid "Bernd Wuebben"
+#~ msgstr "Bernd Johanes Viben"
+
+#~ msgid "Matthias Hoelzer-Kluepfel"
+#~ msgstr "Matijas Helcer-Klipfel"
+
+#~ msgid ""
+#~ "<p><h1>Window Behavior</h1> Here you can customize the way windows behave "
+#~ "when being moved, resized or clicked on. You can also specify a focus "
+#~ "policy as well as a placement policy for new windows.</p> <p>Please note "
+#~ "that this configuration will not take effect if you do not use KWin as "
+#~ "your window manager. If you do use a different window manager, please "
+#~ "refer to its documentation for how to customize window behavior.</p>"
+#~ msgstr ""
+#~ "<h1>Ponašanje prozora</h1><p>Ovdje možete prilagoditi ponašanje prozora u "
+#~ "toku pomijeranja, promjene veličine ili klika na njega. Takođe možete "
+#~ "odrediti smjernice fokusiranja kao i smiještanja novih prozora.</p><p>Ova "
+#~ "postava je na snazi samo ako koristite KWin kao menadžer prozora. Ako "
+#~ "koristite drugi menadžer, pogledajte njegovu dokumentaciju za "
+#~ "prilagođavanje ponašanja prozora.</p>"
+
+#, fuzzy
+#~| msgid "Cascade"
+#~ msgid "Cascaded"
+#~ msgstr "Kaskada"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's geometry to be displayed while "
+#~ "it is being moved or resized. The window position relative to the top-"
+#~ "left corner of the screen is displayed together with its size."
+#~ msgstr ""
+#~ "Uključite ovu opciju ako želite da se geometrija prozora prikazuje dok se "
+#~ "on pomijera ili mu mijenja veličina. Pozicija prozora relativno od "
+#~ "gornjeg lijevog ugla ekrana se prikazuje zajednos njegovom veličinom."
+
+#, fuzzy
+#~| msgid "Display window &geometry when moving or resizing"
+#~ msgid "Display when moving or resizing"
+#~ msgstr "Prikaz geometrije prozora pri kretanju i promjeni veličine"
+
+#~ msgid "Maximize (vertical only)"
+#~ msgstr "maksimizuj (samo uspravno)"
+
+#~ msgid "Maximize (horizontal only)"
+#~ msgstr "maksimizuj (samo vodoravno)"
+
+#~ msgid "Smart"
+#~ msgstr "Pametno"
+
+#~ msgid "Maximizing"
+#~ msgstr "Maksimiziranje"
+
+#, fuzzy
+#~| msgid "Zero-Cornered"
+#~ msgid "Zero-cornered"
+#~ msgstr "Nulti ugao"
+
+#, fuzzy
+#~| msgid "Switch to Window Tab to the Left/Right"
+#~ msgid "Switch to window tab to the left/right"
+#~ msgstr "Perđi na karticu prozora s lijeve/desne strane"
+
+#, fuzzy
+#~| msgid "Window Tabbing"
+#~ msgid "Window tabbing:"
+#~ msgstr "Kartice prozora"
+
+#~ msgid ""
+#~ "When turned on immediately switch to any new window tabs that were "
+#~ "automatically added to the current group."
+#~ msgstr ""
+#~ "Kada je uključeno, odmah pređi na nove kartice prozora koje su automatski "
+#~ "dodane u trenutnu grupu"
+
+#, fuzzy
+#~| msgid "Switch to automatically grouped windows immediately"
+#~ msgid "&Switch to automatically grouped windows immediately"
+#~ msgstr "Odmah pređi na automatski grupisane prozore"
+
+#~ msgid "When turned on hide all tabs that are not active from the taskbar."
+#~ msgstr ""
+#~ "Kada je uključeno, sakrij sve kartice koje nisu aktivne s alatne trake"
+
+#, fuzzy
+#~| msgid "Hide inactive window tabs from the taskbar"
+#~ msgid "&Hide inactive window tabs from the taskbar"
+#~ msgstr "Sakrij neaktivne kartice prozora s alatne trake"
+
+#~ msgid ""
+#~ "When turned on attempt to automatically detect when a newly opened window "
+#~ "is related to an existing one and place them in the same window group."
+#~ msgstr ""
+#~ "Kada je uključeno, pokušava da automatski detektuje da li je novootvoreni "
+#~ "prozor vezan za postojeći i smjesti ga u istu prozorsku grupu."
+
+#, fuzzy
+#~| msgid "Start Window Tab Drag"
+#~ msgid "Start window tab drag"
+#~ msgstr "Počni prevlačenje kartiva prozora"
+
+#~ msgid "Ri&ght button:"
+#~ msgstr "De&sno dugme"
+
+#~ msgid "&Wheel"
+#~ msgstr "&Točak"
+
+#~ msgid "&Left button:"
+#~ msgstr "&Lijevo dugme:"
+
+#~ msgid "&Right button:"
+#~ msgstr "&Desbi dugme"
+
+#~ msgid "M&iddle button:"
+#~ msgstr "S&rednje dugme:"
+
+#~ msgid "Left &button"
+#~ msgstr "Lijevo &dugme"
+
+#~ msgid "Automatically group similar windows"
+#~ msgstr "Automatski grupiši slične prozore"
+
+#, fuzzy
+#~| msgid ""
+#~| "The placement policy determines where a new window will appear on the "
+#~| "desktop.\n"
+#~| "<ul>\n"
+#~| "<li><em>Smart</em> will try to achieve a minimum overlap of windows</"
+#~| "li>\n"
+#~| "<li><em>Maximizing</em> will try to maximize every window to fill the "
+#~| "whole screen. It might be useful to selectively affect placement of some "
+#~| "windows using the window-specific settings.</li>\n"
+#~| "<li><em>Cascade</em> will cascade the windows</li>\n"
+#~| "<li><em>Random</em> will use a random position</li>\n"
+#~| "<li><em>Centered</em> will place the window centered</li>\n"
+#~| "<li><em>Zero-Cornered</em> will place the window in the top-left corner</"
+#~| "li>\n"
+#~| "<li><em>Under Mouse</em> will place the window under the pointer</li>\n"
+#~| "</ul>"
+#~ msgid ""
+#~ "The placement policy determines where a new window will appear on the "
+#~ "desktop.<br><ul>\n"
+#~ "<li><em>Smart</em> will try to achieve a minimum overlap of windows</li>\n"
+#~ "<li><em>Maximizing</em> will try to maximize every window to fill the "
+#~ "whole screen. It might be useful to selectively affect placement of some "
+#~ "windows using the window-specific settings.</li>\n"
+#~ "<li><em>Cascade</em> will cascade the windows</li>\n"
+#~ "<li><em>Random</em> will use a random position</li>\n"
+#~ "<li><em>Centered</em> will place the window centered</li>\n"
+#~ "<li><em>Zero-Cornered</em> will place the window in the top-left corner</"
+#~ "li>\n"
+#~ "<li><em>Under Mouse</em> will place the window under the pointer</li>\n"
+#~ "</ul>"
+#~ msgstr ""
+#~ "Pravila pozicioniranja određuju gdje će se novi prozor pojaviti na radnoj "
+#~ "površini.\n"
+#~ "<ul>\n"
+#~ "<li><em>Pametno</em> će pokušati minimalno preklapanje prozora</li>\n"
+#~ "<li><em>Maksimiziranje</em> će pokušati povećati prozor da napuni cijeli  "
+#~ "ekran. Može biti korisno selektivno uticati na pozicioniranje prozora "
+#~ "koristeći prozorski specifične postavke.</li>\n"
+#~ "<li><em>Kaskada</em> će naslagati prozore</li>\n"
+#~ "<li><em>Slučajno</em> će koristiti slučajnu poziciju</li>\n"
+#~ "<li><em>Centrirano</em> će postviti prozor centrirano</li>\n"
+#~ "<li><em>Nula ugao</em> će postaviti prozor u gornju lijevu poziciju</li>\n"
+#~ "<li><em>Pod mišem</em> će postaviti prozor ispod pokazivača miša</li>\n"
+#~ "</ul>"
+
+#~ msgid "Shading"
+#~ msgstr "Sijenčenje"
+
+#~ msgid "Dela&y:"
+#~ msgstr "Kašnjenj&e"
+
+#~ msgid "&Enable hover"
+#~ msgstr "&Omogući nadlijetanje"
+
+#~ msgid "Activating windows"
+#~ msgstr "Aktivirajući prozori"
+
+#~ msgid "Policy"
+#~ msgstr "Pravila"
+
+#~ msgid "Click"
+#~ msgstr "Klik"
+
+#~ msgid "Hover"
+#~ msgstr "Nadlijetanje"
+
+#~ msgid "&Moving"
+#~ msgstr "&Pomijeranje"
+
+#~ msgid "Wheel event:"
+#~ msgstr "Događaj točkića"
+
+#~ msgid "Handle mouse wheel events"
+#~ msgstr "Obradi događaje točkića miša"
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an active window."
+#~ msgstr ""
+#~ "U ovoj koloni možete prilagoditi klikove miša na naslovnoj traci okvira "
+#~ "aktivnog prozora."
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an inactive window."
+#~ msgstr ""
+#~ "U ovoj koloni možete prilagoditi klikove miša na naslovnoj traci okvira "
+#~ "neaktivnog prozora."
+
+#~ msgid "Left button:"
+#~ msgstr "Lijeva tipka"
+
+#~ msgid "Middle button:"
+#~ msgstr "Srednja tipka:"
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Ponašanje <em>srednjeg</em> klika na naslovnu traku ili okvir "
+#~ "<em>aktivnog</em> prozora."
+
+#~ msgid "Right button:"
+#~ msgstr "Desna tipka:"
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Ponašanje <em>desnog</em> klika na naslovnu traku ili okvir <em>aktivnog</"
+#~ "em> prozora."
+
+#~ msgid "Titlebar & Frame"
+#~ msgstr "Naslovna traka i okvir"
+
+#~ msgid "Titlebar"
+#~ msgstr "Naslovna traka"
+
+#~ msgid "no center snap zone"
+#~ msgstr "nema centralne zone namiještanja"
+
+#~ msgid "no window snap zone"
+#~ msgstr "nema zone namiještanja prozora"
+
+#~ msgid "no border snap zone"
+#~ msgstr "nema zone namiještanja ivice"
+
+#~ msgid "Windows"
+#~ msgstr "Prozori"
+
+#~ msgid "Snap Zones"
+#~ msgstr "Zone namiještanja"
+
+#~ msgid "kcmkwinoptions"
+#~ msgstr "KCM‑opcije-prozora"

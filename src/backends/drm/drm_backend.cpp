@@ -1,0 +1,457 @@
+/*
+    KWin - the KDE window manager
+    This file is part of the KDE project.
+
+    SPDX-FileCopyrightText: 2015 Martin Gräßlin <mgraesslin@kde.org>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#include "drm_backend.h"
+
+#include "config-kwin.h"
+
+#include "backends/libinput/libinputbackend.h"
+#include "core/gpumanager.h"
+#include "core/outputconfiguration.h"
+#include "core/session.h"
+#include "drm_egl_backend.h"
+#include "drm_gpu.h"
+#include "drm_layer.h"
+#include "drm_logging.h"
+#include "drm_output.h"
+#include "drm_pipeline.h"
+#include "drm_render_backend.h"
+#include "drm_virtual_output.h"
+#include "utils/envvar.h"
+#include "utils/udev.h"
+// KF5
+#include <KCoreAddons>
+#include <KLocalizedString>
+// Qt
+#include <QCoreApplication>
+#include <QElapsedTimer>
+#include <QFileInfo>
+#include <QSocketNotifier>
+#include <QStringBuilder>
+// system
+#include <algorithm>
+#include <cerrno>
+#include <ranges>
+#include <sys/stat.h>
+#include <thread>
+#include <unistd.h>
+// drm
+#include <gbm.h>
+#include <libdrm/drm_mode.h>
+#include <xf86drm.h>
+
+using namespace std::chrono_literals;
+
+namespace KWin
+{
+
+class DrmAuthHandle
+{
+public:
+    DrmAuthHandle(Session *session, const QString &filePath)
+        : m_session(session)
+    {
+        std::expected<int, Session::Error> fd = m_session->openRestricted(filePath);
+        QElapsedTimer timer;
+        timer.start();
+        // Switching between sessions / drm masters seems to be racy in some situations.
+        // Lacking a proper solution for that, retry opening the node for up to 5s.
+        while (!fd.has_value() && fd.error() == Session::Error::EBusy && timer.durationElapsed() < 5s) {
+            qCDebug(KWIN_DRM, "Retrying openRestricted(%s)", qPrintable(filePath));
+            std::this_thread::sleep_for(100ms);
+            fd = m_session->openRestricted(filePath);
+        }
+        if (!fd.has_value()) {
+            qCWarning(KWIN_DRM, "Failed to open drm device %s: %s", qPrintable(filePath), strerror(errno));
+            return;
+        }
+        m_fd = *fd;
+    }
+
+    DrmAuthHandle(const DrmAuthHandle &) = delete;
+    DrmAuthHandle &operator=(const DrmAuthHandle &) = delete;
+
+    ~DrmAuthHandle()
+    {
+        if (m_fd != -1) {
+            m_session->closeRestricted(m_fd);
+        }
+    }
+
+    int fd() const
+    {
+        return m_fd;
+    }
+
+private:
+    Session *const m_session;
+    int m_fd = -1;
+};
+
+DrmBackend::DrmBackend(Session *session, QObject *parent)
+    : OutputBackend(parent)
+    , m_udev(std::make_unique<Udev>())
+    , m_udevMonitor(m_udev->createMonitor())
+    , m_session(session)
+{
+}
+
+DrmBackend::~DrmBackend() = default;
+
+Session *DrmBackend::session() const
+{
+    return m_session;
+}
+
+QList<BackendOutput *> DrmBackend::outputs() const
+{
+    return m_outputs | std::ranges::to<QList<BackendOutput *>>();
+}
+
+bool DrmBackend::initialize()
+{
+    m_explicitGpus = GpuManager::splitPathList(qEnvironmentVariable("KWIN_DRM_DEVICES"));
+
+    connect(m_session, &Session::devicePaused, this, [this](dev_t deviceId) {
+        if (const auto gpu = findGpu(deviceId)) {
+            gpu->setRemoved();
+            updateOutputs();
+        }
+    });
+    connect(m_session, &Session::deviceResumed, this, [this](dev_t deviceId) {
+        if (findGpu(deviceId)) {
+            return;
+        }
+        drmDevice *device = nullptr;
+        if (drmGetDeviceFromDevId(deviceId, 0, &device) != 0) {
+            qCWarning(KWIN_DRM, "drmGetDeviceFromDevId failed! %s", strerror(errno));
+            return;
+        }
+        if (!(device->available_nodes & (1 << DRM_NODE_PRIMARY))) {
+            drmFreeDevice(&device);
+            return;
+        }
+        const auto gpu = addGpu(device->nodes[DRM_NODE_PRIMARY]);
+        if (gpu) {
+            updateOutputs();
+        }
+        drmFreeDevice(&device);
+    });
+    connect(m_session, &Session::awoke, this, [this]() {
+        // some drivers for old GPUs have problems after suspend, which
+        // triggering a modeset works around.
+        for (const auto &gpu : m_gpus) {
+            if (gpu->atomicModeSetting()) {
+                continue;
+            }
+            const auto outputs = gpu->drmOutputs();
+            for (const auto &output : outputs) {
+                output->pipeline()->forceLegacyModeset();
+            }
+        }
+    });
+
+    if (!m_explicitGpus.isEmpty()) {
+        for (const QString &fileName : m_explicitGpus) {
+            addGpu(fileName);
+        }
+    } else {
+        const auto devices = m_udev->listGPUs();
+        for (const auto &device : devices) {
+            if (device->seat() == m_session->seat()) {
+                addGpu(device->devNode());
+            }
+        }
+    }
+
+    // setup udevMonitor
+    if (m_udevMonitor) {
+        m_udevMonitor->filterSubsystemDevType("drm", "drm_minor");
+        const int fd = m_udevMonitor->fd();
+        if (fd != -1) {
+            m_socketNotifier = std::make_unique<QSocketNotifier>(fd, QSocketNotifier::Read);
+            connect(m_socketNotifier.get(), &QSocketNotifier::activated, this, &DrmBackend::handleUdevEvent);
+            m_udevMonitor->enable();
+        }
+    }
+    updateOutputs();
+    return true;
+}
+
+void DrmBackend::handleUdevEvent()
+{
+    while (auto device = m_udevMonitor->getDevice()) {
+        int devNum = -1;
+        const bool isPrimaryNode = sscanf(device->sysName().data(), DRM_PRIMARY_MINOR_NAME "%d", &devNum) == 1;
+        if (!isPrimaryNode) {
+            continue;
+        }
+        // Ignore the device seat if the KWIN_DRM_DEVICES envvar is set.
+        if (!m_explicitGpus.isEmpty()) {
+            const auto canonicalPath = QFileInfo(device->devNode()).canonicalFilePath();
+            const bool foundMatch = std::ranges::any_of(m_explicitGpus, [&canonicalPath](const QString &explicitPath) {
+                return QFileInfo(explicitPath).canonicalFilePath() == canonicalPath;
+            });
+            if (!foundMatch) {
+                continue;
+            }
+        } else {
+            if (device->seat() != m_session->seat()) {
+                continue;
+            }
+        }
+
+        if (device->action() == QLatin1StringView("add")) {
+            DrmGpu *gpu = findGpu(device->devNum());
+            if (gpu) {
+                qCWarning(KWIN_DRM) << "Received unexpected add udev event for:" << device->devNode();
+                continue;
+            }
+            if (DrmGpu *gpu = addGpu(device->devNode())) {
+                updateOutputs(gpu);
+            }
+        } else if (device->action() == QLatin1StringView("remove")) {
+            m_gpuAuthHandles.remove(device->devNode());
+            DrmGpu *gpu = findGpu(device->devNum());
+            if (gpu) {
+                gpu->setRemoved();
+                updateOutputs(gpu);
+            }
+        } else if (device->action() == QLatin1StringView("change")) {
+            DrmGpu *gpu = findGpu(device->devNum());
+            if (gpu) {
+                qCDebug(KWIN_DRM) << "Received change event for monitored drm device" << gpu->drmDevice()->path();
+                updateOutputs(gpu);
+            }
+        }
+    }
+}
+
+DrmGpu *DrmBackend::addGpu(const QString &fileName)
+{
+    auto authHandle = m_gpuAuthHandles.value(fileName);
+    if (!authHandle) {
+        authHandle = std::make_shared<DrmAuthHandle>(m_session, fileName);
+    }
+    if (authHandle->fd() == -1) {
+        return nullptr;
+    }
+
+    if (!drmIsKMS(authHandle->fd())) {
+        qCDebug(KWIN_DRM) << "Skipping KMS incapable drm device node at" << fileName;
+        return nullptr;
+    }
+
+    auto drmDevice = DrmDevice::openWithAuthentication(fileName, authHandle->fd());
+    if (!drmDevice) {
+        return nullptr;
+    }
+
+    m_gpuAuthHandles.insert(fileName, authHandle);
+
+    m_gpus.push_back(std::make_unique<DrmGpu>(this, authHandle->fd(), std::move(drmDevice)));
+    auto gpu = m_gpus.back().get();
+    qCDebug(KWIN_DRM, "adding GPU %s", qPrintable(fileName));
+    connect(gpu, &DrmGpu::outputAdded, this, &DrmBackend::addOutput);
+    connect(gpu, &DrmGpu::outputRemoved, this, &DrmBackend::removeOutput);
+    if (m_renderBackend) {
+        gpu->createLayers();
+    }
+    Q_EMIT gpuAdded(gpu);
+    return gpu;
+}
+
+void DrmBackend::addOutput(BackendOutput *o)
+{
+    m_outputs.append(o);
+    Q_EMIT outputAdded(o);
+}
+
+void DrmBackend::removeOutput(BackendOutput *o)
+{
+    m_outputs.removeOne(o);
+    Q_EMIT outputRemoved(o);
+}
+
+void DrmBackend::updateOutputs(DrmGpu *onlyUpdate)
+{
+    for (auto it = m_gpus.begin(); it != m_gpus.end(); ++it) {
+        if ((*it)->isRemoved()) {
+            (*it)->removeOutputs();
+        } else if (!onlyUpdate || onlyUpdate == it->get()) {
+            (*it)->updateOutputs();
+        }
+    }
+
+    Q_EMIT outputsQueried();
+
+    for (auto it = m_gpus.begin(); it != m_gpus.end();) {
+        DrmGpu *gpu = it->get();
+        if (gpu->isRemoved()) {
+            qCDebug(KWIN_DRM) << "Removing GPU" << it->get();
+            const std::unique_ptr<DrmGpu> keepAlive = std::move(*it);
+            it = m_gpus.erase(it);
+            Q_EMIT gpuRemoved(keepAlive.get());
+        } else {
+            it++;
+        }
+    }
+}
+
+std::unique_ptr<InputBackend> DrmBackend::createInputBackend()
+{
+    return std::make_unique<LibinputBackend>(m_session);
+}
+
+std::unique_ptr<EglBackend> DrmBackend::createOpenGLBackend(RenderDevice *device)
+{
+    return std::make_unique<EglGbmBackend>(this, device);
+}
+
+QList<CompositingType> DrmBackend::supportedCompositors() const
+{
+    return QList<CompositingType>{OpenGLCompositing};
+}
+
+QString DrmBackend::supportInformation() const
+{
+    QString supportInfo;
+    QDebug s(&supportInfo);
+    s.nospace();
+    s << "Name: "
+      << "DRM" << Qt::endl;
+    for (size_t g = 0; g < m_gpus.size(); g++) {
+        s << "Atomic Mode Setting on GPU " << g << ": " << m_gpus.at(g)->atomicModeSetting() << Qt::endl;
+    }
+    return supportInfo;
+}
+
+BackendOutput *DrmBackend::createVirtualOutput(const QString &name, const QString &description, const QSize &size, double scale)
+{
+    const auto ret = new DrmVirtualOutput(this, name, description, size, scale, BackendOutput::Capability::CustomModes);
+    m_virtualOutputs.push_back(ret);
+    addOutput(ret);
+    Q_EMIT outputsQueried();
+    return ret;
+}
+
+void DrmBackend::removeVirtualOutput(BackendOutput *output)
+{
+    auto virtualOutput = qobject_cast<DrmVirtualOutput *>(output);
+    Q_ASSERT(virtualOutput);
+    if (!m_virtualOutputs.removeOne(virtualOutput)) {
+        return;
+    }
+    removeOutput(virtualOutput);
+    Q_EMIT outputsQueried();
+    virtualOutput->unref();
+}
+
+DrmGpu *DrmBackend::findGpu(dev_t deviceId) const
+{
+    auto it = std::ranges::find_if(m_gpus, [deviceId](const auto &gpu) {
+        return gpu->drmDevice()->deviceId() == deviceId;
+    });
+    return it == m_gpus.end() ? nullptr : it->get();
+}
+
+size_t DrmBackend::gpuCount() const
+{
+    return m_gpus.size();
+}
+
+std::expected<void, OutputError> DrmBackend::applyOutputChanges(const OutputConfiguration &config)
+{
+    QList<DrmOutput *> toBeEnabled;
+    QList<DrmOutput *> toBeDisabled;
+    for (const auto &gpu : m_gpus) {
+        const auto outputs = gpu->drmOutputs();
+        for (DrmOutput *output : outputs) {
+            if (output->isNonDesktop()) {
+                continue;
+            }
+            if (const auto changeset = config.constChangeSet(output)) {
+                output->queueChanges(changeset);
+                if (changeset->enabled.value_or(output->isEnabled())) {
+                    toBeEnabled << output;
+                } else {
+                    toBeDisabled << output;
+                }
+            }
+        }
+        const auto ret = gpu->testPendingConfiguration();
+        if (!ret) {
+            for (DrmOutput *output : std::as_const(toBeEnabled)) {
+                output->revertQueuedChanges();
+            }
+            for (DrmOutput *output : std::as_const(toBeDisabled)) {
+                output->revertQueuedChanges();
+            }
+            return ret;
+        }
+    }
+    // first, apply changes to drm outputs.
+    // This may remove the placeholder output and thus change m_outputs!
+    for (DrmOutput *output : std::as_const(toBeEnabled)) {
+        if (const auto changeset = config.constChangeSet(output)) {
+            output->applyQueuedChanges(changeset);
+        }
+    }
+    for (DrmOutput *output : std::as_const(toBeDisabled)) {
+        if (const auto changeset = config.constChangeSet(output)) {
+            output->applyQueuedChanges(changeset);
+        }
+    }
+    for (const auto &gpu : m_gpus) {
+        gpu->releaseUnusedBuffers();
+    }
+    // only then apply changes to the virtual outputs
+    for (DrmVirtualOutput *output : std::as_const(m_virtualOutputs)) {
+        output->applyChanges(config);
+    }
+    return {};
+}
+
+void DrmBackend::setRenderBackend(DrmRenderBackend *backend)
+{
+    m_renderBackend = backend;
+}
+
+DrmRenderBackend *DrmBackend::renderBackend() const
+{
+    return m_renderBackend;
+}
+
+void DrmBackend::createLayers()
+{
+    for (const auto &gpu : m_gpus) {
+        gpu->createLayers();
+    }
+    for (DrmVirtualOutput *virt : std::as_const(m_virtualOutputs)) {
+        virt->recreateSurface();
+    }
+}
+
+void DrmBackend::releaseBuffers()
+{
+    for (const auto &gpu : m_gpus) {
+        gpu->releaseBuffers();
+    }
+    for (const DrmVirtualOutput *virt : std::as_const(m_virtualOutputs)) {
+        virt->primaryLayer()->releaseBuffers();
+    }
+}
+
+const std::vector<std::unique_ptr<DrmGpu>> &DrmBackend::gpus() const
+{
+    return m_gpus;
+}
+
+}
+
+#include "moc_drm_backend.cpp"

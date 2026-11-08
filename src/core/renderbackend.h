@@ -1,0 +1,157 @@
+/*
+    SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+#pragma once
+
+#include "core/drm_formats.h"
+#include "core/rendertarget.h"
+#include "effect/globals.h"
+#include "utils/filedescriptor.h"
+
+#include <QFlags>
+#include <QObject>
+#include <QPointer>
+#include <memory>
+#include <sys/types.h>
+
+namespace KWin
+{
+
+class GraphicsBuffer;
+class LogicalOutput;
+class OutputLayer;
+class PresentationFeedback;
+class RenderLoop;
+class SyncTimeline;
+class RenderDevice;
+class OutputFrame;
+
+enum class PresentationFeedbackFlag {
+    ZeroCopy = 0x1,
+};
+Q_DECLARE_FLAGS(PresentationFeedbackFlags, PresentationFeedbackFlag)
+
+class PresentationFeedback
+{
+public:
+    explicit PresentationFeedback() = default;
+    PresentationFeedback(const PresentationFeedback &copy) = delete;
+    PresentationFeedback(PresentationFeedback &&move) = default;
+    virtual ~PresentationFeedback() = default;
+
+    virtual void presented(OutputFrame *frame, std::chrono::nanoseconds timestamp,
+                           PresentationMode mode, PresentationFeedbackFlags flags) = 0;
+};
+
+struct KWIN_EXPORT RenderTimeSpan
+{
+    std::chrono::steady_clock::time_point start = std::chrono::steady_clock::time_point{std::chrono::nanoseconds::zero()};
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::time_point{std::chrono::nanoseconds::zero()};
+
+    RenderTimeSpan operator|(const RenderTimeSpan &other) const;
+};
+
+class KWIN_EXPORT RenderTimeQuery
+{
+public:
+    virtual ~RenderTimeQuery() = default;
+    virtual std::optional<RenderTimeSpan> query() = 0;
+};
+
+class KWIN_EXPORT CpuRenderTimeQuery : public RenderTimeQuery
+{
+public:
+    /**
+     * marks the start of the query
+     */
+    explicit CpuRenderTimeQuery();
+
+    void end();
+
+    std::optional<RenderTimeSpan> query() override;
+
+private:
+    const std::chrono::steady_clock::time_point m_start;
+    std::optional<std::chrono::steady_clock::time_point> m_end;
+};
+
+class KWIN_EXPORT OutputFrame
+{
+public:
+    explicit OutputFrame(RenderLoop *loop, std::chrono::nanoseconds refreshDuration);
+    ~OutputFrame();
+
+    void presented(std::chrono::nanoseconds timestamp, PresentationMode mode);
+
+    void addFeedback(std::shared_ptr<PresentationFeedback> &&feedback, PresentationFeedbackFlags flags);
+
+    void setContentType(ContentType type);
+    std::optional<ContentType> contentType() const;
+
+    void setPresentationMode(PresentationMode mode);
+    PresentationMode presentationMode() const;
+
+    void addRenderTimeQuery(std::unique_ptr<RenderTimeQuery> &&query);
+
+    std::chrono::steady_clock::time_point targetPageflipTime() const;
+    std::chrono::nanoseconds refreshDuration() const;
+    std::chrono::nanoseconds predictedRenderTime() const;
+
+    std::optional<double> brightness() const;
+    void setBrightness(double brightness);
+
+    std::optional<double> dimmingFactor() const;
+    void setDimmingFactor(double factor);
+
+    std::optional<double> artificialHdrHeadroom() const;
+    void setArtificialHdrHeadroom(double edr);
+
+    std::optional<RenderTimeSpan> queryRenderTime() const;
+    std::optional<RenderTimeSpan> queryCpuRenderTime() const;
+
+private:
+    const QPointer<RenderLoop> m_loop;
+    const std::chrono::nanoseconds m_refreshDuration;
+    const std::chrono::steady_clock::time_point m_targetPageflipTime;
+    const std::chrono::nanoseconds m_predictedRenderTime;
+    struct Feedback
+    {
+        std::shared_ptr<PresentationFeedback> feedback;
+        PresentationFeedbackFlags flags;
+    };
+    std::vector<Feedback> m_feedbacks;
+    std::optional<ContentType> m_contentType;
+    PresentationMode m_presentationMode = PresentationMode::VSync;
+    std::vector<std::unique_ptr<RenderTimeQuery>> m_renderTimeQueries;
+    bool m_presented = false;
+    std::optional<double> m_brightness;
+    std::optional<double> m_dimmingFactor;
+    std::optional<double> m_artificialHdrHeadroom;
+};
+
+/**
+ * The RenderBackend class is the base class for all rendering backends.
+ */
+class KWIN_EXPORT RenderBackend : public QObject
+{
+    Q_OBJECT
+
+public:
+    virtual CompositingType compositingType() const = 0;
+
+    virtual bool checkGraphicsReset();
+
+    virtual QList<OutputLayer *> compatibleOutputLayers(BackendOutput *output) = 0;
+
+    virtual RenderDevice *renderDevice() const;
+
+    virtual bool testImportBuffer(GraphicsBuffer *buffer, dev_t targetDevice);
+    virtual FormatModifierMap supportedFormats() const;
+};
+
+} // namespace KWin
+
+Q_DECLARE_OPERATORS_FOR_FLAGS(KWin::PresentationFeedbackFlags)

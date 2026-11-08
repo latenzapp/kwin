@@ -1,0 +1,293 @@
+/*
+    SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+#include "scene/surfaceitem.h"
+#include "core/pixelgrid.h"
+#include "scene/itemrenderer.h"
+#include "scene/scene.h"
+#include "scene/texture.h"
+
+using namespace std::chrono_literals;
+
+namespace KWin
+{
+
+SurfaceItem::SurfaceItem(Item *parent)
+    : Item(parent)
+{
+}
+
+SurfaceItem::~SurfaceItem()
+{
+}
+
+QSizeF SurfaceItem::destinationSize() const
+{
+    return m_destinationSize;
+}
+
+void SurfaceItem::setDestinationSize(const QSizeF &size)
+{
+    if (m_destinationSize != size) {
+        m_destinationSize = size;
+        setSize(size);
+        discardQuads();
+    }
+}
+
+GraphicsBuffer *SurfaceItem::buffer() const
+{
+    return m_bufferRef.get();
+}
+
+const FileDescriptor &SurfaceItem::syncFd() const
+{
+    return m_bufferSync;
+}
+
+void SurfaceItem::setBuffer(GraphicsBuffer *buffer, FileDescriptor &&syncFd)
+{
+    if (buffer) {
+        m_bufferRef = buffer;
+        m_bufferSync = std::move(syncFd);
+        m_hasAlphaChannel = buffer->hasAlphaChannel();
+        setBufferSize(buffer->size());
+    } else {
+        m_bufferRef = nullptr;
+        m_hasAlphaChannel = false;
+        setBufferSize(QSize(0, 0));
+    }
+}
+
+void SurfaceItem::setBufferReleasePoint(const std::shared_ptr<SyncReleasePoint> &releasePoint)
+{
+    m_bufferReleasePoint = releasePoint;
+}
+
+RectF SurfaceItem::bufferSourceBox() const
+{
+    return m_bufferSourceBox;
+}
+
+void SurfaceItem::setBufferSourceBox(const RectF &box)
+{
+    if (m_bufferSourceBox != box) {
+        m_bufferSourceBox = box;
+        discardQuads();
+    }
+}
+
+OutputTransform SurfaceItem::bufferTransform() const
+{
+    return m_surfaceToBufferTransform;
+}
+
+void SurfaceItem::setBufferTransform(OutputTransform transform)
+{
+    if (m_surfaceToBufferTransform != transform) {
+        m_surfaceToBufferTransform = transform;
+        m_bufferToSurfaceTransform = transform.inverted();
+        discardQuads();
+    }
+}
+
+QSize SurfaceItem::bufferSize() const
+{
+    return m_bufferSize;
+}
+
+void SurfaceItem::setBufferSize(const QSize &size)
+{
+    if (m_bufferSize != size) {
+        m_bufferSize = size;
+        discardQuads();
+    }
+}
+
+RegionF SurfaceItem::mapFromBuffer(const Region &region) const
+{
+    const RectF sourceBox = m_bufferToSurfaceTransform.map(m_bufferSourceBox, m_bufferSize);
+    const qreal xScale = m_destinationSize.width() / sourceBox.width();
+    const qreal yScale = m_destinationSize.height() / sourceBox.height();
+
+    RegionF result;
+    for (RectF rect : region.rects()) {
+        const RectF r = m_bufferToSurfaceTransform.map(rect, m_bufferSize).translated(-sourceBox.topLeft());
+        result += RectF(r.x() * xScale, r.y() * yScale, r.width() * xScale, r.height() * yScale).toAlignedRect();
+    }
+    return result;
+}
+
+void SurfaceItem::addDamage(const Region &region)
+{
+    const auto now = std::chrono::steady_clock::now();
+    if (m_lastDamage) {
+        if (!m_accumulatedTimeDiffs) {
+            m_accumulatedTimeDiffs = 0ns;
+        }
+
+        const auto diff = now - *m_lastDamage;
+        *m_accumulatedTimeDiffs += diff;
+        m_lastDamageTimeDiffs.push_back(diff);
+
+        if (m_lastDamageTimeDiffs.size() > 100) {
+            *m_accumulatedTimeDiffs -= m_lastDamageTimeDiffs.front();
+            m_lastDamageTimeDiffs.pop_front();
+        }
+    }
+    m_lastDamage = now;
+    for (auto &[device, damage] : m_damage) {
+        damage += region;
+    }
+
+    const RectF sourceBox = m_bufferToSurfaceTransform.map(m_bufferSourceBox, m_bufferSize);
+    const qreal xScale = sourceBox.width() / m_destinationSize.width();
+    const qreal yScale = sourceBox.height() / m_destinationSize.height();
+    const RegionF logicalDamage = mapFromBuffer(region);
+
+    const auto views = scene()->views();
+    for (RenderView *view : views) {
+        RegionF viewDamage = logicalDamage;
+        const qreal viewScale = view->scale();
+        if (xScale != viewScale || yScale != viewScale) {
+            // Simplified version of ceil(ceil(0.5 * output_scale / surface_scale) / output_scale)
+            const int xPadding = std::ceil(0.5 / xScale);
+            const int yPadding = std::ceil(0.5 / yScale);
+            viewDamage = viewDamage.grownBy(QMarginsF(xPadding, yPadding, xPadding, yPadding));
+        }
+        scheduleRepaint(view, viewDamage);
+    }
+
+    Q_EMIT damaged();
+}
+
+void SurfaceItem::resetDamage(RenderDevice *device)
+{
+    m_damage[device] = Region{};
+}
+
+Region SurfaceItem::damage(RenderDevice *device) const
+{
+    const auto it = m_damage.find(device);
+    return it == m_damage.end() ? Rect{QPoint(), m_bufferSize} : it->second;
+}
+
+Texture *SurfaceItem::texture(RenderDevice *device) const
+{
+    const auto it = m_textures.find(device);
+    return it == m_textures.end() ? nullptr : it->second.get();
+}
+
+void SurfaceItem::preprocess(ItemRenderer *renderer)
+{
+    auto &texture = m_textures[renderer->renderDevice()];
+    if (!buffer()) {
+        texture.reset();
+        return;
+    }
+
+    if (!texture || texture->size() != m_bufferSize) {
+        texture = renderer->createTexture(buffer(), m_bufferSync, m_bufferReleasePoint, colorDescription());
+        if (texture) {
+            resetDamage(renderer->renderDevice());
+        }
+        return;
+    }
+
+    const Region region = damage(renderer->renderDevice());
+    if (!region.isEmpty()) {
+        texture->attach(buffer(), m_bufferSync, region, m_bufferReleasePoint, colorDescription());
+        resetDamage(renderer->renderDevice());
+    }
+}
+
+WindowQuadList SurfaceItem::buildQuads(ItemRenderer *renderer) const
+{
+    const RegionF region = shape();
+    WindowQuadList quads;
+    quads.reserve(region.rects().size());
+
+    const RectF sourceBox = m_bufferToSurfaceTransform.map(m_bufferSourceBox, m_bufferSize);
+    const qreal xScale = sourceBox.width() / m_destinationSize.width();
+    const qreal yScale = sourceBox.height() / m_destinationSize.height();
+
+    for (const RectF &rect : region.rects()) {
+        WindowQuad quad;
+
+        const QPointF bufferTopLeft = (m_bufferSourceBox.topLeft() + m_surfaceToBufferTransform.map(QPointF(rect.left() * xScale, rect.top() * yScale), sourceBox.size())).toPoint();
+        const QPointF bufferTopRight = (m_bufferSourceBox.topLeft() + m_surfaceToBufferTransform.map(QPointF(rect.right() * xScale, rect.top() * yScale), sourceBox.size())).toPoint();
+        const QPointF bufferBottomRight = (m_bufferSourceBox.topLeft() + m_surfaceToBufferTransform.map(QPointF(rect.right() * xScale, rect.bottom() * yScale), sourceBox.size())).toPoint();
+        const QPointF bufferBottomLeft = (m_bufferSourceBox.topLeft() + m_surfaceToBufferTransform.map(QPointF(rect.left() * xScale, rect.bottom() * yScale), sourceBox.size())).toPoint();
+
+        quad[0] = WindowVertex(rect.topLeft(), bufferTopLeft);
+        quad[1] = WindowVertex(rect.topRight(), bufferTopRight);
+        quad[2] = WindowVertex(rect.bottomRight(), bufferBottomRight);
+        quad[3] = WindowVertex(rect.bottomLeft(), bufferBottomLeft);
+
+        quads << quad;
+    }
+
+    return quads;
+}
+
+void SurfaceItem::releaseResources(RenderDevice *device)
+{
+    m_textures.erase(device);
+    m_damage.erase(device);
+}
+
+ContentType SurfaceItem::contentType() const
+{
+    return ContentType::None;
+}
+
+void SurfaceItem::setScanoutHint(DrmDevice *device, const FormatModifierMap &drmFormats)
+{
+}
+
+void SurfaceItem::freeze()
+{
+}
+
+std::optional<std::chrono::nanoseconds> SurfaceItem::recursiveFrameTimeEstimation() const
+{
+    std::optional<std::chrono::nanoseconds> ret = frameTimeEstimation();
+    const auto children = childItems();
+    for (Item *child : children) {
+        const auto other = static_cast<SurfaceItem *>(child)->recursiveFrameTimeEstimation();
+        if (!other.has_value()) {
+            continue;
+        }
+        if (ret.has_value()) {
+            ret = std::min(*ret, *other);
+        } else {
+            ret = other;
+        }
+    }
+    return ret;
+}
+
+std::optional<std::chrono::nanoseconds> SurfaceItem::frameTimeEstimation() const
+{
+    if (!m_accumulatedTimeDiffs) {
+        return std::nullopt;
+    }
+    if (std::chrono::steady_clock::now() - *m_lastDamage > 100ms) {
+        // the surface seems to have stopped rendering entirely
+        return std::nullopt;
+    } else {
+        return *m_accumulatedTimeDiffs / m_lastDamageTimeDiffs.size();
+    }
+}
+
+bool SurfaceItem::hasAlphaChannel() const
+{
+    return m_hasAlphaChannel;
+}
+
+} // namespace KWin
+
+#include "moc_surfaceitem.cpp"

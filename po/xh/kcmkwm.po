@@ -1,0 +1,1486 @@
+# translation of kcmkwm.po to
+# translation of kcmkwm.po to
+# translation of kcmkwm.po to
+# translation of kcmkwm.po to
+# translation of kcmkwm.po to Xhosa
+# K Desktop Environment - kdebase
+# Copyright (C) 2001 translate.org.za
+# Antoinette Dekeni <antoinette@transalate.org.za>, 2001.
+# Lwandle Mgidlana <lwandle@translate.org.za>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2002-10-24 12:06SAST\n"
+"Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
+"Language-Team: Xhosa <xhosa@translate.org.za>\n"
+"Language: xh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0beta2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr ""
+
+#: ui/Focus.qml:46
+#, fuzzy, kde-format
+#| msgid "Click to Focus"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr "Nqakraza kwi Focus"
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, fuzzy, kde-format
+#| msgid "Focus Follows Mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr "Uqwalaselo Lulandela i Mouse"
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr "Uqwalaselo Lungaphantsi kwe Mouse"
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, fuzzy, kde-format
+#| msgid "&Window snap zone:"
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr "&Ummandla wokwenziwa ngokukhawuleza we Window:"
+
+#: ui/Focus.qml:115
+#, fuzzy, kde-format
+msgid "&Delay focus by:"
+msgstr "Ulibaziseko (ms)"
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, fuzzy, kde-format
+#| msgid " msec"
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " msec"
+
+#: ui/Focus.qml:146
+#, kde-format
+msgid "Focus &stealing prevention:"
+msgstr ""
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: ui/Focus.qml:151
+#, fuzzy, kde-format
+#| msgid "Lower"
+msgid "Low"
+msgstr "Ezantsi"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: ui/Focus.qml:153
+#, kde-format
+msgid "High"
+msgstr ""
+
+#: ui/Focus.qml:154
+#, kde-format
+msgid "Extreme"
+msgstr ""
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr ""
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, fuzzy, kde-format
+#| msgid "Nothing"
+msgid "Do nothing"
+msgstr "Akukho nto"
+
+#: ui/Focus.qml:207
+#, fuzzy, kde-format
+msgid "Raising windows:"
+msgstr "Windows"
+
+#: ui/Focus.qml:208
+#, fuzzy, kde-format
+msgid "&Click raises focused window"
+msgstr "Nqak&raza uphakamiso"
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr ""
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr ""
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr ""
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr "&Qwalasela"
+
+#: ui/main.qml:37
+#, fuzzy, kde-format
+msgid "Titlebar A&ctions"
+msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#: ui/main.qml:43
+#, fuzzy, kde-format
+msgid "W&indow Actions"
+msgstr "Iintshuku&mo"
+
+#: ui/main.qml:49
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Mo&vement & Placement"
+msgstr "&Ubeko:"
+
+#: ui/MovementAndPlacement.qml:17
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "&Ubeko:"
+
+#: ui/MovementAndPlacement.qml:22
+#, fuzzy, kde-format
+#| msgid "&Border snap zone:"
+msgid "Screen &edge snap zone:"
+msgstr "&Ummandla womda wokwenza ngokukhawuleza:"
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr "&Ummandla wokwenziwa ngokukhawuleza we Window:"
+
+#: ui/MovementAndPlacement.qml:79
+#, fuzzy, kde-format
+#| msgid "&Border snap zone:"
+msgid "&Center snap zone:"
+msgstr "&Ummandla womda wokwenza ngokukhawuleza:"
+
+#: ui/MovementAndPlacement.qml:106
+#, fuzzy, kde-format
+msgid "&Snap windows:"
+msgstr "Window Yangaphakathi Engasebenziyo"
+
+#: ui/MovementAndPlacement.qml:107
+#, fuzzy, kde-format
+#| msgid "Snap windows onl&y when overlapping"
+msgid "Only when overlapping"
+msgstr "Bamba ii window kuphela xa &zisalekwa ngaphezulu"
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window &placement:"
+msgstr "&Ubeko:"
+
+#: ui/MovementAndPlacement.qml:129
+#, fuzzy, kde-format
+#| msgid "Snap windows onl&y when overlapping"
+msgid "Minimal Overlapping"
+msgstr "Bamba ii window kuphela xa &zisalekwa ngaphezulu"
+
+#: ui/MovementAndPlacement.qml:130
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximized"
+msgstr "Yenza nkulu"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "Jikelele"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "Isembindini"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:134
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Under mouse"
+msgstr "Uqwalaselo Lungaphantsi kwe Mouse"
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr "Phakamisa"
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr "Ezantsi"
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, fuzzy, kde-format
+msgid "Raise/lower"
+msgstr "Qhoboshela Nyusa & Wehlise"
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, fuzzy, kde-format
+msgid "Minimize"
+msgstr "Yenza nkulu"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window menu"
+msgstr "&Ubeko:"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Focus and raise"
+msgstr "Uqwalaselo Lungaphantsi kwe Mouse"
+
+#: ui/TitlebarActions.qml:31
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Focus and lower"
+msgstr "Uqwalaselo Lungaphantsi kwe Mouse"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, kde-format
+msgid "Focus"
+msgstr "Focus"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximize"
+msgstr "Yenza nkulu"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, kde-format
+msgid "Horizontally maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:49
+#, fuzzy, kde-format
+msgid "Titlebar Actions"
+msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#: ui/TitlebarActions.qml:52
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Double-click:"
+msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#: ui/TitlebarActions.qml:63
+#, fuzzy, kde-format
+#| msgid "&Traverse windows on all desktops"
+msgid "Show on all desktops"
+msgstr "Hambisa ngaphaya ii window kuzo zo&nke ii desktops"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, fuzzy, kde-format
+msgid "Mouse &wheel:"
+msgstr "Isitshixo sokuguqula kancinane + iqhosha eliphakathi:"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, fuzzy, kde-format
+msgid "Maximize/restore"
+msgstr "Yenza nkulu"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, kde-format
+msgid "Keep above/below"
+msgstr ""
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, kde-format
+msgid "Move to previous/next desktop"
+msgstr ""
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, kde-format
+msgid "Change opacity"
+msgstr ""
+
+#: ui/TitlebarActions.qml:102
+#, fuzzy, kde-format
+msgid "Titlebar and Frame Actions"
+msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#: ui/TitlebarActions.qml:111
+#, fuzzy, kde-format
+#| msgid "Focus"
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "Focus"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Left click:"
+msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Middle click:"
+msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, fuzzy, kde-format
+msgid "Maximize Button Actions"
+msgstr "Yenza nkulu"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "L&eft click:"
+msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#: ui/TitlebarActions.qml:268
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle c&lick:"
+msgstr "Iqhosha laphakathi:"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr ""
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr ""
+
+#: ui/WindowActions.qml:28
+#, fuzzy, kde-format
+msgid "Focus, raise, and move"
+msgstr "Sebenzisa kwaye use ezantsi"
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+msgid "Focus, raise, and resize"
+msgstr "Sebenzisa kwaye use ezantsi"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "Yenza ubungakanani kwakhona"
+
+#: ui/WindowActions.qml:35
+#, kde-format
+msgid "Decrease opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:36
+#, kde-format
+msgid "Increase opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:42
+#, fuzzy, kde-format
+#| msgid "Inactive Inner Window"
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "Window Yangaphakathi Engasebenziyo"
+
+#: ui/WindowActions.qml:50
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, click through, and raise on release"
+msgstr "Sebenzisa & Nyusa"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:104
+#, fuzzy, kde-format
+#| msgid "Activate & Lower"
+msgid "Focus and scroll"
+msgstr "Sebenzisa & Yehlisa"
+
+#: ui/WindowActions.qml:105
+#, fuzzy, kde-format
+msgid "Focus, raise, and scroll"
+msgstr "Sebenzisa kwaye use ezantsi"
+
+#: ui/WindowActions.qml:120
+#, fuzzy, kde-format
+#| msgid "Inner Window, Titlebar && Frame"
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr "Window yangaphakathi, Ibar yewonga && Nesakhelo"
+
+#: ui/WindowActions.qml:123
+#, fuzzy, kde-format
+#| msgid "Modifier key:"
+msgid "Mo&difier key:"
+msgstr "Isitshixo sokuguqula kancinane:"
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "Meta"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle &click:"
+msgstr "Iqhosha laphakathi:"
+
+#: ui/WindowActions.qml:202
+#, fuzzy, kde-format
+msgid "Mo&use wheel:"
+msgstr "Isitshixo sokuguqula kancinane + iqhosha eliphakathi:"
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Kulo mqolo ungenza ukuziphatha konqakrazo lwasekhohlo xa unqakraza "
+#~ "kwengasebenziyo iwindow yangaphakathi ('ngaphakathi' uthetha: hayi ibar "
+#~ "yewonga, hayi isakhelo)."
+
+#, fuzzy
+#~| msgid "Activate, Raise & Pass Click"
+#~ msgid "Activate, raise and pass click"
+#~ msgstr "Sebenzisa, Phakamisa & Gqithisa Unqakraze"
+
+#, fuzzy
+#~| msgid "Activate & Pass Click"
+#~ msgid "Activate and pass click"
+#~ msgstr "Sebenzisa & Gqithisa Unqakeraze"
+
+#~ msgid "Activate"
+#~ msgstr "Sebenzisa"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Activate and raise"
+#~ msgstr "Sebenzisa & Nyusa"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Kulo mqolo ungenza ukuziphatha konqakrazo oluphakathi xa unqakraza "
+#~ "kwengasebenziyo iwindow yangaphakathi ('ngaphakathi' kuthetha: hayi ibar "
+#~ "yewonga, hayi isakhelo)."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Kulo mqolo ungenza ukuziphatha konqakrazo lwasekunene xa unqakrazo "
+#~ "olungasebenziyo lwe window yangaphakathi ('ngaphakathi' uthetha: hayo "
+#~ "ibar yewonga, hayi isakhelo)."
+
+#, fuzzy
+#~| msgid ""
+#~| "In this row you can customize left click behavior when clicking into an "
+#~| "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgid ""
+#~ "In this row you can customize behavior when scrolling into an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Kulo mqolo ungenza ukuziphatha konqakrazo lwasekhohlo xa unqakraza "
+#~ "kwengasebenziyo iwindow yangaphakathi ('ngaphakathi' uthetha: hayi ibar "
+#~ "yewonga, hayi isakhelo)."
+
+#~ msgid ""
+#~ "Here you select whether holding the Meta key or Alt key will allow you to "
+#~ "perform the following actions."
+#~ msgstr ""
+#~ "Apha ungakhetha noba kukubamba isitshixo se Meta okanye isitshixo se Alt "
+#~ "sizakuvumela ukusebenza iintshukumo ezilandelayo."
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "Kulo mqolo ungenza ukuziphatha konqakrazo kwasekhohlo xa unqakraza kwi "
+#~ "bar yewonga okanye isakhelo."
+
+#, fuzzy
+#~| msgid "Toggle Raise & Lower"
+#~ msgid "Toggle raise and lower"
+#~ msgstr "Qhoboshela Nyusa & Wehlise"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into "
+#~ "the titlebar or the frame."
+#~ msgstr ""
+#~ "Kulo mqolo ungenza ukuziphatha konqakrazo lwaphakathi xa unqakraza kwi "
+#~ "bar yewonga okanye isakhelo."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "Kulo mqolo ungenza ukuziphatha konqakrazo lwasekunene xa unqakraza kwi "
+#~ "bar yewonga okanye isakhelo."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when scrolling with the mouse wheel "
+#~ "in a window while pressing the modifier key."
+#~ msgstr ""
+#~ "Apha ungenza ukuziphatha kwe KDE xa unqakraza endaweni ethile kwi window "
+#~ "ngexesha ucinezela isitshixo sokuguqula kancinane."
+
+#, fuzzy
+#~| msgid ""
+#~| "Enable this option if you want an animation shown when windows are "
+#~| "minimized or restored."
+#~ msgid ""
+#~ "With this option you can specify how and when windows will be focused."
+#~ msgstr ""
+#~ "Yenza olu khetho ukuba ufuna uphiliso olubonisiweyo xa iiwindow zisenziwa "
+#~ "ncinane okanye zigcinwa kwakhona."
+
+#, fuzzy
+#~| msgid "Focus Strictly Under Mouse"
+#~ msgid "Focus strictly under mouse"
+#~ msgstr "Uqwalaselo Luphantsi kwe Mouse Kuphela"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the delay after which the window the mouse pointer is over will "
+#~ "automatically receive focus."
+#~ msgstr ""
+#~ "Olu lulibaziseko emva kokuba iwindow engaphezulu kwesalathisi se mouse "
+#~ "izakuza ngokuzenzekelayo phambili."
+
+#, fuzzy
+#~ msgid ""
+#~ "When this option is enabled, the active window will be brought to the "
+#~ "front when you click somewhere into the window contents. To change it for "
+#~ "inactive windows, you need to change the settings in the Actions tab."
+#~ msgstr ""
+#~ "Xa olu khetho lusenzeka , ii window zakho zizakuziswa phambili xa "
+#~ "unqakraza ndaweni ithile kwimixholo ye window."
+
+#~ msgid ""
+#~ "When this option is enabled, a window in the background will "
+#~ "automatically come to the front when the mouse pointer has been over it "
+#~ "for some time."
+#~ msgstr ""
+#~ "UKuba uphakamiso oluzenzekelayo luyenzeka, i window kwisiqalo izakuza "
+#~ "ngokuzenzekela phambili xa isalathisi se mouse singaphezulu kwixesha "
+#~ "elithile."
+
+#~ msgid ""
+#~ "This is the delay after which the window that the mouse pointer is over "
+#~ "will automatically come to the front."
+#~ msgstr ""
+#~ "Olu lulibaziseko emva kokuba iwindow engaphezulu kwesalathisi se mouse "
+#~ "izakuza ngokuzenzekelayo phambili."
+
+#, fuzzy
+#~| msgid "Ad&vanced"
+#~ msgid "Adva&nced"
+#~ msgstr "Eb&hekisa phambili"
+
+#, fuzzy
+#~ msgid "&Titlebar Actions"
+#~ msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#, fuzzy
+#~ msgid "Window Actio&ns"
+#~ msgstr "Iintshuku&mo"
+
+#~ msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgstr "Ukuziphatha ku <em>kabini</em> nqakraza kwi bar yewonga."
+
+#, fuzzy
+#~| msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgid "Behavior on <em>mouse wheel</em> scroll over the titlebar."
+#~ msgstr "Ukuziphatha ku <em>kabini</em> nqakraza kwi bar yewonga."
+
+#~ msgid "Active"
+#~ msgstr "Iyasebenza"
+
+#~ msgid "Inactive"
+#~ msgstr "Ayisebenzi"
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Uphatho kwi <em>ekohlo</em> nqakraza kwi bar yewonga okanye kwisakhelo se "
+#~ "<em>active</em> window."
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Ukuziphatha kwi <em>ekhohlo</em> nqakraza kwibar yewonga okanye isakhelo "
+#~ "se <em>ngasebenziyo</em> i window."
+
+#, fuzzy
+#~| msgid "Activate & Lower"
+#~ msgid "Activate and lower"
+#~ msgstr "Sebenzisa & Yehlisa"
+
+#, fuzzy
+#~ msgid "Behavior on <em>left</em> click onto the maximize button."
+#~ msgstr "Ukuziphatha ku <em>kabini</em> nqakraza kwi bar yewonga."
+
+#, fuzzy
+#~ msgid "Behavior on <em>middle</em> click onto the maximize button."
+#~ msgstr "Ukuziphatha ku <em>kabini</em> nqakraza kwi bar yewonga."
+
+#, fuzzy
+#~ msgid "Behavior on <em>right</em> click onto the maximize button."
+#~ msgstr "Ukuziphatha ku <em>kabini</em> nqakraza kwi bar yewonga."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set the snap zone for screen borders, i.e. the 'strength' "
+#~| "of the magnetic field which will make windows snap to the border when "
+#~| "moved near it."
+#~ msgid ""
+#~ "Here you can set the snap zone for screen edges, i.e. the 'strength' of "
+#~ "the magnetic field which will make windows snap to the border when moved "
+#~ "near it."
+#~ msgstr ""
+#~ "Apha ungacwangcisa ummandla wokwenziwa ngokukhawuleza wemida yekhusi, "
+#~ "ithetha ukuba. 'ulomelelo' lo mhlaba otsalayo ongenakwenza mfanekiso wee "
+#~ "window kumda xa isondezwe kufutshane nayo."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set the snap zone for windows, i.e. the 'strength' of the "
+#~| "magnetic field which will make windows snap to each other when they're "
+#~| "moved near another window."
+#~ msgid ""
+#~ "Here you can set the snap zone for windows, i.e. the 'strength' of the "
+#~ "magnetic field which will make windows snap to each other when they are "
+#~ "moved near another window."
+#~ msgstr ""
+#~ "Apha ungacwangcisa ummandla wokwenziwa ngokukhawuleza wee window, ithetha "
+#~ "ukuba. 'ulomelelo' lo mhlaba otsalayo ozakwenza umfanekiso wee window "
+#~ "kwenye xa zisondezwa kufutshane kwenye i window."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set the snap zone for screen borders, i.e. the 'strength' "
+#~| "of the magnetic field which will make windows snap to the border when "
+#~| "moved near it."
+#~ msgid ""
+#~ "Here you can set the snap zone for the screen center, i.e. the 'strength' "
+#~ "of the magnetic field which will make windows snap to the center of the "
+#~ "screen when moved near it."
+#~ msgstr ""
+#~ "Apha ungacwangcisa ummandla wokwenziwa ngokukhawuleza wemida yekhusi, "
+#~ "ithetha ukuba. 'ulomelelo' lo mhlaba otsalayo ongenakwenza mfanekiso wee "
+#~ "window kumda xa isondezwe kufutshane nayo."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can set that windows will be only snapped if you try to overlap "
+#~ "them, i.e. they will not be snapped if the windows comes only near "
+#~ "another window or border."
+#~ msgstr ""
+#~ "Apha ungacwangcisa ukuba iiwindow zenziwa ngokukhawuleza ukuba uzama "
+#~ "ukuzaleka ngaphezulu, ithetha ukuba. azinakwenziwa ngokukhawuleza ukuba "
+#~ "iiwindow ziza kuphela kufutshane nenye iwindow okanye umda."
+
+#, fuzzy
+#~| msgid "Operations Menu"
+#~ msgid "Show actions menu"
+#~ msgstr "Imisebenzisi ye Menu"
+
+#, fuzzy
+#~ msgid "Window &unshading:"
+#~ msgstr "Iintshuku&mo"
+
+#, fuzzy
+#~| msgid ""
+#~| "If Shade Hover is enabled, a shaded window will un-shade automatically "
+#~| "when the mouse pointer has been over the title bar for some time."
+#~ msgid ""
+#~ "<html><head/><body><p>If this option is enabled, a shaded window will "
+#~ "unshade automatically when the mouse pointer has been over the titlebar "
+#~ "for some time.</p></body></html>"
+#~ msgstr ""
+#~ "Ukuba i Hover yomthunzi yenziwe, iwindow enomthunzi izaku-ngawenzi-"
+#~ "umthunzi ngokuzenzekelayo xa isalathisi se mouse singaphaya kwebar "
+#~ "yewonga ngexesha elithile."
+
+#~ msgid ""
+#~ "Sets the time in milliseconds before the window unshades when the mouse "
+#~ "pointer goes over the shaded window."
+#~ msgstr ""
+#~ "Icwangcisa ixewsha lemizuzwana emininzi phambi kokuba iwindow ingawenzi "
+#~ "umthunzi xa isalathisi se mouse sihamba ngaphaya kwe window enomthunzi."
+
+#~ msgid "Shade"
+#~ msgstr "Umthunzi"
+
+#, fuzzy
+#~| msgid "Windows"
+#~ msgid "&Special windows:"
+#~ msgstr "Windows"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Lwandle Mgidlana"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "lwandle@translate.org.za"
+
+#~ msgid "Window Behavior Configuration Module"
+#~ msgstr "Isicatshulwa Soqwalalselo Lokuziphatha kwe Window"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "(c) 1997 - 2002 Ababhali be KWin ne KControl"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Window Behavior</h1> Here you can customize the way windows behave "
+#~ "when being moved, resized or clicked on. You can also specify a focus "
+#~ "policy as well as a placement policy for new windows.</p> <p>Please note "
+#~ "that this configuration will not take effect if you do not use KWin as "
+#~ "your window manager. If you do use a different window manager, please "
+#~ "refer to its documentation for how to customize window behavior.</p>"
+#~ msgstr ""
+#~ "<h1>Ukuziphatha kwe Window</h1> Apha ungenza indlela iiwindow ziziphatha "
+#~ "ngayo xa zisuswa, zisenziwa ubungakanani kwakhona okanye zinqakrazwa. "
+#~ "Ungakhankanya kwakhona inkqubo yoqwalaselo nayo njengenkqubo yobeko lwe "
+#~ "window ezintsha.  <p>Nceda qaphela ukuba olu qwalaselo aluzukuthatha "
+#~ "siphumo ukuba awusebenzisi KWin njengomphathi we window yakho. Ukuba "
+#~ "awusebenzisi umphathi owahlukileyo we window, nceda thelekisa kuxwebhu "
+#~ "lwayo ngendlela yokwenza ukuziphatha kwe window."
+
+#, fuzzy
+#~| msgid "Cascade"
+#~ msgid "Cascaded"
+#~ msgstr "Ingxangxasi"
+
+#, fuzzy
+#~| msgid "Display content in &resizing windows"
+#~ msgid "Display when moving or resizing"
+#~ msgstr "Bonisa umxholo kwii window ez&enza ubungakanani kwakhona"
+
+#~ msgid "Maximize (vertical only)"
+#~ msgstr "Yenza nkulu (nkqo kuphela)"
+
+#~ msgid "Maximize (horizontal only)"
+#~ msgstr "Yenza nkulu (tye kuphela)"
+
+#~ msgid "Smart"
+#~ msgstr "Ebukekayo"
+
+#, fuzzy
+#~ msgid "Maximizing"
+#~ msgstr "Yenza nkulu"
+
+#, fuzzy
+#~| msgid "Zero-Cornered"
+#~ msgid "Zero-cornered"
+#~ msgstr "Zero-Cornered"
+
+#, fuzzy
+#~ msgid "Window tabbing:"
+#~ msgstr "Iintshuku&mo"
+
+#, fuzzy
+#~ msgid "Start window tab drag"
+#~ msgstr "Iintshuku&mo"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "Ri&ght button:"
+#~ msgstr "Iqhosha lasekunene:"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "&Left button:"
+#~ msgstr "Iqhosha lasekhohlo:"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "&Right button:"
+#~ msgstr "Iqhosha lasekunene:"
+
+#, fuzzy
+#~| msgid "Middle button:"
+#~ msgid "M&iddle button:"
+#~ msgstr "Iqhosha laphakathi:"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "Left &button"
+#~ msgstr "Iqhosha lasekhohlo:"
+
+#, fuzzy
+#~ msgid ""
+#~ "The placement policy determines where a new window will appear on the "
+#~ "desktop.<br><ul>\n"
+#~ "<li><em>Smart</em> will try to achieve a minimum overlap of windows</li>\n"
+#~ "<li><em>Maximizing</em> will try to maximize every window to fill the "
+#~ "whole screen. It might be useful to selectively affect placement of some "
+#~ "windows using the window-specific settings.</li>\n"
+#~ "<li><em>Cascade</em> will cascade the windows</li>\n"
+#~ "<li><em>Random</em> will use a random position</li>\n"
+#~ "<li><em>Centered</em> will place the window centered</li>\n"
+#~ "<li><em>Zero-Cornered</em> will place the window in the top-left corner</"
+#~ "li>\n"
+#~ "<li><em>Under Mouse</em> will place the window under the pointer</li>\n"
+#~ "</ul>"
+#~ msgstr ""
+#~ "Inkqubo yobeko igqiba apho iwindow entsha izakuvela khona kwi desktop. "
+#~ "Okwangoku, kukho iinkqubo ezintathu ezahlukeneyo: <ul><li><em>Ebukekayo</"
+#~ "em> izakuzama ukwenza ulwaleko oluncinane lwee window</li> "
+#~ "<li><em>Ingxangxasi</em> izakungxangxazisa iiwindow</li> <li."
+#~ "<em>Jikelele</em> izakusebenzisa indawo ejikelezayo</li></ul>"
+
+#~ msgid "Shading"
+#~ msgstr "Yenza umthunzi"
+
+#~ msgid "Dela&y:"
+#~ msgstr "Ukulibazi&sa:"
+
+#~ msgid "&Enable hover"
+#~ msgstr "&Yenza i hover"
+
+#, fuzzy
+#~ msgid "Activating windows"
+#~ msgstr "Window Yangaphakathi Engasebenziyo"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy"
+#~ msgstr "&Inkqubo:"
+
+#~ msgid "&Moving"
+#~ msgstr "&Iyahamba"
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an active window."
+#~ msgstr ""
+#~ "Kulo mhlathi ungenza unqakrazo lwe mouse kwibar yewonga okanye isakhelo "
+#~ "se window esebenzayo."
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an inactive window."
+#~ msgstr ""
+#~ "Kulo mhlathi ungenza unqakrazo lwe mouse kwi bar yewonga okanye isakhelo "
+#~ "sengasebenziyo i window."
+
+#~ msgid "Left button:"
+#~ msgstr "Iqhosha lasekhohlo:"
+
+#~ msgid "Middle button:"
+#~ msgstr "Iqhosha laphakathi:"
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Ukuziphatha kwi <em>phakathi</em> nqakraza kwi bar yewonga okanye "
+#~ "isakhelo se <em>esebenzayo</em> i window."
+
+#~ msgid "Right button:"
+#~ msgstr "Iqhosha lasekunene:"
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Ukuziphatha kwi <em>ekunene</em> nqakraza kwi bar yewonga okanye isakhelo "
+#~ "se <em>esebenzayo</em> i window."
+
+#, fuzzy
+#~| msgid "Titlebar && Frame"
+#~ msgid "Titlebar & Frame"
+#~ msgstr "Ibar yewonga && Isakhelo"
+
+#, fuzzy
+#~ msgid "Titlebar"
+#~ msgstr "&Unqakrazo kabini lwe bar yewonga:"
+
+#, fuzzy
+#~| msgid "&Border snap zone:"
+#~ msgid "no center snap zone"
+#~ msgstr "&Ummandla womda wokwenza ngokukhawuleza:"
+
+#, fuzzy
+#~| msgid "&Window snap zone:"
+#~ msgid "no window snap zone"
+#~ msgstr "&Ummandla wokwenziwa ngokukhawuleza we Window:"
+
+#, fuzzy
+#~| msgid "&Border snap zone:"
+#~ msgid "no border snap zone"
+#~ msgstr "&Ummandla womda wokwenza ngokukhawuleza:"
+
+#~ msgid "Windows"
+#~ msgstr "Windows"
+
+#~ msgid "Snap Zones"
+#~ msgstr "Imimandla Yokhawulezisos"
+
+#~ msgid "kcmkwinoptions"
+#~ msgstr "kcmkwinoptions"
+
+#, fuzzy
+#~ msgid ""
+#~ "The focus policy is used to determine the active window, i.e. the window "
+#~ "you can work in. <ul>\n"
+#~ "<li><em>Click to focus:</em> A window becomes active when you click into "
+#~ "it. This is the behavior you might know from other operating systems.</"
+#~ "li> <li><em>Focus follows mouse:</em> Moving the mouse pointer actively "
+#~ "on to a normal window activates it. New windows will receive the focus, "
+#~ "without you having to point the mouse at them explicitly. Very practical "
+#~ "if you are using the mouse a lot.</li>\n"
+#~ "<li><em>Focus under mouse:</em> The window that happens to be under the "
+#~ "mouse pointer is active. If the mouse points nowhere, the last window "
+#~ "that was under the mouse has focus. New windows will not automatically "
+#~ "receive the focus.</li>\n"
+#~ "<li><em>Focus strictly under mouse:</em> Only the window under the mouse "
+#~ "pointer is active. If the mouse points nowhere, nothing has focus.</li>\n"
+#~ "</ul>\n"
+#~ "Note that 'Focus under mouse' and 'Focus strictly under mouse' prevent "
+#~ "certain features such as the Alt+Tab walk through windows dialog in the "
+#~ "KDE mode from working properly."
+#~ msgstr ""
+#~ "Inkqubo yoqwalaselo isetyenziswa ukugqiba iwindow esebenzayo, ithetha "
+#~ "ukuba. iwindow onokusebenza kuyo. <ul> <li><em>Nqakraza kuqwalaselo:</em> "
+#~ "I window iyasebenza xa unqakraza kuyo. Oku kukuziphatha omele ukwazi "
+#~ "okusuka kwezinye iindlela zokusebenza.</li> <li><em>Uqwalaselo lulandela "
+#~ "imouse:</em> Ishukumisa isalathisi se mouse ngokusebenza  kwi window "
+#~ "eqhele ukuyisebenzisa. Iyenzeka ukuba usebenzisa i mouse kakhulu.</li> "
+#~ "<li><em>Uqwalaselo phantsi kwe mouse:</em> I window eyenzeka phantsi "
+#~ "kwesalathisi se mouse siyasebenza. Ukuba i mouse ayalathi ndaweni, "
+#~ "eyokugqibela i window ebiphantsi kwe mouse inoqwalaselo. </li> "
+#~ "<li><em>Uqwalaselo phantsi kwe mouse ngokungqongqo:</em> Oku kungaphezulu "
+#~ "kuno'Qwalaselo phantsi kwe mouse'. Kuphela i window phantsi kwesalathisi "
+#~ "se mouse esebenzayo. Ukuba i mouse ayalathanga ndaweni, akukho nto "
+#~ "inoqwalaselo.  </ul> Qaphela ukuba 'Uqwalaselo phantsi kwe mouse'kunye no "
+#~ "'Qwalaselo phantsi kwe mouse ngokungqongo' abanaluncedo. Banikezelwa "
+#~ "kuphela kwifashoni-endala yokufa-nzima ENYE yabantu ;-)"
+
+#~ msgid ""
+#~ "When enabled, this feature activates the border of maximized windows and "
+#~ "allows you to move or resize them, just like for normal windows"
+#~ msgstr ""
+#~ "Xa yenziwe, lomsebenzi osemqoka wenza umda wee window ezenziwe nkulu "
+#~ "kwaye ikuvumela ukuzishukumisa okanye ukwenza ubungakanani kwakhona bazo, "
+#~ "njengee window eziqhelekileyo"
+
+#, fuzzy
+#~| msgid "Display content in &resizing windows"
+#~ msgid "Display borders on &maximized windows"
+#~ msgstr "Bonisa umxholo kwii window ez&enza ubungakanani kwakhona"
+
+#, fuzzy
+#~ msgctxt "@item:inlistbox behavior on double click"
+#~ msgid "Minimize"
+#~ msgstr "Yenza nkulu"
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when clicking on the titlebar "
+#~ "or the frame of a window."
+#~ msgstr ""
+#~ "Apha ungenza ukuziphatha konqakrazo lwe mouse xa unqakraza kwibar yewonga "
+#~ "okanye isakhelo se window."
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Ukuziphatha kwi <em>ekunene</em> nqakraza kwibar yewonga okanye isakhelo "
+#~ "se <em>ngasebenziyo</em>i window."
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Ukuziphatha kwi <em>phakathi</em> nqakraza kwi bar yewonga okanye "
+#~ "isakhelo se <em>window</em> engasebenziyo."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can customize behavior when clicking on the maximize button."
+#~ msgstr ""
+#~ "Apha ungenza ukuziphatha konqakrazo lwe mouse xa unqakraza kabini kwibar "
+#~ "yewonga ye window."
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when clicking on an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Apha ungenza ukuziphatha konqakrazo lwe mouse xa unqakraza "
+#~ "kwengasebenziyo iwindow yangaphakathi ('ngaphakathi' kuthetha: hayi ibar "
+#~ "yewonga, hayi isakhelo)."
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when clicking somewhere into a "
+#~ "window while pressing a modifier key."
+#~ msgstr ""
+#~ "Apha ungenza ukuziphatha kwe KDE xa unqakraza endaweni ethile kwi window "
+#~ "ngexesha ucinezela isitshixo sokuguqula kancinane."
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no border snap zone"
+#~ msgid "none"
+#~ msgstr "akukho nanye"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no window snap zone"
+#~ msgid "none"
+#~ msgstr "akukho nanye"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no center snap zone"
+#~ msgid "none"
+#~ msgstr "akukho nanye"
+
+#, fuzzy
+#~| msgid "Nothing"
+#~ msgctxt "Floating layout, windows aren't tiled at all"
+#~ msgid "Floating"
+#~ msgstr "Akukho nto"
+
+#, fuzzy
+#~ msgid ""
+#~ "When this option is enabled, there will be a delay after which the window "
+#~ "the mouse pointer is over will become active (receive focus)."
+#~ msgstr ""
+#~ "Olu lulibaziseko emva kokuba iwindow engaphezulu kwesalathisi se mouse "
+#~ "izakuza ngokuzenzekelayo phambili."
+
+#~ msgid "Di&splay content in moving windows"
+#~ msgstr "B&onisa umxholo kwii window ezihambayo"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's content to be fully shown while "
+#~ "moving it, instead of just showing a window 'skeleton'. The result may "
+#~ "not be satisfying on slow machines without graphic acceleration."
+#~ msgstr ""
+#~ "Yenza olu khetho ukuba ufuna umxholo we window uboniswe ngokupheleleyo "
+#~ "ngexesha uyisusa, endaweni yokubonisa nje 'uphahla' lwe window. Isiphumo "
+#~ "sinokungo nelisi kwimatshini ezicothayo ngaphandle konikezelo lomzobo."
+
+#~ msgid ""
+#~ "Enable this option if you want a window's content to be shown while "
+#~ "resizing it, instead of just showing a window 'skeleton'. The result may "
+#~ "not be satisfying on slow machines."
+#~ msgstr ""
+#~ "Yenza olu khetho ukuba ufuna umxholo we window uboniswe ngexesha isenza "
+#~ "ubungakanani kwakhiona bayo, endaweni yokubonisa nje 'uphahla' lwe "
+#~ "window. Isiphumo sinokungo nelisi kwimatshini ezicothayo."
+
+#~ msgid "Allow moving and resizing o&f maximized windows"
+#~ msgstr ""
+#~ "Vumela ushukumo kunye no&kwenziwa kobungakanani kwakhona bee window "
+#~ "ezenziwe nkulu"
+
+#, fuzzy
+#~ msgid ""
+#~ "Hold down the Alt key and press the Tab key repeatedly to walk through "
+#~ "the windows on the current desktop (the Alt+Tab combination can be "
+#~ "reconfigured).\n"
+#~ "\n"
+#~ "If this checkbox is checked a popup widget is shown, displaying the icons "
+#~ "of all windows to walk through and the title of the currently selected "
+#~ "one.\n"
+#~ "\n"
+#~ "Otherwise, the focus is passed to a new window each time Tab is pressed, "
+#~ "with no popup widget.  In addition, the previously activated window will "
+#~ "be sent to the back in this mode."
+#~ msgstr ""
+#~ "Gcina isitshixo se Alt esicinezelweyo kwaye betha isitshixo sesithuba "
+#~ "ngokuphinda-phinda ukuhamba ngapha kwee window kweyangoku i desktop "
+#~ "(udibaniso lwe Alt+Tab lungaqwalaselwa kwakhona). Iindlela ezimbini "
+#~ "ezahlukileyo zithetha:<ul><li><b>KDE</b>: elungileyo i widget iyaboniswa, "
+#~ "ibonisa i icons zazo zonke ii window ukuhamba ngaphaya kwaye ne wonga "
+#~ "elikhethiweyo ngoku;<li><b>CDE</b>: uqwalaselo lugqithiswa kwentsha i "
+#~ "window ixesha ngalinye isithuba sibethwa. Akukho widget entle.</li></ul>"
+
+#~ msgid ""
+#~ "Leave this option disabled if you want to limit walking through windows "
+#~ "to the current desktop."
+#~ msgstr ""
+#~ "Shiya olu khetho lukhabazekileyo ukuba ufuna ukwenza umda wokuhamba "
+#~ "ngapha kwee window ukuya kweyangoku i desktop."
+
+#~ msgid "Desktop navi&gation wraps around"
+#~ msgstr "Ulawulo lwe d&esktop lusongela macala onke"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this option if you want keyboard or active desktop border "
+#~ "navigation beyond the edge of a desktop to take you to the opposite edge "
+#~ "of the new desktop."
+#~ msgstr ""
+#~ "Yenza olukhetho ukuba ufuna ibhodi yezitshixo okanye umda wombane wolaulo "
+#~ "ngapha kwe siphelo se desktop ukuzisa i desktop kwisiphelo sesiphelo."
+
+#~ msgid "Popup desktop name on desktop &switch"
+#~ msgstr "ingxolo eqhekezayo yegama kwi desktop &tshintsha"
+
+#~ msgid ""
+#~ "Enable this option if you wish to see the current desktop name popup "
+#~ "whenever the current desktop is changed."
+#~ msgstr ""
+#~ "Yenza olukhetho ukuba ufuna ukubona i desktop yangoku igama eliqhekezayo "
+#~ "xa i desktop yangoku itshintswa."
+
+#~ msgid "Active Desktop Borders"
+#~ msgstr "Imida Esebenzayo ye Desktop"
+
+#~ msgid ""
+#~ "If this option is enabled, moving the mouse to a screen border will "
+#~ "change your desktop. This is e.g. useful if you want to drag windows from "
+#~ "one desktop to the other."
+#~ msgstr ""
+#~ "Ukuba olu khetho luyenziwa, ukusa imouse kumda wekhusi kuzakutshintsha "
+#~ "idesktop yakho. Oku yi umzekelo. kuluncedo ukuba ufuna ukutsala ii window "
+#~ "kwenye idesktop ukuya kwenye."
+
+#~ msgid "D&isabled"
+#~ msgstr "Ikhu&bazekile"
+
+#~ msgid "Only &when moving windows"
+#~ msgstr "Kuphela xa &ushukumisa ii window"
+
+#~ msgid "A&lways enabled"
+#~ msgstr "&Isoloko yenziwe"
+
+#~ msgid ""
+#~ "Here you can set a delay for switching desktops using the active borders "
+#~ "feature. Desktops will be switched after the mouse has been pushed "
+#~ "against a screen border for the specified number of milliseconds."
+#~ msgstr ""
+#~ "Apha ungenza ubambezelo lutshintshela ii desktop usebenzisa imida "
+#~ "esebenzayo esemqoka. Iidesktop zezakuswitsha emva kokuba imouse ityhalwe "
+#~ "ngokuchasene nomda wekhusi kwinani elikhankanyiweyo lemizuzwana emininzi."
+
+#~ msgid "Desktop &switch delay:"
+#~ msgstr "Desktop &ubambezelo leswitshi:"
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when middle clicking into a window "
+#~ "while pressing the modifier key."
+#~ msgstr ""
+#~ "Apha ungenza ukuziphatha kwe KDE xa unqakraza ngaphakathi kwi window "
+#~ "ngexesha ucinizela isitshixo sokuguqula kancinane."
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when double clicking on the "
+#~ "titlebar of a window."
+#~ msgstr ""
+#~ "Apha ungenza ukuziphatha konqakrazo lwe mouse xa unqakraza kabini kwibar "
+#~ "yewonga ye window."
+
+#~ msgid "Modifier key + left button:"
+#~ msgstr "Isitshixo sokuguqula kancinane + iqhosha lasekohlo:"
+
+#~ msgid "Modifier key + right button:"
+#~ msgstr "Isitshixo sokuguqula kancinane + iqhosha lasekunene:"
+
+#~ msgid "Modifier key + middle button:"
+#~ msgstr "Isitshixo sokuguqula kancinane + iqhosha eliphakathi:"
+
+#~ msgid "Auto &raise"
+#~ msgstr "Phakamisa &ngokuzenzekelayo"
+
+#~ msgid "Navigation"
+#~ msgstr "Ulawulo"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Active &mouse screen"
+#~ msgstr "Sebenzisa & Nyusa"
+
+#~ msgid "Anima&te"
+#~ msgstr "Philis&a"
+
+#~ msgid ""
+#~ "Animate the action of reducing the window to its titlebar (shading) as "
+#~ "well as the expansion of a shaded window"
+#~ msgstr ""
+#~ "Philisa intshukumo yokunciphisa iwindow kwibar yayo yewonga (yenza "
+#~ "umthunzi) nawo njengolwandiso lwe window enomthunzi"
+
+#~ msgid "Animate minimi&ze and restore"
+#~ msgstr "Philisa ulwenziwo kwento ibenzinca u&gcine kwakhona"
+
+#~ msgid "Slow"
+#~ msgstr "Cotha"
+
+#~ msgid "Fast"
+#~ msgstr "Khawuleza"
+
+#~ msgid ""
+#~ "Here you can set the speed of the animation shown when windows are "
+#~ "minimized and restored. "
+#~ msgstr ""
+#~ "Apha ungacwangcisa isantya sophiliso esibonisiweyo xa iiwindow zisenziwa "
+#~ "ncinane kwaye zigcinwa kwakhona."
+
+#, fuzzy
+#~ msgid "Dock windows:"
+#~ msgstr "Windows"
+
+#, fuzzy
+#~ msgid "Use shadows"
+#~ msgstr "Umthunzi"
+
+#, fuzzy
+#~ msgid "Active window size:"
+#~ msgstr "Sebenzisa kwaye uphakamise"
+
+#, fuzzy
+#~ msgid "Inactive window size:"
+#~ msgstr "Window Yangaphakathi Engasebenziyo"
+
+#, fuzzy
+#~ msgid "Dock window size:"
+#~ msgstr "Windows"
+
+#, fuzzy
+#~ msgid "Shadow color:"
+#~ msgstr "Umthunzi"
+
+#, fuzzy
+#~ msgid "Shadows"
+#~ msgstr "Umthunzi"

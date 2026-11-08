@@ -1,0 +1,1002 @@
+# Breton translation of KDE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1999
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm-1.1\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2004-07-08 22:32+0200\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr ""
+
+#: ui/Focus.qml:46
+#, fuzzy, kde-format
+#| msgid "Click to Focus"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr "Klikañ evit fokus"
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, fuzzy, kde-format
+#| msgid "Focus Follows Mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr "Fokus hervez al logodenn"
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr "Fokus dindañ al logodenn"
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, fuzzy, kde-format
+#| msgid "&Window snap zone:"
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr "Takad sachañ ar &prenestr :"
+
+#: ui/Focus.qml:115
+#, fuzzy, kde-format
+#| msgid "Delay focus"
+msgid "&Delay focus by:"
+msgstr "Dale ar fokus"
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, fuzzy, kde-format
+#| msgid " msec"
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " msec"
+
+#: ui/Focus.qml:146
+#, kde-format
+msgid "Focus &stealing prevention:"
+msgstr ""
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "None"
+msgid "None"
+msgstr "Hini ebet"
+
+#: ui/Focus.qml:151
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "Low"
+msgid "Low"
+msgstr "Izel"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: ui/Focus.qml:153
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "High"
+msgid "High"
+msgstr "Uhel"
+
+#: ui/Focus.qml:154
+#, kde-format
+msgid "Extreme"
+msgstr ""
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr ""
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, fuzzy, kde-format
+#| msgid "Nothing"
+msgid "Do nothing"
+msgstr "Netra"
+
+#: ui/Focus.qml:207
+#, fuzzy, kde-format
+#| msgid "Moving windows:"
+msgid "Raising windows:"
+msgstr "Emaon o fiñval ar prenester :"
+
+#: ui/Focus.qml:208
+#, fuzzy, kde-format
+#| msgid "C&lick raise active window"
+msgid "&Click raises focused window"
+msgstr "K&likañ evit sevel ar prenestr bev"
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr ""
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr ""
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr ""
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr "&Fokus"
+
+#: ui/main.qml:37
+#, fuzzy, kde-format
+msgid "Titlebar A&ctions"
+msgstr "Ar varrenn-ditl kepken"
+
+#: ui/main.qml:43
+#, fuzzy, kde-format
+#| msgid "Window Actio&ns"
+msgid "W&indow Actions"
+msgstr "Obe&roù ar prenestr"
+
+#: ui/main.qml:49
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Mo&vement & Placement"
+msgstr "&Lec'hiadur :"
+
+#: ui/MovementAndPlacement.qml:17
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "&Lec'hiadur :"
+
+#: ui/MovementAndPlacement.qml:22
+#, fuzzy, kde-format
+#| msgid "&Border snap zone:"
+msgid "Screen &edge snap zone:"
+msgstr "Takad sachañ ar &vevenn :"
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, fuzzy, kde-format
+#| msgid " pixel"
+#| msgid_plural " pixels"
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr " pikseloù"
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr "Takad sachañ ar &prenestr :"
+
+#: ui/MovementAndPlacement.qml:79
+#, fuzzy, kde-format
+#| msgid "&Border snap zone:"
+msgid "&Center snap zone:"
+msgstr "Takad sachañ ar &vevenn :"
+
+#: ui/MovementAndPlacement.qml:106
+#, fuzzy, kde-format
+#| msgid "Inactive windows:"
+msgid "&Snap windows:"
+msgstr "Prenester marv :"
+
+#: ui/MovementAndPlacement.qml:107
+#, fuzzy, kde-format
+#| msgid "Only &when moving windows"
+msgid "Only when overlapping"
+msgstr "&En ur fiñval ar prenester hepken"
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window &placement:"
+msgstr "&Lec'hiadur :"
+
+#: ui/MovementAndPlacement.qml:129
+#, fuzzy, kde-format
+#| msgid "Only &when moving windows"
+msgid "Minimal Overlapping"
+msgstr "&En ur fiñval ar prenester hepken"
+
+#: ui/MovementAndPlacement.qml:130
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximized"
+msgstr "Uhelaat"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "Ankivil"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "Kreizennet"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:134
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Under mouse"
+msgstr "Fokus dindañ al logodenn"
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr "Sevel"
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr "Izelaat"
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, fuzzy, kde-format
+#| msgid "Raise/Lower"
+msgid "Raise/lower"
+msgstr "Sevel/Izelaat"
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr "Izelaat"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window menu"
+msgstr "&Lec'hiadur :"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Focus and raise"
+msgstr "Fokus dindañ al logodenn"
+
+#: ui/TitlebarActions.qml:31
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Focus and lower"
+msgstr "Fokus dindañ al logodenn"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, kde-format
+msgid "Focus"
+msgstr "Fokus"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximize"
+msgstr "Uhelaat"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, fuzzy, kde-format
+msgid "Horizontally maximize"
+msgstr "Disheoliet a-led"
+
+#: ui/TitlebarActions.qml:49
+#, fuzzy, kde-format
+msgid "Titlebar Actions"
+msgstr "Ar varrenn-ditl kepken"
+
+#: ui/TitlebarActions.qml:52
+#, kde-format
+msgid "&Double-click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:63
+#, fuzzy, kde-format
+#| msgid "On All Desktops"
+msgid "Show on all desktops"
+msgstr "War an holl vurevoù"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, fuzzy, kde-format
+#| msgid "Modifier key + mouse wheel:"
+msgid "Mouse &wheel:"
+msgstr "Stokell kemmer + logodenn gant ur rodell :"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, fuzzy, kde-format
+#| msgid "Maximize/Restore"
+msgid "Maximize/restore"
+msgstr "Uhelaat/Adsevel"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, fuzzy, kde-format
+#| msgid "Keep Above/Below"
+msgid "Keep above/below"
+msgstr "Mirout a-us an holl re"
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, kde-format
+msgid "Move to previous/next desktop"
+msgstr ""
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, fuzzy, kde-format
+msgid "Change opacity"
+msgstr "Divoullded"
+
+#: ui/TitlebarActions.qml:102
+#, fuzzy, kde-format
+msgid "Titlebar and Frame Actions"
+msgstr "Ar varrenn-ditl kepken"
+
+#: ui/TitlebarActions.qml:111
+#, fuzzy, kde-format
+#| msgid "Focus"
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "Fokus"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, kde-format
+msgid "&Left click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, kde-format
+msgid "&Middle click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, fuzzy, kde-format
+#| msgid "Maximize Button"
+msgid "Maximize Button Actions"
+msgstr "Nozel Uhelaat"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, kde-format
+msgid "L&eft click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:268
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle c&lick:"
+msgstr "Nozel a-greiz :"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr ""
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr "Fiñval"
+
+#: ui/WindowActions.qml:28
+#, fuzzy, kde-format
+#| msgid "Activate, Raise and Move"
+msgid "Focus, raise, and move"
+msgstr "Bevaat, sevel ha fiñval"
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+#| msgid "Activate, Raise and Move"
+msgid "Focus, raise, and resize"
+msgstr "Bevaat, sevel ha fiñval"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "Adventañ"
+
+#: ui/WindowActions.qml:35
+#, fuzzy, kde-format
+msgid "Decrease opacity"
+msgstr "Divoullded"
+
+#: ui/WindowActions.qml:36
+#, fuzzy, kde-format
+msgid "Increase opacity"
+msgstr "Divoullded"
+
+#: ui/WindowActions.qml:42
+#, fuzzy, kde-format
+#| msgid "Inactive Inner Window"
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "Prenestr marv diabarzh"
+
+#: ui/WindowActions.qml:50
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, click through, and raise on release"
+msgstr "Bevaat ha sevel"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:104
+#, fuzzy, kde-format
+#| msgid "Activate & Lower"
+msgid "Focus and scroll"
+msgstr "Bevaat hag izelaat"
+
+#: ui/WindowActions.qml:105
+#, fuzzy, kde-format
+#| msgid "Activate, Raise and Move"
+msgid "Focus, raise, and scroll"
+msgstr "Bevaat, sevel ha fiñval"
+
+#: ui/WindowActions.qml:120
+#, fuzzy, kde-format
+#| msgid "Inner Window, Titlebar && Frame"
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr "Prenestr diabarzh, barrenn-ditl ha stern"
+
+#: ui/WindowActions.qml:123
+#, fuzzy, kde-format
+#| msgid "Modifier key:"
+msgid "Mo&difier key:"
+msgstr "Stokell kemmer :"
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "Meta"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle &click:"
+msgstr "Nozel a-greiz :"
+
+#: ui/WindowActions.qml:202
+#, fuzzy, kde-format
+#| msgid "Modifier key + mouse wheel:"
+msgid "Mo&use wheel:"
+msgstr "Stokell kemmer + logodenn gant ur rodell :"
+
+#, fuzzy
+#~| msgid "Activate, Raise & Pass Click"
+#~ msgid "Activate, raise and pass click"
+#~ msgstr "Bevaat, sevel ha tremen ar c'hlik"
+
+#, fuzzy
+#~| msgid "Activate & Pass Click"
+#~ msgid "Activate and pass click"
+#~ msgstr "Bevaat ha tremen ar c'hlik"
+
+#~ msgid "Activate"
+#~ msgstr "Bevaat"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Activate and raise"
+#~ msgstr "Bevaat ha sevel"
+
+#, fuzzy
+#~| msgid "Toggle Raise & Lower"
+#~ msgid "Toggle raise and lower"
+#~ msgstr "Gwintañ sevel hag izelaat"
+
+#, fuzzy
+#~| msgid "Focus Strictly Under Mouse"
+#~ msgid "Focus strictly under mouse"
+#~ msgstr "Fokus dindañ al logodenn eeun-hag-eeun"
+
+#, fuzzy
+#~| msgid "Ad&vanced"
+#~ msgid "Adva&nced"
+#~ msgstr "&Barek"
+
+#, fuzzy
+#~ msgid "&Titlebar Actions"
+#~ msgstr "Ar varrenn-ditl kepken"
+
+#~ msgid "Window Actio&ns"
+#~ msgstr "Obe&roù ar prenestr"
+
+#~ msgid "Active"
+#~ msgstr "Bev"
+
+#~ msgid "Inactive"
+#~ msgstr "Marv"
+
+#, fuzzy
+#~| msgid "Activate & Lower"
+#~ msgid "Activate and lower"
+#~ msgstr "Bevaat hag izelaat"
+
+#, fuzzy
+#~| msgid "Operations Menu"
+#~ msgid "Show actions menu"
+#~ msgstr "Lañser obererezhoù"
+
+#, fuzzy
+#~| msgid "Shade/Unshade"
+#~ msgid "Shade/unshade"
+#~ msgstr "Rollañ/Dirollañ"
+
+#, fuzzy
+#~| msgid "Window Actio&ns"
+#~ msgid "Window &unshading:"
+#~ msgstr "Obe&roù ar prenestr"
+
+#~ msgid "Shade"
+#~ msgstr "Rollañ"
+
+#, fuzzy
+#~| msgid "Windows"
+#~ msgid "&Special windows:"
+#~ msgstr "Prenester"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Thierry Vignaud, Jañ-Mai Drapier"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "tvignaud@mandriva.com, jdrapier@club-internet.fr"
+
+#~ msgid "Window Behavior Configuration Module"
+#~ msgstr "Mollad ar gefluniadur emzalc'h ar prenester"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "(c) 1997 - 2002 Oberourien KWin ha Kcontrol"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#, fuzzy
+#~| msgid "Cascade"
+#~ msgid "Cascaded"
+#~ msgstr "Diri"
+
+#, fuzzy
+#~| msgid "Display content in &resizing windows"
+#~ msgid "Display when moving or resizing"
+#~ msgstr "Diskouez an endalc'had pa &adventer ur prenester"
+
+#~ msgid "Smart"
+#~ msgstr "Poellek"
+
+#~ msgid "Maximizing"
+#~ msgstr "Oc'h uhelaat"
+
+#, fuzzy
+#~| msgid "Window Actio&ns"
+#~ msgid "Window tabbing:"
+#~ msgstr "Obe&roù ar prenestr"
+
+#, fuzzy
+#~| msgid "Window Actio&ns"
+#~ msgid "Start window tab drag"
+#~ msgstr "Obe&roù ar prenestr"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "Ri&ght button:"
+#~ msgstr "Nozel a-zehou :"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "&Left button:"
+#~ msgstr "Nozel a-gleiz :"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "&Right button:"
+#~ msgstr "Nozel a-zehou :"
+
+#, fuzzy
+#~| msgid "Middle button:"
+#~ msgid "M&iddle button:"
+#~ msgstr "Nozel a-greiz :"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "Left &button"
+#~ msgstr "Nozel a-gleiz :"
+
+#, fuzzy
+#~ msgid "Shading"
+#~ msgstr "(Dis)Heoliañ"
+
+#~ msgid "Dela&y:"
+#~ msgstr "Dal&e :"
+
+#, fuzzy
+#~ msgid "&Enable hover"
+#~ msgstr "(Dis)Heoliañ"
+
+#, fuzzy
+#~| msgid "Active windows:"
+#~ msgid "Activating windows"
+#~ msgstr "Prenester bev :"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy"
+#~ msgstr "&Politikerez :"
+
+#~ msgid "&Moving"
+#~ msgstr "&Tilec'hiañ"
+
+#~ msgid "Left button:"
+#~ msgstr "Nozel a-gleiz :"
+
+#~ msgid "Middle button:"
+#~ msgstr "Nozel a-greiz :"
+
+#~ msgid "Right button:"
+#~ msgstr "Nozel a-zehou :"
+
+#, fuzzy
+#~| msgid "Titlebar && Frame"
+#~ msgid "Titlebar & Frame"
+#~ msgstr "Barrenn-ditl ha stern"
+
+#, fuzzy
+#~ msgid "Titlebar"
+#~ msgstr "Ar varrenn-ditl kepken"
+
+#, fuzzy
+#~| msgid "&Border snap zone:"
+#~ msgid "no center snap zone"
+#~ msgstr "Takad sachañ ar &vevenn :"
+
+#, fuzzy
+#~| msgid "&Window snap zone:"
+#~ msgid "no window snap zone"
+#~ msgstr "Takad sachañ ar &prenestr :"
+
+#, fuzzy
+#~| msgid "&Border snap zone:"
+#~ msgid "no border snap zone"
+#~ msgstr "Takad sachañ ar &vevenn :"
+
+#~ msgid "Windows"
+#~ msgstr "Prenester"
+
+#~ msgid "kcmkwinoptions"
+#~ msgstr "kcmkwinoptions"
+
+#, fuzzy
+#~| msgid "Display content in &resizing windows"
+#~ msgid "Display borders on &maximized windows"
+#~ msgstr "Diskouez an endalc'had pa &adventer ur prenester"
+
+#, fuzzy
+#~| msgid "Minimize"
+#~ msgctxt "@item:inlistbox behavior on double click"
+#~ msgid "Minimize"
+#~ msgstr "Izelaat"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no border snap zone"
+#~ msgid "none"
+#~ msgstr "hini ebet"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no window snap zone"
+#~ msgid "none"
+#~ msgstr "hini ebet"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no center snap zone"
+#~ msgid "none"
+#~ msgstr "hini ebet"
+
+#, fuzzy
+#~| msgid "Nothing"
+#~ msgctxt "Floating layout, windows aren't tiled at all"
+#~ msgid "Floating"
+#~ msgstr "Netra"
+
+#~ msgid "Di&splay content in moving windows"
+#~ msgstr "Di&skouez an endalc'had pa zilec'hier ur prenester"
+
+#~ msgctxt "Focus Stealing Prevention Level"
+#~ msgid "Normal"
+#~ msgstr "Boas"
+
+#~ msgid "Active Desktop Borders"
+#~ msgstr "Bordoù ar burev oberiant"
+
+#~ msgid "D&isabled"
+#~ msgstr "M&arv"
+
+#~ msgid "Desktop &switch delay:"
+#~ msgstr "Gedvezh kent &gwintañ burev :"
+
+#~ msgid "Modifier key + left button:"
+#~ msgstr "Stokell kemmer + nozel a-gleiz :"
+
+#~ msgid "Modifier key + right button:"
+#~ msgstr "Stokell kemmer + nozel a-zehou :"
+
+#~ msgid "Modifier key + middle button:"
+#~ msgstr "Stokell kemmer + nozel a-greiz :"
+
+#~ msgid "Auto &raise"
+#~ msgstr "&Sevel emgefreek"
+
+#~ msgid "Navigation"
+#~ msgstr "Merdeadurezh"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Active &mouse screen"
+#~ msgstr "Bevaat ha sevel"
+
+#~ msgid "Anima&te"
+#~ msgstr "Enaouiñ"
+
+#~ msgid "Slow"
+#~ msgstr "Gorrek"
+
+#~ msgid "Fast"
+#~ msgstr "Buan"
+
+#~ msgid "&Translucency"
+#~ msgstr "&Treuzwel"
+
+#~ msgid "Dock windows:"
+#~ msgstr "Ensoc'hañ ar prenester :"
+
+#~ msgid "Opacity"
+#~ msgstr "Divoullded"
+
+#~ msgid "Use shadows"
+#~ msgstr "Implijit ar skeudoù"
+
+#~ msgid "Active window size:"
+#~ msgstr "Ment ar prenestr bev :"
+
+#~ msgid "Inactive window size:"
+#~ msgstr "Ment ar prenestr marv :"
+
+#, fuzzy
+#~ msgid "Dock window size:"
+#~ msgstr "Prenester"
+
+#, fuzzy
+#~ msgid "Vertical offset:"
+#~ msgstr "Disheoliet a-serzh"
+
+#~ msgid "Shadow color:"
+#~ msgstr "Liv ar skeud :"
+
+#~ msgid "Remove shadows on move"
+#~ msgstr "Implijit ar skeudoù en ur fiñval"
+
+#~ msgid "Remove shadows on resize"
+#~ msgstr "Implijit ar skeudoù en ur adventañ"
+
+#~ msgid "Shadows"
+#~ msgstr "Skeudoù"
+
+#~ msgid "Warning"
+#~ msgstr "Diwallit"

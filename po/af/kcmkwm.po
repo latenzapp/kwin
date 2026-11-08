@@ -1,0 +1,1792 @@
+# UTF-8 test:äëïöü
+# Copyright (C) 2001 Free Software Foundation, Inc. 
+# Kobus Venter <kabousv@therugby.co.za>, 2005. 
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm stable\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2005-11-25 19:56+0200\n"
+"Last-Translator: Kobus Venter <kabousv@therugby.co.za>\n"
+"Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr ""
+
+#: ui/Focus.qml:46
+#, fuzzy, kde-format
+#| msgid "Click to Focus"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr "Kliek om te Fokus"
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, fuzzy, kde-format
+#| msgid "Focus Follows Mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr "Fokus Volg Muis"
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr "Fokus Onder Muis"
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, fuzzy, kde-format
+#| msgid "&Window snap zone:"
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr "Venster klamp sone:"
+
+#: ui/Focus.qml:115
+#, fuzzy, kde-format
+#| msgid "Delay focus"
+msgid "&Delay focus by:"
+msgstr "Vertraag Fokus"
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, fuzzy, kde-format
+#| msgid " msec"
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " msek"
+
+#: ui/Focus.qml:146
+#, fuzzy, kde-format
+#| msgid "Focus stealing prevention level:"
+msgid "Focus &stealing prevention:"
+msgstr "Fokus steel voorkoming vlak"
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "None"
+msgid "None"
+msgstr "Geen"
+
+#: ui/Focus.qml:151
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "Low"
+msgid "Low"
+msgstr "Laag"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: ui/Focus.qml:153
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "High"
+msgid "High"
+msgstr "Hoog"
+
+#: ui/Focus.qml:154
+#, fuzzy, kde-format
+#| msgctxt "Focus Stealing Prevention Level"
+#| msgid "Extreme"
+msgid "Extreme"
+msgstr "Uiters"
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr ""
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, fuzzy, kde-format
+#| msgid "Nothing"
+msgid "Do nothing"
+msgstr "Niks"
+
+#: ui/Focus.qml:207
+#, fuzzy, kde-format
+#| msgid "Moving windows:"
+msgid "Raising windows:"
+msgstr "Skuif vensters"
+
+#: ui/Focus.qml:208
+#, fuzzy, kde-format
+#| msgid "C&lick raise active window"
+msgid "&Click raises focused window"
+msgstr "Kliek lig aktiewe venster"
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr ""
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr ""
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr ""
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr "Fokus"
+
+#: ui/main.qml:37
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar A&ctions"
+msgstr "Titelbalk Aksies"
+
+#: ui/main.qml:43
+#, fuzzy, kde-format
+#| msgid "Window Actio&ns"
+msgid "W&indow Actions"
+msgstr "Venster Aksies"
+
+#: ui/main.qml:49
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Mo&vement & Placement"
+msgstr "Plasing:"
+
+#: ui/MovementAndPlacement.qml:17
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "Plasing:"
+
+#: ui/MovementAndPlacement.qml:22
+#, fuzzy, kde-format
+#| msgid "&Border snap zone:"
+msgid "Screen &edge snap zone:"
+msgstr "Grens klamp sone:"
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr "Venster klamp sone:"
+
+#: ui/MovementAndPlacement.qml:79
+#, fuzzy, kde-format
+#| msgid "&Border snap zone:"
+msgid "&Center snap zone:"
+msgstr "Grens klamp sone:"
+
+#: ui/MovementAndPlacement.qml:106
+#, fuzzy, kde-format
+#| msgid "Inactive windows:"
+msgid "&Snap windows:"
+msgstr "Onaktiewe venster"
+
+#: ui/MovementAndPlacement.qml:107
+#, fuzzy, kde-format
+#| msgid "Snap windows onl&y when overlapping"
+msgid "Only when overlapping"
+msgstr "Klamp vensters slegs wanneer oorvleuel"
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window &placement:"
+msgstr "Plasing:"
+
+#: ui/MovementAndPlacement.qml:129
+#, fuzzy, kde-format
+#| msgid "Snap windows onl&y when overlapping"
+msgid "Minimal Overlapping"
+msgstr "Klamp vensters slegs wanneer oorvleuel"
+
+#: ui/MovementAndPlacement.qml:130
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximized"
+msgstr "Vergroot"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "Lukrake"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "Gesentreer"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:134
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Under mouse"
+msgstr "Fokus Onder Muis"
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr "Lig"
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr "Verlaag"
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, fuzzy, kde-format
+#| msgid "Raise/Lower"
+msgid "Raise/lower"
+msgstr "Lig && Verlaag"
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr "Verklein"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "&Placement:"
+msgid "Window menu"
+msgstr "Plasing:"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Focus and raise"
+msgstr "Fokus Onder Muis"
+
+#: ui/TitlebarActions.qml:31
+#, fuzzy, kde-format
+#| msgid "Focus Under Mouse"
+msgid "Focus and lower"
+msgstr "Fokus Onder Muis"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, kde-format
+msgid "Focus"
+msgstr "Fokus"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, fuzzy, kde-format
+#| msgid "Maximize"
+msgid "Maximize"
+msgstr "Vergroot"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, fuzzy, kde-format
+#| msgid "Horizontal offset:"
+msgid "Horizontally maximize"
+msgstr "Horisontale verskil:"
+
+#: ui/TitlebarActions.qml:49
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar Actions"
+msgstr "Titelbalk Aksies"
+
+#: ui/TitlebarActions.qml:52
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Double-click:"
+msgstr "Titelbalk dubbel-kliek:"
+
+#: ui/TitlebarActions.qml:63
+#, fuzzy, kde-format
+#| msgid "On All Desktops"
+msgid "Show on all desktops"
+msgstr "Op Alle Werkskerms"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, fuzzy, kde-format
+#| msgid "Modifier key + mouse wheel:"
+msgid "Mouse &wheel:"
+msgstr "Modifikasie sleutel + muis wiel:"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, fuzzy, kde-format
+#| msgid "Maximize/Restore"
+msgid "Maximize/restore"
+msgstr "Maksimeer/Herstel"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, fuzzy, kde-format
+#| msgid "Keep Above/Below"
+msgid "Keep above/below"
+msgstr "Ho bo/onder"
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, fuzzy, kde-format
+#| msgid "Move to Previous/Next Desktop"
+msgid "Move to previous/next desktop"
+msgstr "Gaan na Vorige/Volgende Werkskerm"
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, fuzzy, kde-format
+#| msgid "Change Opacity"
+msgid "Change opacity"
+msgstr "Verander Opacity"
+
+#: ui/TitlebarActions.qml:102
+#, fuzzy, kde-format
+#| msgid "&Titlebar Actions"
+msgid "Titlebar and Frame Actions"
+msgstr "Titelbalk Aksies"
+
+#: ui/TitlebarActions.qml:111
+#, fuzzy, kde-format
+#| msgid "Focus"
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "Fokus"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Left click:"
+msgstr "Titelbalk dubbel-kliek:"
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "&Middle click:"
+msgstr "Titelbalk dubbel-kliek:"
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, fuzzy, kde-format
+#| msgid "Maximize Button"
+msgid "Maximize Button Actions"
+msgstr "Vergroot Knoppie"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, fuzzy, kde-format
+#| msgid "&Titlebar double-click:"
+msgid "L&eft click:"
+msgstr "Titelbalk dubbel-kliek:"
+
+#: ui/TitlebarActions.qml:268
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle c&lick:"
+msgstr "Middelste knoppie:"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr ""
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr ""
+
+#: ui/WindowActions.qml:28
+#, fuzzy, kde-format
+#| msgid "Activate, Raise and Move"
+msgid "Focus, raise, and move"
+msgstr "Aktiveer, Lig & Skuif"
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+#| msgid "Activate, Raise and Move"
+msgid "Focus, raise, and resize"
+msgstr "Aktiveer, Lig & Skuif"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "Hervergroot"
+
+#: ui/WindowActions.qml:35
+#, fuzzy, kde-format
+#| msgid "Change Opacity"
+msgid "Decrease opacity"
+msgstr "Verander Opacity"
+
+#: ui/WindowActions.qml:36
+#, fuzzy, kde-format
+#| msgid "Change Opacity"
+msgid "Increase opacity"
+msgstr "Verander Opacity"
+
+#: ui/WindowActions.qml:42
+#, fuzzy, kde-format
+#| msgid "Inactive Inner Window"
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "Onaktiewe Binneste Venster"
+
+#: ui/WindowActions.qml:50
+#, fuzzy, kde-format
+#| msgid "Activate & Raise"
+msgid "Focus, click through, and raise on release"
+msgstr "Aktiveer & Lig"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:104
+#, fuzzy, kde-format
+#| msgid "Activate & Lower"
+msgid "Focus and scroll"
+msgstr "Aktiveer & Verlaag"
+
+#: ui/WindowActions.qml:105
+#, fuzzy, kde-format
+#| msgid "Activate, Raise and Move"
+msgid "Focus, raise, and scroll"
+msgstr "Aktiveer, Lig & Skuif"
+
+#: ui/WindowActions.qml:120
+#, fuzzy, kde-format
+#| msgid "Inner Window, Titlebar && Frame"
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr "Binneste Venster, Titelbalk && Raam"
+
+#: ui/WindowActions.qml:123
+#, fuzzy, kde-format
+#| msgid "Modifier key:"
+msgid "Mo&difier key:"
+msgstr "Verander sleutel:"
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "Meta"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, fuzzy, kde-format
+#| msgid "Middle button:"
+msgid "Middle &click:"
+msgstr "Middelste knoppie:"
+
+#: ui/WindowActions.qml:202
+#, fuzzy, kde-format
+#| msgid "Modifier key + mouse wheel:"
+msgid "Mo&use wheel:"
+msgstr "Modifikasie sleutel + muis wiel:"
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "In hierdie ry kan jy die linker kliek gedrag pasmaak vir wanneer jy kliek "
+#~ "binne 'n onaktiewe binneste venster ('binneste' beteken: nie titelbalk, "
+#~ "nie raam)."
+
+#, fuzzy
+#~| msgid "Activate, Raise & Pass Click"
+#~ msgid "Activate, raise and pass click"
+#~ msgstr "Aktiveer, Lig & Herhaling Kliek"
+
+#, fuzzy
+#~| msgid "Activate & Pass Click"
+#~ msgid "Activate and pass click"
+#~ msgstr "Aktiveer & Herhaling Kliek"
+
+#~ msgid "Activate"
+#~ msgstr "Aktiveer"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Activate and raise"
+#~ msgstr "Aktiveer & Lig"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "In hierdie ry kan jy die middelste kliek gedrag pasmaak vir wanneer jy "
+#~ "kliek binne 'n onaktiewe binneste venster ('binneste' beteken: nie "
+#~ "titelbalk, nie raam)."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "In hierdie ry kan jy die regter kliek gedrag pasmaak vir wanneer jy kliek "
+#~ "binne 'n onaktiewe binneste venster ('binneste' beteken: nie titelbalk, "
+#~ "nie raam)."
+
+#, fuzzy
+#~| msgid ""
+#~| "In this row you can customize left click behavior when clicking into an "
+#~| "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgid ""
+#~ "In this row you can customize behavior when scrolling into an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "In hierdie ry kan jy die linker kliek gedrag pasmaak vir wanneer jy kliek "
+#~ "binne 'n onaktiewe binneste venster ('binneste' beteken: nie titelbalk, "
+#~ "nie raam)."
+
+#~ msgid ""
+#~ "Here you select whether holding the Meta key or Alt key will allow you to "
+#~ "perform the following actions."
+#~ msgstr ""
+#~ "Hier kan jy kies of die inhou van die Meta sleutel of Alt sleutel jou sal "
+#~ "toelaat om die volgende aksies uit te voer."
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "In hierdie ry jy kan linkskliek gedrag pasmaak wanneer gekliek word binne "
+#~ "die titelbalk of die raam."
+
+#, fuzzy
+#~| msgid "Toggle Raise & Lower"
+#~ msgid "Toggle raise and lower"
+#~ msgstr "Wissel Lig & Verlaag"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into "
+#~ "the titlebar or the frame."
+#~ msgstr ""
+#~ "In hierdie ry jy kan middelste kliek gedrag pasmaak wanneer gekliek word "
+#~ "binne die titelbalk of die raam."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "In hierdie ry jy kan regterkant kliek gedrag pasmaak wanneer gekliek word "
+#~ "binne die titelbalk of die raam."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can customize KDE's behavior when scrolling with the mouse "
+#~| "wheel  in a window while pressing the modifier key."
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when scrolling with the mouse wheel "
+#~ "in a window while pressing the modifier key."
+#~ msgstr ""
+#~ "Jy kan KDE se gedrag hier pasmaak vir wanneer die muis wiel binne 'n "
+#~ "venster gedraai word, terwyl 'n modifikasie sleutel gedruk word."
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>This option specifies how much KWin will try to prevent unwanted "
+#~| "focus stealing caused by unexpected activation of new windows. (Note: "
+#~| "This feature does not work with the Focus Under Mouse or Focus Strictly "
+#~| "Under Mouse focus policies.)<ul><li><em>None:</em> Prevention is turned "
+#~| "off and new windows always become activated.</li><li><em>Low:</em> "
+#~| "Prevention is enabled; when some window does not have support for the "
+#~| "underlying mechanism and KWin cannot reliably decide whether to activate "
+#~| "the window or not, it will be activated. This setting may have both "
+#~| "worse and better results than normal level, depending on the "
+#~| "applications.</li><li><em>Normal:</em> Prevention is enabled.</"
+#~| "li><li><em>High:</em> New windows get activated only if no window is "
+#~| "currently active or if they belong to the currently active application. "
+#~| "This setting is probably not really usable when not using mouse focus "
+#~| "policy.</li><li><em>Extreme:</em> All windows must be explicitly "
+#~| "activated by the user.</li></ul></p><p>Windows that are prevented from "
+#~| "stealing focus are marked as demanding attention, which by default means "
+#~| "their taskbar entry will be highlighted. This can be changed in the "
+#~| "Notifications control module.</p>"
+#~ msgid ""
+#~ "<html><head/><body><p>The placement policy determines where a new window "
+#~ "will appear on the desktop.</p><ul style=\"margin-top: 0px; margin-"
+#~ "bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+#~ "\"><li style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Smart</span> will try to achieve a minimum overlap "
+#~ "of windows</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Maximizing</span> will try to maximize "
+#~ "every window to fill the whole screen. It might be useful to selectively "
+#~ "affect placement of some windows using the window-specific settings.</"
+#~ "li><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Random</span> will use a random position</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Centered</span> will place the window centered</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Zero-cornered</span> will place the window in the top-"
+#~ "left corner</li><li style=\" margin-top:0px; margin-bottom:12px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Under mouse</span> will place the window "
+#~ "under the pointer</li></ul></body></html>"
+#~ msgstr ""
+#~ "<p>Hiedie opsie spesifiseer hoeveel KWin probeer om te keer dat nuwe "
+#~ "vensters die fokus steel.Hierdie opsie werk nie vir 'Fokus onder Muis' en "
+#~ "'Fokus streng onder Muis' beleid nie.<ul><li><em>Geen:</em>Voorkoming "
+#~ "word af gesit en nuwe vensters word altyd aktief</li><li><em>Laag:</"
+#~ "em>Voorkoming is aktief. Vir vensters wat nie die onderliggende meganisme "
+#~ "ondersteun nie sal dit aktief gemaak word</li><li><em>Normaal:</"
+#~ "em>Voorkoming is aktief.</li><li><em>Hoog:</em>Nuwe vensters sal "
+#~ "geaktiveer word as dit aan die huidige aktiewe program behoort. Dit sal "
+#~ "nie geaktiveer word as 'n ander venster aktief is nie. Hierdie opsie maak "
+#~ "meeste sin saam met 'n muis fokus beleid.</li> <li><em>Ekstreem:</em> "
+#~ "Alle vensters moet spesifiek deur die gebruiker geaktiveer word</li></"
+#~ "ul></p><p>Vensters wat verhoed word om die fokus te steel sal aandui dat "
+#~ "hulle aandag benodig. Gewoonlik beteken dit dat hulle taakbalk inskrywing "
+#~ "verlig is. Dit kan in die Inkennisstelling beheer module verander word.</"
+#~ "p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "Enable this option if you want an animation shown when windows are "
+#~| "minimized or restored."
+#~ msgid ""
+#~ "With this option you can specify how and when windows will be focused."
+#~ msgstr ""
+#~ "Aktiveer hierdie opsie as jy 'n animasie vertoon wil hê wanneer vensters "
+#~ "verklein herstel word."
+
+#, fuzzy
+#~| msgid "Focus Strictly Under Mouse"
+#~ msgid "Focus strictly under mouse"
+#~ msgstr "Fokus Streng Onder Muis"
+
+#~ msgid ""
+#~ "This is the delay after which the window the mouse pointer is over will "
+#~ "automatically receive focus."
+#~ msgstr ""
+#~ "Hierdie is die vertraging waarna die venster waaroor die muis wyser is  "
+#~ "automaties op gefokus sal word."
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>This option specifies how much KWin will try to prevent unwanted "
+#~| "focus stealing caused by unexpected activation of new windows. (Note: "
+#~| "This feature does not work with the Focus Under Mouse or Focus Strictly "
+#~| "Under Mouse focus policies.)<ul><li><em>None:</em> Prevention is turned "
+#~| "off and new windows always become activated.</li><li><em>Low:</em> "
+#~| "Prevention is enabled; when some window does not have support for the "
+#~| "underlying mechanism and KWin cannot reliably decide whether to activate "
+#~| "the window or not, it will be activated. This setting may have both "
+#~| "worse and better results than normal level, depending on the "
+#~| "applications.</li><li><em>Normal:</em> Prevention is enabled.</"
+#~| "li><li><em>High:</em> New windows get activated only if no window is "
+#~| "currently active or if they belong to the currently active application. "
+#~| "This setting is probably not really usable when not using mouse focus "
+#~| "policy.</li><li><em>Extreme:</em> All windows must be explicitly "
+#~| "activated by the user.</li></ul></p><p>Windows that are prevented from "
+#~| "stealing focus are marked as demanding attention, which by default means "
+#~| "their taskbar entry will be highlighted. This can be changed in the "
+#~| "Notifications control module.</p>"
+#~ msgid ""
+#~ "<html><head/><body><p>This option specifies how much KWin will try to "
+#~ "prevent unwanted focus stealing caused by unexpected activation of new "
+#~ "windows. (Note: This feature does not work with the <span style=\" font-"
+#~ "style:italic;\">Focus under mouse</span> or <span style=\" font-style:"
+#~ "italic;\">Focus strictly under mouse</span> focus policies.) </p><ul "
+#~ "style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+#~ "right: 0px; -qt-list-indent: 1;\"><li style=\" margin-top:12px; margin-"
+#~ "bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">None:</span> Prevention "
+#~ "is turned off and new windows always become activated.</li><li style=\" "
+#~ "margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+#~ "block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~ "\">Low:</span> Prevention is enabled; when some window does not have "
+#~ "support for the underlying mechanism and KWin cannot reliably decide "
+#~ "whether to activate the window or not, it will be activated. This setting "
+#~ "may have both worse and better results than the medium level, depending "
+#~ "on the applications.</li><li style=\" margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-style:italic;\">Medium:</span> Prevention is "
+#~ "enabled.</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">High:</span> New windows get activated only "
+#~ "if no window is currently active or if they belong to the currently "
+#~ "active application. This setting is probably not really usable when not "
+#~ "using mouse focus policy.</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">Extreme:</span> All "
+#~ "windows must be explicitly activated by the user.</li></ul><p>Windows "
+#~ "that are prevented from stealing focus are marked as demanding attention, "
+#~ "which by default means their taskbar entry will be highlighted. This can "
+#~ "be changed in the Notifications control module.</p></body></html>"
+#~ msgstr ""
+#~ "<p>Hiedie opsie spesifiseer hoeveel KWin probeer om te keer dat nuwe "
+#~ "vensters die fokus steel.Hierdie opsie werk nie vir 'Fokus onder Muis' en "
+#~ "'Fokus streng onder Muis' beleid nie.<ul><li><em>Geen:</em>Voorkoming "
+#~ "word af gesit en nuwe vensters word altyd aktief</li><li><em>Laag:</"
+#~ "em>Voorkoming is aktief. Vir vensters wat nie die onderliggende meganisme "
+#~ "ondersteun nie sal dit aktief gemaak word</li><li><em>Normaal:</"
+#~ "em>Voorkoming is aktief.</li><li><em>Hoog:</em>Nuwe vensters sal "
+#~ "geaktiveer word as dit aan die huidige aktiewe program behoort. Dit sal "
+#~ "nie geaktiveer word as 'n ander venster aktief is nie. Hierdie opsie maak "
+#~ "meeste sin saam met 'n muis fokus beleid.</li> <li><em>Ekstreem:</em> "
+#~ "Alle vensters moet spesifiek deur die gebruiker geaktiveer word</li></"
+#~ "ul></p><p>Vensters wat verhoed word om die fokus te steel sal aandui dat "
+#~ "hulle aandag benodig. Gewoonlik beteken dit dat hulle taakbalk inskrywing "
+#~ "verlig is. Dit kan in die Inkennisstelling beheer module verander word.</"
+#~ "p>"
+
+#~ msgid ""
+#~ "When this option is enabled, the active window will be brought to the "
+#~ "front when you click somewhere into the window contents. To change it for "
+#~ "inactive windows, you need to change the settings in the Actions tab."
+#~ msgstr ""
+#~ "Wanneer geaktiveer, sal die aktiewe venster na vore gebring word wanneer "
+#~ "jy êrens binne die venster inhoud kliek. Om dit verander na onaktiewe "
+#~ "vensters, moet jy dit stel in die Aksie oortjie."
+
+#~ msgid ""
+#~ "When this option is enabled, a window in the background will "
+#~ "automatically come to the front when the mouse pointer has been over it "
+#~ "for some time."
+#~ msgstr ""
+#~ "Wanneer hierdie opsie geaktiveer is, sal 'n venster in die agtergrond "
+#~ "automaties na vore kom wanneer die muis wyser bo-oor dit is vir 'n "
+#~ "geruime tyd."
+
+#~ msgid ""
+#~ "This is the delay after which the window that the mouse pointer is over "
+#~ "will automatically come to the front."
+#~ msgstr ""
+#~ "Hierdie is die vertraging waarna die venster waaroor die muis wyser is  "
+#~ "automaties na vore sal kom."
+
+#, fuzzy
+#~| msgid "Ad&vanced"
+#~ msgid "Adva&nced"
+#~ msgstr "Gevorderde"
+
+#~ msgid "&Titlebar Actions"
+#~ msgstr "Titelbalk Aksies"
+
+#~ msgid "Window Actio&ns"
+#~ msgstr "Venster Aksies"
+
+#~ msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgstr "Gedrag vir <em>dubbel</em> kliek binne die titelbalk."
+
+#, fuzzy
+#~| msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgid "Behavior on <em>mouse wheel</em> scroll over the titlebar."
+#~ msgstr "Gedrag vir <em>dubbel</em> kliek binne die titelbalk."
+
+#~ msgid "Active"
+#~ msgstr "Aktief"
+
+#~ msgid "Inactive"
+#~ msgstr "Onaktief"
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Gedrag vir <em>links</em> kliek binne die titelbalk of raam van 'n "
+#~ "<em>aktiewe</em> venster."
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Gedrag vir <em>links</em> kliek binne die titelbalk of raam van 'n "
+#~ "<em>onaktiewe</em> venster."
+
+#, fuzzy
+#~| msgid "Activate & Lower"
+#~ msgid "Activate and lower"
+#~ msgstr "Aktiveer & Verlaag"
+
+#~ msgid "Behavior on <em>left</em> click onto the maximize button."
+#~ msgstr "Gedrag vir <em>links</em> kliek op die vergroot knoppie."
+
+#~ msgid "Behavior on <em>middle</em> click onto the maximize button."
+#~ msgstr "Gedrag vir <em>middel</em> kliek op die vergroot knoppie."
+
+#~ msgid "Behavior on <em>right</em> click onto the maximize button."
+#~ msgstr "Gedrag vir <em>regs</em> kliek op die vergroot knoppie."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set the snap zone for screen borders, i.e. the 'strength' "
+#~| "of the magnetic field which will make windows snap to the border when "
+#~| "moved near it."
+#~ msgid ""
+#~ "Here you can set the snap zone for screen edges, i.e. the 'strength' of "
+#~ "the magnetic field which will make windows snap to the border when moved "
+#~ "near it."
+#~ msgstr ""
+#~ "Hier kan jy die klamp sone van die skerm rame stel, byvoorbeeld die "
+#~ "'sterkte' van die magnetiese veld wat sal veroorsaak dat vensters aan die "
+#~ "raam klamp wanneer hulle naby daaraan gekuif word."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set the snap zone for windows, i.e. the 'strength' of the "
+#~| "magnetic field which will make windows snap to each other when they're "
+#~| "moved near another window."
+#~ msgid ""
+#~ "Here you can set the snap zone for windows, i.e. the 'strength' of the "
+#~ "magnetic field which will make windows snap to each other when they are "
+#~ "moved near another window."
+#~ msgstr ""
+#~ "Hier kan jy die klamp sone van die vensters stel, byvoorbeeld die "
+#~ "'sterkte' van die magnetiese veld wat sal veroorsaak dat vensters aan "
+#~ "mekaar klamp wanneer hulle naby aan 'n ander venster gekuif word."
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set the snap zone for screen borders, i.e. the 'strength' "
+#~| "of the magnetic field which will make windows snap to the border when "
+#~| "moved near it."
+#~ msgid ""
+#~ "Here you can set the snap zone for the screen center, i.e. the 'strength' "
+#~ "of the magnetic field which will make windows snap to the center of the "
+#~ "screen when moved near it."
+#~ msgstr ""
+#~ "Hier kan jy die klamp sone van die skerm rame stel, byvoorbeeld die "
+#~ "'sterkte' van die magnetiese veld wat sal veroorsaak dat vensters aan die "
+#~ "raam klamp wanneer hulle naby daaraan gekuif word."
+
+#~ msgid ""
+#~ "Here you can set that windows will be only snapped if you try to overlap "
+#~ "them, i.e. they will not be snapped if the windows comes only near "
+#~ "another window or border."
+#~ msgstr ""
+#~ "Hier kan jy kies dat vensters net klamp as jy probeer om dit oor mekaar "
+#~ "te plaas, hulle sal byvoorbeeld nie klamp wanneer 'n venster naby 'n "
+#~ "ander venster of raam kom nie."
+
+#, fuzzy
+#~| msgid "Operations Menu"
+#~ msgid "Show actions menu"
+#~ msgstr "Operasies Kieslys"
+
+#, fuzzy
+#~| msgid "Shade/Unshade"
+#~ msgid "Shade/unshade"
+#~ msgstr "Skadu/Ontskadu"
+
+#, fuzzy
+#~| msgid "Window Actio&ns"
+#~ msgid "Window &unshading:"
+#~ msgstr "Venster Aksies"
+
+#, fuzzy
+#~| msgid ""
+#~| "If Shade Hover is enabled, a shaded window will un-shade automatically "
+#~| "when the mouse pointer has been over the title bar for some time."
+#~ msgid ""
+#~ "<html><head/><body><p>If this option is enabled, a shaded window will "
+#~ "unshade automatically when the mouse pointer has been over the titlebar "
+#~ "for some time.</p></body></html>"
+#~ msgstr ""
+#~ "As Skadu Sweef geaktiveer is, sal 'n beskadude venster automaties "
+#~ "ontskadu wanneer die muis wyser 'n geruime tyd oor die titel balk is."
+
+#~ msgid ""
+#~ "Sets the time in milliseconds before the window unshades when the mouse "
+#~ "pointer goes over the shaded window."
+#~ msgstr ""
+#~ "Verstel die tyd in millisekondes voordat die venster ontskadu wanneer die "
+#~ "muis wyser bo-oor die beskadude venster gaan."
+
+#~ msgid "Shade"
+#~ msgstr "Skadu"
+
+#, fuzzy
+#~| msgid "Windows"
+#~ msgid "&Special windows:"
+#~ msgstr "Vensters"
+
+#~ msgid ""
+#~ "When turned on, utility windows (tool windows, torn-off menus,...) of "
+#~ "inactive applications will be hidden and will be shown only when the "
+#~ "application becomes active. Note that applications have to mark the "
+#~ "windows with the proper window type for this feature to work."
+#~ msgstr ""
+#~ "Wanneer hierdie aktief is, sal nutsvensters (gereedskap vensters, afskeur "
+#~ "kieslyste,...) van onaktiewe programme weg gesteek word. Hulle sal net "
+#~ "gewys word wanneer die program aktief word. Die program moet die vensters "
+#~ "met die regte tipe merk vir hierdie eienskap om te werk."
+
+#~ msgid "Hide utility windows for inactive applications"
+#~ msgstr "Steek nutsvensters van onaktiewe programme weg"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Kobus Venter"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kabousv@therugby.co.za"
+
+#~ msgid "Window Behavior Configuration Module"
+#~ msgstr "Venster Gedrag Opstelling Module"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "(c) 1997 - 2002 Kwin en KControl Outeure"
+
+#, fuzzy
+#~| msgid ""
+#~| "<h1>Window Behavior</h1> Here you can customize the way windows behave "
+#~| "when being moved, resized or clicked on. You can also specify a focus "
+#~| "policy as well as a placement policy for new windows. <p>Please note "
+#~| "that this configuration will not take effect if you do not use KWin as "
+#~| "your window manager. If you do use a different window manager, please "
+#~| "refer to its documentation for how to customize window behavior."
+#~ msgid ""
+#~ "<p><h1>Window Behavior</h1> Here you can customize the way windows behave "
+#~ "when being moved, resized or clicked on. You can also specify a focus "
+#~ "policy as well as a placement policy for new windows.</p> <p>Please note "
+#~ "that this configuration will not take effect if you do not use KWin as "
+#~ "your window manager. If you do use a different window manager, please "
+#~ "refer to its documentation for how to customize window behavior.</p>"
+#~ msgstr ""
+#~ "<h1>Venster Gedrag</h1> Hier kan jy die wyse waarop vensters hulle gedra "
+#~ "pasmaak wanneer hulle verskuif, hervergroot of daarop gekliek word. Jy "
+#~ "kan asook 'n fokus beleid spesifiseer, asook 'n plasing beleid vir nuwe "
+#~ "vensters. <p>Let daarop dat hierdie opstelling geen effek sal hê as jy "
+#~ "nie Kwin gebruik as jou Venster Bestuurder nie. As jy 'n ander Venster "
+#~ "Bestuurder gebruik, verwys na sy dokumentasie hoe om venster gedrag te "
+#~ "pasmaak."
+
+#, fuzzy
+#~| msgid "Cascade"
+#~ msgid "Cascaded"
+#~ msgstr "Kaskade"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's geometry to be displayed while "
+#~ "it is being moved or resized. The window position relative to the top-"
+#~ "left corner of the screen is displayed together with its size."
+#~ msgstr ""
+#~ "Aktiveer hierdie opsie as jy wil hê die vesnter se geometrie moet vertoon "
+#~ "word wanneer dit geskuif hervergroot word. Die venster posissie relatief "
+#~ "tot die linker-bo hoek van die skerm word vertoon saam met sy groote."
+
+#, fuzzy
+#~| msgid "Display window &geometry when moving or resizing"
+#~ msgid "Display when moving or resizing"
+#~ msgstr "Verstoon venster geometrie wanneer 'n venster skuif of hervergroot"
+
+#~ msgid "Maximize (vertical only)"
+#~ msgstr "Vergroot (vertikaal slegs)"
+
+#~ msgid "Maximize (horizontal only)"
+#~ msgstr "Maksimeer (horisontaal slegs)"
+
+#~ msgid "Smart"
+#~ msgstr "Luukse"
+
+#~ msgid "Maximizing"
+#~ msgstr "Maksimeer"
+
+#, fuzzy
+#~| msgid "Zero-Cornered"
+#~ msgid "Zero-cornered"
+#~ msgstr "Zero_Hoek"
+
+#, fuzzy
+#~| msgid "Window Actio&ns"
+#~ msgid "Window tabbing:"
+#~ msgstr "Venster Aksies"
+
+#, fuzzy
+#~| msgid "Window Actio&ns"
+#~ msgid "Start window tab drag"
+#~ msgstr "Venster Aksies"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "Ri&ght button:"
+#~ msgstr "Regter knoppie:"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "&Left button:"
+#~ msgstr "Linker knoppie:"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "&Right button:"
+#~ msgstr "Regter knoppie:"
+
+#, fuzzy
+#~| msgid "Middle button:"
+#~ msgid "M&iddle button:"
+#~ msgstr "Middelste knoppie:"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "Left &button"
+#~ msgstr "Linker knoppie:"
+
+#, fuzzy
+#~| msgid ""
+#~| "The placement policy determines where a new window will appear on the "
+#~| "desktop. <ul> <li><em>Smart</em> will try to achieve a minimum overlap "
+#~| "of windows</li> <li><em>Maximizing</em> will try to maximize every "
+#~| "window to fill the whole screen. It might be useful to selectively "
+#~| "affect placement of some windows using the window-specific settings.</"
+#~| "li> <li><em>Cascade</em> will cascade the windows</li> <li><em>Random</"
+#~| "em> will use a random position</li> <li><em>Centered</em> will place the "
+#~| "window centered</li> <li><em>Zero-Cornered</em> will place the window in "
+#~| "the top-left corner</li></ul>"
+#~ msgid ""
+#~ "The placement policy determines where a new window will appear on the "
+#~ "desktop.<br><ul>\n"
+#~ "<li><em>Smart</em> will try to achieve a minimum overlap of windows</li>\n"
+#~ "<li><em>Maximizing</em> will try to maximize every window to fill the "
+#~ "whole screen. It might be useful to selectively affect placement of some "
+#~ "windows using the window-specific settings.</li>\n"
+#~ "<li><em>Cascade</em> will cascade the windows</li>\n"
+#~ "<li><em>Random</em> will use a random position</li>\n"
+#~ "<li><em>Centered</em> will place the window centered</li>\n"
+#~ "<li><em>Zero-Cornered</em> will place the window in the top-left corner</"
+#~ "li>\n"
+#~ "<li><em>Under Mouse</em> will place the window under the pointer</li>\n"
+#~ "</ul>"
+#~ msgstr ""
+#~ "Die vervang beleid bepaal waar 'n nuwe venster verskyn op die werkskerm."
+#~ "<ul><li><em>Smart</em> Minimum oorvleuling tussen vensters</"
+#~ "li><li><em>Maksimering</em> Maksimeer elke program om die hele werkskerm "
+#~ "tevul</li><li><em>Kaskade</em> Kaskade vensters</li><li><em>Lukraak</em> "
+#~ "'n Willekeuringe posisie sal gebruik word.</li><li><em>Gesentreer</em> "
+#~ "Plaas die venster in die middel</li><li><em>Hoek</em> Plaas die venster "
+#~ "links bo in die hoek</li></ul>"
+
+#~ msgid "Shading"
+#~ msgstr "Skadu"
+
+#~ msgid "Dela&y:"
+#~ msgstr "Vertraag:"
+
+#~ msgid "&Enable hover"
+#~ msgstr "Aktiveer sweef"
+
+#, fuzzy
+#~| msgid "Active windows:"
+#~ msgid "Activating windows"
+#~ msgstr "Aktiewe venster"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy"
+#~ msgstr "Beleid:"
+
+#~ msgid "&Moving"
+#~ msgstr "Beweeg"
+
+#, fuzzy
+#~| msgid "Titlebar wheel event:"
+#~ msgid "Wheel event:"
+#~ msgstr "Titelbalk wiel aksie:"
+
+#~ msgid "Handle mouse wheel events"
+#~ msgstr "Handteer muis wiel aksies:"
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an active window."
+#~ msgstr ""
+#~ "In hierdie kolom jy kan muis klieke pasmaak binne die titelbalk of die "
+#~ "raam van 'n aktiewe venster."
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an inactive window."
+#~ msgstr ""
+#~ "In hierdie kolom jy kan muis klieke pasmaak binne die titelbalk of die "
+#~ "raam van 'n onaktiewe venster."
+
+#~ msgid "Left button:"
+#~ msgstr "Linker knoppie:"
+
+#~ msgid "Middle button:"
+#~ msgstr "Middelste knoppie:"
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Gedrag vir <em>middelste</em> kliek binne die titelbalk of raam van 'n "
+#~ "<em>aktiewe</em> venster."
+
+#~ msgid "Right button:"
+#~ msgstr "Regter knoppie:"
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Gedrag vir <em>regterkant</em> kliek binne die titelbalk of raam van 'n "
+#~ "<em>aktiewe</em> venster."
+
+#, fuzzy
+#~| msgid "Titlebar && Frame"
+#~ msgid "Titlebar & Frame"
+#~ msgstr "Titelbalk && Rame"
+
+#, fuzzy
+#~| msgid "&Titlebar Actions"
+#~ msgid "Titlebar"
+#~ msgstr "Titelbalk Aksies"
+
+#, fuzzy
+#~| msgid "&Border snap zone:"
+#~ msgid "no center snap zone"
+#~ msgstr "Grens klamp sone:"
+
+#, fuzzy
+#~| msgid "&Window snap zone:"
+#~ msgid "no window snap zone"
+#~ msgstr "Venster klamp sone:"
+
+#, fuzzy
+#~| msgid "&Border snap zone:"
+#~ msgid "no border snap zone"
+#~ msgstr "Grens klamp sone:"
+
+#~ msgid "Windows"
+#~ msgstr "Vensters"
+
+#~ msgid "Snap Zones"
+#~ msgstr "Klamp Sones"
+
+#~ msgid "kcmkwinoptions"
+#~ msgstr "kcmkwinoptions"
+
+#, fuzzy
+#~| msgid ""
+#~| "The focus policy is used to determine the active window, i.e. the window "
+#~| "you can work in. <ul> <li><em>Click to focus:</em> A window becomes "
+#~| "active when you click into it. This is the behavior you might know from "
+#~| "other operating systems.</li> <li><em>Focus follows mouse:</em> Moving "
+#~| "the mouse pointer actively on to a normal window activates it. New "
+#~| "windows will receive the focus, without you having to point the mouse at "
+#~| "them explicitly. Very practical if you are using the mouse a lot.</li> "
+#~| "<li><em>Focus under mouse:</em> The window that happens to be under the "
+#~| "mouse pointer is active. If the mouse points nowhere, the last window "
+#~| "that was under the mouse has focus. New windows will not automatically "
+#~| "receive the focus.</li> <li><em>Focus strictly under mouse:</em> Only "
+#~| "the window under the mouse pointer is active. If the mouse points "
+#~| "nowhere, nothing has focus. </ul>Note that 'Focus under mouse' and "
+#~| "'Focus strictly under mouse' prevent certain features such as the Alt"
+#~| "+Tab walk through windows dialog in the KDE mode from working properly."
+#~ msgid ""
+#~ "The focus policy is used to determine the active window, i.e. the window "
+#~ "you can work in. <ul>\n"
+#~ "<li><em>Click to focus:</em> A window becomes active when you click into "
+#~ "it. This is the behavior you might know from other operating systems.</"
+#~ "li> <li><em>Focus follows mouse:</em> Moving the mouse pointer actively "
+#~ "on to a normal window activates it. New windows will receive the focus, "
+#~ "without you having to point the mouse at them explicitly. Very practical "
+#~ "if you are using the mouse a lot.</li>\n"
+#~ "<li><em>Focus under mouse:</em> The window that happens to be under the "
+#~ "mouse pointer is active. If the mouse points nowhere, the last window "
+#~ "that was under the mouse has focus. New windows will not automatically "
+#~ "receive the focus.</li>\n"
+#~ "<li><em>Focus strictly under mouse:</em> Only the window under the mouse "
+#~ "pointer is active. If the mouse points nowhere, nothing has focus.</li>\n"
+#~ "</ul>\n"
+#~ "Note that 'Focus under mouse' and 'Focus strictly under mouse' prevent "
+#~ "certain features such as the Alt+Tab walk through windows dialog in the "
+#~ "KDE mode from working properly."
+#~ msgstr ""
+#~ "Die fokus beleid word gebruik om die aktiewe venster te bepaal. Dit is "
+#~ "die venster waarin jy kan werk. <ul> <li><em>Kliek om te fokus:</em> 'n "
+#~ "Venster word aktief wanneer jy binne dit kliek. Hierdie is die gedrag wat "
+#~ "jy dalk ken van ander beheer stelsels.</li> <li><em>Fokus volg muis:</em> "
+#~ "Deur die muis wyser aktief na 'n normale venster te skuif word dit "
+#~ "geaktiveer. Daar sal op nuwe vensters gefokus word sonder dat jy met die "
+#~ "muis op hulle hoef te fokus. Dit is baie prakties indien jy die muis baie "
+#~ "gebruik.</li> <li><em>Fokus onder muis:</em> Die venster wat onder die "
+#~ "muis wyser is, word aktief. As die muis wyser nêrens spesifiek wys nie, "
+#~ "is die laaste venster wat onder Die muis was gefokus. Daar word nie "
+#~ "automaties op nuwe vensters gefokus nie.</li> <li><em>Fokus streng onder "
+#~ "muis:</em> Slegs die venster onder die mus wyser is aktief. As die muis "
+#~ "wyser nêrens heen wys nie, word daar op niks gefokus nie.</ul>Let daarop "
+#~ "dat 'Fokus onder muis' en 'Fokus streng onder muis' sekere fuksies soos "
+#~ "die Alt+Oortjie kombinasie om deur vesnters te stap in KDE modus verhoed "
+#~ "om behoorlik te werk."
+
+#~ msgid ""
+#~ "When enabled, this feature activates the border of maximized windows and "
+#~ "allows you to move or resize them, just like for normal windows"
+#~ msgstr ""
+#~ "Wanneer aangeskakel, sal hierdie funksie die raam van vergrote vensters "
+#~ "aktiveer,en toelaat dat jy dit beweeg of hervergroot, net soos normale "
+#~ "vensters"
+
+#, fuzzy
+#~| msgid "Display content in &resizing windows"
+#~ msgid "Display borders on &maximized windows"
+#~ msgstr "Vertoon inhoud tydens hervergroot vensters"
+
+#, fuzzy
+#~| msgid "Minimize"
+#~ msgctxt "@item:inlistbox behavior on double click"
+#~ msgid "Minimize"
+#~ msgstr "Verklein"
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when clicking on the titlebar "
+#~ "or the frame of a window."
+#~ msgstr ""
+#~ "Hier jy kan muis kliek gedrag pasmaak wanneer gekliek word op die "
+#~ "titelbalk van die raam van 'n venster."
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Gedrag vir <em>regterkant</em> kliek binne die titelbalk of raam van 'n "
+#~ "<em>onaktiewe</em> venster."
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Gedrag vir <em>middelste</em> kliek binne die titelbalk of raam van 'n "
+#~ "<em>onaktiewe</em> venster."
+
+#~ msgid ""
+#~ "Here you can customize behavior when clicking on the maximize button."
+#~ msgstr ""
+#~ "Hier kan jy die gedrag pasmaak vir wanneer jy op die vergroot knoppie "
+#~ "kliek."
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when clicking on an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Hier kan jy die muis kliek gedrag pasmaak vir wanneer jy kliek binne 'n "
+#~ "onaktiewe binneste venster ('binneste' beteken: nie titelbalk, nie raam)."
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when clicking somewhere into a "
+#~ "window while pressing a modifier key."
+#~ msgstr ""
+#~ "Hier kan jy KDE se gedrag pasmaak vir wanneer jy iewers binne 'n venster "
+#~ "kliek, terwyl jy die verander sleutel inhou."
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no border snap zone"
+#~ msgid "none"
+#~ msgstr "geen"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no window snap zone"
+#~ msgid "none"
+#~ msgstr "geen"
+
+#, fuzzy
+#~| msgid "none"
+#~ msgctxt "no center snap zone"
+#~ msgid "none"
+#~ msgstr "geen"
+
+#, fuzzy
+#~| msgid "Nothing"
+#~ msgctxt "Floating layout, windows aren't tiled at all"
+#~ msgid "Floating"
+#~ msgstr "Niks"
+
+#~ msgid ""
+#~ "When this option is enabled, there will be a delay after which the window "
+#~ "the mouse pointer is over will become active (receive focus)."
+#~ msgstr ""
+#~ "Wanneer geaktiveer, sal daar 'n vertraging wees en daarna sal die venster "
+#~ "waaroor die muis wyser is automaties na voor kom."
+
+#~ msgid "Di&splay content in moving windows"
+#~ msgstr "Vertoon inhoud tydens vensters skuif"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's content to be fully shown while "
+#~ "moving it, instead of just showing a window 'skeleton'. The result may "
+#~ "not be satisfying on slow machines without graphic acceleration."
+#~ msgstr ""
+#~ "Aktiveer hierdie opsie as jy wil hê 'n venster se inhoud moet vertoon "
+#~ "terwyl dit geskuif word, in plaas daarvan om slegs die 'skelet' te "
+#~ "vertoon. Die resultaat mag dalk nie wees bevredigend wees op stadige "
+#~ "masjiene sonder grafiese versnelling nie."
+
+#~ msgid "Display content in &resizing windows"
+#~ msgstr "Vertoon inhoud tydens hervergroot vensters"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's content to be shown while "
+#~ "resizing it, instead of just showing a window 'skeleton'. The result may "
+#~ "not be satisfying on slow machines."
+#~ msgstr ""
+#~ "Aktiveer hierdie opsie as jy wil hê 'n venster se inhoud moet vertoon "
+#~ "terwyl dit hervergroot word, in plaas daarvan om slegs die 'skelet' te "
+#~ "vertoon. Die resultaat mag dalk nie wees bevredigend wees op stadige "
+#~ "masjiene nie."
+
+#~ msgid "Allow moving and resizing o&f maximized windows"
+#~ msgstr "Laat beweging en hervergrooting van vergrote vensters toe"
+
+#~ msgid "Show window list while switching windows"
+#~ msgstr "Wys venster lys terwyl venssters wissel"
+
+#~ msgid ""
+#~ "Hold down the Alt key and press the Tab key repeatedly to walk through "
+#~ "the windows on the current desktop (the Alt+Tab combination can be "
+#~ "reconfigured).\n"
+#~ "\n"
+#~ "If this checkbox is checked a popup widget is shown, displaying the icons "
+#~ "of all windows to walk through and the title of the currently selected "
+#~ "one.\n"
+#~ "\n"
+#~ "Otherwise, the focus is passed to a new window each time Tab is pressed, "
+#~ "with no popup widget.  In addition, the previously activated window will "
+#~ "be sent to the back in this mode."
+#~ msgstr ""
+#~ "Hou die Alt sleutel in en druk die Oortjie sleutel herhaaldelik om deur "
+#~ "die vensters op die huidige werkskerm te stap. (die Alt+Oortjie "
+#~ "kombinasie kan gekonfigureer word).\n"
+#~ "\n"
+#~ "As die kiesboks gekies is, sal 'n opspring toestel vertoon word, wat die "
+#~ "ikone van alle vensters wat deurgeloop kan word vertoon asook die naam "
+#~ "van die een wat huidig gekies is.\n"
+#~ "\n"
+#~ "Andersins word die fokus elke keer verskuif na 'n nuwe venster wanneer "
+#~ "die oortjie gedruk word, met geen opspring toestel. Die vorige "
+#~ "geaktiveerde venster word aan dieagterkant geplaas in hierdie mode."
+
+#~ msgid "&Traverse windows on all desktops"
+#~ msgstr "Versprei vensters op alle werkskerms"
+
+#~ msgid ""
+#~ "Leave this option disabled if you want to limit walking through windows "
+#~ "to the current desktop."
+#~ msgstr ""
+#~ "Los hierdie opsie afgeskakel as jy die deurstap deur vensters na die "
+#~ "huidige werkskerm wil beperk."
+
+#~ msgid "Desktop navi&gation wraps around"
+#~ msgstr "Werkskerm navigering omvou rondom"
+
+#~ msgid ""
+#~ "Enable this option if you want keyboard or active desktop border "
+#~ "navigation beyond the edge of a desktop to take you to the opposite edge "
+#~ "of the new desktop."
+#~ msgstr ""
+#~ "Aktiveer hierdie opsie as jy sleutelbord of aktiewe grens navigering "
+#~ "verby 'n rand van 'n werkskerm na die teenoorgestelde kant van die nuwe "
+#~ "werkskerm wil hê."
+
+#~ msgid "Popup desktop name on desktop &switch"
+#~ msgstr "Opspring werkskerm naam met werkskerm wisseling"
+
+#~ msgid ""
+#~ "Enable this option if you wish to see the current desktop name popup "
+#~ "whenever the current desktop is changed."
+#~ msgstr ""
+#~ "Aktiveer hierdie opsie as jy die werkskerm naam wil laat opspring wanneer "
+#~ "die huidige werkskerm verander."
+
+#~ msgctxt "Focus Stealing Prevention Level"
+#~ msgid "Normal"
+#~ msgstr "Normaal"
+
+#~ msgid "Active Desktop Borders"
+#~ msgstr "Aktiewe Werkskerm Grense"
+
+#~ msgid ""
+#~ "If this option is enabled, moving the mouse to a screen border will "
+#~ "change your desktop. This is e.g. useful if you want to drag windows from "
+#~ "one desktop to the other."
+#~ msgstr ""
+#~ "As hierdie opsie geaktiveer is, sal die beweeging van die muis na 'n "
+#~ "skerm grens jou werkskerm verander. Dit is Bv. bruikbaar as jy vensters "
+#~ "van een werkskerm na 'n ander toe trek."
+
+#~ msgid "D&isabled"
+#~ msgstr "Afgeskakel"
+
+#~ msgid "Only &when moving windows"
+#~ msgstr "Slegs wanneer vensters skuif"
+
+#~ msgid "A&lways enabled"
+#~ msgstr "Altyd geaktiveer"
+
+#~ msgid ""
+#~ "Here you can set a delay for switching desktops using the active borders "
+#~ "feature. Desktops will be switched after the mouse has been pushed "
+#~ "against a screen border for the specified number of milliseconds."
+#~ msgstr ""
+#~ "Hier jy kan 'n vertraging stel wanneer werkskerms gewissel word en die "
+#~ "aktiewe grens funksie gebruik word. Werkskerms sal slegs gewissel word "
+#~ "nadat daar met die muis teen 'n skerm grens gedruk was vir die vooraf "
+#~ "bepaalde aantal millisekondes."
+
+#~ msgid "Desktop &switch delay:"
+#~ msgstr "Werkskerm wissel vertraging:"
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when middle clicking into a window "
+#~ "while pressing the modifier key."
+#~ msgstr ""
+#~ "Hier kan jy KDE se gedrag pasmaak vir wanneer jy iewers binne 'n venster "
+#~ "middel kliek, terwyl jy die verander sleutel inhou."
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when double clicking on the "
+#~ "titlebar of a window."
+#~ msgstr ""
+#~ "Hier jy kan muis kliek gedrag pasmaak wanneer jy dubbel kliek op die "
+#~ "titelbalk van 'n venster."
+
+#~ msgid "Modifier key + left button:"
+#~ msgstr "Verander sleutel + links knoppie:"
+
+#~ msgid "Modifier key + right button:"
+#~ msgstr "Verander sleutel + regterkant knoppie:"
+
+#~ msgid "Modifier key + middle button:"
+#~ msgstr "Verander sleutel + middelste knoppie:"
+
+#~ msgid "Auto &raise"
+#~ msgstr "Outo lig"
+
+#~ msgid "Navigation"
+#~ msgstr "Navigering"
+
+#, fuzzy
+#~| msgid "Activate & Raise"
+#~ msgid "Active &mouse screen"
+#~ msgstr "Aktiveer & Lig"
+
+#~ msgid "Anima&te"
+#~ msgstr "Animasie"
+
+#~ msgid ""
+#~ "Animate the action of reducing the window to its titlebar (shading) as "
+#~ "well as the expansion of a shaded window"
+#~ msgstr ""
+#~ "Animasie van die aksie van verkleining van die venster na sy titelbalk "
+#~ "(skadu) asook die uitbreiding van 'n beskadude venster"
+
+#~ msgid "Animate minimi&ze and restore"
+#~ msgstr "Animasie van verklein en herstel"
+
+#~ msgid "Slow"
+#~ msgstr "Stadige"
+
+#~ msgid "Fast"
+#~ msgstr "Vinnige"
+
+#~ msgid ""
+#~ "Here you can set the speed of the animation shown when windows are "
+#~ "minimized and restored. "
+#~ msgstr ""
+#~ "Hier jy kan die spoed stel wat die animasie vertoon wanneer vensters "
+#~ "verklein en herstel word. "
+
+#~ msgid "&Translucency"
+#~ msgstr "Deurskynendheid"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt><b>It seems that alpha channel support is not available.</"
+#~ "b><br><br>Please make sure you have <a href=\"http://www.freedesktop.org/"
+#~ "\">Xorg &ge; 6.8</a>, and have installed the kompmgr that came with kwin."
+#~ "<br>Also, make sure you have the following entries in your XConfig (e.g. /"
+#~ "etc/X11/xorg.conf):<br><br><i>Section \"Extensions\"<br>Option \"Composite"
+#~ "\" \"Enable\"<br>EndSection</i><br><br>And if your GPU provides hardware-"
+#~ "accelerated Xrender support (mainly nVidia cards):<br><br><i>Option     "
+#~ "\"RenderAccel\" \"true\"</i><br>In <i>Section \"Device\"</i></qt>"
+#~ msgstr ""
+#~ "<qt><b>Dit lyk of alpha kanaal ondersteuning nie beskikbaar is nie.</"
+#~ "b><br><br>Maak asseblief seker dat jy 'n <a href=\"http://www.freedesktop."
+#~ "org/\">Xorg &ge; 6.8</a>, en dat die kompmgr wat saam met kwin kom "
+#~ "geinstalleer is.<br>Maak ook seker dat volgende inskrywings in jou "
+#~ "XConfig (bv. /etc/X11/xorg.conf) is:<br><br><i>Seksie \"Extensions"
+#~ "\"<br>Opsie \"Composite\" \"Enable\"<br>EndSeksie</i><br><br>Indien jou "
+#~ "GVE hardeware versnelling ondersteuning bied aan Xrender (hoofsaaklik "
+#~ "nVidia kaarte):<br><br><i>Opsie     \"RenderAccel\" \"true\"</i><br>In "
+#~ "<i>Seksie \"Device\"</i></qt>"
+
+#~ msgid "Apply translucency only to decoration"
+#~ msgstr "Wens deurskynheid net op versierings aan"
+
+#~ msgid "Dock windows:"
+#~ msgstr "Koppel Vensters"
+
+#~ msgid "Treat 'keep above' windows as active ones"
+#~ msgstr "Hanteer 'hou bo' vesnters as aktiewes"
+
+#~ msgid "Disable ARGB windows (ignores window alpha maps, fixes gtk1 apps)"
+#~ msgstr ""
+#~ "Skakel ARGB vensters af (Ignoreer venster alfa kaarte, regstellings gtk1 "
+#~ "applikasies)"
+
+#~ msgid "Opacity"
+#~ msgstr "Opacity"
+
+#~ msgid "Use shadows"
+#~ msgstr "Gebruik Skadus"
+
+#~ msgid "Active window size:"
+#~ msgstr "Aktiewe venster groote:"
+
+#~ msgid "Inactive window size:"
+#~ msgstr "Onaktiewe Venster grootte:"
+
+#~ msgid "Dock window size:"
+#~ msgstr "Koppel venster grootte:"
+
+#~ msgid "Vertical offset:"
+#~ msgstr "Vertikale verskil:"
+
+#~ msgid "Shadow color:"
+#~ msgstr "Skadu Kleur:"
+
+#~ msgid "Remove shadows on move"
+#~ msgstr "Verwyder skadus tydens skuif"
+
+#~ msgid "Remove shadows on resize"
+#~ msgstr "Verwyder skadus tydens hervergroot"
+
+#~ msgid "Shadows"
+#~ msgstr "Skadus"
+
+#~ msgid "Fade-in windows (including popups)"
+#~ msgstr "Verhelder vensters (insluitend springoppe)"
+
+#~ msgid "Fade between opacity changes"
+#~ msgstr "Verdof tydens onduidelike veranderings"
+
+#~ msgid "Effects"
+#~ msgstr "Effekte"
+
+#~ msgid "Use translucency/shadows"
+#~ msgstr "Gebruik deurskynend/skaduwees"
+
+#~ msgid ""
+#~ "<qt>Translucency support is new and may cause problems<br> including "
+#~ "crashes (sometimes the translucency engine, seldom even X).</qt>"
+#~ msgstr ""
+#~ "<qt>Die ondersteuning van Deurskynend is nuut, en dit kan probleme "
+#~ "veroorsaak<br> en dit kan ook omval (somtyds die deurskynend drywer, baie "
+#~ "selde X).</qt>"
+
+#~ msgid "Fade-in speed:"
+#~ msgstr "Bleik-in spoed:"
+
+#~ msgid "Fade-out speed:"
+#~ msgstr "Bleik-uit spoed"

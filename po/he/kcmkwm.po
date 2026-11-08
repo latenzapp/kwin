@@ -1,0 +1,1391 @@
+# translation of kcmkwm.po to hebrew
+# translation of kcmkwm.po to
+# KDE Hebrew Localization Project
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 1999-2002 Meni Livne <livne@kde.org>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+#
+# Diego Iastrubni <elcuco@kde.org>, 2004.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2006, 2008, 2009, 2012, 2013.
+# tahmar1900 <tahmar1900@gmail.com>, 2008.
+# elkana bardugo <ttv200@gmail.com>, 2016.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2026-07-14 09:17+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Lokalize 26.04.1\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr "מדיניות מיקוד חלון:"
+
+#: ui/Focus.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr "לחיצה למיקוד"
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr "המיקוד עובר לחלון כשלוחצים עליו."
+
+#: ui/Focus.qml:51
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr "מיקוד עוקב סמן"
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr "עם תנועת הסמן, המיקוד עובר לחלונות שתחתיו לאחר עיכוב שניתן להגדיר."
+
+#: ui/Focus.qml:56
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr "מיקוד תחת הסמן"
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr "המיקוד עובר לחלון שתחת הסמן, אפילו אם הסמן לא זז."
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+"בחירה ב<interface>מיקוד תחת הסמן</interface> תמנע את העברת המיקוד לחלק "
+"מהחלונות שמופיעים על המסך. עלול להוביל להקצאת המיקוד לחלונות לא רצויים. אפשר "
+"להשתמש אבל רצוי לנקוט במשנה זהירות."
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr "החלון האחרון שהיה במיקוד"
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr "לאחר הסגירה, להעביר את המיקוד אל:"
+
+#: ui/Focus.qml:86
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr "חלון תחת הסמן"
+
+#: ui/Focus.qml:115
+#, kde-format
+msgid "&Delay focus by:"
+msgstr "ה&שהיית מיקוד ב־:"
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr "%1 מ״ש"
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr " מ״ש"
+
+#: ui/Focus.qml:146
+#, kde-format
+msgid "Focus &stealing prevention:"
+msgstr "מניעת &גניבת מיקוד:"
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, kde-format
+msgid "None"
+msgstr "ללא"
+
+#: ui/Focus.qml:151
+#, kde-format
+msgid "Low"
+msgstr "נמוכה"
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr "בינונית"
+
+#: ui/Focus.qml:153
+#, kde-format
+msgid "High"
+msgstr "גבוהה"
+
+#: ui/Focus.qml:154
+#, kde-format
+msgid "Extreme"
+msgstr "הכי גבוהה"
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr "לעבור לשולחן העבודה הווירטואלי של החלון"
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr "בעת העברת המיקוד לחלון בשולחן עבודה וירטואלי אחר:"
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr "להעביר החלון לשולחן העבודה הווירטואלי הנוכחי"
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, kde-format
+msgid "Do nothing"
+msgstr "לא עושה כלום"
+
+#: ui/Focus.qml:207
+#, kde-format
+msgid "Raising windows:"
+msgstr "הגבהת חלונות:"
+
+#: ui/Focus.qml:208
+#, kde-format
+msgid "&Click raises focused window"
+msgstr "לחיצה מגביהה את החלון ש&עליו המיקוד"
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr "&קידום בריחוף, לאחר השהיה של:"
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr "התנהגות בריבוי מסכים:"
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr "ה&פרדת מיקוד מסך"
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr "מי&קוד"
+
+#: ui/main.qml:37
+#, kde-format
+msgid "Titlebar A&ctions"
+msgstr "פעולות &שורת הכותרת"
+
+#: ui/main.qml:43
+#, kde-format
+msgid "W&indow Actions"
+msgstr "פעולות &חלון"
+
+#: ui/main.qml:49
+#, kde-format
+msgid "Mo&vement & Placement"
+msgstr "ת&נועה והצבה"
+
+#: ui/MovementAndPlacement.qml:17
+#, kde-format
+msgctxt "@title:group"
+msgid "Movement"
+msgstr "תנועה"
+
+#: ui/MovementAndPlacement.qml:22
+#, kde-format
+msgid "Screen &edge snap zone:"
+msgstr "אזור ההצמדה של &קצה המסך:"
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr "%1 פיקסלים"
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr "פיקסלים"
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr "אזור הצמדה של חלו&ן:"
+
+#: ui/MovementAndPlacement.qml:79
+#, kde-format
+msgid "&Center snap zone:"
+msgstr "אזור ההצמדה של ה&מרכז:"
+
+#: ui/MovementAndPlacement.qml:106
+#, kde-format
+msgid "&Snap windows:"
+msgstr "ה&צמדת חלונות:"
+
+#: ui/MovementAndPlacement.qml:107
+#, kde-format
+msgid "Only when overlapping"
+msgstr "רק כשהם חופפים"
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr "הצבה"
+
+#: ui/MovementAndPlacement.qml:125
+#, kde-format
+msgid "Window &placement:"
+msgstr "ה&צבת חלון:"
+
+#: ui/MovementAndPlacement.qml:129
+#, kde-format
+msgid "Minimal Overlapping"
+msgstr "חפיפה מזערית"
+
+#: ui/MovementAndPlacement.qml:130
+#, kde-format
+msgid "Maximized"
+msgstr "מוגדלת"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "אקראית"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr "ממורכזת"
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr "בפינה השמאלית העליונה"
+
+#: ui/MovementAndPlacement.qml:134
+#, kde-format
+msgid "Under mouse"
+msgstr "מתחת לעכבר"
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr "הצבת תמונה בתוך תמונה"
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr "פתיחה בפינת המסך:"
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr "שמאלית עליונה"
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr "ימנית עליונה"
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr "שמאלית תחתונה"
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr "ימנית תחתונה"
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr "גבול:"
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr "מקדמת"
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr "דוחקת"
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, kde-format
+msgid "Raise/lower"
+msgstr "מגביהה/מנמיכה"
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr "מקטינה"
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr "סוגרת"
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, kde-format
+msgid "Window menu"
+msgstr "תפריט חלון"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, kde-format
+msgid "Focus and raise"
+msgstr "מיקוד והגבהה"
+
+#: ui/TitlebarActions.qml:31
+#, kde-format
+msgid "Focus and lower"
+msgstr "מיקוד והדחקה"
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, kde-format
+msgid "Focus"
+msgstr "מיקוד"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, kde-format
+msgid "Maximize"
+msgstr "מגדילה"
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr "מגדילה אנכית"
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, kde-format
+msgid "Horizontally maximize"
+msgstr "מגדילה אופקית"
+
+#: ui/TitlebarActions.qml:49
+#, kde-format
+msgid "Titlebar Actions"
+msgstr "פעולות שורת הכותרת"
+
+#: ui/TitlebarActions.qml:52
+#, kde-format
+msgid "&Double-click:"
+msgstr "לחיצה &כפולה:"
+
+#: ui/TitlebarActions.qml:63
+#, kde-format
+msgid "Show on all desktops"
+msgstr "מציגה בכל שולחנות העבודה"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, kde-format
+msgid "Mouse &wheel:"
+msgstr "&גלגלת העכבר:"
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, kde-format
+msgid "Maximize/restore"
+msgstr "מגדילה/משחזרת"
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, kde-format
+msgid "Keep above/below"
+msgstr "ריחוף מעל/צלילה מתחת"
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, kde-format
+msgid "Move to previous/next desktop"
+msgstr "עוברת לשולחן העבודה הקודם/הבא"
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, kde-format
+msgid "Change opacity"
+msgstr "משנה אטימות"
+
+#: ui/TitlebarActions.qml:102
+#, kde-format
+msgid "Titlebar and Frame Actions"
+msgstr "פעולות שורת הכותרת והמסגרת"
+
+#: ui/TitlebarActions.qml:111
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "במיקוד"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr "לא במיקוד"
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, kde-format
+msgid "&Left click:"
+msgstr "לחיצה &שמאלית:"
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr "לחיצה שמאלית על שורת כותרת או מסגרת שיש עליהן מיקוד"
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr "לחיצה שמאלית על שורת כותרת או מסגרת שאין עליהן מיקוד"
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, kde-format
+msgid "&Middle click:"
+msgstr "לחיצה &אמצעית:"
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr "לחיצה אמצעית על שורת כותרת או מסגרת שיש עליהן מיקוד"
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr "לחיצה אמצעית על שורת כותרת או מסגרת שאין עליהן מיקוד"
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr "לחיצה ימ&נית:"
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr "לחיצה ימנית על שורת כותרת או מסגרת שיש עליהן מיקוד"
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr "לחיצה ימנית על שורת כותרת או מסגרת שאין עליהן מיקוד"
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr "לחיצה כפולה על מסגרת החלון תגדיל אותו לחלוטין"
+
+#: ui/TitlebarActions.qml:248
+#, kde-format
+msgid "Maximize Button Actions"
+msgstr "פעולות כפתור הגדלה"
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, kde-format
+msgid "L&eft click:"
+msgstr "לחיצה &שמאלית:"
+
+#: ui/TitlebarActions.qml:268
+#, kde-format
+msgid "Middle c&lick:"
+msgstr "לחיצה אמצ&עית:"
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr "ל&חיצה ימנית:"
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr "מיקוד, הגבהה ולחיצה מבעד"
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr "מיקוד ולחיצה מבעד"
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr "מזיזה"
+
+#: ui/WindowActions.qml:28
+#, kde-format
+msgid "Focus, raise, and move"
+msgstr "ממקדת, מקדמת ומזיזה"
+
+#: ui/WindowActions.qml:29
+#, kde-format
+msgid "Focus, raise, and resize"
+msgstr "ממקדת, מקדמת ומשנה גודל"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr "משנה גודל"
+
+#: ui/WindowActions.qml:35
+#, kde-format
+msgid "Decrease opacity"
+msgstr "מנמיכה אטימות"
+
+#: ui/WindowActions.qml:36
+#, kde-format
+msgid "Increase opacity"
+msgstr "מגבירה אטימות"
+
+#: ui/WindowActions.qml:42
+#, kde-format
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr "פעולות פנים חלון שאינו במיקוד"
+
+#: ui/WindowActions.qml:50
+#, kde-format
+msgid "Focus, click through, and raise on release"
+msgstr "ממקדת, לוחצת מבעד ומגביהה עם השחרור"
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr "גלילה"
+
+#: ui/WindowActions.qml:104
+#, kde-format
+msgid "Focus and scroll"
+msgstr "ממקדת וגוללת"
+
+#: ui/WindowActions.qml:105
+#, kde-format
+msgid "Focus, raise, and scroll"
+msgstr "ממקדת, מקדמת וגוללת"
+
+#: ui/WindowActions.qml:120
+#, kde-format
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr "פעולות חלון פנימי, שורת הכותרת והמסגרת"
+
+#: ui/WindowActions.qml:123
+#, kde-format
+msgid "Mo&difier key:"
+msgstr "מקש ה&חלפה:"
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr "מטא (כפתור Windows)"
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr "Alt"
+
+#: ui/WindowActions.qml:170
+#, kde-format
+msgid "Middle &click:"
+msgstr "לחיצה אמ&צעית:"
+
+#: ui/WindowActions.qml:202
+#, kde-format
+msgid "Mo&use wheel:"
+msgstr "גלגלת ה&עכבר:"
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "בשורה זו אפשר להתאים אישית את התנהגות הלחיצה השמאלית על פנים חלון לא פעיל "
+#~ "(‚פנים’ מתייחס לכל מה שאינו שורת הכותרת ולא המסגרת)."
+
+#~ msgid "Activate, raise and pass click"
+#~ msgstr "מפעילה, מקדמת ומעבירה לחיצה"
+
+#~ msgid "Activate and pass click"
+#~ msgstr "הפעלה והעבר לחיצה"
+
+#~ msgid "Activate"
+#~ msgstr "מפעילה"
+
+#~ msgid "Activate and raise"
+#~ msgstr "מפעילה ומקדמת"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "בשורה זו אפשר להתאים אישית את התנהגות הלחיצה האמצעית על פנים חלון לא פעיל "
+#~ "(‚פנים’ פירושו כל מה שאינו שורת הכותרת או המסגרת)."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into an "
+#~ "inactive inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "בשורה זו אפשר להתאים אישית את התנהגות הלחיצה הימנית על פנים חלון לא פעיל "
+#~ "(‚פנים’ פירושו כל מה שאינו שורת הכותרת או המסגרת)."
+
+#~ msgid ""
+#~ "In this row you can customize behavior when scrolling into an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "בשורה זו אפשר להתאים אישית את התנהגות הגלילה על פנים חלון לא פעיל (‚פנים’ "
+#~ "פירושו כל מה שאינו שורת הכותרת או המסגרת)."
+
+#~ msgid ""
+#~ "Here you select whether holding the Meta key or Alt key will allow you to "
+#~ "perform the following actions."
+#~ msgstr ""
+#~ "כאן אפשר לבחור אם החזקת המקשים מטא או Alt לחוצים תאפשר לך לבצע את הפעולות "
+#~ "הבאות."
+
+#~ msgid "  + "
+#~ msgstr "  + "
+
+#~ msgid ""
+#~ "In this row you can customize left click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "בשורה זו אפשר להתאים אישית את התנהגות הלחיצה השמאלית על כותרת או מסגרת "
+#~ "החלון."
+
+#~ msgid "Toggle raise and lower"
+#~ msgstr "מקדמת או מדחיקה"
+
+#~ msgid ""
+#~ "In this row you can customize middle click behavior when clicking into "
+#~ "the titlebar or the frame."
+#~ msgstr ""
+#~ "בשורה זו אפשר להתאים את פעולת הלחיצה האמצעית על שורת הכותרת או המסגרת."
+
+#~ msgid ""
+#~ "In this row you can customize right click behavior when clicking into the "
+#~ "titlebar or the frame."
+#~ msgstr ""
+#~ "בשורה זו אפשר להתאים את פעולת הלחיצה הימנית על שורת הכותרת או המסגרת."
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when scrolling with the mouse wheel "
+#~ "in a window while pressing the modifier key."
+#~ msgstr ""
+#~ "כאן אפשר להתאים את ההתנהגות של KDE בעת גלילת העכבר על חלון בזמן לחיצה על "
+#~ "מקש החלפה."
+
+#~ msgid ""
+#~ "<html><head/><body><p>The placement policy determines where a new window "
+#~ "will appear on the desktop.</p><ul style=\"margin-top: 0px; margin-"
+#~ "bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"
+#~ "\"><li style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Smart</span> will try to achieve a minimum overlap "
+#~ "of windows</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Maximizing</span> will try to maximize "
+#~ "every window to fill the whole screen. It might be useful to selectively "
+#~ "affect placement of some windows using the window-specific settings.</"
+#~ "li><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+#~ "font-style:italic;\">Random</span> will use a random position</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Centered</span> will place the window centered</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">Zero-cornered</span> will place the window in the top-"
+#~ "left corner</li><li style=\" margin-top:0px; margin-bottom:12px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">Under mouse</span> will place the window "
+#~ "under the pointer</li></ul></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>מדיניות ההצבה קובעת איפה יופיעו חלונות חדשים על "
+#~ "שולחן העבודה.</p><ul style=\"margin-top: 0px; margin-bottom: 0px; margin-"
+#~ "left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" margin-"
+#~ "top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+#~ "indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">חכמה</"
+#~ "span> תנסה למזער את חפיפת החלונות</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">מוגדלת</span> תנסה "
+#~ "להגדיל כל חלון כך שיכסה את כל המסך. יכול להיות שימושי כדי להשפיע באופן "
+#~ "נקודתי על חלק מהחלונות בעזרת הגדרות נקודתיות לחלון.</li><li style=\" "
+#~ "margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+#~ "block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~ "\">אקראית</span> תשתמש במקום אקראי</li><li style=\" margin-top:0px; "
+#~ "margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+#~ "text-indent:0px;\"><span style=\" font-style:italic;\">ממורכזת</span> "
+#~ "תציב את החלון במרכז</li><li style=\" margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-style:italic;\">פינה אפס</span> תציב את החלון "
+#~ "בפינה הימנית העליונה</li><li style=\" margin-top:0px; margin-bottom:12px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-style:italic;\">מתחת לעכבר</span> תציב את החלון "
+#~ "מתחת לעכבר</li></ul></body></html>"
+
+#~ msgid ""
+#~ "When turned on, apps which are able to remember the positions of their "
+#~ "windows are allowed to do so. This will override the window placement "
+#~ "mode defined above."
+#~ msgstr ""
+#~ "כשהאפשרות פעילה, יישומים שיכולים לזכור את מקום החלונות שלהם מורשים לעשות "
+#~ "זאת. הגדרה זו דורסת את מצב הצבת החלונות שמוגדר להלן."
+
+#~ msgid ""
+#~ "Allow apps to remember the positions of their own windows, if they "
+#~ "support it"
+#~ msgstr "לאפשר ליישומים לזכור את מקומות החלונות שלהם, אם הם תומכים בזה"
+
+#~ msgid "Virtual Desktop behavior:"
+#~ msgstr "התנהגות שולחן עבודה וירטואלי:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>This setting controls what happens when an open "
+#~ "window located on a Virtual Desktop other than the current one is "
+#~ "activated. </p><p><span style=\" font-style:italic;\">Switch to that "
+#~ "Virtual Desktop</span> will switch to the Virtual Desktop where the "
+#~ "window is currently located. </p><p><span style=\" font-style:italic;"
+#~ "\">Bring window to current Virtual Desktop</span> will cause the window "
+#~ "to jump to the active Virtual Desktop. </p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>הגדרה זו שולטת מה קורה כשחלון פתוח ממוקם בשולחן "
+#~ "עבודה וירטואלי שאינו הפעיל. </p><p><span style=\" font-style:italic;"
+#~ "\">לעבור לשולחן העבודה הווירטואלי הזה</span> תעביר לשולחן העבודה "
+#~ "הווירטואלי בו נמצא החלון הזה. </p><p><span style=\" font-style:italic;"
+#~ "\">העברת החלון לשולחן העבודה הווירטואלי הנוכחי</span> תגרום לחלון לקפוץ "
+#~ "לשולחן העבודה הווירטואלי הפעיל. </p></body></html>"
+
+#~ msgid ""
+#~ "With this option you can specify how and when windows will be focused."
+#~ msgstr "עם האפשרות הזאת אפשר לציין איך ומתי החלונות יקבלו מיקוד."
+
+#~ msgid "Click to focus (mouse precedence)"
+#~ msgstr "לחיצה למיקוד (עדיפות לעכבר)"
+
+#~ msgid "Focus follows mouse (mouse precedence)"
+#~ msgstr "מיקוד עוקב עכבר (עדיפות לעכבר)"
+
+#~ msgid "Focus strictly under mouse"
+#~ msgstr "מיקוד עוקב עכבר באדיקות"
+
+#~ msgid ""
+#~ "This is the delay after which the window the mouse pointer is over will "
+#~ "automatically receive focus."
+#~ msgstr "משך ההשהיה שלאחריה החלון שעליו עומד סמן העכבר יקבל מיקוד אוטומטית."
+
+#~ msgid ""
+#~ "<html><head/><body><p>This option specifies how much KWin will try to "
+#~ "prevent unwanted focus stealing caused by unexpected activation of new "
+#~ "windows. (Note: This feature does not work with the <span style=\" font-"
+#~ "style:italic;\">Focus under mouse</span> or <span style=\" font-style:"
+#~ "italic;\">Focus strictly under mouse</span> focus policies.) </p><ul "
+#~ "style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-"
+#~ "right: 0px; -qt-list-indent: 1;\"><li style=\" margin-top:12px; margin-"
+#~ "bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">None:</span> Prevention "
+#~ "is turned off and new windows always become activated.</li><li style=\" "
+#~ "margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+#~ "block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~ "\">Low:</span> Prevention is enabled; when some window does not have "
+#~ "support for the underlying mechanism and KWin cannot reliably decide "
+#~ "whether to activate the window or not, it will be activated. This setting "
+#~ "may have both worse and better results than the medium level, depending "
+#~ "on the applications.</li><li style=\" margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-style:italic;\">Medium:</span> Prevention is "
+#~ "enabled.</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">High:</span> New windows get activated only "
+#~ "if no window is currently active or if they belong to the currently "
+#~ "active application. This setting is probably not really usable when not "
+#~ "using mouse focus policy.</li><li style=\" margin-top:0px; margin-"
+#~ "bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+#~ "indent:0px;\"><span style=\" font-style:italic;\">Extreme:</span> All "
+#~ "windows must be explicitly activated by the user.</li></ul><p>Windows "
+#~ "that are prevented from stealing focus are marked as demanding attention, "
+#~ "which by default means their taskbar entry will be highlighted. This can "
+#~ "be changed in the Notifications control module.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>אפשרות זו מציינת עד כמה KWin ינסה למנוע גניבת מיקוד "
+#~ "שנגרם על ידי הפעלה לא צפויה של חלונות חדשים. (לתשומת ליבך: היכולת הזאת לא "
+#~ "עובדת עם מדיניויות המיקוד <span style=\" font-style:italic;\">מיקוד מתחת "
+#~ "לעכבר</span> או <span style=\" font-style:italic;\">מיקוד מתחת לעכבר "
+#~ "באדיקות</span>.) </p><ul style=\"margin-top: 0px; margin-bottom: 0px; "
+#~ "margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" "
+#~ "margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -"
+#~ "qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;"
+#~ "\">ללא:</span> המניעה כבויה וחלונות חדשים תמיד יהפכו פעילים.</li><li "
+#~ "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "style:italic;\">נמוכה:</span> מניעה מופעלת, כאשר לחלון מסוים אין תמיכה "
+#~ "במנגנון שמאחורי הקלעים KWin לא יכול להחליט בצורה חד־משמעית האם להפעיל את "
+#~ "החלון או לא, הוא יופעל. להגדרה זו עשויות להיות תוצאות טובות או גרועות "
+#~ "יותר מהרמה הממוצעת, כתלות ביישומים.</li><li style=\" margin-top:0px; "
+#~ "margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+#~ "text-indent:0px;\"><span style=\" font-style:italic;\">בינונית:</span> "
+#~ "מניעה מופעלת.</li><li style=\" margin-top:0px; margin-bottom:0px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-style:italic;\">גבוהה:</span> חלונות חדשים יופעלו רק אם אף "
+#~ "חלון לא פעיל כרגע או אם הם שייכים ליישום שפעיל כרגע. הגדרה זאת כנראה לא "
+#~ "ממש שימושית כשלא משתמשים במדיניות מיקוד עכבר.</li><li style=\" margin-"
+#~ "top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-"
+#~ "indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">קיצונית:"
+#~ "</span> את כל החלונות המשתמש חייב להפעיל במפורש.</li></ul><p>חלונות "
+#~ "שנמנעת מהם חטיפת מיקוד מסומנים כדורשים תשומת לב, מה שאומר כברירת מחדל "
+#~ "שרשומת שורת המשימות שלהם תידלק. אפשר לשנות את זה דרך מודול בקרת ההתראות.</"
+#~ "p></body></html>"
+
+#~ msgid ""
+#~ "When this option is enabled, the active window will be brought to the "
+#~ "front when you click somewhere into the window contents. To change it for "
+#~ "inactive windows, you need to change the settings in the Actions tab."
+#~ msgstr ""
+#~ "כשאפשרות זו פעילה, חלונות יקודמו לחזית אוטומטית עקב לחיצה במקום כלשהו על "
+#~ "תוכן החלון. כדי לשנות את זה עבור חלונות לא פעילים יש לגשת להגדרות בלשונית "
+#~ "הפעולות."
+
+#~ msgid ""
+#~ "When this option is enabled, a window in the background will "
+#~ "automatically come to the front when the mouse pointer has been over it "
+#~ "for some time."
+#~ msgstr ""
+#~ "כשאפשרות זו פעילה, חלון ברקע יקודם לחזית כשסמן העכבר שהה מעליו למשך זמן "
+#~ "מה."
+
+#~ msgid ""
+#~ "This is the delay after which the window that the mouse pointer is over "
+#~ "will automatically come to the front."
+#~ msgstr ""
+#~ "משך ההשהיה שלאחריה יובא לחזית באופן אוטומטי החלון שמעליו נמצא מצביע העכבר."
+
+#~ msgid ""
+#~ "When this option is enabled, focus operations are limited only to the "
+#~ "active screen"
+#~ msgstr "כשאפשרות זו פעילה, פעולות מיקוד מוגבלות רק למסך הפעיל"
+
+#~ msgid "Window activation policy description"
+#~ msgstr "תיאור מדיניות הפעלת חלונות"
+
+#~ msgid "Adva&nced"
+#~ msgstr "מת&קדם"
+
+#~ msgid "&Titlebar Actions"
+#~ msgstr "פעולות &שורת הכותרת"
+
+#~ msgid "Window Actio&ns"
+#~ msgstr "פעולות חלון"
+
+#~ msgid "Behavior on <em>double</em> click into the titlebar."
+#~ msgstr "התנהגות לחיצה <em>כפולה</em> על שורת הכותרת."
+
+#~ msgid "Behavior on <em>mouse wheel</em> scroll over the titlebar."
+#~ msgstr "התנהגות בעת סיבוב <em>גלגלת העכבר</em> על שורת הכותרת."
+
+#~ msgid "Active"
+#~ msgstr "פעיל"
+
+#~ msgid "Inactive"
+#~ msgstr "לא פעיל"
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "התנהגות לחיצה <em>שמאלית</em> על שורת הכותרת או המסגרת של חלון <em>פעיל</"
+#~ "em>."
+
+#~ msgid ""
+#~ "Behavior on <em>left</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "התנהגות לחיצה <em>שמאלית</em> על שורת הכותרת או המסגרת של חלון <em>לא "
+#~ "פעיל</em>."
+
+#~ msgid "Activate and lower"
+#~ msgstr "מפעילה ודוחקת"
+
+#~ msgid "Behavior on <em>left</em> click onto the maximize button."
+#~ msgstr "התנהגות לחיצה <em>שמאלית</em> על כפתור ההגדלה."
+
+#~ msgid "Behavior on <em>middle</em> click onto the maximize button."
+#~ msgstr "התנהגות לחיצה <em>אמצעית</em> על כפתור ההגדלה."
+
+#~ msgid "Behavior on <em>right</em> click onto the maximize button."
+#~ msgstr "התנהגות לחיצה <em>ימנית</em> על כפתור ההגדלה."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for screen edges, i.e. the 'strength' of "
+#~ "the magnetic field which will make windows snap to the border when moved "
+#~ "near it."
+#~ msgstr ""
+#~ "כאן אפשר להגדיר את אזור ההצמדה של קצוות המסך, למשל: ה‚עוצמה’ של השדה "
+#~ "המגנטי שגורם לחלונות להיצמד למסגרת כשהם מועברים לידה."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for windows, i.e. the 'strength' of the "
+#~ "magnetic field which will make windows snap to each other when they are "
+#~ "moved near another window."
+#~ msgstr ""
+#~ "כאן אפשר להגדיר את אזור ההצמדה של חלונות, כלומר את ‚עוצמת’ השדה המגנטי "
+#~ "שיגרום לחלונות להיצמד זה לזה כשהם מועברים ליד חלון אחר."
+
+#~ msgid ""
+#~ "Here you can set the snap zone for the screen center, i.e. the 'strength' "
+#~ "of the magnetic field which will make windows snap to the center of the "
+#~ "screen when moved near it."
+#~ msgstr ""
+#~ "כאן אפשר להגדיר את אזור ההצמדה של מרכז המסך, כלומר את ‚עוצמת’ השדה המגנטי "
+#~ "שיגרום לחלונות להיצמד למרכז המסך כאשר הם מועברים לידו."
+
+#~ msgid ""
+#~ "Here you can set that windows will be only snapped if you try to overlap "
+#~ "them, i.e. they will not be snapped if the windows comes only near "
+#~ "another window or border."
+#~ msgstr ""
+#~ "כאן אפשר להגדיר שחלונות יוצמדו רק כשמנסים לערום אותם, כלומר, הם לא יוצמדו "
+#~ "אם החלונות רק מתקרבים לחלון או גבול אחר."
+
+#~ msgid ""
+#~ "<em>Click to focus:</em> A window becomes active when you click into it. "
+#~ "This behavior is common on other operating systems and likely what you "
+#~ "want."
+#~ msgstr ""
+#~ "<em>לחיצה למיקוד:</em> חלון יהפוך להיות פעיל בלחיצה עליו. התנהגות זו "
+#~ "נפוצה במערכות הפעלה אחרות וכנראה שזה מה שיהיה לך הכי מוכר."
+
+#~ msgid ""
+#~ "<em>Click to focus (mouse precedence):</em> Mostly the same as <em>Click "
+#~ "to focus</em>. If an active window has to be chosen by the system (eg. "
+#~ "because the currently active one was closed) the window under the mouse "
+#~ "is the preferred candidate. Unusual, but possible variant of <em>Click to "
+#~ "focus</em>."
+#~ msgstr ""
+#~ "<em>לחיצה למיקוד (עדיפות לעכבר):</em> מאוד דומה ל<em>לחיצה למיקוד</em>. "
+#~ "אם חובה על המערכת לבחור בחלון פעיל (למשל: כיוון שהחלון הנוכחי נסגר) החלון "
+#~ "שמתחת לעכבר הוא המועמד המועדף. חריג, אבל חידוד אפשרי של <em>לחיצה למיקוד</"
+#~ "em>."
+
+#~ msgid ""
+#~ "<em>Focus follows mouse:</em> Moving the mouse onto a window will "
+#~ "activate it. Eg. windows randomly appearing under the mouse will not gain "
+#~ "the focus. <em>Focus stealing prevention</em> takes place as usual. Think "
+#~ "as <em>Click to focus</em> just without having to actually click."
+#~ msgstr ""
+#~ "<em>מיקוד עוקב עכבר:</em> העברת העכבר לתוך חלון תפעיל אותו. <em>מניעת "
+#~ "גניבת מיקוד</em> מתרחשת כרגיל. אפשר לחשוב על זה כעל <em>לחיצה למיקוד</em> "
+#~ "רק בלי שצריך ללחוץ בפועל."
+
+#~ msgid ""
+#~ "This is mostly the same as <em>Focus follows mouse</em>. If an active "
+#~ "window has to be chosen by the system (eg. because the currently active "
+#~ "one was closed) the window under the mouse is the preferred candidate. "
+#~ "Choose this, if you want a hover controlled focus."
+#~ msgstr ""
+#~ "זה מאוד דומה ל<em>מיקוד עוקב עכבר</em>. אם חובה על המערכת לבחור בחלון "
+#~ "פעיל (למשל: כיוון שהחלון הנוכחי נסגר) החלון שמתחת לעכבר הוא המועמד "
+#~ "המועדף. כדי לעבוד עם מיקוד שנשלט בריחוף, יש לבחור בזה."
+
+#~ msgid ""
+#~ "<em>Focus under mouse:</em> The focus always remains on the window under "
+#~ "the mouse.<br/><strong>Warning:</strong> <em>Focus stealing prevention</"
+#~ "em> and the <em>tabbox ('Alt+Tab')</em> contradict the activation policy "
+#~ "and will not work. You very likely want to use <em>Focus follows mouse "
+#~ "(mouse precedence)</em> instead!"
+#~ msgstr ""
+#~ "<em>מיקוד מתחת לעכבר:</em> המיקוד תמיד נשאר על החלון שמתחת לעכבר.<br/"
+#~ "><strong>אזהרה:</strong> <em>מניעת גניבת מיקוד</em> ו<em>תיבת הטאב (‚Alt"
+#~ "+Tab’)</em> סותרות את מדיניות ההפעלה ולא תעבודנה. סביר מאוד להניח שעדיף "
+#~ "לך להשתמש ב<em>מיקוד עוקב עכבר (עדיפות לעכבר)</em> במקום!"
+
+#~ msgid ""
+#~ "<em>Focus strictly under mouse:</em> The focus is always on the window "
+#~ "under the mouse (in doubt nowhere) very much like the focus behavior in "
+#~ "an unmanaged legacy X11 environment.<br/><strong>Warning:</strong> "
+#~ "<em>Focus stealing prevention</em> and the <em>tabbox ('Alt+Tab')</em> "
+#~ "contradict the activation policy and will not work. You very likely want "
+#~ "to use <em>Focus follows mouse (mouse precedence)</em> instead!"
+#~ msgstr ""
+#~ "<em>מיקוד עוקב עכבר באדיקות:</em> המיקוד תמיד על החלון שמתחת לעכבר (במקרה "
+#~ "של ספק בשום מקום) מאוד דומה להתנהגות המיקוד בסביבת X11 מיושנת ובלתי "
+#~ "מנוהלת.<br/><strong>אזהרה:</strong> <em>מניעת גניבת מיקוד</em> ו<em>תיבת "
+#~ "טאב (‚Alt+Tab’)</em> סותרות את מדיניות ההפעלה ולא תעבודנה. סביר מאוד "
+#~ "להניח שעדיף לך להשתמש ב<em>מיקוד עוקב עכבר (עדיפות לעכבר)</em> במקום!"
+
+#~ msgid ""
+#~ "Note that \"Activate, pass click and raise on release\" doesn't work on "
+#~ "X11, and falls back to \"Activate, raise and pass click\" instead"
+#~ msgstr ""
+#~ "נא לשים לב ש„הפעלה, העברת לחיצה והגבהה עם השחרור” לא עובד ב־X11, ונסוג "
+#~ "ל„הפעלה, קידום והעברת לחיצה” במקום"
+
+#~ msgid "Show actions menu"
+#~ msgstr "הצגת תפריט פעולות"
+
+#~ msgid "Shade/unshade"
+#~ msgstr "הצללה/הבהרה"
+
+#~ msgid "Window &unshading:"
+#~ msgstr "ה&בהרת חלונות:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>If this option is enabled, a shaded window will "
+#~ "unshade automatically when the mouse pointer has been over the titlebar "
+#~ "for some time.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>אם אפשרות זו פעילה, חלון מוצלל יובהר אוטומטית כשסמן "
+#~ "העכבר מרחף מעל שורת הכותרת שלו למשך זמן מה.</p></body></html>"
+
+#~ msgid "On titlebar hover after:"
+#~ msgstr "עם ריחוף מעל שורת הכותרת לאחר:"
+
+#~ msgid ""
+#~ "Sets the time in milliseconds before the window unshades when the mouse "
+#~ "pointer goes over the shaded window."
+#~ msgstr ""
+#~ "הגדרת הזמן במילישניות בטרם הבהרת החלון כשסמן העכבר עובר מעל חלון מוצלל."
+
+#~ msgid "Shade"
+#~ msgstr "גלילה"
+
+#~ msgid "&Special windows:"
+#~ msgstr "חלונות מיוח&דים:"
+
+#~ msgid ""
+#~ "When turned on, utility windows (tool windows, torn-off menus,...) of "
+#~ "inactive applications will be hidden and will be shown only when the "
+#~ "application becomes active. Note that applications have to mark the "
+#~ "windows with the proper window type for this feature to work."
+#~ msgstr ""
+#~ "כאשר אפשרות זו מופעלת, חלונות שירות (חלונות של כלים, תפריטים צצים, …) של "
+#~ "יישומים לא פעילים יוסתרו, ויוצגו רק כאשר היישום הופך לפעיל. כדאי לשים לב "
+#~ "שיישומים צריכים לסמן את החלונות עם סוג החלון המתאים, כדי שאפשרות זו תעבוד."
+
+#~ msgid "Hide utility windows for inactive applications"
+#~ msgstr "הסתרת חלונות שירות עבור יישומים לא פעילים"
+
+#~ msgid ""
+#~ "When this option is enabled, the active screen (where new windows appear, "
+#~ "for example) is the screen containing the mouse pointer. When disabled, "
+#~ "the active screen is the screen containing the focused window."
+#~ msgstr ""
+#~ "כשאפשרות זו פעילה, המסך הפעיל (בו מופיעים חלונות חדשים למשל) הוא המסך בו "
+#~ "מופיע סמן העכבר. כשהאפשרות כבויה, החלון הפעיל הוא החלון שמכיל את החלון "
+#~ "שעליו המיקוד."
+
+#~ msgid "Active screen follows &mouse"
+#~ msgstr "המסך הפעיל עוקב אחרי ה&עכבר"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "צוות התרגום של KDE ישראל"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde-l10n-he@kde.org"
+
+#~ msgid "Window Behavior Configuration Module"
+#~ msgstr "מודול הגדרת פעולת חלונות"
+
+#~ msgid "(c) 1997 - 2002 KWin and KControl Authors"
+#~ msgstr "(c) 1997 - 2002 KWin and KControl Authors"
+
+#~ msgid "Matthias Ettrich"
+#~ msgstr "Matthias Ettrich"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Cristian Tibirna"
+#~ msgstr "Cristian Tibirna"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Matthias Kalle Dalheimer"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Daniel Molkentin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid "Pat Dowler"
+#~ msgstr "Pat Dowler"
+
+#~ msgid "Bernd Wuebben"
+#~ msgstr "Bernd Wuebben"
+
+#~ msgid "Matthias Hoelzer-Kluepfel"
+#~ msgstr "Matthias Hoelzer-Kluepfel"
+
+#~ msgid ""
+#~ "<p><h1>Window Behavior</h1> Here you can customize the way windows behave "
+#~ "when being moved, resized or clicked on. You can also specify a focus "
+#~ "policy as well as a placement policy for new windows.</p> <p>Please note "
+#~ "that this configuration will not take effect if you do not use KWin as "
+#~ "your window manager. If you do use a different window manager, please "
+#~ "refer to its documentation for how to customize window behavior.</p>"
+#~ msgstr ""
+#~ "<p><h1>פעולת חלונות</h1>כאן באפשרותך להתאים אישית את הדרך שבה יתפקדו "
+#~ "חלונות בעת הזזה, שינוי גודל או לחיצה עליהם. באפשרותך גם לציין מדיניות "
+#~ "התמקדות ומדיניות למיקום חלונות חדשים. </p> ‏<p>שים לב שהגדרות אלה לא יהיו "
+#~ "בתוקף אם אינך משתמש ב־KWin בתור מנהל החלונות שלך. אם אתה משתמש במנהל "
+#~ "חלונות אחר, פנה לתיעוד שלו בנוגע להתאמה אישית של פעולת החלונות. </p> "
+
+#, fuzzy
+#~| msgid "Cascade"
+#~ msgid "Cascaded"
+#~ msgstr "מדורג"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's geometry to be displayed while "
+#~ "it is being moved or resized. The window position relative to the top-"
+#~ "left corner of the screen is displayed together with its size."
+#~ msgstr ""
+#~ "הפעל את אפשרו זו, אם ברצונך שגודל החלון יוצג כאשר החלון מוזז או גודלו "
+#~ "משתנה. מיקום החלון יהיה יחסי לפינה שמאלית עליונה של המסך ויוצג ביחד עם "
+#~ "הגודל שלו."
+
+#, fuzzy
+#~| msgid "Display window &geometry when moving or resizing"
+#~ msgid "Display when moving or resizing"
+#~ msgstr "הצג &גודל החלון בעת הזז או שינוי גודל"
+
+#~ msgid "Maximize (vertical only)"
+#~ msgstr "הגדל (אנכית בלבד)"
+
+#~ msgid "Maximize (horizontal only)"
+#~ msgstr "הגדל (אופקית בלבד)"
+
+#~ msgid "Smart"
+#~ msgstr "חכם"
+
+#~ msgid "Maximizing"
+#~ msgstr "מוגדל"
+
+#, fuzzy
+#~| msgid "Zero-Cornered"
+#~ msgid "Zero-cornered"
+#~ msgstr "בפינת המסך"
+
+#, fuzzy
+#~| msgid "Switch to Window Tab to the Left/Right"
+#~ msgid "Switch to window tab to the left/right"
+#~ msgstr "עבור לכרטיסיית חלון ימנית/שמאלית"
+
+#, fuzzy
+#~| msgid "Window Tabbing"
+#~ msgid "Window tabbing:"
+#~ msgstr "קיבוץ חלונות"
+
+#~ msgid ""
+#~ "When turned on immediately switch to any new window tabs that were "
+#~ "automatically added to the current group."
+#~ msgstr ""
+#~ "כאשר אפשרות זו מופעלת, מחליף מיידית לכל כרטיסית חלון חדש שנוספה אוטומטית "
+#~ "לקבוצה הנוכחית"
+
+#, fuzzy
+#~| msgid "Switch to automatically grouped windows immediately"
+#~ msgid "&Switch to automatically grouped windows immediately"
+#~ msgstr "החלף לקיבוץ חלונות מיידית"
+
+#~ msgid "When turned on hide all tabs that are not active from the taskbar."
+#~ msgstr ""
+#~ "כאשר אפשרות זו מופעלת, מפעיל את הסתרת כל הכרטיסיות שאינם פעילות משורת "
+#~ "המשימות."
+
+#, fuzzy
+#~| msgid "Hide inactive window tabs from the taskbar"
+#~ msgid "&Hide inactive window tabs from the taskbar"
+#~ msgstr "הסתר כרטיסיות של חלונות לא פעילים משורת משימות"
+
+#~ msgid ""
+#~ "When turned on attempt to automatically detect when a newly opened window "
+#~ "is related to an existing one and place them in the same window group."
+#~ msgstr ""
+#~ "כאשר אפשרות זו מופעלת, מנסה לזהות אוטומטית אם חלון חדש שנפתח קשור לאחד "
+#~ "קיים וממקם אותם באותה קבוצת חלונות."
+
+#, fuzzy
+#~| msgid "Start Window Tab Drag"
+#~ msgid "Start window tab drag"
+#~ msgstr "התחל את גרירת הלשונית של החלון"
+
+#~ msgid "Ri&ght button:"
+#~ msgstr "לחצן &ימני:"
+
+#~ msgid "&Wheel"
+#~ msgstr "&גלגלת"
+
+#~ msgid "&Left button:"
+#~ msgstr "לחצן &שמאלי:"
+
+#~ msgid "&Right button:"
+#~ msgstr "&לחצן ימני:"
+
+#~ msgid "M&iddle button:"
+#~ msgstr "לחצן &אמצעי:"
+
+#~ msgid "Left &button"
+#~ msgstr "לחצן &שמאלי"
+
+#~ msgid "Automatically group similar windows"
+#~ msgstr "קבץ אוטומטית חלונות דומים"
+
+#~ msgid ""
+#~ "The placement policy determines where a new window will appear on the "
+#~ "desktop.<br><ul>\n"
+#~ "<li><em>Smart</em> will try to achieve a minimum overlap of windows</li>\n"
+#~ "<li><em>Maximizing</em> will try to maximize every window to fill the "
+#~ "whole screen. It might be useful to selectively affect placement of some "
+#~ "windows using the window-specific settings.</li>\n"
+#~ "<li><em>Cascade</em> will cascade the windows</li>\n"
+#~ "<li><em>Random</em> will use a random position</li>\n"
+#~ "<li><em>Centered</em> will place the window centered</li>\n"
+#~ "<li><em>Zero-Cornered</em> will place the window in the top-left corner</"
+#~ "li>\n"
+#~ "<li><em>Under Mouse</em> will place the window under the pointer</li>\n"
+#~ "</ul>"
+#~ msgstr ""
+#~ "מדיניות המיקום קובעת היכן על שולחן העבודה יופיע חלון חדש.<br><ul>\n"
+#~ "<li><em>חכם</em> ינסה להשיג מינימום חלונות שמסתירים זה את זה</li>\n"
+#~ "<li><em>מוגדל</em> ינסה להגדיל כל חלון לגודל המסך כולו. זה עשוי להיות "
+#~ "שימושי לקביעת אפשרות זו עבור חלונות יחודיים, באמצעות הגדרות ספיצית לחלון."
+#~ "</li>\n"
+#~ "<li><em>מדורג</em> יפרוש את החלונות בצורה מדורגת</li>\n"
+#~ "<li><em>אקראי</em> ישתמש במיקום אקראי</li>\n"
+#~ "<li><em>ממורכז</em> ימקם את החלון במרכז המסך</li>\n"
+#~ "<li><em>נקודת אפס</em>ימקם את החלון בנקודה השמאלית עליונה של המסך</li>\n"
+#~ "<li><em>מתחת לעכבר</em>ימקם את החלון מתחת לסמן של העכבר</li> </ul>"
+
+#~ msgid "Shading"
+#~ msgstr "גלילה"
+
+#~ msgid "Dela&y:"
+#~ msgstr "השה&יה:"
+
+#~ msgid "&Enable hover"
+#~ msgstr "אפשר ריחו&ף"
+
+#~ msgid "Activating windows"
+#~ msgstr "התמקדות בחלונות"
+
+#~ msgid "Policy"
+#~ msgstr "מדיניות"
+
+#~ msgid "Click"
+#~ msgstr "לחיצה"
+
+#~ msgid "Hover"
+#~ msgstr "ריחוף"
+
+#~ msgid "&Moving"
+#~ msgstr "ה&זזה"
+
+#~ msgid "Wheel event:"
+#~ msgstr "שימוש בגלגלת:"
+
+#~ msgid "Handle mouse wheel events"
+#~ msgstr "טיפול בעת שימוש בגלגלת"
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an active window."
+#~ msgstr ""
+#~ "בטור זה באפשרותך להתאים את לחיצות העכבר בשורת הכותרת או במסגרת של חלון "
+#~ "פעיל."
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an inactive window."
+#~ msgstr ""
+#~ "בטור זה באפשרותך להתאים את לחיצות העכבר בשורת הכותרת או במסגרת של חלון לא "
+#~ "פעיל."
+
+#~ msgid "Left button:"
+#~ msgstr "לחצן שמאלי:"
+
+#~ msgid "Middle button:"
+#~ msgstr "לחצן אמצעי:"
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "התנהגות לחיצה <em>אמצעית</em> על שורת הכותרת או המסגרת של חלון <em>פעיל</"
+#~ "em>."
+
+#~ msgid "Right button:"
+#~ msgstr "לחצן ימני:"
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "התנהגות לחיצה <em>ימנית</em> על שורת הכותרת או המסגרת של חלון <em>פעיל</"
+#~ "em>."
+
+#~ msgid "Titlebar & Frame"
+#~ msgstr "שורת כותרת ומסגרת"
+
+#~ msgid "Titlebar"
+#~ msgstr "שורת כותרת"
+
+#~ msgid "no center snap zone"
+#~ msgstr "ללא אזור הצמדה מרכזי"
+
+#~ msgid "no window snap zone"
+#~ msgstr "ללא אזור ההצמדה של חלון"
+
+#~ msgid "no border snap zone"
+#~ msgstr "ללא אזור ההצמדה של גבול"
+
+#~ msgid "Windows"
+#~ msgstr "חלונות"
+
+#~ msgid "Snap Zones"
+#~ msgstr "אזורי הצמדה"

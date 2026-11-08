@@ -1,0 +1,55 @@
+/*
+    SPDX-FileCopyrightText: 2023 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+#pragma once
+
+#include "drm_formats.h"
+#include "kwin_export.h"
+
+#include <QList>
+#include <QSize>
+
+namespace KWin
+{
+
+class GraphicsBuffer;
+
+/**
+ * The GraphicsBufferOptions describes the properties of an allocated graphics buffer.
+ */
+struct GraphicsBufferOptions
+{
+    /// The size of the buffer, in device pixels.
+    QSize size;
+
+    /// The pixel format of the buffer, see DRM_FORMAT_*.
+    uint32_t format;
+
+    /// An optional list of modifiers, see DRM_FORMAT_MOD_*.
+    ModifierList modifiers;
+
+    /// Whether the graphics buffer should be suitable for software rendering.
+    bool software = false;
+
+    /// Whether the graphics buffer should be suitable for scanout
+    bool scanout = false;
+
+    /// Whether or not the graphics buffer needs to be usable as a render target
+    bool render = true;
+};
+
+class KWIN_EXPORT GraphicsBufferAllocator
+{
+public:
+    GraphicsBufferAllocator();
+    virtual ~GraphicsBufferAllocator();
+
+    virtual GraphicsBuffer *allocate(const GraphicsBufferOptions &options) = 0;
+
+    static uint64_t align(uint64_t size, uint64_t minimum);
+};
+
+} // namespace KWin

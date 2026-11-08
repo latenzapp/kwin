@@ -1,0 +1,1167 @@
+# translation of kcmkwm.po to Tajik
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2004, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"PO-Revision-Date: 2019-09-16 14:27+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ui/Focus.qml:22
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Window focus policy:"
+msgstr ""
+
+#: ui/Focus.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Click to focus"
+msgstr ""
+
+#: ui/Focus.qml:47
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window becomes focused when clicked."
+msgstr ""
+
+#: ui/Focus.qml:51
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus follows pointer"
+msgstr ""
+
+#: ui/Focus.qml:52
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid ""
+"As the pointer moves, windows under it become focused after a configurable "
+"delay."
+msgstr ""
+
+#: ui/Focus.qml:56
+#, kde-format
+msgctxt "@item:inlistbox Window focus policy"
+msgid "Focus under pointer"
+msgstr ""
+
+#: ui/Focus.qml:57
+#, kde-format
+msgctxt "@info:tooltip Window focus policy"
+msgid "Window under pointer receives focus, even if the pointer has not moved."
+msgstr ""
+
+#: ui/Focus.qml:75
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Selecting <interface>Focus under pointer</interface> will prevent focus on "
+"some windows appearing on screen. This can lead to assigning focus to "
+"unwanted windows. Use with caution."
+msgstr ""
+
+#: ui/Focus.qml:81
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Last focused window"
+msgstr ""
+
+#: ui/Focus.qml:83
+#, kde-format
+msgctxt "@title:group"
+msgid "After closing a window, move focus to:"
+msgstr ""
+
+#: ui/Focus.qml:86
+#, kde-format
+msgctxt "@option:radio After closing a window, move focus to:"
+msgid "Window under pointer"
+msgstr ""
+
+#: ui/Focus.qml:115
+#, kde-format
+msgid "&Delay focus by:"
+msgstr ""
+
+#: ui/Focus.qml:124 ui/Focus.qml:250
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "%1 ms"
+msgstr ""
+
+#: ui/Focus.qml:128 ui/Focus.qml:254
+#, kde-format
+msgctxt "short for millisecond(s)"
+msgid "ms"
+msgstr ""
+
+#: ui/Focus.qml:146
+#, kde-format
+msgid "Focus &stealing prevention:"
+msgstr ""
+
+#: ui/Focus.qml:150 ui/MovementAndPlacement.qml:30
+#: ui/MovementAndPlacement.qml:58 ui/MovementAndPlacement.qml:87
+#, kde-format
+msgid "None"
+msgstr "Ҳеҷ чиз"
+
+#: ui/Focus.qml:151
+#, kde-format
+msgid "Low"
+msgstr ""
+
+#: ui/Focus.qml:152
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: ui/Focus.qml:153
+#, kde-format
+msgid "High"
+msgstr ""
+
+#: ui/Focus.qml:154
+#, kde-format
+msgid "Extreme"
+msgstr ""
+
+#: ui/Focus.qml:171
+#, kde-format
+msgctxt "@option:radio When focusing a window on a different Virtual Desktop:"
+msgid "Switch to window’s Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:173
+#, kde-format
+msgctxt "@title:group"
+msgid "When focusing a window on a different Virtual Desktop:"
+msgstr ""
+
+#: ui/Focus.qml:176
+#, kde-format
+msgid "Bring window to current Virtual Desktop"
+msgstr ""
+
+#: ui/Focus.qml:180 ui/TitlebarActions.qml:26 ui/TitlebarActions.qml:39
+#: ui/TitlebarActions.qml:64 ui/TitlebarActions.qml:87 ui/WindowActions.qml:38
+#: ui/WindowActions.qml:211
+#, kde-format
+msgid "Do nothing"
+msgstr ""
+
+#: ui/Focus.qml:207
+#, kde-format
+msgid "Raising windows:"
+msgstr ""
+
+#: ui/Focus.qml:208
+#, kde-format
+msgid "&Click raises focused window"
+msgstr ""
+
+#: ui/Focus.qml:228
+#, kde-format
+msgid "&Raise on hover, delayed by:"
+msgstr ""
+
+#: ui/Focus.qml:272
+#, kde-format
+msgid "Multiscreen behavior:"
+msgstr ""
+
+#: ui/Focus.qml:273
+#, kde-format
+msgid "&Separate screen focus"
+msgstr ""
+
+#: ui/main.qml:31
+#, kde-format
+msgid "&Focus"
+msgstr ""
+
+#: ui/main.qml:37
+#, kde-format
+msgid "Titlebar A&ctions"
+msgstr ""
+
+#: ui/main.qml:43
+#, kde-format
+msgid "W&indow Actions"
+msgstr ""
+
+#: ui/main.qml:49
+#, kde-format
+msgid "Mo&vement & Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:17
+#, kde-format
+msgctxt "@title:group"
+msgid "Movement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:22
+#, kde-format
+msgid "Screen &edge snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:30 ui/MovementAndPlacement.qml:58
+#: ui/MovementAndPlacement.qml:87 ui/MovementAndPlacement.qml:183
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "%1 px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:34 ui/MovementAndPlacement.qml:62
+#: ui/MovementAndPlacement.qml:91 ui/MovementAndPlacement.qml:187
+#, kde-format
+msgctxt "short for pixel(s)"
+msgid "px"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:50
+#, kde-format
+msgid "&Window snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:79
+#, kde-format
+msgid "&Center snap zone:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:106
+#, kde-format
+msgid "&Snap windows:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:107
+#, kde-format
+msgid "Only when overlapping"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:122
+#, kde-format
+msgctxt "@title:group"
+msgid "Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:125
+#, kde-format
+msgid "Window &placement:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:129
+#, kde-format
+msgid "Minimal Overlapping"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:130
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox behavior on double click"
+#| msgid "Minimize"
+msgid "Maximized"
+msgstr "Свернуть"
+
+#: ui/MovementAndPlacement.qml:131
+#, kde-format
+msgid "Random"
+msgstr "Тасодуфӣ"
+
+#: ui/MovementAndPlacement.qml:132
+#, kde-format
+msgid "Centered"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:133
+#, kde-format
+msgid "In Top-Left Corner"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:134
+#, kde-format
+msgid "Under mouse"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:149
+#, kde-format
+msgctxt "@title:group"
+msgid "Picture-in-picture Placement"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:152
+#, kde-format
+msgid "Open in screen corner:"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:157
+#, kde-format
+msgid "Top-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:158
+#, kde-format
+msgid "Top-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:159
+#, kde-format
+msgid "Bottom-left"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:160
+#, kde-format
+msgid "Bottom-right"
+msgstr ""
+
+#: ui/MovementAndPlacement.qml:173
+#, kde-format
+msgid "Margin:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:20 ui/TitlebarActions.qml:33 ui/WindowActions.qml:31
+#, kde-format
+msgid "Raise"
+msgstr ""
+
+#: ui/TitlebarActions.qml:21 ui/TitlebarActions.qml:34
+#: ui/TitlebarActions.qml:61 ui/WindowActions.qml:32
+#, kde-format
+msgid "Lower"
+msgstr ""
+
+#: ui/TitlebarActions.qml:22 ui/TitlebarActions.qml:35
+#: ui/TitlebarActions.qml:82 ui/WindowActions.qml:33 ui/WindowActions.qml:206
+#, kde-format
+msgid "Raise/lower"
+msgstr ""
+
+#: ui/TitlebarActions.qml:23 ui/TitlebarActions.qml:36
+#: ui/TitlebarActions.qml:60 ui/WindowActions.qml:34
+#, kde-format
+msgid "Minimize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:24 ui/TitlebarActions.qml:37
+#: ui/TitlebarActions.qml:62
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: ui/TitlebarActions.qml:25 ui/TitlebarActions.qml:38 ui/WindowActions.qml:37
+#, fuzzy, kde-format
+#| msgid "Windows"
+msgid "Window menu"
+msgstr "Тирезаҳо"
+
+#: ui/TitlebarActions.qml:30 ui/WindowActions.qml:23 ui/WindowActions.qml:54
+#, kde-format
+msgid "Focus and raise"
+msgstr ""
+
+#: ui/TitlebarActions.qml:31
+#, kde-format
+msgid "Focus and lower"
+msgstr ""
+
+#: ui/TitlebarActions.qml:32 ui/WindowActions.qml:22 ui/WindowActions.qml:53
+#, kde-format
+msgid "Focus"
+msgstr "Фокус"
+
+#: ui/TitlebarActions.qml:43 ui/TitlebarActions.qml:57
+#, kde-format
+msgid "Maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:44 ui/TitlebarActions.qml:58
+#, kde-format
+msgid "Vertically maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:45 ui/TitlebarActions.qml:59
+#, kde-format
+msgid "Horizontally maximize"
+msgstr ""
+
+#: ui/TitlebarActions.qml:49
+#, kde-format
+msgid "Titlebar Actions"
+msgstr ""
+
+#: ui/TitlebarActions.qml:52
+#, kde-format
+msgid "&Double-click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:63
+#, kde-format
+msgid "Show on all desktops"
+msgstr "Намоиш додан дар ҳамаи мизҳои корӣ"
+
+#: ui/TitlebarActions.qml:77 ui/WindowActions.qml:99
+#, kde-format
+msgid "Mouse &wheel:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:83 ui/WindowActions.qml:207
+#, kde-format
+msgid "Maximize/restore"
+msgstr ""
+
+#: ui/TitlebarActions.qml:84 ui/WindowActions.qml:208
+#, kde-format
+msgid "Keep above/below"
+msgstr ""
+
+#: ui/TitlebarActions.qml:85 ui/WindowActions.qml:209
+#, kde-format
+msgid "Move to previous/next desktop"
+msgstr ""
+
+#: ui/TitlebarActions.qml:86 ui/WindowActions.qml:210
+#, kde-format
+msgid "Change opacity"
+msgstr ""
+
+#: ui/TitlebarActions.qml:102
+#, kde-format
+msgid "Titlebar and Frame Actions"
+msgstr ""
+
+#: ui/TitlebarActions.qml:111
+#, fuzzy, kde-format
+#| msgid "Focus"
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for focused windows"
+msgid "Focused"
+msgstr "Фокус"
+
+#: ui/TitlebarActions.qml:116
+#, kde-format
+msgctxt ""
+"@label for a group of comboboxes Left/Middle/Right-Click for unfocused "
+"windows"
+msgid "Unfocused"
+msgstr ""
+
+#: ui/TitlebarActions.qml:122 ui/WindowActions.qml:46
+#, kde-format
+msgid "&Left click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:128
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:143
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Left click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:160 ui/WindowActions.qml:68
+#, kde-format
+msgid "&Middle click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:165
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:179
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Middle click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:196 ui/WindowActions.qml:83
+#, kde-format
+msgid "&Right click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:201
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on a focused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:215
+#, kde-format
+msgctxt "@label:listbox accessible name"
+msgid "Right click on an unfocused titlebar or frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:233
+#, kde-format
+msgid "Maximize window by double clicking its frame"
+msgstr ""
+
+#: ui/TitlebarActions.qml:248
+#, kde-format
+msgid "Maximize Button Actions"
+msgstr ""
+
+#: ui/TitlebarActions.qml:251 ui/WindowActions.qml:154
+#, kde-format
+msgid "L&eft click:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:268
+#, kde-format
+msgid "Middle c&lick:"
+msgstr ""
+
+#: ui/TitlebarActions.qml:285 ui/WindowActions.qml:186
+#, kde-format
+msgid "Right clic&k:"
+msgstr ""
+
+#: ui/WindowActions.qml:20 ui/WindowActions.qml:51
+#, kde-format
+msgid "Focus, raise, and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:21 ui/WindowActions.qml:52
+#, kde-format
+msgid "Focus and click through"
+msgstr ""
+
+#: ui/WindowActions.qml:27
+#, kde-format
+msgid "Move"
+msgstr ""
+
+#: ui/WindowActions.qml:28
+#, kde-format
+msgid "Focus, raise, and move"
+msgstr ""
+
+#: ui/WindowActions.qml:29
+#, fuzzy, kde-format
+msgid "Focus, raise, and resize"
+msgstr "Тирезаи дохилитари ғайрифаъол"
+
+#: ui/WindowActions.qml:30
+#, kde-format
+msgid "Resize"
+msgstr ""
+
+#: ui/WindowActions.qml:35
+#, kde-format
+msgid "Decrease opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:36
+#, kde-format
+msgid "Increase opacity"
+msgstr ""
+
+#: ui/WindowActions.qml:42
+#, kde-format
+msgctxt "@title:group"
+msgid "Unfocused Inner Window Actions"
+msgstr ""
+
+#: ui/WindowActions.qml:50
+#, kde-format
+msgid "Focus, click through, and raise on release"
+msgstr ""
+
+#: ui/WindowActions.qml:103
+#, kde-format
+msgid "Scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:104
+#, kde-format
+msgid "Focus and scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:105
+#, kde-format
+msgid "Focus, raise, and scroll"
+msgstr ""
+
+#: ui/WindowActions.qml:120
+#, kde-format
+msgid "Inner Window, Titlebar, and Frame Actions"
+msgstr ""
+
+#: ui/WindowActions.qml:123
+#, kde-format
+msgid "Mo&difier key:"
+msgstr ""
+
+#: ui/WindowActions.qml:131
+#, kde-format
+msgid "Meta"
+msgstr ""
+
+#: ui/WindowActions.qml:132
+#, kde-format
+msgid "Alt"
+msgstr ""
+
+#: ui/WindowActions.qml:170
+#, kde-format
+msgid "Middle &click:"
+msgstr ""
+
+#: ui/WindowActions.qml:202
+#, kde-format
+msgid "Mo&use wheel:"
+msgstr ""
+
+#~ msgid "Activate"
+#~ msgstr "Фаъол кардан"
+
+#~ msgid "  + "
+#~ msgstr "  + "
+
+#~ msgid "Active"
+#~ msgstr "Фаъол"
+
+#~ msgid "Inactive"
+#~ msgstr "Ғайрифаъол"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Victor Ibragimov"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "victor.ibragimov@gmail.com"
+
+#, fuzzy
+#~| msgid "Window Tabbing"
+#~ msgid "Window tabbing:"
+#~ msgstr "X window dump"
+
+#, fuzzy
+#~| msgid "Start Window Tab Drag"
+#~ msgid "Start window tab drag"
+#~ msgstr "Запуск без окна по умолчанию"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "Ri&ght button:"
+#~ msgstr "Кнопкаи рост:"
+
+#, fuzzy
+#~| msgid "Wheel"
+#~ msgid "&Wheel"
+#~ msgstr "Круг"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "&Left button:"
+#~ msgstr "Кнопкаи чап:"
+
+#, fuzzy
+#~| msgid "Right button:"
+#~ msgid "&Right button:"
+#~ msgstr "Кнопкаи рост:"
+
+#, fuzzy
+#~| msgid "Middle button:"
+#~ msgid "M&iddle button:"
+#~ msgstr "Кнопкаи мобайн:"
+
+#, fuzzy
+#~| msgid "Left button:"
+#~ msgid "Left &button"
+#~ msgstr "Кнопкаи чап:"
+
+#, fuzzy
+#~| msgid ""
+#~| "The placement policy determines where a new window will appear on the "
+#~| "desktop. <ul> <li><em>Smart</em> will try to achieve a minimum overlap "
+#~| "of windows</li> <li><em>Maximizing</em> will try to maximize every "
+#~| "window to fill the whole screen. It might be useful to selectively "
+#~| "affect placement of some windows using the window-specific settings.</"
+#~| "li> <li><em>Cascade</em> will cascade the windows</li> <li><em>Random</"
+#~| "em> will use a random position</li> <li><em>Centered</em> will place the "
+#~| "window centered</li> <li><em>Zero-Cornered</em> will place the window in "
+#~| "the top-left corner</li></ul>"
+#~ msgid ""
+#~ "The placement policy determines where a new window will appear on the "
+#~ "desktop.<br><ul>\n"
+#~ "<li><em>Smart</em> will try to achieve a minimum overlap of windows</li>\n"
+#~ "<li><em>Maximizing</em> will try to maximize every window to fill the "
+#~ "whole screen. It might be useful to selectively affect placement of some "
+#~ "windows using the window-specific settings.</li>\n"
+#~ "<li><em>Cascade</em> will cascade the windows</li>\n"
+#~ "<li><em>Random</em> will use a random position</li>\n"
+#~ "<li><em>Centered</em> will place the window centered</li>\n"
+#~ "<li><em>Zero-Cornered</em> will place the window in the top-left corner</"
+#~ "li>\n"
+#~ "<li><em>Under Mouse</em> will place the window under the pointer</li>\n"
+#~ "</ul>"
+#~ msgstr ""
+#~ "Политика размещения определяет, в каком месте на рабочем столе появится "
+#~ "новое окно.<ul><li><em>Оптимальное</em> новое окно располагается так, "
+#~ "чтобы наименьшим образом перекрыть уже открытые</"
+#~ "li><li><em>Разворачивание</em> новое окно располагается так, чтобы занять "
+#~ "максимум места на экране. Это может быть полезным для размещения особых "
+#~ "окон</li><li><em>Каскадом</em> окна располагаются каскадом</"
+#~ "li><li><em>Произвольное</em> позиция окна выбирается произвольным "
+#~ "образом</li><li><em>По центру</em> окна располагаются в центре экрана</"
+#~ "li><li><em>В (ну)левом углу</em> окна располагаются в левом верхнем углу "
+#~ "экрана</li></ul>"
+
+#~ msgid "Shading"
+#~ msgstr "Соя кардан"
+
+#~ msgid "Dela&y:"
+#~ msgstr "Тавақ&қуф:"
+
+#~ msgid "&Enable hover"
+#~ msgstr "&Фаъолсозии hover"
+
+#, fuzzy
+#~ msgid "Activating windows"
+#~ msgstr "Тирезаи дохилитари ғайрифаъол"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy"
+#~ msgstr "&Сиёсат:"
+
+#~ msgid "&Moving"
+#~ msgstr "&Ҳаракат"
+
+#, fuzzy
+#~| msgid "Titlebar wheel event:"
+#~ msgid "Wheel event:"
+#~ msgstr "Событие колеса в заголовке:"
+
+#~ msgid "Handle mouse wheel events"
+#~ msgstr "Действия колеса мыши"
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an active window."
+#~ msgstr ""
+#~ "Дар ин сутун метавонед рафтори кнопкаи мушро ҳангоме, ки рӯи унвон ё "
+#~ "шакли тирезаи фаъол пахш мекунед, оддӣ кунед."
+
+#~ msgid ""
+#~ "In this column you can customize mouse clicks into the titlebar or the "
+#~ "frame of an inactive window."
+#~ msgstr ""
+#~ "Дар ин сутун метавонед рафтори кнопкаи мушро ҳангоме, ки рӯи таври унвон "
+#~ "ё шакли тирезаи ғайрифаъоле пахш мекунед оддӣ, кунед."
+
+#~ msgid "Left button:"
+#~ msgstr "Кнопкаи чап:"
+
+#~ msgid "Middle button:"
+#~ msgstr "Кнопкаи мобайн:"
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Рафтори дар пахши <em>мобайн</em> рӯи навори унвон ё шакли як "
+#~ "тирезаи<em>фаъол</em>."
+
+#~ msgid "Right button:"
+#~ msgstr "Кнопкаи рост:"
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>active</em> window."
+#~ msgstr ""
+#~ "Рафтори дар пахши <em>рост</em> рӯи навори унвон ё шакли як "
+#~ "тирезаи<em>фаъол</em>."
+
+#, fuzzy
+#~| msgid "Titlebar && Frame"
+#~ msgid "Titlebar & Frame"
+#~ msgstr "Наворунвон && чорчӯба"
+
+#, fuzzy
+#~| msgid "&Titlebar Actions"
+#~ msgid "Titlebar"
+#~ msgstr "&Действия заголовка"
+
+#, fuzzy
+#~| msgid "&Center snap zone:"
+#~ msgid "no center snap zone"
+#~ msgstr "&Размер граничной зоны экрана:"
+
+#, fuzzy
+#~| msgid "&Window snap zone:"
+#~ msgid "no window snap zone"
+#~ msgstr "&Минтақаи ҳасоси тиреза:"
+
+#, fuzzy
+#~| msgid "&Border snap zone:"
+#~ msgid "no border snap zone"
+#~ msgstr "&Нотиқи ҳасоси лабаҳо:"
+
+#~ msgid "Snap Zones"
+#~ msgstr "Мунотиқ шикананда"
+
+#~ msgid "kcmkwinoptions"
+#~ msgstr "kcmkwinoptions"
+
+#, fuzzy
+#~| msgid ""
+#~| "The focus policy is used to determine the active window, i.e. the window "
+#~| "you can work in. <ul> <li><em>Click to focus:</em> A window becomes "
+#~| "active when you click into it. This is the behavior you might know from "
+#~| "other operating systems.</li> <li><em>Focus follows mouse:</em> Moving "
+#~| "the mouse pointer actively on to a normal window activates it. New "
+#~| "windows will receive the focus, without you having to point the mouse at "
+#~| "them explicitly. Very practical if you are using the mouse a lot.</li> "
+#~| "<li><em>Focus under mouse:</em> The window that happens to be under the "
+#~| "mouse pointer is active. If the mouse points nowhere, the last window "
+#~| "that was under the mouse has focus. New windows will not automatically "
+#~| "receive the focus.</li> <li><em>Focus strictly under mouse:</em> Only "
+#~| "the window under the mouse pointer is active. If the mouse points "
+#~| "nowhere, nothing has focus.</li> </ul>Note that 'Focus under mouse' and "
+#~| "'Focus strictly under mouse' prevent certain features such as the Alt"
+#~| "+Tab walk through windows dialog in the KDE mode from working properly."
+#~ msgid ""
+#~ "The focus policy is used to determine the active window, i.e. the window "
+#~ "you can work in. <ul>\n"
+#~ "<li><em>Click to focus:</em> A window becomes active when you click into "
+#~ "it. This is the behavior you might know from other operating systems.</"
+#~ "li> <li><em>Focus follows mouse:</em> Moving the mouse pointer actively "
+#~ "on to a normal window activates it. New windows will receive the focus, "
+#~ "without you having to point the mouse at them explicitly. Very practical "
+#~ "if you are using the mouse a lot.</li>\n"
+#~ "<li><em>Focus under mouse:</em> The window that happens to be under the "
+#~ "mouse pointer is active. If the mouse points nowhere, the last window "
+#~ "that was under the mouse has focus. New windows will not automatically "
+#~ "receive the focus.</li>\n"
+#~ "<li><em>Focus strictly under mouse:</em> Only the window under the mouse "
+#~ "pointer is active. If the mouse points nowhere, nothing has focus.</li>\n"
+#~ "</ul>\n"
+#~ "Note that 'Focus under mouse' and 'Focus strictly under mouse' prevent "
+#~ "certain features such as the Alt+Tab walk through windows dialog in the "
+#~ "KDE mode from working properly."
+#~ msgstr ""
+#~ "Правила активации окна (задание фокуса ввода) определяют то окно, в "
+#~ "котором вы можете работать.<ul><li><em>Щелчком мыши:</em> окно становится "
+#~ "активным, когда внутри него щёлкают мышью. Такое поведение окон знакомо "
+#~ "вам по другим операционным системам.</li><li><em>Фокус следует за мышью:</"
+#~ "em> явное движение мыши в окне активизирует его. Очень полезно в том "
+#~ "случае, если вы в основном работаете мышью.</li><li><em>Фокус под мышью:</"
+#~ "em> окно, оказавшееся под указателем мыши, становится активным. Иными "
+#~ "словами, ни одно окно не может иметь фокус, если в нём не находится "
+#~ "указатель мыши.</li><li><em>Фокус строго под мышью:</em> ещё более "
+#~ "строгое правило, чем «Фокус под мышью». Активным может быть только то "
+#~ "окно, в котором находится указатель мыши. Если указатель не находится ни "
+#~ "в одном окне, то ни одно окно не имеет фокуса.</li></ul> Учтите, что "
+#~ "режимы «Фокус под мышью» и 'Фокус строго под мышью' мешают использовать "
+#~ "такие функции, как например циклическое переключение между окнами при "
+#~ "помощи Alt+Tab."
+
+#~ msgid "&Raise, with the following delay:"
+#~ msgstr "П&оверх всех с задержкой:"
+
+#~ msgid ""
+#~ "When enabled, this feature activates the border of maximized windows and "
+#~ "allows you to move or resize them, just like for normal windows"
+#~ msgstr ""
+#~ "Ин имкони агар фаъол бошад, лабаи тирезаи бузургшударо фаъол мекунад ва "
+#~ "иҷозат медиҳад, ки онро ҳаракат диҳед ё таъғири андоза диҳед, Дақиқе "
+#~ "мисли тирезаҳои оддӣ."
+
+#, fuzzy
+#~| msgid "Display content in &resizing windows"
+#~ msgid "Display borders on &maximized windows"
+#~ msgstr "Намоиши &окана ҳолати тағйири андозаи тиреза"
+
+#, fuzzy
+#~| msgid "Close"
+#~ msgctxt "@item:inlistbox behavior on double click"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when clicking on the titlebar "
+#~ "or the frame of a window."
+#~ msgstr ""
+#~ "Дар инҷо метавонед рафтори пахши мушро ҳангоми ду пахш рӯи наворунвони як "
+#~ "система ё тирезаи оддӣ кунед."
+
+#~ msgid ""
+#~ "Behavior on <em>right</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Рафтори дар пахши <em>рост</em> рӯи навори унвон ё шакли як "
+#~ "тирезаи<em>ғайрифаъол</em>."
+
+#~ msgid ""
+#~ "Behavior on <em>middle</em> click into the titlebar or frame of an "
+#~ "<em>inactive</em> window."
+#~ msgstr ""
+#~ "Рафтори дар кнопкаи <em>миёни</em> рӯи таври унвон ё шакли як тирезаи "
+#~ "<em>ғайрифаъол</em>."
+
+#~ msgid ""
+#~ "Here you can customize behavior when clicking on the maximize button."
+#~ msgstr ""
+#~ "Здесь вы можете настроить поведение при нажатии на кнопку разворачивания."
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when clicking on an inactive "
+#~ "inner window ('inner' means: not titlebar, not frame)."
+#~ msgstr ""
+#~ "Дар инҷо шумо метавонед реаксияи кнопкаи мушро дар даруни тирезаи "
+#~ "ғайрифаъол ('дохил' маънои: на дар чорчӯба ва на дар сарлавҳа-ро дорад) "
+#~ "танзим кунед."
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when clicking somewhere into a "
+#~ "window while pressing a modifier key."
+#~ msgstr ""
+#~ "Дар инҷо шумо метавонед рафтори KDE-ро вақти пахши рӯи ягон ҷои тиреза, "
+#~ "танзим кунед."
+
+#~ msgctxt "no border snap zone"
+#~ msgid "none"
+#~ msgstr "нет"
+
+#~ msgctxt "no window snap zone"
+#~ msgid "none"
+#~ msgstr "нет"
+
+#~ msgctxt "no center snap zone"
+#~ msgid "none"
+#~ msgstr "нет"
+
+#, fuzzy
+#~| msgid "Nothing"
+#~ msgctxt "Floating layout, windows aren't tiled at all"
+#~ msgid "Floating"
+#~ msgstr "Ҳеҷ чиз"
+
+#~ msgid ""
+#~ "When this option is enabled, there will be a delay after which the window "
+#~ "the mouse pointer is over will become active (receive focus)."
+#~ msgstr ""
+#~ "Если этот параметр включен, окно будет становиться активным (получать "
+#~ "фокус) при наведении на него указателя не сразу, а с задержкой."
+
+#~ msgid "Di&splay content in moving windows"
+#~ msgstr "Намоиши &оканаи тирезаи гузаранда"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's content to be fully shown while "
+#~ "moving it, instead of just showing a window 'skeleton'. The result may "
+#~ "not be satisfying on slow machines without graphic acceleration."
+#~ msgstr ""
+#~ "Нафақат чорчӯба, балки тамоми оканаи тиреза гузаронида хоҳад шуд. Хулосаи "
+#~ "он мумкин аст на онқадар хуб хоҳад буд дар мошинҳои суст, бидуни "
+#~ "суръатфизои графикӣ."
+
+#~ msgid "Display content in &resizing windows"
+#~ msgstr "Намоиши &окана ҳолати тағйири андозаи тиреза"
+
+#~ msgid ""
+#~ "Enable this option if you want a window's content to be shown while "
+#~ "resizing it, instead of just showing a window 'skeleton'. The result may "
+#~ "not be satisfying on slow machines."
+#~ msgstr ""
+#~ "Ҳолати таъғири андозаи тиреза, нафақат чорчӯбаи он балки ҳамаи оканаи он "
+#~ "намоиш хоҳад шуд. Хулосаи он мумкин аст на онқадар хуб хоҳад буд дар "
+#~ "мошинҳои суст, бидуни суръатфизои графикӣ."
+
+#~ msgid "Allow moving and resizing o&f maximized windows"
+#~ msgstr ""
+#~ "Иҷозати ҳаракат додан ва таъғири андоза додани &тирезаҳои бузургшуда"
+
+#, fuzzy
+#~ msgid ""
+#~ "Hold down the Alt key and press the Tab key repeatedly to walk through "
+#~ "the windows on the current desktop (the Alt+Tab combination can be "
+#~ "reconfigured).\n"
+#~ "\n"
+#~ "If this checkbox is checked a popup widget is shown, displaying the icons "
+#~ "of all windows to walk through and the title of the currently selected "
+#~ "one.\n"
+#~ "\n"
+#~ "Otherwise, the focus is passed to a new window each time Tab is pressed, "
+#~ "with no popup widget.  In addition, the previously activated window will "
+#~ "be sent to the back in this mode."
+#~ msgstr ""
+#~ "Ҳолати пахши кнопкаи Alt шумо метавонед кнопкаи Tab-ро барои тез "
+#~ "гузаштани байни тирезаҳо дар мизи кории равон (мос омадани Alt+Tab-ро "
+#~ "метавонед аз нав танзим кард). Инро бо ду сохт кардан мумкин аст:"
+#~ "<ul><li><b>KDE</b>: ҳолати пахши кнопкаи Alt+Tab тиреза бо ишораҳои "
+#~ "тамоми тирезаҳо байни онҳо метавонед гузаред, ошкор мешавад, дар ин ҳолат "
+#~ "тирезаи фаъоли равон равшан аст;<li><b>CDE</b>: ҳар вақти пахши кнопкаи "
+#~ "Alt+Tab ҳамон вақт тирезаи баъдӣ фаъол мешавад, дар ин ҳолат тирезаи "
+#~ "гузаранда пайдо намешавад.</li></ul>"
+
+#~ msgid "&Traverse windows on all desktops"
+#~ msgstr "&Тирезаҳои тамоми мизи кориҳоро пуракс кунед"
+
+#~ msgid ""
+#~ "Leave this option disabled if you want to limit walking through windows "
+#~ "to the current desktop."
+#~ msgstr ""
+#~ "Агар хоҳед қадам задани байни тирезаҳоро ба ин мизи корӣ маҳдуд кунед ин "
+#~ "интихоботи ғайрифаъолро раҳо кунед."
+
+#~ msgid "Desktop navi&gation wraps around"
+#~ msgstr "&Ҷустуҷӯи мизи корӣ ба даври муҳит"
+
+#~ msgid ""
+#~ "Enable this option if you want keyboard or active desktop border "
+#~ "navigation beyond the edge of a desktop to take you to the opposite edge "
+#~ "of the new desktop."
+#~ msgstr ""
+#~ "Агар хоҳед, ки сафҳаи калид ё ҷустуҷӯи эллектрикӣ бардори дарканор як "
+#~ "лабаи мизи кории шуморо ба мизи кории дар лабаи мухолиф баронд, ин "
+#~ "интихоботро фаъол кунед."
+
+#~ msgid "Popup desktop name on desktop &switch"
+#~ msgstr "Номи мизи кории ҷаҳшӣ дар ҳангоми &таъвизи мизи корӣ"
+
+#~ msgid ""
+#~ "Enable this option if you wish to see the current desktop name popup "
+#~ "whenever the current desktop is changed."
+#~ msgstr ""
+#~ "Агар хоҳед вақте ки мизи корӣ феъле таъғир карди номи мизи кории ҷадидро "
+#~ "бибинед, ин интихоботро фаъол кунед."
+
+#~ msgctxt "Focus Stealing Prevention Level"
+#~ msgid "Normal"
+#~ msgstr "Оддӣ"
+
+#~ msgid "Active Desktop Borders"
+#~ msgstr "Фаъол кардани ҳошияҳои мизи корӣ"
+
+#~ msgid ""
+#~ "If this option is enabled, moving the mouse to a screen border will "
+#~ "change your desktop. This is e.g. useful if you want to drag windows from "
+#~ "one desktop to the other."
+#~ msgstr ""
+#~ "Гузаронидани мушро аз лабаи экран ба гузаштани дигар мизи корӣ хоҳад "
+#~ "овард. Ин хеле қулай аст ҳолати кашида бурдани тирезаро аз як мизи корӣ "
+#~ "ба мизи кории дигар."
+
+#~ msgid "D&isabled"
+#~ msgstr "Ғай&рифаъол шуд"
+
+#~ msgid "Only &when moving windows"
+#~ msgstr "&Фақат вақте ки тиреза дар ҳоли ҳаракат аст"
+
+#~ msgid "A&lways enabled"
+#~ msgstr "&Ҳамеша фаъол"
+
+#~ msgid ""
+#~ "Here you can set a delay for switching desktops using the active borders "
+#~ "feature. Desktops will be switched after the mouse has been pushed "
+#~ "against a screen border for the specified number of milliseconds."
+#~ msgstr ""
+#~ "Дар инҷо метавонед боздоштани аз як мизи корӣ ба дигар мизи кориро бо "
+#~ "ёрии функсияи фаъолии лаба, танзим кунед. Гузаронидани мизи корӣ аз "
+#~ "миқдори додашудаи миллисония, баъди гузаронидани муш аз лабаи экран, иҷро "
+#~ "хоҳад шуд."
+
+#~ msgid "Desktop &switch delay:"
+#~ msgstr "Таваққуфи &равшансозии мизи корӣ:ы"
+
+#~ msgid ""
+#~ "Here you can customize KDE's behavior when middle clicking into a window "
+#~ "while pressing the modifier key."
+#~ msgstr ""
+#~ "Дар инҷо шумо метавонед танзими реаксияи KDE-ро ҳолати пахши рӯи байни "
+#~ "кнопкаи муш, дар даруни тиреза бо якҷоягӣ пахши кардани кнопкаи "
+#~ "дигаргуна, кунед."
+
+#~ msgid ""
+#~ "Here you can customize mouse click behavior when double clicking on the "
+#~ "titlebar of a window."
+#~ msgstr ""
+#~ "Дар инҷо метавонед рафтори пахши мушро ҳангоми ду пахш рӯи наворунвони як "
+#~ "тирезаи оддӣ кунед."
+
+#~ msgid "Modifier key + left button:"
+#~ msgstr "Таъғирдиҳанда + кнопкаи чап:"
+
+#~ msgid "Modifier key + right button:"
+#~ msgstr "Таъғирдиҳанда + кнопкаи рост:"
+
+#~ msgid "Modifier key + middle button:"
+#~ msgstr "Таъғирдиҳанда + кнопкаи мобайн:"
+
+#~ msgid "Auto &raise"
+#~ msgstr "Барҷастагии &худкор"
+
+#~ msgid "Navigation"
+#~ msgstr "Ҷустуҷӯ"
+
+#~| msgid "Activate & Raise"
+#~ msgid "Active &mouse screen"
+#~ msgstr "Фаъол кардан ва барҷаста кардан"
+
+#~ msgid "Anima&te"
+#~ msgstr "&Аниматсия"
+
+#~ msgid ""
+#~ "Animate the action of reducing the window to its titlebar (shading) as "
+#~ "well as the expansion of a shaded window"
+#~ msgstr ""
+#~ "Ин рамз аниматсияро ҳолати печонидани тирезаро дар мундариҷа ва ҳолати "
+#~ "бозсозии он чун намуди қаблӣ аз мундариҷа, фаъол хоҳад сохт"
+
+#~ msgid "Animate minimi&ze and restore"
+#~ msgstr "&Печониш ва бозсозии ором"
+
+#~ msgid "Slow"
+#~ msgstr "Оҳиста"
+
+#~ msgid "Fast"
+#~ msgstr "Тез"
+
+#~ msgid ""
+#~ "Here you can set the speed of the animation shown when windows are "
+#~ "minimized and restored. "
+#~ msgstr ""
+#~ "Дар инҷо метавонед суръати мутаҳарк бударо дар ҳангоми кам кардан ё "
+#~ "бозсозӣ кардани тирезаҳо танзим кунед."
+
+#, fuzzy
+#~ msgid "Dock windows:"
+#~ msgstr "Тирезаҳо"
+
+#, fuzzy
+#~ msgid "Use shadows"
+#~ msgstr "Соя кардан"
+
+#, fuzzy
+#~ msgid "Inactive window size:"
+#~ msgstr "Тирезаи дохилитари ғайрифаъол"
+
+#, fuzzy
+#~ msgid "Dock window size:"
+#~ msgstr "Тирезаҳо"
+
+#, fuzzy
+#~ msgid "Shadow color:"
+#~ msgstr "Соя кардан"
+
+#, fuzzy
+#~ msgid "Shadows"
+#~ msgstr "Соя кардан"

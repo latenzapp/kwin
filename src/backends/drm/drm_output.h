@@ -1,0 +1,121 @@
+/*
+    KWin - the KDE window manager
+    This file is part of the KDE project.
+
+    SPDX-FileCopyrightText: 2015 Martin Gräßlin <mgraesslin@kde.org>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#pragma once
+
+#include "core/backendoutput.h"
+#include "drm_object.h"
+#include "drm_plane.h"
+#include "utils/filedescriptor.h"
+
+#include <QList>
+#include <QObject>
+#include <QPoint>
+#include <QPointer>
+#include <QSize>
+#include <QTimer>
+#include <chrono>
+#include <xf86drmMode.h>
+
+namespace KWin
+{
+
+class DrmConnector;
+class DrmGpu;
+class DrmPipeline;
+class DumbSwapchain;
+class DrmLease;
+class OutputChangeSet;
+
+class KWIN_EXPORT DrmOutput : public BackendOutput
+{
+    Q_OBJECT
+
+public:
+    explicit DrmOutput(const std::shared_ptr<DrmConnector> &connector, DrmPipeline *pipeline);
+
+    DrmConnector *connector() const;
+    DrmPipeline *pipeline() const;
+
+    std::expected<void, OutputError> testPresentation(const std::shared_ptr<OutputFrame> &frame) override;
+    std::expected<void, OutputError> present(const QList<OutputLayer *> &layersToUpdate, const std::shared_ptr<OutputFrame> &frame) override;
+    void repairPresentation() override;
+    bool recommendsOverlayUse() const override;
+
+    bool queueChanges(const std::shared_ptr<OutputChangeSet> &properties);
+    void applyQueuedChanges(const std::shared_ptr<OutputChangeSet> &properties);
+    void revertQueuedChanges();
+
+    bool shouldDisableNonPrimaryPlanes() const;
+    std::expected<void, OutputError> presentAsync(OutputLayer *layer, std::optional<std::chrono::nanoseconds> allowedVrrDelay) override;
+    void setAutoRotateAvailable(bool isAvailable) override;
+    void setAutoBrightnessAvailable(bool isAvailable) override;
+
+    DrmLease *lease() const;
+    bool addLeaseObjects(QList<uint32_t> &objectList);
+    void leased(DrmLease *lease);
+    void leaseEnded();
+
+    void setChannelFactors(const QVector3D &rgb) override;
+    void updateConnectorProperties();
+
+    bool setPostBlendPipeline(const ColorPipeline &pipeline, const std::shared_ptr<ColorDescription> &newLayerBlendColor) override;
+    void resetPostBlendPipeline() override;
+
+    /**
+     * @returns whether or not the renderer should apply channel factors
+     */
+    bool needsShadowBuffer() const;
+
+    void removePipeline();
+    void maybeUpdateDpmsState();
+
+    const State &nextState() const;
+    Colorimetry wireColor(const State &next) const;
+    TransferFunction::Type wireTransfer(const State &next) const;
+
+private:
+    void tryKmsColorOffloading(State &next);
+    double calculateMaxArtificialHdrHeadroom(const State &next) const;
+    std::shared_ptr<ColorDescription> createColorDescription(const State &next) const;
+    Capabilities computeCapabilities() const;
+    void updateInformation();
+    void unsetBrightnessDevice() override;
+    void updateBrightness(double newBrightness, double newArtificialHdrHeadroom, double newDimming);
+    void maybeScheduleRepaints(const State &next);
+    std::optional<uint32_t> decideAutomaticBpcLimit() const;
+    void refreshModes(State *nextState) const;
+    void maybeFixCurrentMode(State *nextState) const;
+
+    DrmGpu *const m_gpu;
+    DrmPipeline *m_pipeline;
+    const std::shared_ptr<DrmConnector> m_connector;
+
+    DrmLease *m_lease = nullptr;
+
+    QVector3D m_sRgbChannelFactors = {1, 1, 1};
+    bool m_needsShadowBuffer = false;
+
+    // what tryKmsColorOffloading calculated, without any offload from the compositor.
+    // setPostBlendPipeline merges onto this base, resetPostBlendPipeline restores it
+    ColorPipeline m_baseCrtcColorPipeline;
+    std::shared_ptr<ColorDescription> m_baseLayerBlendingColor;
+    // the offload that's currently applied; both are set and cleared together, so a null
+    // m_appliedLayerBlendingColor means there is none
+    ColorPipeline m_appliedPostBlendPipeline;
+    std::shared_ptr<ColorDescription> m_appliedLayerBlendingColor;
+    PresentationMode m_desiredPresentationMode = PresentationMode::VSync;
+    bool m_autoRotateAvailable = false;
+    bool m_autoBrightnessAvailable = false;
+
+    std::optional<State> m_nextState;
+};
+
+}
+
+Q_DECLARE_METATYPE(KWin::DrmOutput *)
