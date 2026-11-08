@@ -290,8 +290,11 @@ void CBeamBridge::sendCapabilities() {
   //
   // kFeatInputText: MsgType::Input's Text opcode is typed here, in this
   // compositor's own layout (CBeamInputTranslator).
+  //
+  // kFeatHdr: MsgType::OutputSetHdr composes an output in PQ / BT.2020 into a
+  // 10-bit buffer, and such frames carry kDmabufHdr.
   uint32_t feat = kFeatDmabufFrames | kFeatBufferRelease | kFeatDamageRects |
-                  kFeatOutputScale | kFeatInputText;
+                  kFeatOutputScale | kFeatInputText | kFeatHdr;
   // Only when this compositor was actually started with more than one seat.
   // A single-seat run must never claim it -- every seat would drive one pointer
   // (see webrtc_seats.h).
@@ -619,6 +622,24 @@ int CBeamBridge::handleMessage(const uint8_t *data, size_t len, int *fds, int fd
         break;
       }
       if (m_onOutputSetScale) m_onOutputSetScale(hdr->outputIdx, p->scaleMilli / 1000.0);
+      break;
+    }
+    case MsgType::OutputSetHdr: {
+      if (payloadLen < sizeof(OutputHdrPayload)) return 0;
+      const auto *p = reinterpret_cast<const OutputHdrPayload *>(payload);
+      // Bounds are enforced here, where the message is parsed: a luminance
+      // KWin's colour maths would divide by zero with, or one no display has,
+      // is refused.
+      // The black level too: at or above the reference white the range
+      // inverts.
+      if (p->on && (p->referenceNits < 1 || p->referenceNits > p->maxNits || p->maxNits > 10000 ||
+                    p->minMilliNits >= uint64_t(p->referenceNits) * 1000)) {
+        WEBRTC_LOG("CBeamBridge: OutputSetHdr ref=%u max=%u min=%u/1000 nits out of range, ignored",
+                   (unsigned)p->referenceNits, (unsigned)p->maxNits, (unsigned)p->minMilliNits);
+        break;
+      }
+      if (m_onOutputSetHdr)
+        m_onOutputSetHdr(hdr->outputIdx, p->on != 0, p->referenceNits, p->maxNits, p->minMilliNits);
       break;
     }
     default:

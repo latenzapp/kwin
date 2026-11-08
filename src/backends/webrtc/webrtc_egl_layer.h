@@ -31,8 +31,10 @@
 namespace KWin
 {
 
+class ColorDescription;
 class EglSwapchain;
 class EglSwapchainSlot;
+class GLFramebuffer;
 class GLRenderTimeQuery;
 class GLTexture;
 class GraphicsBuffer;
@@ -75,6 +77,8 @@ public:
     bool loanCurrentSlot(uint32_t frameId, uint32_t bufferId);
     // The GraphicsBuffer behind the slot currently being ended, or nullptr.
     GraphicsBuffer *currentBuffer() const;
+    // That buffer holds HDR (PQ / BT.2020, 10 bits): the frame's kDmabufHdr.
+    bool currentBufferHdr() const { return m_currentHdr; }
     void releaseLoan(uint32_t frameId, int fenceFd);
     size_t loanCount() const { return m_loans.size(); }
 
@@ -126,8 +130,38 @@ private:
     WebRTCEglBackend *const m_backend;
     std::shared_ptr<EglSwapchain> m_swapchain;
     std::shared_ptr<EglSwapchainSlot> m_current;
+    bool m_currentHdr = false;  // m_current was composed for an HDR output
+    bool m_swapchainForHdr = false;  // m_swapchain was made for an HDR output (maybe 8-bit, see beginFrame)
     std::unique_ptr<GLRenderTimeQuery> m_query;
     DamageJournal m_damageJournal;
+
+    // ── HDR blending (see WebRTCOutput::setHdr) ─────────────────────────
+    //
+    // When the output's blending colour differs from its encoding (HDR:
+    // gamma 2.2 vs PQ) the scene composes into this shadow texture instead
+    // of the swapchain slot, and endFrame converts the repainted region into
+    // the slot in one pass. One texture, not a swapchain: it never leaves
+    // this process, so nothing can hold it while the next frame composes,
+    // and with buffer age always 1 the scene repaints only this frame's
+    // damage. m_damageJournal keeps tracking the SLOTS (their ages decide
+    // how much of each slot the conversion pass rewrites);
+    // m_shadowDamageJournal tracks the texture.
+    bool beginShadow(const QSize &size, OutputTransform transform);
+    void convertShadow(const Region &damagedDeviceRegion);
+    void releaseShadow();
+    std::unique_ptr<GLTexture> m_shadowTexture;
+    std::unique_ptr<GLFramebuffer> m_shadowFramebuffer;
+    DamageJournal m_shadowDamageJournal;
+    // The texture holds the previous frame, complete (an endFrame ran).
+    bool m_shadowValid = false;
+    // This frame composes into the shadow texture.
+    bool m_shadowActive = false;
+    // A size no blending buffer could be made at: not retried every frame.
+    QSize m_shadowFailedSize;
+    // The conversion the shadow was composed for, (blending, encoding): a
+    // change repaints everything, in the texture and in every slot.
+    std::shared_ptr<ColorDescription> m_shadowBlend;
+    std::shared_ptr<ColorDescription> m_shadowEncoding;
     // Per layer, so each output's every-60th trace samples its own
     // composites.
     uint64_t m_endFrameCount = 0;

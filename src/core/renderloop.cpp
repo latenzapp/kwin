@@ -1,6 +1,8 @@
 /*
     SPDX-FileCopyrightText: 2020 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
 
+    Modified by Latenz (Simone Salgaro), Oct 2026: adds RenderLoop::averageRenderTime().
+
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
@@ -349,6 +351,11 @@ void RenderLoop::setMaxPendingFrameCount(uint32_t maxCount)
 std::chrono::nanoseconds RenderLoop::predictedRenderTime() const
 {
     return d->renderJournal.result();
+}
+
+std::chrono::nanoseconds RenderLoop::averageRenderTime() const
+{
+    return d->renderJournal.average();
 }
 
 } // namespace KWin

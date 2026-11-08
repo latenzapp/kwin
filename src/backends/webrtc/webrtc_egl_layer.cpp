@@ -15,13 +15,20 @@
 #include "webrtc_egl_layer.h"
 
 #include "webrtc_egl_backend.h"
+#include "webrtc_output.h"
 #include "webrtc_logging.h"
 
 // Not just forward-declared: beginFrame creates the swapchain on the render device.
+#include "core/colorspace.h"
 #include "core/drmdevice.h"
 #include "core/renderloop.h"
 #include "core/graphicsbuffer.h"
 #include "opengl/eglswapchain.h"
+#include "opengl/glframebuffer.h"
+#include "opengl/glshader.h"
+#include "opengl/glshadermanager.h"
+#include "opengl/gltexture.h"
+#include "opengl/glvertexbuffer.h"
 #include "opengl/glrendertimequery.h"
 #include "opengl/glutils.h"
 
@@ -60,39 +67,280 @@ std::optional<OutputLayerBeginFrameInfo> WebRTCEglLayer::beginFrame(OutputFrame 
     }
 
     const QSize nativeSize = m_output->modeSize();
-    if (!m_swapchain || m_swapchain->size() != nativeSize) {
+    // HDR (WebRTCOutput::setHdr): PQ / BT.2020 needs 10 bits a channel -- 8
+    // would band in every gradient -- in the first 2101010 format a swapchain
+    // can really be made in: the EGL import list is no promise of allocation
+    // (a format it offers may still fail to allocate). SDR stays
+    // XRGB8888; HDR without a 10-bit buffer stays SDR.
+    const bool hdr = m_output->highDynamicRange();
+    if (!m_swapchain || m_swapchain->size() != nativeSize || m_swapchainForHdr != hdr) {
         // Every buffer the old swapchain owned is about to stop existing, so
         // every loan on one is unreturnable and every id the peer has cached
         // is stale. Both have to go before the new swapchain hands out
         // pointers that could reuse the same addresses.
         reclaimAllLoans();
         forgetAllBufferIds();
-        GraphicsBufferOptions options{
-            .size = nativeSize,
-            .format = DRM_FORMAT_XRGB8888,
-            .modifiers = m_backend->supportedFormats()[DRM_FORMAT_XRGB8888],
-            .software = false,
-            .scanout = false,
+        m_swapchain.reset();
+        const FormatModifierMap formats = m_backend->supportedFormats();
+        auto make = [&](uint32_t format) {
+            if (!formats.contains(format)) {
+                return false;
+            }
+            GraphicsBufferOptions options{
+                .size = nativeSize,
+                .format = format,
+                .modifiers = formats[format],
+                .software = false,
+                .scanout = false,
+            };
+            m_swapchain = EglSwapchain::create(m_backend->renderDevice(), options);
+            return m_swapchain != nullptr;
         };
-        m_swapchain = EglSwapchain::create(m_backend->renderDevice(), options);
-        if (!m_swapchain) {
+        // KWIN_WEBRTC_TEST_HDR_FAULT=swapchain (test-only): no 10-bit format
+        // allocates, as on a GPU without one -- exercises hdrUnavailable().
+        static const bool s_faultSwapchain = qEnvironmentVariable("KWIN_WEBRTC_TEST_HDR_FAULT") == QStringLiteral("swapchain");
+        if (hdr && !s_faultSwapchain) {
+            for (uint32_t f : {DRM_FORMAT_XBGR2101010, DRM_FORMAT_XRGB2101010, DRM_FORMAT_ABGR2101010, DRM_FORMAT_ARGB2101010}) {
+                if (make(f)) {
+                    break;
+                }
+            }
+        }
+        if (hdr) {
+            if (!m_swapchain) {
+                WEBRTC_LOG("HDR: no 10-bit swapchain can be made here; the output stays SDR");
+                // Out of the frame being prepared: the state change repaints.
+                if (auto *out = dynamic_cast<WebRTCOutput *>(m_output.data())) {
+                    QMetaObject::invokeMethod(out, [out]() { out->hdrUnavailable(); }, Qt::QueuedConnection);
+                }
+            }
+        }
+        if (!m_swapchain && !make(DRM_FORMAT_XRGB8888)) {
             return std::nullopt;
         }
+        m_swapchainForHdr = hdr;
     }
+    const bool hdrBuffer = m_swapchain->format() != DRM_FORMAT_XRGB8888;
 
     m_current = m_swapchain->acquire();
     if (!m_current) {
         return std::nullopt;
     }
 
-    m_current->framebuffer()->colorAttachment()->setContentTransform(bufferTransform().combine(OutputTransform::FlipY));
+    const OutputTransform contentTransform = bufferTransform().combine(OutputTransform::FlipY);
+    m_current->framebuffer()->colorAttachment()->setContentTransform(contentTransform);
 
     m_query = GLRenderTimeQuery::begin(m_backend->openglContextRef());
 
+    // A switch between SDR and HDR repaints everything: the damage journal
+    // describes pixels in the other encoding.
+    if (hdrBuffer != m_currentHdr) {
+        m_damageJournal.clear();
+    }
+    m_currentHdr = hdrBuffer;
+
+    // HDR blends in the output's blending colour, not in its encoding (see
+    // WebRTCOutput::setHdr). SDR -- and HDR without a 10-bit buffer, which
+    // composes sRGB until the output drops to SDR -- renders into the slot
+    // directly: no shadow, no pass.
+    const std::shared_ptr<ColorDescription> &encoding = m_output->colorDescription();
+    const std::shared_ptr<ColorDescription> &blending = m_output->blendingColor();
+    if (hdrBuffer && blending != encoding) {
+        if (m_shadowBlend != blending || m_shadowEncoding != encoding) {
+            m_shadowBlend = blending;
+            m_shadowEncoding = encoding;
+            m_shadowValid = false;
+            m_damageJournal.clear();
+        }
+        if (beginShadow(nativeSize, contentTransform)) {
+            return OutputLayerBeginFrameInfo{
+                .renderTarget = RenderTarget(m_shadowFramebuffer.get(), blending),
+                // Age 1: the texture holds the last frame. An invalid
+                // one had its journal cleared, which reads as everything.
+                .repaint = s_bufferAgeEnabled ? m_shadowDamageJournal.accumulate(1, Region::infinite()) : Region::infinite(),
+            };
+        }
+        // No shadow (allocation failed, logged once in beginShadow): compose
+        // straight into the PQ slot rather than lose the frame.
+    }
+    if (m_shadowTexture) {
+        releaseShadow();
+        m_damageJournal.clear();
+    }
+
     return OutputLayerBeginFrameInfo{
-        .renderTarget = RenderTarget(m_current->framebuffer()),
+        .renderTarget = hdrBuffer ? RenderTarget(m_current->framebuffer(), encoding)
+                                  : RenderTarget(m_current->framebuffer()),
         .repaint = s_bufferAgeEnabled ? m_damageJournal.accumulate(m_current->age(), Region::infinite()) : Region::infinite(),
     };
+}
+
+// GLTexture::allocate() ignores its internal format in KWin 6.8 (it always
+// allocates 8-bit RGBA/BGRA storage), so the blending buffer gets
+// its storage here. Owning: the GLTexture deletes the name.
+namespace
+{
+class ShadowTexture : public GLTexture
+{
+public:
+    static std::unique_ptr<GLTexture> create(GLenum internalFormat, const QSize &size)
+    {
+        GLuint name = 0;
+        glGenTextures(1, &name);
+        if (!name) {
+            return nullptr;
+        }
+        while (glGetError() != GL_NO_ERROR) {
+        }
+        glBindTexture(GL_TEXTURE_2D, name);
+        if (internalFormat == GL_RGBA16F) {
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA16F, size.width(), size.height(), 0, GL_RGBA, GL_HALF_FLOAT, nullptr);
+        } else {
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB10_A2, size.width(), size.height(), 0, GL_RGBA, GL_UNSIGNED_INT_2_10_10_10_REV, nullptr);
+        }
+        const bool ok = glGetError() == GL_NO_ERROR;
+        glBindTexture(GL_TEXTURE_2D, 0);
+        if (!ok) {
+            glDeleteTextures(1, &name);
+            return nullptr;
+        }
+        return std::unique_ptr<GLTexture>(new ShadowTexture(name, internalFormat, size));
+    }
+
+private:
+    ShadowTexture(GLuint name, GLenum internalFormat, const QSize &size)
+        : GLTexture(GL_TEXTURE_2D, name, internalFormat, size, 1, true, OutputTransform{})
+    {
+    }
+};
+}
+
+// The blending buffer: half float, so the gamma 2.2 values keep more
+// precision than the 10-bit PQ they are converted into (SDR white sits at
+// 0.48 of a 1000-nit range; 10 bits there would requantise SDR content
+// before the PQ encode). Falls back to 10 bits where FP16 cannot be rendered to.
+bool WebRTCEglLayer::beginShadow(const QSize &size, OutputTransform transform)
+{
+    m_shadowActive = false;
+    if (!m_shadowTexture || m_shadowTexture->size() != size) {
+        if (m_shadowFailedSize == size) {
+            return false;
+        }
+        releaseShadow();
+        for (GLenum format : {GLenum(GL_RGBA16F), GLenum(GL_RGB10_A2)}) {
+            auto texture = ShadowTexture::create(format, size);
+            if (!texture) {
+                continue;
+            }
+            auto framebuffer = std::make_unique<GLFramebuffer>(texture.get());
+            if (!framebuffer->valid()) {
+                continue;
+            }
+            m_shadowTexture = std::move(texture);
+            m_shadowFramebuffer = std::move(framebuffer);
+            WEBRTC_INFO("HDR: blending buffer %dx%d %s", size.width(), size.height(),
+                        format == GL_RGBA16F ? "RGBA16F" : "RGB10_A2");
+            break;
+        }
+        if (!m_shadowTexture) {
+            WEBRTC_ERR("HDR: no %dx%d blending buffer can be made; composing on PQ values", size.width(), size.height());
+            m_shadowFailedSize = size;
+            return false;
+        }
+    }
+    if (m_shadowTexture->contentTransform() != transform) {
+        m_shadowTexture->setContentTransform(transform);
+        m_shadowValid = false;
+    }
+    // Invalid until this frame's endFrame: a frame begun and never ended
+    // leaves the texture partly repainted, and the next one must not trust
+    // it. An empty journal makes beginFrame ask for a full repaint.
+    if (!m_shadowValid) {
+        m_shadowDamageJournal.clear();
+    }
+    m_shadowActive = true;
+    m_shadowValid = false;
+    return true;
+}
+
+void WebRTCEglLayer::releaseShadow()
+{
+    m_shadowFramebuffer.reset();
+    m_shadowTexture.reset();
+    m_shadowDamageJournal.clear();
+    m_shadowValid = false;
+    m_shadowActive = false;
+}
+
+// Device-space rectangles as two triangles each, positions in framebuffer
+// pixels and texture coordinates over the same size: a texel-exact copy.
+// The same geometry as drm_egl_layer_surface.cpp's (file-static there).
+static GLVertexBuffer *uploadShadowGeometry(const Region &pixels, const QSize &size)
+{
+    GLVertexBuffer *vbo = GLVertexBuffer::streamingBuffer();
+    vbo->reset();
+    vbo->setAttribLayout(std::span(GLVertexBuffer::GLVertex2DLayout), sizeof(GLVertex2D));
+    const auto optMap = vbo->map<GLVertex2D>(pixels.rects().size() * 6);
+    if (!optMap) {
+        return nullptr;
+    }
+    const auto map = *optMap;
+    size_t i = 0;
+    for (RectF rect : pixels.rects()) {
+        const float x0 = rect.left();
+        const float y0 = rect.top();
+        const float x1 = rect.right();
+        const float y1 = rect.bottom();
+        const float u0 = x0 / size.width();
+        const float v0 = y0 / size.height();
+        const float u1 = x1 / size.width();
+        const float v1 = y1 / size.height();
+        map[i++] = GLVertex2D{.position = QVector2D(x0, y0), .texcoord = QVector2D(u0, v0)};
+        map[i++] = GLVertex2D{.position = QVector2D(x1, y1), .texcoord = QVector2D(u1, v1)};
+        map[i++] = GLVertex2D{.position = QVector2D(x0, y1), .texcoord = QVector2D(u0, v1)};
+        map[i++] = GLVertex2D{.position = QVector2D(x0, y0), .texcoord = QVector2D(u0, v0)};
+        map[i++] = GLVertex2D{.position = QVector2D(x1, y0), .texcoord = QVector2D(u1, v0)};
+        map[i++] = GLVertex2D{.position = QVector2D(x1, y1), .texcoord = QVector2D(u1, v1)};
+    }
+    vbo->unmap();
+    vbo->setVertexCount(i);
+    return vbo;
+}
+
+// The blending -> encoding pass, the equivalent of the shadow branch of
+// EglGbmLayerSurface::endRendering. It rewrites what the SLOT lacks: this
+// frame's damage plus whatever changed since the slot was last written (its
+// age), all of which the shadow texture holds -- it is never behind.
+void WebRTCEglLayer::convertShadow(const Region &damagedDeviceRegion)
+{
+    const QSize size = m_swapchain->size();
+    const Region slotRepaint = s_bufferAgeEnabled
+        ? (damagedDeviceRegion | m_damageJournal.accumulate(m_current->age(), Region::infinite()))
+        : Region::infinite();
+    const auto mapping = m_shadowTexture->contentTransform().combine(OutputTransform::FlipY);
+    const QSize rotatedSize = mapping.map(size);
+    const Region repaint = mapping.map(slotRepaint & Rect(QPoint(), rotatedSize), rotatedSize);
+    if (repaint.isEmpty()) {
+        return;
+    }
+
+    GLFramebuffer *fbo = m_current->framebuffer();
+    GLFramebuffer::pushFramebuffer(fbo);
+    ShaderBinder binder(ShaderTrait::MapTexture | ShaderTrait::TransformColorspace);
+    // Absolute colorimetric: the scene already mapped every surface to the
+    // output's luminances; this only re-encodes them.
+    binder.shader()->setColorspaceUniforms(m_shadowBlend, m_shadowEncoding, RenderingIntent::AbsoluteColorimetricNoAdaptation);
+    QMatrix4x4 mat;
+    mat.scale(1, -1);
+    mat.ortho(QRectF(QPointF(), fbo->size()));
+    binder.shader()->setUniform(GLShader::Mat4Uniform::ModelViewProjectionMatrix, mat);
+    glDisable(GL_BLEND);
+    if (GLVertexBuffer *vbo = uploadShadowGeometry(repaint, size)) {
+        m_shadowTexture->bind();
+        vbo->render(GL_TRIANGLES);
+        m_shadowTexture->unbind();
+    }
+    GLFramebuffer::popFramebuffer();
 }
 
 /**
@@ -134,6 +382,16 @@ void WebRTCEglLayer::reportCadence()
 
 bool WebRTCEglLayer::endFrame(const Region &renderedDeviceRegion, const Region &damagedDeviceRegion, OutputFrame *frame)
 {
+    if (m_shadowActive) {
+        m_shadowActive = false;
+        if (m_current) {
+            convertShadow(damagedDeviceRegion);
+        }
+        m_shadowDamageJournal.add(damagedDeviceRegion);
+        m_shadowValid = true;
+    }
+    // After the conversion pass, so the render time KWin schedules by (and
+    // KWIN_LOG_PERFORMANCE_DATA records) includes it.
     if (frame && m_query) {
         m_query->end();
         frame->addRenderTimeQuery(std::move(m_query));
@@ -380,6 +638,7 @@ void WebRTCEglLayer::releaseBuffers()
 {
     m_current.reset();
     m_swapchain.reset();
+    releaseShadow();
 }
 
 GLTexture *WebRTCEglLayer::texture() const

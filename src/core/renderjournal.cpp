@@ -1,6 +1,8 @@
 /*
     SPDX-FileCopyrightText: 2020 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
 
+    Modified by Latenz (Simone Salgaro), Oct 2026: adds RenderJournal::average().
+
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
@@ -41,6 +43,11 @@ void RenderJournal::add(std::chrono::nanoseconds renderTime, std::chrono::nanose
 std::chrono::nanoseconds RenderJournal::result() const
 {
     return m_result + m_variance * 2;
+}
+
+std::chrono::nanoseconds RenderJournal::average() const
+{
+    return m_result;
 }
 
 } // namespace KWin

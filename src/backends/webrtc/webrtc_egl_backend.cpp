@@ -405,6 +405,9 @@ bool WebRTCEglBackend::initPipeline(const SWebRTCConfig &config)
     m_bridge->setOnOutputSetScale([this](uint16_t idx, double scale) {
         onBridgeOutputSetScale(idx, scale);
     });
+    m_bridge->setOnOutputSetHdr([this](uint16_t idx, bool on, uint32_t ref, uint32_t max, uint32_t minMilli) {
+        onBridgeOutputSetHdr(idx, on, ref, max, minMilli);
+    });
 
     // Clipboard is not carried over the bridge.
 
@@ -618,6 +621,28 @@ bool WebRTCEglBackend::setOutputScale(uint32_t outputIdx, double scale)
     }
 
     broadcastOutputList();
+    return true;
+}
+
+bool WebRTCEglBackend::setOutputHdr(uint32_t outputIdx, bool on, uint32_t referenceNits, uint32_t maxNits,
+                                    uint32_t minMilliNits)
+{
+    BackendOutput *output = findOutputByIdx(outputIdx);
+    if (!output) {
+        WEBRTC_LOG("setOutputHdr: unknown output %u", outputIdx);
+        return false;
+    }
+    auto *webrtcOutput = static_cast<WebRTCOutput *>(output);
+    if (!webrtcOutput->setHdr(on, referenceNits, maxNits, minMilliNits / 1000.0)) {
+        return true;  // already so
+    }
+    WEBRTC_LOG("output %u: HDR %s (SDR white %u nits, peak %u, black %.3f)", outputIdx, on ? "on" : "off",
+               referenceNits, maxNits, minMilliNits / 1000.0);
+    // Every pixel changes encoding: one whole frame, as a scale change does.
+    if (SOutputPipeline *pipeline = findPipelineByIdx(outputIdx)) {
+        if (pipeline->streamActive) armForcedCapture(webrtcOutput);
+        else pipeline->pendingForcedCapture = true;
+    }
     return true;
 }
 
@@ -1092,6 +1117,7 @@ bool WebRTCEglBackend::sendDmabufFrame(SOutputPipeline *pipeline, const DmaBufAt
     uint8_t flags = 0;
     if (isNew) flags |= kwin_bridge::kDmabufNewBuffer;
     if (forced) flags |= kwin_bridge::kDmabufForced;
+    if (layer->currentBufferHdr()) flags |= kwin_bridge::kDmabufHdr;
 
     // Explicit cross-process sync. EGLNativeFence does the glFlush and hands
     // back a sync_file the peer can wait on GPU-side; without it (driver

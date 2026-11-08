@@ -1,4 +1,6 @@
 #version 140
+// Modified by Latenz (Simone Salgaro), Oct 2026: the black point translation
+// scales with alpha on premultiplied colour.
 
 #if TRAIT_MAP_TEXTURE || TRAIT_MAP_MULTI_PLANE_TEXTURE
 uniform sampler2D sampler;
@@ -78,7 +80,9 @@ void main(void)
 
 #if TRAIT_TRANSFORM_COLORSPACE
     result = encodingToNits(result, sourceNamedTransferFunction, sourceTransferFunctionParams.x, sourceTransferFunctionParams.y);
-    result.rgb = (colorimetryTransform * vec4(result.rgb, 1.0)).rgb;
+    // Premultiplied: the black point translation scales with alpha too (see
+    // sourceEncodingToNitsInDestinationColorspace in colormanagement.glsl).
+    result.rgb = (colorimetryTransform * vec4(result.rgb, result.a)).rgb;
 #endif
 
 #if TRAIT_ADJUST_SATURATION

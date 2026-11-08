@@ -269,6 +269,8 @@ public:
     // Set an output's DPI scale factor (MsgType::OutputSetScale). Pixel size is
     // untouched: scale only changes the logical space clients are laid out in.
     bool setOutputScale(uint32_t outputIdx, double scale);
+    // HDR composition for one output (MsgType::OutputSetHdr).
+    bool setOutputHdr(uint32_t outputIdx, bool on, uint32_t referenceNits, uint32_t maxNits, uint32_t minMilliNits);
     // Get list of all output infos for client
     std::vector<SOutputInfo> getOutputInfos() const;
     // Get the output index for a BackendOutput*
@@ -318,6 +320,7 @@ private:
     void onBridgeOutputConfigure(uint16_t outputIdx, uint32_t width, uint32_t height, bool hasPos,
                                   int32_t x, int32_t y, uint32_t fps);
     void onBridgeOutputSetScale(uint16_t outputIdx, double scale);
+    void onBridgeOutputSetHdr(uint16_t outputIdx, bool on, uint32_t referenceNits, uint32_t maxNits, uint32_t minMilliNits);
 
     WebRTCBackend *m_backend;
 

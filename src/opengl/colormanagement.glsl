@@ -1,3 +1,5 @@
+// Modified by Latenz (Simone Salgaro), Oct 2026: the black point translation
+// scales with alpha on premultiplied colour.
 const int sRGB_EOTF = 0;
 const int linear_EOTF = 1;
 const int PQ_EOTF = 2;
@@ -223,7 +225,12 @@ vec4 encodingToNits(vec4 color, int sourceTransferFunction, float luminanceOffse
 
 vec4 sourceEncodingToNitsInDestinationColorspace(vec4 color) {
     color = encodingToNits(color, sourceNamedTransferFunction, sourceTransferFunctionParams.x, sourceTransferFunctionParams.y);
-    color.rgb = (colorimetryTransform * vec4(color.rgb, 1.0)).rgb;
+    // color is premultiplied here (encodingToNits multiplies the alpha back
+    // in), so the matrix's translation -- the black point compensation of
+    // ColorDescription::toOther -- must be scaled by alpha too, or every
+    // translucent pixel gets the full black offset: a fully transparent one
+    // adds light to what is under it. Opaque pixels are unchanged.
+    color.rgb = (colorimetryTransform * vec4(color.rgb, color.a)).rgb;
     return vec4(doTonemapping(color.rgb), color.a);
 }
 

@@ -10,7 +10,7 @@
 
 namespace kwin_bridge {
 
-inline constexpr uint16_t kProtocolVersion = 7;
+inline constexpr uint16_t kProtocolVersion = 9;
 inline constexpr const char *kDefaultSocketEnv = "BEAM_KWIN_SOCKET";
 inline constexpr const char *kDefaultSocketRelPath = "beam/kwin-bridge.sock";
 
@@ -40,12 +40,14 @@ enum class MsgType : uint8_t {
   ClientHello = 23,
   BufferRelease = 24,
   OutputSetScale = 25,
+  OutputSetHdr = 27,
 };
 
 enum DmabufFlags : uint8_t {
   kDmabufNewBuffer = 1 << 0,
   kDmabufHasFence = 1 << 1,
   kDmabufForced = 1 << 2,
+  kDmabufHdr = 1 << 3,
 };
 
 enum BufferReleaseFlags : uint8_t {
@@ -60,6 +62,7 @@ enum FeatureBit : uint32_t {
   kFeatOutputScale = 1u << 5,
   kFeatSeats = 1u << 8,
   kFeatInputText = 1u << 9,
+  kFeatHdr = 1u << 10,
 };
 
 enum StreamMode : uint32_t {
@@ -204,6 +207,14 @@ struct OutputScalePayload {
 
 inline constexpr uint32_t kMinScaleMilli = 500;
 inline constexpr uint32_t kMaxScaleMilli = 4000;
+
+struct OutputHdrPayload {
+  uint8_t on;
+  uint8_t reserved[3];
+  uint32_t referenceNits;
+  uint32_t maxNits;
+  uint32_t minMilliNits;
+};
 
 #pragma pack(pop)
 

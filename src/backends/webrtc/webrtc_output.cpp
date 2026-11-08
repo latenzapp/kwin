@@ -19,6 +19,7 @@
 #include "compositor.h"
 #include "core/outputconfiguration.h"
 #include "core/outputlayer.h"
+#include "core/colorspace.h"
 #include "core/region.h"
 #include "core/renderbackend.h"
 #include "core/renderloop.h"
@@ -39,6 +40,18 @@ namespace KWin
 static bool s_forceContinuousEnv()
 {
     static const bool value = NWebRTCPipeline::envFlag("KWIN_WEBRTC_CONTINUOUS");
+    return value;
+}
+
+// KWIN_WEBRTC_HDR_BLEND=pq: blend an HDR output directly on PQ code values.
+// Skips the conversion pass but darkens translucency and fades; see
+// WebRTCOutput::setHdr.
+static bool s_hdrBlendPqEnv()
+{
+    static const bool value = [] {
+        const char *v = NWebRTCPipeline::envValue("KWIN_WEBRTC_HDR_BLEND");
+        return v && strcasecmp(v, "pq") == 0;
+    }();
     return value;
 }
 
@@ -93,6 +106,15 @@ static std::chrono::nanoseconds s_callbackLeadEnv()
     return value;
 }
 
+static bool s_callbackBoundedEnv()
+{
+    static const bool value = [] {
+        const char *v = NWebRTCPipeline::envValue("KWIN_WEBRTC_CALLBACK_ESTIMATE");
+        return !(v && strcasecmp(v, "predicted") == 0);
+    }();
+    return value;
+}
+
 WebRTCOutput::WebRTCOutput(WebRTCBackend *parent, const std::optional<QString> &connectorName)
     : BackendOutput()
     , m_backend(parent)
@@ -113,10 +135,67 @@ WebRTCOutput::WebRTCOutput(WebRTCBackend *parent, const std::optional<QString> &
         .name = connectorName.value_or(QStringLiteral("WEBRTC-%1").arg(identifier)),
         .physicalSize = QSize(),
         .edid = Edid{},
+        // HDR only when the peer asks for it (setHdr). The capability lets clients see
+        // an HDR output once it is one.
+        .capabilities = Capability::HighDynamicRange | Capability::WideColorGamut,
         .panelOrientation = OutputTransform::Kind::Normal,
         .internal = false,
         .mstPath = QByteArray(),
     });
+}
+
+bool WebRTCOutput::setHdr(bool on, uint32_t referenceNits, uint32_t maxNits, double minNits)
+{
+    if (on && m_hdrUnavailable) {
+        return false;
+    }
+    if (on == m_state.highDynamicRange
+        && (!on || (m_state.referenceLuminance == referenceNits && m_state.colorDescription->maxHdrLuminance() == double(maxNits)))) {
+        return false;
+    }
+    State next = m_state;
+    next.highDynamicRange = on;
+    next.wideColorGamut = on;
+    std::shared_ptr<ColorDescription> colour = ColorDescription::sRGB;
+    if (on) {
+        next.referenceLuminance = referenceNits;
+        colour = std::make_shared<ColorDescription>(Colorimetry::BT2020, TransferFunction(TransferFunction::PerceptualQuantizer),
+                                                    double(referenceNits), minNits, double(maxNits), double(maxNits));
+    }
+    next.originalColorDescription = colour;
+    next.colorDescription = colour;
+    // Blend in gamma 2.2 over the output's luminance range, as KWin's DRM
+    // backend does (DrmOutput::tryKmsColorOffloading): alpha blending on PQ
+    // code values makes every translucent edge, shadow and fade far too dark.
+    // The layer composes into a shadow buffer in this space and converts it
+    // to PQ in one pass (WebRTCEglLayer::endFrame); it does so whenever the
+    // two descriptions differ, so SDR (both sRGB, the same object) has no pass.
+    //
+    // The range starts at the output's black, not at 0 as in the DRM
+    // backend. KWin's black point compensation maps every surface's black to
+    // that level (0.005 nits: the PQ transfer function's own minimum), and in
+    // a gamma 2.2 that starts at 0 such a black is a code of 0.0039 instead
+    // of 0, so whatever is blended over it comes out lighter than on SDR.
+    // From the black level up, gamma 2.2 is a pure power law of the values
+    // SDR blends, scaled: grey mixes come out exactly as on an SDR output.
+    // Saturated ones mix in the BT.2020 container, as on KWin's DRM HDR.
+    //
+    // layerBlendingColor stays the encoding: there is no KMS blending stage
+    // after the layer here, the buffer goes to the peer as it is.
+    const double black = std::max(colour->minLuminance(), colour->transferFunction().minLuminance);
+    next.blendingColor = (on && !s_hdrBlendPqEnv())
+        ? colour->withTransferFunction(TransferFunction(TransferFunction::gamma22, black, double(maxNits)))
+        : colour;
+    next.layerBlendingColor = colour;
+    setState(next);
+    Q_EMIT changed();
+    return true;
+}
+
+void WebRTCOutput::hdrUnavailable()
+{
+    m_hdrUnavailable = true;
+    setHdr(false, 0, 0, 0);
 }
 
 WebRTCOutput::~WebRTCOutput()
@@ -286,7 +365,16 @@ std::chrono::nanoseconds WebRTCOutput::frameCallbackDelay() const
     const auto interval = std::chrono::nanoseconds(1'000'000'000'000) / renderLoop()->refreshRate();
     // From the end of this compose (when the callback would go out) to the start of the
     // next one: one interval minus the render loop's own head start (render estimate + 1 ms).
-    const auto nextComposeIn = interval - renderLoop()->predictedRenderTime() - std::chrono::milliseconds(1);
+    // The prediction's variance margin is bounded here: one slow composite keeps
+    // predictedRenderTime() high enough to clamp this delay to zero for a long time,
+    // which puts every client's draw right after the compose. The margin serves the
+    // render loop's deadline, not this estimate.
+    // KWIN_WEBRTC_CALLBACK_ESTIMATE=predicted selects the unbounded
+    // predictedRenderTime().
+    const auto estimate = s_callbackBoundedEnv()
+        ? std::min(renderLoop()->predictedRenderTime(), renderLoop()->averageRenderTime() + std::chrono::milliseconds(2))
+        : renderLoop()->predictedRenderTime();
+    const auto nextComposeIn = interval - estimate - std::chrono::milliseconds(1);
     return std::clamp(nextComposeIn - s_callbackLeadEnv(), std::chrono::nanoseconds::zero(), interval);
 }
 

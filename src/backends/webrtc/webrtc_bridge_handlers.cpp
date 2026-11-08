@@ -213,6 +213,14 @@ void WebRTCEglBackend::onBridgeOutputSetScale(uint16_t outputIdx, double scale)
     }, Qt::QueuedConnection);
 }
 
+void WebRTCEglBackend::onBridgeOutputSetHdr(uint16_t outputIdx, bool on, uint32_t referenceNits, uint32_t maxNits,
+                                            uint32_t minMilliNits)
+{
+    QMetaObject::invokeMethod(this, [this, outputIdx, on, referenceNits, maxNits, minMilliNits]() {
+        setOutputHdr(outputIdx, on, referenceNits, maxNits, minMilliNits);
+    }, Qt::QueuedConnection);
+}
+
 void WebRTCEglBackend::sendCursorImage(uint32_t outputIdx, uint32_t width, uint32_t height,
                                         int32_t hotspotX, int32_t hotspotY, const uint8_t *rgba,
                                         size_t rgbaLen)

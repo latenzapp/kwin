@@ -46,6 +46,17 @@ public:
 
     void applyChanges(const OutputConfiguration &config) override;
 
+    // HDR composition: the output's colour becomes PQ /
+    // BT.2020 with SDR content at `referenceNits`, which is what the scene
+    // renders into (WebRTCEglLayer takes it as its RenderTarget colour, in a
+    // 10-bit buffer) and what HDR clients are told the output can show.
+    // False when nothing changed.
+    bool setHdr(bool on, uint32_t referenceNits, uint32_t maxNits, double minNits);
+    // The layer could not make a 10-bit swapchain: the output goes back to
+    // SDR and refuses HDR until the compositor restarts, so clients are not
+    // told of an HDR output that composes sRGB.
+    void hdrUnavailable();
+
     void setOutputLayer(std::unique_ptr<OutputLayer> &&layer);
     OutputLayer *outputLayer() const;
     void setCursorLayer(std::unique_ptr<OutputLayer> &&layer);
@@ -120,6 +131,7 @@ private:
     int m_identifier;
     std::shared_ptr<OutputFrame> m_frame;
     bool m_continuousMode = false; // set while a stream is active
+    bool m_hdrUnavailable = false; // hdrUnavailable()
     uint32_t m_captureHz = 0;      // 0 = render loop follows the advertised mode
 };
 

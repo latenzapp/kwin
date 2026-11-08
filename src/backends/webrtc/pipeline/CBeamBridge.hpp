@@ -72,6 +72,10 @@ class CBeamBridge {
   // `scale` is already validated against kMinScaleMilli/kMaxScaleMilli and
   // converted out of the wire's fixed point by the time it gets here.
   using FnOutputSetScale = std::function<void(uint16_t outputIdx, double scale)>;
+  // kFeatHdr: HDR composition for an output, with the
+  // luminances the peer chose (OutputHdrPayload).
+  using FnOutputSetHdr = std::function<void(uint16_t outputIdx, bool on, uint32_t referenceNits,
+                                            uint32_t maxNits, uint32_t minMilliNits)>;
 
   CBeamBridge();
   ~CBeamBridge();
@@ -135,6 +139,7 @@ class CBeamBridge {
   void setOnOutputRemove(FnOutputRemove cb) { m_onOutputRemove = std::move(cb); }
   void setOnOutputConfigure(FnOutputConfigure cb) { m_onOutputConfigure = std::move(cb); }
   void setOnOutputSetScale(FnOutputSetScale cb) { m_onOutputSetScale = std::move(cb); }
+  void setOnOutputSetHdr(FnOutputSetHdr cb) { m_onOutputSetHdr = std::move(cb); }
   void setOnBufferRelease(FnBufferRelease cb) { m_onBufferRelease = std::move(cb); }
   void setOnBufferForget(FnBufferForget cb) { m_onBufferForget = std::move(cb); }
 
@@ -265,6 +270,7 @@ class CBeamBridge {
   FnOutputRemove m_onOutputRemove;
   FnOutputConfigure m_onOutputConfigure;
   FnOutputSetScale m_onOutputSetScale;
+  FnOutputSetHdr m_onOutputSetHdr;
   FnBufferRelease m_onBufferRelease;
   FnBufferForget m_onBufferForget;
 

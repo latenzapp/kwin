@@ -1,6 +1,8 @@
 /*
     SPDX-FileCopyrightText: 2020 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
 
+    Modified by Latenz (Simone Salgaro), Oct 2026: adds RenderLoop::averageRenderTime().
+
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
@@ -99,6 +101,7 @@ public:
      * Returns the expected time how long it is going to take to render the next frame.
      */
     std::chrono::nanoseconds predictedRenderTime() const;
+    std::chrono::nanoseconds averageRenderTime() const;
 
     // TODO integrate cursor updates into the render loop / frame scheduling somehow?
     // and then remove this again
