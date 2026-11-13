@@ -10,7 +10,7 @@
 
 namespace kwin_bridge {
 
-inline constexpr uint16_t kProtocolVersion = 9;
+inline constexpr uint16_t kProtocolVersion = 10;
 inline constexpr const char *kDefaultSocketEnv = "BEAM_KWIN_SOCKET";
 inline constexpr const char *kDefaultSocketRelPath = "beam/kwin-bridge.sock";
 
