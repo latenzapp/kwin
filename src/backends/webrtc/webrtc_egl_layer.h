@@ -13,7 +13,7 @@
     SPDX-FileCopyrightText: 2015 Martin Gräßlin <mgraesslin@kde.org>
     SPDX-FileCopyrightText: 2026 Simone Salgaro
 
-    Written for Latenz (Aug-Oct 2026) as part of the Latenz fork of KWin; not
+    Written for Latenz (Aug-Nov 2026) as part of the Latenz fork of KWin; not
     part of upstream KWin.
 
     SPDX-License-Identifier: GPL-2.0-or-later
@@ -51,6 +51,11 @@ public:
 
     FormatModifierMap supportedDrmFormats() const override;
     void releaseBuffers() override;
+
+    // Refuses a target rectangle that is not the whole output. This layer's
+    // buffer IS the stream's frame: there is no CRTC to place a smaller plane
+    // at targetRect() and fill the rest. See the definition.
+    bool preparePresentationTest() override;
 
     GLTexture *texture() const;
 
@@ -165,6 +170,10 @@ private:
     // Per layer, so each output's every-60th trace samples its own
     // composites.
     uint64_t m_endFrameCount = 0;
+
+    // preparePresentationTest() is refusing partial targets: logged when this
+    // starts and when it ends, not on every composite.
+    bool m_refusingPartialTarget = false;
 
 public:
     // Composite ticks reaching endFrame(). Distinguishes "the compositor is

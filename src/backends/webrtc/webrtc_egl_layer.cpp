@@ -7,7 +7,7 @@
     SPDX-FileCopyrightText: 2015 Martin Gräßlin <mgraesslin@kde.org>
     SPDX-FileCopyrightText: 2026 Simone Salgaro
 
-    Written for Latenz (Aug-Oct 2026) as part of the Latenz fork of KWin; not
+    Written for Latenz (Aug-Nov 2026) as part of the Latenz fork of KWin; not
     part of upstream KWin.
 
     SPDX-License-Identifier: GPL-2.0-or-later
@@ -632,6 +632,66 @@ void WebRTCEglLayer::forgetAllBufferIds()
 FormatModifierMap WebRTCEglLayer::supportedDrmFormats() const
 {
     return m_backend->supportedFormats();
+}
+
+// The whole output, with one pixel of slack per edge: the scene view's target
+// is the output's logical geometry scaled back to device pixels and rounded
+// (compositor.cpp, mapGlobalLogicalToOutputDeviceCoordinates), which may land
+// a pixel inside at a fractional scale. A cursor never comes close.
+static constexpr bool targetCoversOutput(const Rect &target, const QSize &modeSize)
+{
+    return target.adjusted(-1, -1, 1, 1).contains(Rect(QPoint(0, 0), modeSize));
+}
+// The scene: the whole output.
+static_assert(targetCoversOutput(Rect(0, 0, 1920, 1080), QSize(1920, 1080)));
+// Mirroring's black bars make the scene's target larger than the mode.
+static_assert(targetCoversOutput(Rect(-10, -10, 1940, 1100), QSize(1920, 1080)));
+// Rounding at a fractional scale: a pixel short on an edge (here the left and
+// the bottom) still counts.
+static_assert(targetCoversOutput(Rect(1, 0, 2559, 1439), QSize(2560, 1440)));
+// The cursor swapped onto the primary, the case this refuses: a cursor-sized
+// target anywhere on the output, the output's corner included.
+static_assert(!targetCoversOutput(Rect(0, 0, 24, 24), QSize(1920, 1080)));
+static_assert(!targetCoversOutput(Rect(948, 528, 48, 48), QSize(1920, 1080)));
+// Anything two pixels short of an edge is not the whole output.
+static_assert(!targetCoversOutput(Rect(0, 0, 1918, 1080), QSize(1920, 1080)));
+static_assert(!targetCoversOutput(Rect(0, 2, 1920, 1078), QSize(1920, 1080)));
+
+// KWin asks a primary layer to show a single item at that item's rectangle
+// when the scene needs no composite: with nothing on the output, or only a
+// black single-pixel background (WorkspaceScene::layerCandidates and its
+// checkForBlackBackground), the cursor is the only layer candidate, and
+// assignLayers() moves it from the cursor layer onto the primary because "the
+// primary plane *must* be used". On a DRM device that is a small primary
+// plane at the cursor's place on a black CRTC. Here the layer's buffer is the
+// stream's whole frame (beginFrame sizes it to the mode, and the peer receives
+// all of it), so accepting this target would draw the cursor's view over the
+// whole buffer, stretching the arrow across the frame until something else
+// appears on the output.
+//
+// Refusing that target fails the configuration in setupLayers(), and
+// composite() falls back to the scene on the primary with the cursor drawn
+// into it: a black frame with a cursor of the right size at the right place.
+// The cursor layer is disabled for those frames, so the peer is told the
+// decoupled cursor is hidden. The next frame with something to composite
+// goes back to the scene on the primary and the cursor on its own layer.
+bool WebRTCEglLayer::preparePresentationTest()
+{
+    const Rect target = targetRect();
+    const QSize modeSize = m_output->modeSize();
+    const bool covers = targetCoversOutput(target, modeSize);
+    if (covers == !m_refusingPartialTarget) {
+        return covers;
+    }
+    m_refusingPartialTarget = !covers;
+    if (covers) {
+        WEBRTC_INFO("primary layer: the scene covers the output again (%dx%d)", modeSize.width(), modeSize.height());
+    } else {
+        WEBRTC_INFO("primary layer: refusing a %dx%d target at %d,%d on a %dx%d output (one item, not the scene): "
+                    "the scene is composited instead",
+                    target.width(), target.height(), target.x(), target.y(), modeSize.width(), modeSize.height());
+    }
+    return covers;
 }
 
 void WebRTCEglLayer::releaseBuffers()

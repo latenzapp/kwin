@@ -11,7 +11,7 @@
 
     SPDX-FileCopyrightText: 2026 Simone Salgaro
 
-    Written for Latenz (Feb-Oct 2026) as part of the Latenz fork of KWin; not
+    Written for Latenz (Feb-Nov 2026) as part of the Latenz fork of KWin; not
     part of upstream KWin.
 
     SPDX-License-Identifier: GPL-2.0-or-later
@@ -22,8 +22,11 @@
 #include "webrtc_logging.h"
 #include "pipeline/WebRTCLog.hpp"
 
+#include "core/backendoutput.h"
+#include "core/output.h"
 #include "input.h"
 #include "keyboard_input.h"
+#include "workspace.h"
 #include "xkb.h"
 
 #include <QCoreApplication>
@@ -108,13 +111,17 @@ void WebRTCInputBackend::setOutputSize(uint32_t width, uint32_t height)
 {
     m_outputWidth  = width;
     m_outputHeight = height;
-    // Also update default output geometry (idx 0)
-    m_outputGeometries[0] = {0, 0, width, height};
+    // Also update default output geometry (idx 0), keeping its output.
+    SOutputGeometry &primary = m_outputGeometries[0];
+    primary.x = 0;
+    primary.y = 0;
+    primary.width = width;
+    primary.height = height;
 }
 
-void WebRTCInputBackend::setOutputGeometry(uint32_t outputIdx, int32_t x, int32_t y, uint32_t w, uint32_t h)
+void WebRTCInputBackend::setOutputGeometry(uint32_t outputIdx, BackendOutput *output, int32_t x, int32_t y, uint32_t w, uint32_t h)
 {
-    m_outputGeometries[outputIdx] = {x, y, w, h};
+    m_outputGeometries[outputIdx] = {x, y, w, h, output};
     WEBRTC_LOG("Input: setOutputGeometry(%u) = %d,%d %ux%u", outputIdx, x, y, w, h);
 }
 
@@ -123,10 +130,28 @@ void WebRTCInputBackend::removeOutputGeometry(uint32_t outputIdx)
     m_outputGeometries.erase(outputIdx);
 }
 
+// Absolute positions from the peer (pointer, touch, tablet) are fractions of
+// the buffer the output renders, that is of its mode size in pixels. The
+// workspace places them in logical coordinates, where the output covers its
+// logical geometry: the backend position less the corner of all outputs'
+// bounding box, and the mode size turned by the output's transform and divided
+// by its scale. Output management can change the scale, the transform and the
+// position at any time, so the point is mapped through the workspace's current
+// geometry of the output on every event. The inverse-transform step is the one
+// the nested Wayland backend applies to a pointer on its host window. The
+// rectangle registered for the output covers only the time before the workspace
+// manages it.
 QPointF WebRTCInputBackend::mapAbs(uint32_t outputIdx, float nx, float ny) const
 {
     auto it = m_outputGeometries.find(outputIdx);
     if (it != m_outputGeometries.end()) {
+        BackendOutput *output = it->second.output;
+        if (LogicalOutput *logical = (output && workspace()) ? workspace()->findOutput(output) : nullptr) {
+            const QSizeF buffer = output->modeSize();
+            const QPointF inBuffer(static_cast<double>(nx) * buffer.width(), static_cast<double>(ny) * buffer.height());
+            const QPointF local = output->transform().inverted().map(inBuffer, buffer) / output->scale();
+            return logical->geometryF().topLeft() + local;
+        }
         return QPointF(static_cast<double>(nx) * it->second.width + it->second.x,
                        static_cast<double>(ny) * it->second.height + it->second.y);
     }

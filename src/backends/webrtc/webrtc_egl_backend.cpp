@@ -22,7 +22,7 @@
     SPDX-FileCopyrightText: 2015 Martin Gräßlin <mgraesslin@kde.org>
     SPDX-FileCopyrightText: 2026 Simone Salgaro
 
-    Written for Latenz (Feb-Oct 2026) as part of the Latenz fork of KWin; not
+    Written for Latenz (Feb-Nov 2026) as part of the Latenz fork of KWin; not
     part of upstream KWin.
 
     SPDX-License-Identifier: GPL-2.0-or-later
@@ -243,6 +243,17 @@ void WebRTCEglBackend::initOutputPipeline(BackendOutput *output, uint32_t output
                outputIdx, config.width, config.height, config.fps, config.codec.c_str());
 
     m_pipelines[output] = std::move(pipeline);
+
+    // A move that does not come through the bridge (output management, a stored
+    // configuration) must reach the peer too, or the layout it was last sent
+    // goes stale. The position is the only field of the list such a change can
+    // touch: applyChanges() ignores a requested mode, and the size and rate in
+    // the list are the pipeline's, set when the pipeline is created and changed
+    // only by the bridge's own handlers. A scale or transform changes no field
+    // of the list (sizes on the bridge are pixels), and the input backend maps
+    // every event through the workspace's current geometry of the output
+    // (mapAbs), so neither needs a list of its own.
+    connect(output, &BackendOutput::positionChanged, this, &WebRTCEglBackend::scheduleOutputListSync);
 }
 
 void WebRTCEglBackend::shutdownOutputPipeline(BackendOutput *output)
@@ -251,6 +262,7 @@ void WebRTCEglBackend::shutdownOutputPipeline(BackendOutput *output)
     if (it != m_pipelines.end()) {
         WEBRTC_LOG("shutdown: destroying pipeline for output %u", it->second.outputIdx);
         m_pipelines.erase(it);
+        disconnect(output, nullptr, this, nullptr);
     }
 }
 
@@ -669,9 +681,38 @@ std::vector<WebRTCEglBackend::SOutputInfo> WebRTCEglBackend::getOutputInfos() co
     return infos;
 }
 
+// The outputs and their rectangles: what the input backend's geometry table is
+// built from, and the layout the peer is sent in the list. The rate is left
+// out: StreamStart changes it without sending a list.
+static bool sameOutputLayout(const std::vector<WebRTCEglBackend::SOutputInfo> &a,
+                             const std::vector<WebRTCEglBackend::SOutputInfo> &b)
+{
+    return std::equal(a.begin(), a.end(), b.begin(), b.end(), [](const auto &x, const auto &y) {
+        return x.idx == y.idx && x.x == y.x && x.y == y.y && x.width == y.width && x.height == y.height;
+    });
+}
+
+void WebRTCEglBackend::scheduleOutputListSync()
+{
+    if (m_outputListSyncQueued)
+        return;
+    m_outputListSyncQueued = true;
+    // Runs after the change that queued it has finished: applyOutputConfiguration
+    // applies every output of a configuration before the event loop turns, so
+    // the list is read once, complete.
+    QMetaObject::invokeMethod(this, [this]() {
+        m_outputListSyncQueued = false;
+        if (sameOutputLayout(getOutputInfos(), m_lastOutputList))
+            return;
+        WEBRTC_INFO("output list changed outside the bridge: sending it");
+        broadcastOutputList();
+    }, Qt::QueuedConnection);
+}
+
 void WebRTCEglBackend::broadcastOutputList()
 {
     auto infos = getOutputInfos();
+    m_lastOutputList = infos;
 
     if (m_bridge) {
         std::vector<CBeamBridge::OutputDescriptor> descs;
@@ -693,7 +734,7 @@ void WebRTCEglBackend::broadcastOutputList()
     auto *inputBackend = m_backend->inputBackend();
     if (inputBackend) {
         for (const auto &info : infos) {
-            inputBackend->setOutputGeometry(info.idx, info.x, info.y, info.width, info.height);
+            inputBackend->setOutputGeometry(info.idx, findOutputByIdx(info.idx), info.x, info.y, info.width, info.height);
         }
     }
 }

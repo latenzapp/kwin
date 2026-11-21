@@ -20,7 +20,7 @@
     SPDX-FileCopyrightText: 2015 Martin Gräßlin <mgraesslin@kde.org>
     SPDX-FileCopyrightText: 2026 Simone Salgaro
 
-    Written for Latenz (Feb-Oct 2026) as part of the Latenz fork of KWin; not
+    Written for Latenz (Feb-Nov 2026) as part of the Latenz fork of KWin; not
     part of upstream KWin.
 
     SPDX-License-Identifier: GPL-2.0-or-later
@@ -301,6 +301,13 @@ private:
     // Send the current output list to the peer over the bridge (also
     // resyncs the input backend's per-output geometry table).
     void broadcastOutputList();
+    // An output moved. The bridge's own handlers broadcast the list
+    // themselves; this catches every other source: output management
+    // (kscreen, the display settings) and KWin applying a configuration it
+    // stored. Queued, so one configuration that moves several outputs sends
+    // one list, and the list goes out only when its layout differs from the
+    // last one sent.
+    void scheduleOutputListSync();
 
     // ── CBeamBridge callbacks (invoked from the bridge's socket threads;
     // these all hop onto the main thread via QMetaObject::invokeMethod) ──
@@ -330,6 +337,11 @@ private:
     // ── Per-output pipelines ─────────────────────────────────────────────
     std::map<BackendOutput *, SOutputPipeline> m_pipelines;
     uint32_t m_nextOutputIdx = 0; // monotonically increasing output ID
+
+    // scheduleOutputListSync(): a check is already queued, and the list the
+    // last broadcastOutputList() sent.
+    bool m_outputListSyncQueued = false;
+    std::vector<SOutputInfo> m_lastOutputList;
 
     // ── Bridge to the peer ──────────────────────────────────────────────
     std::unique_ptr<NStreaming::CBeamBridge> m_bridge;

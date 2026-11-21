@@ -5,7 +5,7 @@
 
     SPDX-FileCopyrightText: 2026 Simone Salgaro
 
-    Written for Latenz (Feb-Oct 2026) as part of the Latenz fork of KWin; not
+    Written for Latenz (Feb-Nov 2026) as part of the Latenz fork of KWin; not
     part of upstream KWin.
 
     SPDX-License-Identifier: GPL-2.0-or-later
@@ -19,6 +19,7 @@
 #include <QHash>
 #include <QList>
 #include <QPointF>
+#include <QPointer>
 #include <atomic>
 #include <chrono>
 #include <mutex>
@@ -29,6 +30,7 @@
 namespace KWin
 {
 
+class BackendOutput;
 class WebRTCBackend;
 class WebRTCEglBackend;
 
@@ -219,18 +221,21 @@ public:
     // Set the output dimensions for absolute coordinate mapping
     void setOutputSize(uint32_t width, uint32_t height);
 
-    // Multi-monitor: register per-output geometry for abs coordinate mapping
+    // Multi-monitor: register per-output geometry for abs coordinate mapping.
+    // `output` is what an event is mapped through once the workspace manages
+    // it (see mapAbs); the rectangle is the answer until then.
     struct SOutputGeometry {
         int32_t  x = 0, y = 0;
         uint32_t width = 1920, height = 1080;
+        QPointer<BackendOutput> output;
     };
-    void setOutputGeometry(uint32_t outputIdx, int32_t x, int32_t y, uint32_t w, uint32_t h);
+    void setOutputGeometry(uint32_t outputIdx, BackendOutput *output, int32_t x, int32_t y, uint32_t w, uint32_t h);
     void removeOutputGeometry(uint32_t outputIdx);
 
 private:
     void dispatch(const SRemoteInputEvent &ev);
-    // Normalised [0..1] within `outputIdx` -> global pixel coordinates, from
-    // that output's geometry (falling back to the primary size).
+    // Normalised [0..1] within `outputIdx`'s picture -> the global logical
+    // coordinates the pointer lives in (see the .cpp).
     QPointF mapAbs(uint32_t outputIdx, float nx, float ny) const;
     WebRTCTabletTool *tabletTool(uint8_t wireType);
     // Types one character on seat 0 in the active layout (see the .cpp).
