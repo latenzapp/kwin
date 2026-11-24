@@ -10,7 +10,7 @@
 
 namespace kwin_bridge {
 
-inline constexpr uint16_t kProtocolVersion = 10;
+inline constexpr uint16_t kProtocolVersion = 11;
 inline constexpr const char *kDefaultSocketEnv = "BEAM_KWIN_SOCKET";
 inline constexpr const char *kDefaultSocketRelPath = "beam/kwin-bridge.sock";
 
@@ -100,6 +100,16 @@ struct OutputDesc {
   uint32_t fps;
   uint8_t nameLen;
 };
+
+struct OutputScaleTail {
+  uint32_t magic;
+  uint16_t count;
+};
+struct OutputScaleEntry {
+  uint16_t idx;
+  uint32_t scaleMilli;
+};
+inline constexpr uint32_t kOutputScaleTailMagic = 0x4c435353u;
 
 struct DmabufFramePayload {
   uint64_t ptsUs;

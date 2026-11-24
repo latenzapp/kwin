@@ -1,7 +1,7 @@
 /*
     SPDX-FileCopyrightText: 2026 Simone Salgaro
 
-    Written for Latenz (Jul-Oct 2026) as part of the Latenz fork of KWin; not
+    Written for Latenz (Jul-Nov 2026) as part of the Latenz fork of KWin; not
     part of upstream KWin.
 
     SPDX-License-Identifier: GPL-2.0-or-later
@@ -251,8 +251,8 @@ void CBeamBridge::sendOutputListLocked(uint8_t msgType) {
   auto *hdr = reinterpret_cast<MsgHeader *>(buf.data());
   *hdr = MsgHeader{msgType, 0, 0, 0};
 
-  // hello fields are written before the resize loop below invalidates the
-  // pointer -- keep it that way.
+  // The `hello` fields are written before the resizes below invalidate the
+  // pointer; keep it that way.
   auto *hello = reinterpret_cast<HelloPayload *>(buf.data() + sizeof(MsgHeader));
   hello->protoVersion = kProtocolVersion;
   hello->codecMask = kCodecMask;
@@ -272,6 +272,22 @@ void CBeamBridge::sendOutputListLocked(uint8_t msgType) {
     buf.resize(off + sizeof(OutputDesc) + desc.nameLen);
     std::memcpy(buf.data() + off, &desc, sizeof(OutputDesc));
     std::memcpy(buf.data() + off + sizeof(OutputDesc), o.name.data(), desc.nameLen);
+  }
+
+  // Each output's scale after the descriptors, in the same datagram, so a
+  // position and a scale changed by one configuration arrive together: an
+  // OutputScaleTail (kOutputScaleTailMagic, entry count), then one
+  // OutputScaleEntry per output in list order. A client that does not read
+  // the tail stops after the last descriptor.
+  const OutputScaleTail tail{kOutputScaleTailMagic, static_cast<uint16_t>(m_outputs.size())};
+  size_t off = buf.size();
+  buf.resize(off + sizeof(OutputScaleTail) + m_outputs.size() * sizeof(OutputScaleEntry));
+  std::memcpy(buf.data() + off, &tail, sizeof(OutputScaleTail));
+  off += sizeof(OutputScaleTail);
+  for (const auto &o : m_outputs) {
+    const OutputScaleEntry entry{o.idx, o.scaleMilli};
+    std::memcpy(buf.data() + off, &entry, sizeof(OutputScaleEntry));
+    off += sizeof(OutputScaleEntry);
   }
 
   // Logged on failure rather than dropped in silence: a Hello that never
@@ -495,8 +511,8 @@ void CBeamBridge::recvLoop(int fd) {
       }
     }
     // MSG_TRUNC as well as MSG_CTRUNC: a datagram larger than this buffer
-    // arrives cut short, and parsing what is left as if it were whole reads
-    // payload fields out of the tail of a previous message.
+    // arrives cut short, and parsing the prefix as if it were the whole
+    // message would act on an incomplete payload.
     if (mh.msg_flags & (MSG_CTRUNC | MSG_TRUNC)) {
       for (int i = 0; i < nfds; ++i) ::close(fds[i]);
       static int nlog = 0;
@@ -577,9 +593,9 @@ int CBeamBridge::handleMessage(const uint8_t *data, size_t len, int *fds, int fd
     case MsgType::StreamStop:
       if (m_onStreamStop) m_onStreamStop(hdr->outputIdx);
       break;
-    // ForceIdr, SetBitrate and ResubmitLast are parsed and DROPPED. The
-    // message types stay in the protocol enum, so existing values are never
-    // reused, but this process has nothing to do with them.
+    // ForceIdr, SetBitrate and ResubmitLast are accepted and ignored. Their
+    // values are reserved in the protocol enum, so they are never reused, but
+    // this process has nothing to do with them.
     case MsgType::ForceIdr:
     case MsgType::SetBitrate:
     case MsgType::ResubmitLast:

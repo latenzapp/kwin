@@ -31,9 +31,7 @@
 #include "opengl/eglbackend.h"
 #include "utils/damagejournal.h"
 
-// The per-output layer this backend creates. Its own file;
-// included here rather than forward-declared because compatibleOutputLayers
-// and addOutput construct one.
+// The per-output layer this backend creates, one per output in addOutput().
 #include "webrtc_egl_layer.h"
 
 #include "pipeline/CBeamBridge.hpp"
@@ -66,7 +64,8 @@ class GLRenderTimeQuery;
  * buffer's DMABUF is loaned to the peer, a separate process.
  *
  * Multi-monitor: each output gets its own SOutputPipeline (stream lifecycle,
- * throttle state and loan table). Transport is shared.
+ * throttle state) and its own WebRTCEglLayer, which holds its loan table.
+ * Transport is shared.
  */
 class WebRTCEglBackend : public EglBackend
 {
@@ -101,10 +100,11 @@ public:
         // Damage-gated capture (see WebRTCEglLayer::endFrame): captureFrame is normally
         // skipped when the scene reports no real damage, so an idle desktop
         // costs no loan and no cross-process import. This forces the NEXT
-        // captureFrame through regardless of damage -- set on StreamStart
-        // and after a resolution change, both of which invalidate whatever
-        // the damage journal thinks is "unchanged": the peer has no
-        // previous frame to build on.
+        // captureFrame through regardless of damage -- set on StreamStart,
+        // after a resolution, scale or HDR change, and when the peer cannot
+        // resolve a buffer id. Each invalidates whatever the damage journal
+        // thinks is "unchanged": the peer has no usable previous frame to
+        // build on.
         bool pendingForcedCapture = true;
 
         // Until when we keep waking the render loop to deliver that forced
@@ -180,6 +180,7 @@ public:
         int32_t  x;     // logical position
         int32_t  y;
         uint32_t fps;
+        uint32_t scaleMilli = 1000;  // the output's scale, thousandths
         std::string codec;
         uint32_t bitrateBps;
     };
@@ -204,7 +205,7 @@ public:
     bool changeFps(uint32_t fps, uint32_t outputIdx = 0);
 
     // Called by WebRTCEglLayer::endFrame() to capture the buffer for a specific output.
-    // `bypassThrottle` skips the min-interval submit gate; pass what
+    // `bypassThrottle` skips the submit throttle; pass what
     // consumeForcedCapture() returned, never what consumeDeferredCapture() did.
     // Returns true when the frame was LOANED to the peer: the caller must
     // then NOT release the swapchain slot, because the BufferRelease handler
@@ -227,10 +228,11 @@ public:
     // Bridge output index for `output`, 0 if it has no pipeline.
     uint32_t outputIndexFor(BackendOutput *output);
 
-    // Damage-gated capture (see WebRTCEglLayer::endFrame): true exactly once per
-    // StreamStart/resolution-change, false otherwise -- callers should
-    // capture unconditionally when this returns true, and gate on real
-    // scene damage the rest of the time. Not idempotent: clears the flag.
+    // Damage-gated capture (see WebRTCEglLayer::endFrame): true when a whole
+    // frame is owed (StreamStart, a resolution, scale or HDR change, a
+    // forgotten buffer id), false otherwise -- callers should capture
+    // unconditionally when this returns true, and gate on real scene damage
+    // the rest of the time. Not idempotent: clears the flag.
     bool consumeForcedCapture(BackendOutput *output);
 
     // Same shape, for damage the submit throttle deferred (see
@@ -301,12 +303,12 @@ private:
     // Send the current output list to the peer over the bridge (also
     // resyncs the input backend's per-output geometry table).
     void broadcastOutputList();
-    // An output moved. The bridge's own handlers broadcast the list
-    // themselves; this catches every other source: output management
-    // (kscreen, the display settings) and KWin applying a configuration it
-    // stored. Queued, so one configuration that moves several outputs sends
-    // one list, and the list goes out only when its layout differs from the
-    // last one sent.
+    // An output moved or changed scale. The bridge's own handlers broadcast
+    // the list themselves; this catches every other source: output
+    // management (kscreen, the display settings) and KWin applying a
+    // configuration it stored. Queued, so one configuration that changes
+    // several outputs sends one list, and the list goes out only when its
+    // layout differs from the last one sent.
     void scheduleOutputListSync();
 
     // ── CBeamBridge callbacks (invoked from the bridge's socket threads;
@@ -315,9 +317,9 @@ private:
                               uint32_t startKbps, uint32_t maxKbps, uint32_t mode);
     void onBridgeStreamStop(uint16_t outputIdx);
     void onBridgeSetFps(uint16_t outputIdx, uint32_t fps);
-    // ForceIdr, SetBitrate and ResubmitLast: the message types stay in the
-    // protocol enum, so existing values are never reused, and CBeamBridge
-    // still parses them, but there is nothing here to act on.
+    // ForceIdr, SetBitrate and ResubmitLast have no handler: CBeamBridge
+    // accepts and ignores them, and their values are reserved in the
+    // protocol enum.
     void onBridgeClientConnected();
     void onBridgeClientDisconnected();
     // Dynamic output layout, requested by the peer: thin wrappers around

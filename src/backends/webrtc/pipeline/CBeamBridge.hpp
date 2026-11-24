@@ -16,7 +16,7 @@
  *
  * SPDX-FileCopyrightText: 2026 Simone Salgaro
  *
- * Written for Latenz (Jul-Oct 2026) as part of the Latenz fork of KWin; not
+ * Written for Latenz (Jul-Nov 2026) as part of the Latenz fork of KWin; not
  * part of upstream KWin.
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -44,6 +44,10 @@ class CBeamBridge {
     uint32_t nativeW = 0;
     uint32_t nativeH = 0;
     uint32_t fps = 0;
+    // The output's scale in thousandths (1000 = 1.0), sent as an
+    // OutputScaleEntry after the list's OutputScaleTail, so the peer can
+    // derive the output's logical size.
+    uint32_t scaleMilli = 1000;
     std::string name;
   };
 
@@ -72,8 +76,8 @@ class CBeamBridge {
   // `scale` is already validated against kMinScaleMilli/kMaxScaleMilli and
   // converted out of the wire's fixed point by the time it gets here.
   using FnOutputSetScale = std::function<void(uint16_t outputIdx, double scale)>;
-  // kFeatHdr: HDR composition for an output, with the
-  // luminances the peer chose (OutputHdrPayload).
+  // kFeatHdr: HDR composition for an output, with the luminances the peer
+  // chose (OutputHdrPayload).
   using FnOutputSetHdr = std::function<void(uint16_t outputIdx, bool on, uint32_t referenceNits,
                                             uint32_t maxNits, uint32_t minMilliNits)>;
 
@@ -186,10 +190,10 @@ class CBeamBridge {
   std::atomic<uint64_t> m_dropped{0};
 
   // The ONE place a message reaches the client. Takes m_sendMutex and reads
-  // m_clientFd inside it, which is the property that matters: every sender
-  // that read the fd first and locked afterwards owned a window in which
-  // acceptLoop could close that fd -- and hand its number straight back to
-  // the next open() in this process -- between the read and the send.
+  // m_clientFd inside it, which is the property that matters: a sender that
+  // read the fd before locking would have a window in which acceptLoop could
+  // close that fd -- and hand its number straight back to the next open() in
+  // this process -- between the read and the send.
   //
   // `what` names the message for the throttled failure log, and is also why
   // this is not a template: one line per message type is worth more than the
@@ -198,12 +202,13 @@ class CBeamBridge {
                     const int *fds = nullptr, int fdCount = 0);
 
   void sendHello();
-  // Sent immediately after Hello. A separate message because HelloPayload is
-  // followed by a variable-length OutputDesc[] and so cannot be extended:
-  // existing payload layouts never change.
+  // Sent immediately after Hello. A separate message because HelloPayload
+  // itself cannot grow: the variable-length output descriptors follow it,
+  // and existing payload layouts never change.
   void sendCapabilities();
-  // Serializes the current output list (HelloPayload + OutputDesc[] -- the
-  // wire layout Hello and OutputsChanged share) and sends it as msgType.
+  // Serializes the current output list (HelloPayload, then each OutputDesc
+  // followed by its name bytes, then OutputScaleTail + OutputScaleEntry[] --
+  // the wire layout Hello and OutputsChanged share) and sends it as msgType.
   // Caller must hold m_outputsMutex.
   void sendOutputListLocked(uint8_t msgType);
   void replayCursorCache();

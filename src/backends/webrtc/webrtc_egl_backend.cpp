@@ -13,10 +13,11 @@
     out of the compositor's hands until then.
 
     Multi-monitor: each output has its own SOutputPipeline (stream lifecycle,
-    throttle state, damage accumulation and loan table), so outputs can run at
-    different resolutions and rates. Transport is one shared CBeamBridge
-    socket; a frame names its output in the bridge protocol's own header
-    (kwin_bridge_protocol.h), not in-band, so outputs share no wire format.
+    throttle state, damage accumulation) and its own layer with its loan
+    table, so outputs can run at different resolutions and rates. Transport
+    is one shared CBeamBridge socket; a frame names its output in the bridge
+    protocol's own header (kwin_bridge_protocol.h), not in-band, so outputs
+    share no wire format.
 
     Based on KWin's VirtualEglBackend:
     SPDX-FileCopyrightText: 2015 Martin Gräßlin <mgraesslin@kde.org>
@@ -231,8 +232,8 @@ QList<OutputLayer *> WebRTCEglBackend::compatibleOutputLayers(BackendOutput *out
 // Per-Output Pipeline Management
 // ═══════════════════════════════════════════════════════════════════════════════
 
-// Bookkeeping only -- an output index, its config, and an empty loan table;
-// nothing can fail.
+// Bookkeeping only -- an output index and its config, plus the signal
+// connections below; nothing can fail.
 void WebRTCEglBackend::initOutputPipeline(BackendOutput *output, uint32_t outputIdx, const SWebRTCConfig &config)
 {
     SOutputPipeline pipeline;
@@ -244,16 +245,17 @@ void WebRTCEglBackend::initOutputPipeline(BackendOutput *output, uint32_t output
 
     m_pipelines[output] = std::move(pipeline);
 
-    // A move that does not come through the bridge (output management, a stored
-    // configuration) must reach the peer too, or the layout it was last sent
-    // goes stale. The position is the only field of the list such a change can
-    // touch: applyChanges() ignores a requested mode, and the size and rate in
-    // the list are the pipeline's, set when the pipeline is created and changed
-    // only by the bridge's own handlers. A scale or transform changes no field
-    // of the list (sizes on the bridge are pixels), and the input backend maps
-    // every event through the workspace's current geometry of the output
-    // (mapAbs), so neither needs a list of its own.
+    // A move or a scale change that does not come through the bridge (output
+    // management, a stored configuration) must reach the peer too, or the
+    // layout it was last sent goes stale. Position and scale are the fields of
+    // the list such a change can touch: applyChanges() ignores a requested
+    // mode, and the size and rate in the list are the pipeline's, set when the
+    // pipeline is created and changed only by the bridge's own handlers. A
+    // transform changes no field of the list, and the input backend maps every
+    // event through the workspace's current geometry of the output (mapAbs),
+    // so it needs no list of its own.
     connect(output, &BackendOutput::positionChanged, this, &WebRTCEglBackend::scheduleOutputListSync);
+    connect(output, &BackendOutput::scaleChanged, this, &WebRTCEglBackend::scheduleOutputListSync);
 }
 
 void WebRTCEglBackend::shutdownOutputPipeline(BackendOutput *output)
@@ -397,8 +399,8 @@ bool WebRTCEglBackend::initPipeline(const SWebRTCConfig &config)
     m_bridge->setOnStreamStop([this](uint16_t idx) { onBridgeStreamStop(idx); });
     m_bridge->setOnSetFps([this](uint16_t idx, uint32_t fps) { onBridgeSetFps(idx, fps); });
     // No handler for ForceIdr, SetBitrate or ResubmitLast: this compositor
-    // does not act on them. The bridge still parses the message types (their
-    // values stay reserved in the protocol enum) and drops them.
+    // does not act on them. The bridge accepts and ignores these message
+    // types; their values are reserved in the protocol enum.
     m_bridge->setOnInput([this](uint16_t outputIdx, const uint8_t *data, size_t len) {
         if (auto *inputBackend = m_backend->inputBackend())
             CBeamInputTranslator::translate(outputIdx, data, len, inputBackend);
@@ -670,6 +672,7 @@ std::vector<WebRTCEglBackend::SOutputInfo> WebRTCEglBackend::getOutputInfos() co
         QPoint pos = webrtcOutput->position();
         info.x = pos.x();
         info.y = pos.y();
+        info.scaleMilli = static_cast<uint32_t>(qRound(webrtcOutput->scale() * 1000.0));
         info.fps = pipeline.config.fps;
         info.codec = pipeline.config.codec;
         info.bitrateBps = pipeline.config.bitrateBps;
@@ -681,14 +684,15 @@ std::vector<WebRTCEglBackend::SOutputInfo> WebRTCEglBackend::getOutputInfos() co
     return infos;
 }
 
-// The outputs and their rectangles: what the input backend's geometry table is
-// built from, and the layout the peer is sent in the list. The rate is left
-// out: StreamStart changes it without sending a list.
+// The outputs, their rectangles and scales: the layout the peer is sent in the
+// list (the rectangles also build the input backend's geometry table). The
+// rate is left out: StreamStart changes it without sending a list.
 static bool sameOutputLayout(const std::vector<WebRTCEglBackend::SOutputInfo> &a,
                              const std::vector<WebRTCEglBackend::SOutputInfo> &b)
 {
     return std::equal(a.begin(), a.end(), b.begin(), b.end(), [](const auto &x, const auto &y) {
-        return x.idx == y.idx && x.x == y.x && x.y == y.y && x.width == y.width && x.height == y.height;
+        return x.idx == y.idx && x.x == y.x && x.y == y.y && x.width == y.width && x.height == y.height
+            && x.scaleMilli == y.scaleMilli;
     });
 }
 
@@ -724,6 +728,7 @@ void WebRTCEglBackend::broadcastOutputList()
             d.nativeW = info.width;
             d.nativeH = info.height;
             d.fps = info.fps;
+            d.scaleMilli = info.scaleMilli;
             d.name = QStringLiteral("WEBRTC-%1").arg(info.idx).toStdString();
             descs.push_back(d);
         }
@@ -966,9 +971,8 @@ bool WebRTCEglBackend::captureFrame(BackendOutput *output, const DmaBufAttribute
     // frame is refused only when it arrives more than a tenth of an interval
     // before it is due. A minimum spacing leaves almost no slack at high
     // frame rates, so GPU contention pushes composites under it and they are
-    // thrown away. A throttled
-    // tick is not a lost change -- it re-arms the damage gate via
-    // pendingDeferredCapture.
+    // thrown away. A throttled tick is not a lost change -- it re-arms the
+    // damage gate via pendingDeferredCapture.
     const auto now = std::chrono::steady_clock::now();
     const auto interval = pipeline->config.fps > 0
         ? std::chrono::nanoseconds(1'000'000'000ull / pipeline->config.fps)
@@ -1087,11 +1091,11 @@ void WebRTCEglBackend::fillDamagePayload(SOutputPipeline *pipeline, bool forced,
 
 // Hands one composited buffer to the peer by file descriptor.
 //
-// Ordering matters and is not obvious: the loan has to be recorded BEFORE the
-// send, because the reply can arrive on the bridge's recv thread while this
-// function is still running. Recording afterwards leaves a window where a
-// BufferRelease finds no loan, silently drops it, and the slot is pinned
-// forever.
+// The loan is recorded before the send, so a frame goes out only with its
+// slot pinned, and is taken back if the send fails. BufferRelease is read
+// on the bridge's recv thread but handled on the compositor thread (the
+// handler is queued there), so it cannot run before this function
+// returns; a release that arrives after its loan expired finds nothing.
 bool WebRTCEglBackend::sendDmabufFrame(SOutputPipeline *pipeline, const DmaBufAttributes *dma,
                                         WebRTCEglLayer *layer, bool forced)
 {
@@ -1169,8 +1173,7 @@ bool WebRTCEglBackend::sendDmabufFrame(SOutputPipeline *pipeline, const DmaBufAt
     //
     // Created only when the peer can import a fence: EGLNativeFence's
     // constructor (eglCreateSyncKHR, a glFlush, eglDupNativeFenceFDANDROID)
-    // would otherwise be wasted on every frame. Without a fence, the glFinish
-    // below is required for correctness.
+    // would otherwise be wasted on every frame.
     FileDescriptor fenceFd;
     const bool peerWantsFence = (m_bridge->peerFeatures() & kwin_bridge::kFeatNativeFence) != 0;
     bool sentFence = false;
